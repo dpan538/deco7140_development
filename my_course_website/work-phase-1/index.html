@@ -5,7 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Web Design Project - DECO7140</title>
 
-        <!-- CSS Linking - following course structure -->
+        <!-- CSS Linking / 引入不同的CSS文件 (reset, base, layout, components, spacing) -->
+        <!-- reset.css: 重置浏览器默认样式 -->
+        <!-- base.css: 定义基础样式 (如字体、颜色) -->
+        <!-- layout.css: 页面布局相关的样式 -->
+        <!-- components.css: 独立组件的样式 (按钮、文字动画等) -->
+        <!-- spacing.css: 控制页面元素的间距 -->
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
@@ -14,31 +19,31 @@
     </head>
 
     <body>
-        <!-- Main container matching exact design -->
+        <!-- Main container / 页面主容器，对应Figma设计稿的整体布局 -->
         <div class="design-container">
-            <!-- Top Blue Section (50% height) -->
+            <!-- Top Blue Section (50% height) / 顶部蓝色区域，占页面一半高度 -->
             <div class="blue-section">
-                <!-- Welcome title -->
+                <!-- Welcome title / 欢迎标题 -->
                 <h1 class="welcome-text">Welcome to My Website</h1>
 
-                <!-- Next button with white border -->
+                <!-- Next button with white border / 白色边框的按钮，点击进入下一步 -->
                 <button id="surprise-button" class="next-btn">
                     <span class="next-text">Next →</span>
                 </button>
             </div>
 
-            <!-- Bottom Section (50% height) -->
+            <!-- Bottom Section (50% height) / 底部区域，占页面另一半 -->
             <div class="bottom-section">
-                <!-- Left Green Section with Links -->
+                <!-- Left Green Section with Links / 左侧绿色区域，放置“Links”部分 -->
                 <div class="green-section section-links">
                     <h2 class="links-title">Links</h2>
-                    <!-- Yellow diagonal line through Links -->
+                    <!-- Yellow diagonal line through Links / 黄色斜线装饰 -->
                     <div class="yellow-diagonal"></div>
                 </div>
 
-                <!-- Right Section split into Red (top) and Yellow (bottom) -->
+                <!-- Right Section split into Red (top) and Yellow (bottom) / 右侧区域，上半红色，下半黄色 -->
                 <div class="right-section">
-                    <!-- Red Section with Introduction -->
+                    <!-- Red Section with Introduction / 红色区域，放个人介绍文字 -->
                     <div class="red-section">
                         <div class="intro-text">
                             <p class="intro-line">Hi.</p>
@@ -52,28 +57,30 @@
                         </div>
                     </div>
 
-                    <!-- Yellow Section with About Me -->
+                    <!-- Yellow Section with About Me / 黄色区域，放“About Me”标题 -->
                     <div class="yellow-section section-about">
                         <h2 class="about-title">About Me</h2>
                     </div>
                 </div>
             </div>
 
-            <!-- Footer -->
+            <!-- Footer / 页脚，固定在底部 -->
             <div class="footer-badge">
                 © 2025 My Web Design. All rights reserved.
             </div>
         </div>
 
-        <!-- Overlay for surprise content -->
+        <!-- Overlay for surprise content / 黑色遮罩层，点击按钮后显示的隐藏内容 -->
         <div id="overlay" class="overlay">
             <div class="overlay-box">
+                <!-- Typewriter effect text / 打字机效果文字 -->
                 <div class="typewriter-text"></div>
+                <!-- Exit hint / 提示用户按 ESC 退出 -->
                 <div class="typewriter-hint">press esc to exit</div>
             </div>
         </div>
 
-        <!-- JavaScript - without module type for now -->
+        <!-- JavaScript Linking / 连接到index.js脚本，处理按钮交互和动画逻辑 -->
         <script src="js/index.js"></script>
     </body>
 </html>

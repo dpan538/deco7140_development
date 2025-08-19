@@ -1,91 +1,103 @@
 /* DECO7140 Introduction to Web Design - Work Phase 1 */
 /* Base styles and color variables - exact design match */
+/* 基础样式和颜色变量，严格对应设计稿 */
 
 /* Import fonts - American Typewriter and Borel */
+/* 导入字体：打字机风格 American Typewriter 和手写风格 Borel */
 @import url("https://fonts.googleapis.com/css2?family=Borel&display=swap");
 
 /* CSS Color Variables - Exact from design */
+/* 定义全局颜色变量（方便统一修改和调用） */
 :root {
-    --color-primary: #1e2ede; /* Palatinate blue */
-    --color-secondary: #f7e733; /* Aureolin yellow */
-    --color-accent: #ff0035; /* Imperial red */
-    --color-success: #138a36; /* Forest green */
-    --color-dark: #000000; /* Black */
-    --color-light: #ffffff; /* White */
-    --color-background: #fcfafa; /* Light background */
+    --color-primary: #1e2ede; /* Palatinate blue / 主蓝色 */
+    --color-secondary: #f7e733; /* Aureolin yellow / 明亮黄色 */
+    --color-accent: #ff0035; /* Imperial red / 红色强调 */
+    --color-success: #138a36; /* Forest green / 绿色成功色 */
+    --color-dark: #000000; /* Black / 黑色 */
+    --color-light: #ffffff; /* White / 白色 */
+    --color-background: #fcfafa; /* Light background / 浅背景 */
 }
 
 /* Global reset and base styles */
+/* 全局重置：去掉默认边距，统一盒子模型 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body 基础样式 / 页面整体风格 */
 body {
-    font-family: "American Typewriter", "Courier New", monospace;
-    background-color: var(--color-background);
-    color: var(--color-dark);
-    line-height: 1.5;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    font-family: "American Typewriter", "Courier New", monospace; /* 默认字体 */
+    background-color: var(--color-background); /* 浅灰背景 */
+    color: var(--color-dark); /* 黑色文字 */
+    line-height: 1.5; /* 行高 */
+    overflow: hidden; /* 隐藏滚动条 */
+    display: flex; /* Flex 布局 */
+    justify-content: center; /* 内容水平居中 */
+    align-items: center; /* 内容垂直居中 */
+    min-height: 100vh; /* 最小高度占满整个视口 */
 }
 
 /* Typography - exact sizes from design */
+/* 字体排版，精确还原设计稿 */
 
 /* Welcome title - larger font size */
+/* 欢迎标题（顶部蓝色区域的文字） */
 .welcome-text {
-    font-family: "Borel", cursive;
-    font-size: 4rem; /* Increased from 3rem */
-    color: var(--color-secondary);
+    font-family: "Borel", cursive; /* 手写风格 */
+    font-size: 4rem; /* 增大到 4rem */
+    color: var(--color-secondary); /* 黄色 */
     font-weight: normal;
     text-align: center;
     margin: 0;
 }
 
 /* Next button text - adjusted size */
+/* Next 按钮上的文字样式 */
 .next-text {
     font-family: "Borel", cursive;
-    font-size: 2rem; /* Reduced for better fit */
+    font-size: 2rem; /* 缩小以更好适配按钮 */
     color: var(--color-secondary);
     font-weight: normal;
 }
 
 /* Introduction lines - slightly smaller to fit well */
+/* 个人介绍部分（红色区域的文字行） */
 .intro-line {
     font-family: "Borel", cursive;
-    font-size: 1.8rem; /* Slightly reduced */
-    color: var(--color-light);
+    font-size: 1.8rem; /* 略微缩小 */
+    color: var(--color-light); /* 白色文字 */
     margin: 0;
-    line-height: 1.25;
+    line-height: 1.25; /* 紧凑行距 */
 }
 
 /* Name highlight with underline */
+/* 高亮显示名字，带有白色下划线 */
 .name-highlight {
     text-decoration: underline;
-    text-decoration-color: var(--color-light);
-    text-decoration-thickness: 3px;
-    text-underline-offset: 6px;
+    text-decoration-color: var(--color-light); /* 白色下划线 */
+    text-decoration-thickness: 3px; /* 下划线厚度 */
+    text-underline-offset: 6px; /* 下划线与文字间距 */
 }
 
 /* Large titles - reduced size to fit smaller areas */
+/* 大标题样式（Links, About Me） */
 .links-title,
 .about-title {
-    font-family: "American Typewriter", monospace;
-    font-size: 4rem; /* Reduced from 5rem */
-    color: var(--color-dark);
+    font-family: "American Typewriter", monospace; /* 打字机字体 */
+    font-size: 4rem; /* 从 5rem 缩小到 4rem，更适合空间 */
+    color: var(--color-dark); /* 黑色文字 */
     font-weight: bold;
     text-align: center;
     margin: 0;
-    line-height: 0.9;
+    line-height: 0.9; /* 紧凑行距 */
     z-index: 2;
-    position: relative;
+    position: relative; /* 保持在斜线装饰上层 */
 }
 
 /* Typography hierarchy for other elements */
+/* 其他文字层级的排版，保证全局统一 */
 h1 {
     font-size: 3rem;
     font-weight: normal;
