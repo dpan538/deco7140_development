@@ -2,47 +2,78 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>My Web Design Project</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Web Design Project - DECO7140</title>
 
-        <!-- CSS Reset -->
+        <!-- CSS Linking - following course structure -->
         <link rel="stylesheet" href="css/reset.css" />
-        <!-- Base Styles -->
         <link rel="stylesheet" href="css/base.css" />
-        <!-- Layout Styles -->
         <link rel="stylesheet" href="css/layout.css" />
-        <!-- Component Styles -->
         <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/spacing.css" />
     </head>
+
     <body>
-        <header class="header-container">
-            <h1>Welcome to My Website</h1>
-        </header>
+        <!-- Main container matching exact design -->
+        <div class="design-container">
+            <!-- Top Blue Section (50% height) -->
+            <div class="blue-section">
+                <!-- Welcome title -->
+                <h1 class="welcome-text">Welcome to My Website</h1>
 
-        <main>
-            <div class="container">
-                <h1>This is Work Phase 1</h1>
-                <section>
-                    <h2>What you will see here:</h2>
-                    <p>
-                        Hi. I am Dai Pan, a student in University of Queensland.
-                    </p>
-                </section>
-                <section>
-                    <h2>links</h2>
-                    <a href="..index.html">Home</a>
-                </section>
-
-                <section>
-                    <h2>About Me</h2>
-                    <p>I'm now learning web design.</p>
-                </section>
-
-                <hr />
-
-                <footer>
-                    <p>&copy; 2025 My Web Design. All rights reserved.</p>
-                </footer>
+                <!-- Next button with white border -->
+                <button id="surprise-button" class="next-btn">
+                    <span class="next-text">Next →</span>
+                </button>
             </div>
-        </main>
+
+            <!-- Bottom Section (50% height) -->
+            <div class="bottom-section">
+                <!-- Left Green Section with Links -->
+                <div class="green-section section-links">
+                    <h2 class="links-title">Links</h2>
+                    <!-- Yellow diagonal line through Links -->
+                    <div class="yellow-diagonal"></div>
+                </div>
+
+                <!-- Right Section split into Red (top) and Yellow (bottom) -->
+                <div class="right-section">
+                    <!-- Red Section with Introduction -->
+                    <div class="red-section">
+                        <div class="intro-text">
+                            <p class="intro-line">Hi.</p>
+                            <p class="intro-line">
+                                I am
+                                <span class="name-highlight">DAI PAN</span>,
+                            </p>
+                            <p class="intro-line">a student in the</p>
+                            <p class="intro-line">University of</p>
+                            <p class="intro-line">Queensland.</p>
+                        </div>
+                    </div>
+
+                    <!-- Yellow Section with About Me -->
+                    <div class="yellow-section section-about">
+                        <h2 class="about-title">About Me</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer-badge">
+                © 2025 My Web Design. All rights reserved.
+            </div>
+        </div>
+
+        <!-- Overlay for surprise content -->
+        <div id="overlay" class="overlay">
+            <div class="overlay-box">
+                <div class="typewriter-text"></div>
+                <div class="typewriter-hint">press esc to exit</div>
+            </div>
+        </div>
+
+        <!-- JavaScript - without module type for now -->
+        <script src="js/index.js"></script>
     </body>
 </html>
