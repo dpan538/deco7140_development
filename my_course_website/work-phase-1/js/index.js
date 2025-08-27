@@ -7,7 +7,7 @@
 const PAGE_NAME = "index.js";
 
 // DOM Elements / 获取页面中的元素
-const surpriseButton = document.getElementById("surprise-button"); // 获取“Next”按钮
+const nextButton = document.getElementById("next-button"); // 获取“Next”按钮
 const overlay = document.getElementById("overlay"); // 获取遮罩层
 const typewriterText = document.querySelector(".typewriter-text"); // 获取打字机效果文字的容器
 const linksSection = document.querySelector(".section-links"); // 获取左侧 Links 区域
@@ -31,7 +31,7 @@ function typewriterEffect(element, text, speed = 100) {
         if (i < text.length) {
             element.textContent += text.charAt(i); // 将字符逐个加入
             i++;
-            setTimeout(typeChar, speed); // 递归调用，形成打字机效果
+            setTimeout(typeChar, speed + Math.random() * 50); // 递归调用，形成打字机效果
         }
     }
 
@@ -45,8 +45,9 @@ function typewriterEffect(element, text, speed = 100) {
 function showOverlay() {
     overlay.classList.add("active"); // 给遮罩层加上 active 样式 → 显示
     const message =
-        "This is a section that hasn't been edited yet, so check back later."; // 预设文字
-    typewriterEffect(typewriterText, message, 80); // 调用打字机函数，速度为80ms
+        "This is a section that hasn't been edited yet, check back later."; // 预设文字
+    typewriterEffect(typewriterText, message, 80);
+    // 调用打字机函数，速度为80ms
 }
 
 /**
@@ -56,6 +57,13 @@ function showOverlay() {
 function hideOverlay() {
     overlay.classList.remove("active"); // 移除 active 样式 → 隐藏
 }
+
+    // ESC key to close overlay / 按 ESC 键关闭遮罩层
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            hideOverlay();
+        }
+    });
 
 /**
  * Handle Links section click - redirect to portfolio
@@ -79,16 +87,10 @@ function handleAboutClick() {
  */
 function initializeInteractions() {
     // Surprise button click / 点击按钮时显示遮罩层
-    if (surpriseButton) {
-        surpriseButton.addEventListener("click", showOverlay);
+    if (nextButton) {
+        nextButton.addEventListener("click", showOverlay);
     }
 
-    // ESC key to close overlay / 按 ESC 键关闭遮罩层
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-            hideOverlay();
-        }
-    });
 
     // Click outside overlay to close / 点击遮罩层空白处关闭
     if (overlay) {

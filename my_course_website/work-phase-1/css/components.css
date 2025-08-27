@@ -5,12 +5,12 @@
 /* Next button - white border, transparent background */
 /* Next 按钮：白色边框，透明背景 */
 .next-btn {
-    padding: 18px 50px; /* 内边距 */
-    border: 4px solid var(--color-light); /* 白色边框 */
+    padding: 20px 50px; /* 内边距 */
+    border: 5px solid var(--color-light); /* 白色边框 */
     border-radius: 50px; /* 圆角按钮 */
     background-color: transparent; /* 背景透明 */
     cursor: pointer; /* 鼠标悬停时显示手型 */
-    transition: all 0.3s ease; /* 添加过渡动画 */
+    transition: all 0.5s ease; /* 添加过渡动画 */
     outline: none; /* 移除点击时的外边框 */
 }
 
@@ -21,7 +21,7 @@
 }
 
 .next-btn:hover .next-text {
-    color: var(--color-primary); /* 按钮文字变为主色 */
+    color: var(--color-blue); /* 按钮文字变为主色 */
 }
 
 /* Overlay styles - preserving existing functionality */
@@ -58,8 +58,8 @@
 /* 打字机效果的文字样式 */
 .typewriter-text {
     font-family: "Borel", cursive; /* 手写风格字体 */
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 2.3rem;
+    margin-bottom: 3rem;
     min-height: 3rem; /* 保持固定高度，避免文字抖动 */
     color: var(--color-light); /* 白色文字 */
 }
@@ -68,104 +68,32 @@
 /* 提示文字样式（press esc to exit） */
 .typewriter-hint {
     font-family: "American Typewriter", monospace;
-    font-size: 1.2rem;
-    color: var(--color-secondary); /* 黄色提示文字 */
+    font-size: 1.5rem;
+    color: var(--color-yellow); /* 黄色提示文字 */
     margin-top: 2rem;
 }
 
 /* Interactive cursor styles */
 /* 鼠标悬停时绿色和黄色区域透明度变化 */
 .green-section:hover {
-    opacity: 0.9;
-    transition: opacity 0.2s ease;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
 }
 
 .yellow-section:hover {
-    opacity: 0.9;
-    transition: opacity 0.2s ease;
-}
-
-/* Simple card components for other pages */
-/* 简单卡片组件（适用于其他页面） */
-.simple-card {
-    background-color: var(--color-light);
-    border: 2px solid var(--color-dark);
-    padding: 1.5rem;
-    margin: 1rem;
-    text-align: center;
-    max-width: 300px;
-    border-radius: 8px;
-}
-
-/* Card container using Flexbox */
-/* 卡片容器：使用 Flex 布局，垂直排列 */
-.card-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem; /* 卡片之间的间距 */
-    padding: 1rem;
-}
-
-/* Button styles for other pages */
-/* 通用按钮样式（用于其他页面） */
-.button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    display: inline-block;
-    text-decoration: none; /* 去掉下划线 */
-    transition: all 0.2s ease-in-out;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
 }
 
 /* Primary button style / 主按钮（蓝色背景） */
 .button-primary {
-    background-color: var(--color-primary);
+    background-color: var(--color-blue);
     color: var(--color-light);
 }
 
 /* Secondary button style / 次按钮（黄色背景） */
 .button-secondary {
-    background-color: var(--color-secondary);
+    background-color: var(--color-yellow);
     color: var(--color-dark);
 }
 
-/* Button hover effect */
-/* 悬停时按钮浮起并带阴影 */
-.button:hover {
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-}
-
-/* Navigation links */
-/* 导航链接样式 */
-.nav-link {
-    color: var(--color-light);
-    text-decoration: none;
-    font-family: "American Typewriter", monospace;
-    font-size: 1.2rem;
-    transition: color 0.2s ease;
-}
-
-/* Navigation link hover */
-/* 悬停时导航链接变黄色 */
-.nav-link:hover {
-    color: var(--color-secondary);
-}
-
-/* Responsive card layout */
-/* 响应式卡片布局：宽屏下横向排列 */
-@media (min-width: 768px) {
-    .card-container {
-        flex-direction: row; /* 横向排列 */
-        flex-wrap: wrap; /* 自动换行 */
-        justify-content: center;
-    }
-
-    .simple-card {
-        flex: 1 1 280px; /* 自适应宽度 */
-    }
-}

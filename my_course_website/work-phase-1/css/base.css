@@ -9,13 +9,13 @@
 /* CSS Color Variables - Exact from design */
 /* 定义全局颜色变量（方便统一修改和调用） */
 :root {
-    --color-primary: #1e2ede; /* Palatinate blue / 主蓝色 */
-    --color-secondary: #f7e733; /* Aureolin yellow / 明亮黄色 */
-    --color-accent: #ff0035; /* Imperial red / 红色强调 */
-    --color-success: #138a36; /* Forest green / 绿色成功色 */
+    --color-blue: #1e2ede; /* Palatinate blue / 主蓝色 */
+    --color-yellow: #f7e733; /* Aureolin yellow / 明亮黄色 */
+    --color-red: #ff0035; /* Imperial red / 红色 */
+    --color-green: #138a36; /* Forest green / 绿色 */
     --color-dark: #000000; /* Black / 黑色 */
     --color-light: #ffffff; /* White / 白色 */
-    --color-background: #fcfafa; /* Light background / 浅背景 */
+    --color-background: #000000; /* Light background / 浅背景 */
 }
 
 /* Global reset and base styles */
@@ -46,8 +46,8 @@ body {
 /* 欢迎标题（顶部蓝色区域的文字） */
 .welcome-text {
     font-family: "Borel", cursive; /* 手写风格 */
-    font-size: 4rem; /* 增大到 4rem */
-    color: var(--color-secondary); /* 黄色 */
+    font-size: 4.5rem; /* 增大到 4rem */
+    color: var(--color-yellow); /* 黄色 */
     font-weight: normal;
     text-align: center;
     margin: 0;
@@ -58,7 +58,7 @@ body {
 .next-text {
     font-family: "Borel", cursive;
     font-size: 2rem; /* 缩小以更好适配按钮 */
-    color: var(--color-secondary);
+    color: var(--color-yellow);
     font-weight: normal;
 }
 
@@ -66,7 +66,7 @@ body {
 /* 个人介绍部分（红色区域的文字行） */
 .intro-line {
     font-family: "Borel", cursive;
-    font-size: 1.8rem; /* 略微缩小 */
+    font-size: 1.7rem; /* 略微缩小 */
     color: var(--color-light); /* 白色文字 */
     margin: 0;
     line-height: 1.25; /* 紧凑行距 */
@@ -78,7 +78,7 @@ body {
     text-decoration: underline;
     text-decoration-color: var(--color-light); /* 白色下划线 */
     text-decoration-thickness: 3px; /* 下划线厚度 */
-    text-underline-offset: 6px; /* 下划线与文字间距 */
+    text-underline-offset: 5px; /* 下划线与文字间距 */
 }
 
 /* Large titles - reduced size to fit smaller areas */
@@ -86,8 +86,7 @@ body {
 .links-title,
 .about-title {
     font-family: "American Typewriter", monospace; /* 打字机字体 */
-    font-size: 4rem; /* 从 5rem 缩小到 4rem，更适合空间 */
-    color: var(--color-dark); /* 黑色文字 */
+    font-size: 5rem; 
     font-weight: bold;
     text-align: center;
     margin: 0;
@@ -96,8 +95,6 @@ body {
     position: relative; /* 保持在斜线装饰上层 */
 }
 
-/* Typography hierarchy for other elements */
-/* 其他文字层级的排版，保证全局统一 */
 h1 {
     font-size: 3rem;
     font-weight: normal;
