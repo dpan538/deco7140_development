@@ -67,7 +67,7 @@
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.7s ease-in-out;
 }
 
 /* Front & Back Base Styles */
@@ -82,9 +82,9 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 1rem;
+    border-radius: 12px;
+    padding: 8px;
+    font-size: 1.2rem;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     /* OVERRIDE inherited text color */
     color: #ffffff !important;
@@ -114,6 +114,7 @@
     transform: rotateY(180deg);
 }
 
+/* GenAI !important to give highest priority */
 .flip-card-front p,
 .flip-card-back p,
 .flip-card-front strong,
@@ -193,23 +194,8 @@
     line-height: 1.5;
 }
 
-/* Mobile: Simple bullet points */
-.response ul li::marker {
-    content: "• ";
-    color: var(--secondary-color);
-}
 
-/* Desktop: Custom emoji bullet points */
-@media (min-width: 768px) {
-    .response ul li::marker {
-        content: "🌱 ";
-        font-size: 1.2em;
-    }
-}
-
-/* ===== ADD TO COMPONENTS.CSS (after existing interactive highlighting) ===== */
-
-/* INTERACTIVE HIGHLIGHTING - USER STORIES */
+/* interactive highlighting styling for stories */
 /* Base Highlight Style for User Stories */
 .interactive-highlight-stories {
     position: relative;
@@ -217,7 +203,7 @@
     cursor: pointer;
     padding: 2px 5px;
     border-radius: 5px;
-    transition: background 0.3s ease;
+    transition: background 0.5s ease;
 }
 
 /* Tooltip Styling for User Stories */
@@ -227,19 +213,19 @@
     right: -20px; 
     background: var(--accent-color);
     color: white;
-    font-size: 0.7rem; /* Smaller font for longer content */
+    font-size: 1rem; /* change font size for readability */
     font-weight: bold;
-    width: 200px; /* Wider tooltip for user stories */
-    min-height: 60px; /* Taller tooltip for longer content */
+    width: 300px; /* Wider tooltip for long texts */
+    min-height: 60px; /* Taller tooltip */
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px; /* More rounded corners */
+    border-radius: 8px; 
     opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
     padding: var(--space-2); /* Internal padding */
     text-align: center;
-    line-height: 1.2; /* Better line spacing for readability */
+    line-height: 1.2; 
     z-index: 10; /* Ensure tooltip appears above other content */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
 }
@@ -266,35 +252,4 @@
     background-color: rgba(255, 215, 0, 0.5);
 }
 
-/* User Story Box Container */
-.user-story-box {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: var(--space-4);
-    margin: var(--space-4) 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-.user-story-box h3 {
-    margin: 0 0 var(--space-3) 0;
-    font-size: 1.5rem;
-    text-align: center;
-    color: white;
-}
-
-/* for ethics page*/
-
-.ethics-matrix {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: var(--space-3);
-    /* Harm | ACS Value/Principle | Solution */
-}
-
-.ethics-card {
-    background: linear-gradient(var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: var(--space-4);
-    border-radius: 8px;
-}
