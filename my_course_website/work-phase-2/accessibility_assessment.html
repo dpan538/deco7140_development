@@ -1,4 +1,16 @@
-<!-- Navigation Bar -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Assessment - Wellness Community</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -9,3 +21,231 @@
             <li><a href="genai_mt_acknowledgement.html">GenAI Acknowledgement</a></li>
         </ul>
     </nav>
+
+    <div class="container">
+        <header>
+            <h1>Accessibility Assessment</h1>
+            <h3>WCAG 2.2 Success Criteria Analysis for Wellness Community Platform</h3>
+        </header>
+
+        <main>
+            <!-- Overview Section -->
+            <section>
+                <p>Based on our client and user needs analysis, we have identified 13 key WCAG success criteria that are essential for our wellness community platform. These criteria address the specific accessibility challenges faced by our diverse user base, including elderly users with limited tech skills, individuals with visual impairments, and users requiring assistive technologies.</p>
+            </section>
+
+            <!-- PERCEIVABLE Principle -->
+            <section>
+                <h2>Perceivable - Information must be presentable to users in ways they can perceive</h2>
+                
+                <div class="flip-card-container">
+                    <!-- 1.1.1 Alternative Text -->
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>1.1.1</strong></p>
+                                <p>Alternative Text for Non-text Content</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Why Relevant</strong></p>
+                                <p>Akasha (elderly user) relies on screen readers. Our platform images need alt text for accessibility tools to describe visual content effectively.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.3.2 Meaningful Sequence -->
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>1.3.2</strong></p>
+                                <p>Meaningful Sequence</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Why Relevant</strong></p>
+                                <p>Users navigating with keyboard/screen readers need logical content order. Essential for Akasha's screen reader and Fligo's keyboard navigation needs.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.4.1 Avoid Color-only Cues -->
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>1.4.1</strong></p>
+                                <p>Avoid Color-only Cues</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Why Relevant</strong></p>
+                                <p>Users with color blindness need additional indicators beyond color. Critical for form errors and interactive elements in our wellness platform.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.4.3 Perceivable Text Contrast -->
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>1.4.3</strong></p>
+                                <p>Perceivable Text Contrast</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Why Relevant</strong></p>
+                                <p>Akasha has vision difficulties and needs high contrast text. Minimum 4.5:1 ratio ensures readability for low vision users in our community.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.4.4 Resize Text without Loss -->
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>1.4.4</strong></p>
+                                <p>Resize Text without Loss</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Why Relevant</strong></p>
+                                <p>Akasha needs larger text sizes. Our platform must support 200% zoom without breaking layout or losing functionality.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- OPERABLE Principle -->
+            <section>
+                <h2>Operable - Interface components must be operable</h2>
+                
+                <div class="flip-card-container">
+                    <!-- 2.1.1 Keyboard Navigability -->
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>2.1.1</strong></p>
+                                <p>Keyboard Navigability</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Why Relevant</strong></p>
+                                <p>Fligo uses keyboard navigation for privacy. All interactive elements must be accessible via Tab/Enter keys without mouse dependency.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.4.7 Focus Visible -->
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>2.4.7</strong></p>
+                                <p>Focus Visible</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Why Relevant</strong></p>
+                                <p>Users navigating with keyboard need clear focus indicators. Essential for Fligo's discrete navigation and assistive technology users.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- UNDERSTANDABLE Principle -->
+            <section>
+                <h2>Understandable - Information and operation of interface must be understandable</h2>
+                
+                <div class="flip-card-container">
+                    <!-- 3.1.5 Reading Level -->
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>3.1.5</strong></p>
+                                <p>Reading Level</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Why Relevant</strong></p>
+                                <p>Akasha has limited literacy. Content must use simple language and clear explanations to ensure comprehension across education levels.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.2.3 Consistent Navigation -->
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>3.2.3</strong></p>
+                                <p>Consistent Navigation</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Why Relevant</strong></p>
+                                <p>Akasha struggles with changing interfaces. Navigation must remain consistent across pages to reduce cognitive load and confusion.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.2.4 Consistent Identification -->
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>3.2.4</strong></p>
+                                <p>Consistent Identification</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Why Relevant</strong></p>
+                                <p>Interface elements must behave consistently. Critical for users like Akasha who need predictable interactions and Denisho who values reliability.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.3.1 Error Identification -->
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>3.3.1</strong></p>
+                                <p>Error Identification & Suggestions</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Why Relevant</strong></p>
+                                <p>All users need clear error messages with suggestions. Particularly important for Akasha's limited tech skills and form completion difficulties.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.3.2 Labels & Instructions -->
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>3.3.2</strong></p>
+                                <p>Labels & Instructions</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Why Relevant</strong></p>
+                                <p>Clear form labels essential for screen readers and users with cognitive challenges. Critical for Akasha's comprehension and Fligo's efficient navigation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.3.4 Error Prevention and Recovery -->
+                    <div class="flip-card" tabindex="0">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <p><strong>3.3.4</strong></p>
+                                <p>Error Prevention and Recovery</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p><strong>Why Relevant</strong></p>
+                                <p>Users need confirmation for important actions. Essential for Fligo's safety concerns and Akasha's fear of making irreversible mistakes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Summary -->
+            <section>
+                <h2>Implementation Suggestions</h2>
+                <h5>Based on my user research, these accessibility criteria directly address the needs of our wellness community users. 
+                    Priority should be given to perceivable text contrast (1.4.3), keyboard navigability (2.1.1), and consistent navigation and Identification (3.2.3, 3.2.4) as these impact our most users directly.</h5>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/accessibility_assessment.js"></script>
+</body>
+</html>

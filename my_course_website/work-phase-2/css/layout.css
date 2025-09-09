@@ -75,8 +75,13 @@ header {
     text-align: center;
     padding: var(--space-4) var(--space-2);
 }
+main {
+    text-align: center;
+    padding: var(--space-4) var(--space-2);
+}
 
-/* Helper Classes for Spacing */
+
+/* GenAI Helper Classes for Spacing */
 
 /* Margin Classes */
 .m-0 {

@@ -121,7 +121,7 @@
     color: #ffffff !important;
 }
 
-/* ===== ADD TO COMPONENTS.CSS ===== */
+/* ===== USER Stories TO COMPONENTS.CSS (Styling Updates) ===== */
 
 /* Interview Section Styling */
 .interview {
@@ -222,10 +222,9 @@
 
 /* Tooltip Styling for User Stories */
 .interactive-highlight-stories::after {
-    content: attr(data-userstory); /* Gets the user story from data-userstory attribute */
-    position: absolute;
-    top: -10px; /* Positioned above the highlighted text */
-    right: -20px; /* Positioned to the right */
+    content: attr(data-userstory); 
+    top: -10px; 
+    right: -20px; 
     background: var(--accent-color);
     color: white;
     font-size: 0.7rem; /* Smaller font for longer content */
@@ -282,4 +281,20 @@
     font-size: 1.5rem;
     text-align: center;
     color: white;
+}
+
+/* for ethics page*/
+
+.ethics-matrix {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-3);
+    /* Harm | ACS Value/Principle | Solution */
+}
+
+.ethics-card {
+    background: linear-gradient(var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: var(--space-4);
+    border-radius: 8px;
 }
