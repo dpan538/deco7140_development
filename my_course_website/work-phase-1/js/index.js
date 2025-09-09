@@ -40,45 +40,20 @@ function typewriterEffect(element, text, speed = 100) {
 
 /**
  * Show overlay with typewriter effect
- * 显示遮罩层，并执行打字机效果
  */
 function showOverlay() {
-    overlay.classList.add("active"); // 给遮罩层加上 active 样式 → 显示
+    overlay.classList.add("active"); // 
     const message =
-        "This is a section that hasn't been edited yet, check back later."; // 预设文字
+        "This is a section that hasn't been edited yet, check back later."; 
     typewriterEffect(typewriterText, message, 80);
-    // 调用打字机函数，速度为80ms
 }
 
-/**
- * Hide overlay
- * 隐藏遮罩层
- */
-function hideOverlay() {
-    overlay.classList.remove("active"); // 移除 active 样式 → 隐藏
-}
-
-    // ESC key to close overlay / 按 ESC 键关闭遮罩层
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-            hideOverlay();
-        }
-    });
-
-/**
- * Handle Links section click - redirect to portfolio
- * 处理 Links 点击事件 → 打开作品集网站
- */
 function handleLinksClick() {
-    window.open("https://www.daiportfolio.com/", "_blank"); // 新窗口打开链接
+    window.open("https://www.daiportfolio.com/", "_blank"); 
 }
 
-/**
- * Handle About Me section click - placeholder for future About page
- * 处理 About 点击事件 → 目前用 alert 占位，未来跳转到 About 页面
- */
 function handleAboutClick() {
-    alert("About Me page coming soon!"); // 弹出提示框
+    alert("About Me page coming soon!"); 
 }
 
 /**
@@ -86,13 +61,13 @@ function handleAboutClick() {
  * 初始化页面交互逻辑
  */
 function initializeInteractions() {
-    // Surprise button click / 点击按钮时显示遮罩层
+    // Surprise button click / 
     if (nextButton) {
         nextButton.addEventListener("click", showOverlay);
     }
 
 
-    // Click outside overlay to close / 点击遮罩层空白处关闭
+    // Click outside overlay to close / 
     if (overlay) {
         overlay.addEventListener("click", (event) => {
             if (event.target === overlay) {
