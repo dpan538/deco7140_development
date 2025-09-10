@@ -28,12 +28,13 @@
     transition: opacity 0.3s ease;
 }
 
+/* Show Number on Hover (Desktop) */
 @media (hover: hover) {
     .interactive-highlight:hover::after {
         opacity: 1;
     }
 }
-
+/* Show Number on Tap (Mobile) */
 .interactive-highlight:focus::after,
 .interactive-highlight:active::after {
     opacity: 1;
@@ -196,7 +197,6 @@
 
 
 /* interactive highlighting styling for stories */
-/* Base Highlight Style for User Stories */
 .interactive-highlight-stories {
     position: relative;
     background-color: rgba(255, 215, 0, 0.3); /* Light yellow highlight with 30% transparency */
@@ -211,7 +211,7 @@
     content: attr(data-userstory); 
     top: -10px; 
     right: -20px; 
-    background: var(--accent-color);
+    background: var(--primary-color);
     color: white;
     font-size: 1rem; /* change font size for readability */
     font-weight: bold;

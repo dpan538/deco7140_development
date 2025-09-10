@@ -1,3 +1,4 @@
+/*container box for desktop and mobile */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -12,7 +13,7 @@
     }
 }
 
-/* CSS Variables to Define Color Scheme */
+/* Color Scheme */
 :root {
     --primary-color: #2c3e50; /* Dark Blue */
     --secondary-color: #3498db; /* Bright Blue */
@@ -27,17 +28,6 @@ body {
     background-color: var(--background-color);
 }
 
-/* Spacing Variables */
-:root {
-    --space-0: 0;
-    --space-1: 0.25rem;
-    --space-2: 0.5rem;
-    --space-3: 1rem;
-    --space-4: 1.5rem;
-    --space-5: 3rem;
-}
-
-/* add after user stories */
 /* Navigation Styling */
 nav {
     background-color: var(--primary-color);
@@ -81,6 +71,15 @@ main {
     padding: var(--space-4) var(--space-2);
 }
 
+/* Spacing Variables - from Week5 IA3*/
+:root {
+    --space-0: 0;
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 1rem;
+    --space-4: 1.5rem;
+    --space-5: 3rem;
+}
 
 /* GenAI Helper Classes for Spacing */
 

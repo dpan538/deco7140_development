@@ -1,7 +1,7 @@
 /* Import Google Font */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
-/* Body styles - font and colors from variables */
+/* Body styles */
 header {
     text-align: center; /*for user stories*/
 }
