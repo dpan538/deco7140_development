@@ -1,0 +1,73 @@
+/* Color Variables */
+:root {
+    --primary-color: #5DA9E9;        /* Argentinian Blue */
+    --secondary-color: #95C623;      /* Yellow Green */
+    --accent-color: #1D1D1D;         /* Eerie Black */
+    --text-color: #1D1D1D;           /* Black text */
+    --background-color: #FFFCF9;     /* Baby Powder white */
+    --light-gray: #f5f5f5;
+}
+
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+
+/* Base Typography */
+body {
+    font-family: 'Red Hat Text', Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Headings */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+}
+
+/* Desktop adjustments */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 2.25rem;
+    }
+    
+    h3 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Page Title Component */
+.page-title {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+@media (min-width: 768px) {
+    .page-title {
+        text-align: left;
+        font-size: 3.5rem;
+    }
+}
+
+/* Paragraph styling */
+p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}

@@ -1,0 +1,25 @@
+/* PAGE CONTAINER */
+
+/* Desktop */
+@media (min-width: 768px) {
+    .container {
+        width: 70vw;
+    }
+}
+
+/* Mobile */
+.container {
+    min-height: 100vh;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+/* HELPER CLASSES */
+
+/* Margin (vertical) */
+.m-y-1 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.m-y-2 { margin-top: 1rem;   margin-bottom: 1rem;   }
+
+/* Padding (vertical) */
+.p-y-1 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.p-y-2 { padding-top: 1rem;   padding-bottom: 1rem;   }
