@@ -1,41 +1,146 @@
-<!-- visceral_design.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visceral Design - Work Phase 3</title>
+    <!-- Google Font Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/component.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        /* Apply Red Hat Text font to all elements */
+        * {
+            font-family: 'Red Hat Text', sans-serif;
+        }
+    </style>
 </head>
 <body>
-    <nav id="nav-mobile" aria-label="Main Navigation">
-        <ul>
-            <li><a href="index.html"><span class="icon">🏠</span></a></li>
-            <li><a href="site_map.html"><span class="icon">🗺️</span></a></li>
-            <li><a href="style_guide.html"><span class="icon">🎨</span></a></li>
-            <li><a href="ethical_response.html"><span class="icon">💚</span></a></li>
-            <li><a href="genai_mt_acknowledgement.html"><span class="icon">😊</span></a></li>
-        </ul>
-    </nav>
-
-    <nav id="nav-desktop" aria-label="Main Navigation">
+    <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="site_map.html">Site Map</a></li>
             <li><a href="style_guide.html">Style Guide</a></li>
             <li><a href="ethical_response.html">Ethics</a></li>
-            <li><a href="genai_mt_acknowledgement.html">GenAI Acknowledgement</a></li>
+            <li><a href="genai_mt_acknowledgement.html">GenAI</a></li>
         </ul>
     </nav>
 
     <main>
         <div class="container">
-            <h1 class="page-title">Visceral Design</h1>
+            <!-- Sub Navigation -->
+            <div style="background-color: #5DA9E9; padding: 0.75rem; border-radius: 8px; margin-top: 2rem; margin-bottom: 2rem;">
+                <ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <li><a href="style_guide.html" style="color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px;">Overview</a></li>
+                    <li><a href="visceral_design.html" style="color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px; background-color: #1D1D1D;">Visceral</a></li>
+                    <li><a href="behavioural_design.html" style="color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px;">Behavioural</a></li>
+                    <li><a href="reflective_design.html" style="color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px;">Reflective</a></li>
+                </ul>
+            </div>
+
+            <h1 style="color: #5DA9E9; font-size: 2.5rem; font-weight: bold; text-align: left; margin-bottom: 1rem;">Visceral Design</h1>
+            <p style="color: #1D1D1D; font-size: 1.25rem; text-align: left; margin-bottom: 2rem;">First impressions and emotional impact through visual design choices that create immediate appeal and reduce anxiety for wellness community users.</p>
+
+            <!-- Page Layouts Section -->
+            <div style="margin: 2rem 0;">
+                <h2 style="color: #5DA9E9; font-size: 1.8rem; font-weight: 600; margin-bottom: 1rem;">Page Layouts</h2>
+                <p style="margin-bottom: 2rem;">Wireframes showing the structural foundation of our wellness platform, designed to support diverse user needs identified through our research with Akasha, Denisho, and Fligo.</p>
+                
+                <!-- Simple Gallery -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                    <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; cursor: pointer;" onclick="openViewer('assets/homepage-mobile.jpg', 'Mobile homepage layout emphasizing accessibility with large touch targets and simplified navigation, designed for users like Akasha who prefer clear, uncluttered interfaces.')">
+                        <img src="assets/homepage-mobile.jpg" alt="Homepage Mobile Wireframe" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                        <h3 style="color: #1D1D1D; margin-bottom: 0.5rem;">Homepage Mobile</h3>
+                        <p style="color: #1D1D1D; font-size: 0.9rem;">Mobile homepage layout emphasizing accessibility with large touch targets and simplified navigation, designed for users like Akasha.</p>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; cursor: pointer;" onclick="openViewer('assets/homepage-desktop.jpg', 'Desktop homepage providing comprehensive overview with card-based layout, balancing information density with visual clarity for diverse user comfort levels.')">
+                        <img src="assets/homepage-desktop.jpg" alt="Homepage Desktop Wireframe" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                        <h3 style="color: #1D1D1D; margin-bottom: 0.5rem;">Homepage Desktop</h3>
+                        <p style="color: #1D1D1D; font-size: 0.9rem;">Desktop homepage providing comprehensive overview with card-based layout, balancing information density with visual clarity.</p>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; cursor: pointer;" onclick="openViewer('assets/community-mobile.jpg', 'Mobile community interface prioritizing privacy controls and anonymous interaction options, directly addressing Fligo safety concerns in mental health discussions.')">
+                        <img src="assets/community-mobile.jpg" alt="Community Mobile Wireframe" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                        <h3 style="color: #1D1D1D; margin-bottom: 0.5rem;">Community Mobile</h3>
+                        <p style="color: #1D1D1D; font-size: 0.9rem;">Mobile community interface prioritizing privacy controls and anonymous interaction options, addressing Fligo's safety concerns.</p>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; cursor: pointer;" onclick="openViewer('assets/community-desktop.jpg', 'Desktop community layout featuring flexible communication options including group discussions and private messaging, supporting Denisho multicultural communication needs.')">
+                        <img src="assets/community-desktop.jpg" alt="Community Desktop Wireframe" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                        <h3 style="color: #1D1D1D; margin-bottom: 0.5rem;">Community Desktop</h3>
+                        <p style="color: #1D1D1D; font-size: 0.9rem;">Desktop community layout featuring flexible communication options, supporting Denisho's multicultural communication needs.</p>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; cursor: pointer;" onclick="openViewer('assets/personal-space-mobile.jpg', 'Mobile personal wellness area with intuitive self-assessment tools and progress tracking, designed for private, secure mental health management.')">
+                        <img src="assets/personal-space-mobile.jpg" alt="Personal Space Mobile Wireframe" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                        <h3 style="color: #1D1D1D; margin-bottom: 0.5rem;">Personal Space Mobile</h3>
+                        <p style="color: #1D1D1D; font-size: 0.9rem;">Mobile personal wellness area with intuitive self-assessment tools and progress tracking for secure mental health management.</p>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; cursor: pointer;" onclick="openViewer('assets/personal-space-desktop.jpg', 'Desktop personal space offering detailed analytics and resources while maintaining strong privacy protections, essential for user trust in mental health platforms.')">
+                        <img src="assets/personal-space-desktop.jpg" alt="Personal Space Desktop Wireframe" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                        <h3 style="color: #1D1D1D; margin-bottom: 0.5rem;">Personal Space Desktop</h3>
+                        <p style="color: #1D1D1D; font-size: 0.9rem;">Desktop personal space offering detailed analytics while maintaining strong privacy protections essential for user trust.</p>
+                    </div>
+                </div>
+
+                <!-- Image Viewer Modal -->
+                <div id="imageViewer" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000;">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; border-radius: 12px; padding: 2rem; max-width: 90%; max-height: 90%; overflow: auto;">
+                        <button onclick="closeViewer()" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer;">✖</button>
+                        <img id="viewerImage" src="" alt="" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; margin-bottom: 1rem;">
+                        <p id="viewerCaption" style="color: #1D1D1D; line-height: 1.6; max-width: 800px;"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Emotional Impact Section -->
+            <div style="margin: 2rem 0;">
+                <h2 style="color: #5DA9E9; font-size: 1.8rem; font-weight: 600; margin-bottom: 1rem;">Visual Emotional Impact</h2>
+                <p style="margin-bottom: 2rem;">How our visual choices create immediate emotional responses that support mental wellness and reduce anxiety for diverse users.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                    <div style="background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 1.5rem; border-left: 4px solid #5DA9E9;">
+                        <h3 style="color: #1D1D1D; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600;">Calming Blue Palette</h3>
+                        <p style="color: #1D1D1D; line-height: 1.6;">Cool blue tones immediately signal trust and tranquility, crucial for users experiencing anxiety or seeking mental health support. Research shows blue reduces cortisol levels and promotes feelings of safety.</p>
+                    </div>
+                    <div style="background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 1.5rem; border-left: 4px solid #5DA9E9;">
+                        <h3 style="color: #1D1D1D; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600;">High Contrast Accessibility</h3>
+                        <p style="color: #1D1D1D; line-height: 1.6;">Strong color contrast ensures Akasha and other users with visual challenges can immediately distinguish interactive elements, reducing frustration and cognitive load.</p>
+                    </div>
+                    <div style="background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 1.5rem; border-left: 4px solid #5DA9E9;">
+                        <h3 style="color: #1D1D1D; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600;">Cultural Neutrality</h3>
+                        <p style="color: #1D1D1D; line-height: 1.6;">Blue transcends cultural boundaries without triggering negative associations, supporting Denisho's multicultural background and creating inclusive first impressions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typography Psychology Section -->
+            <div style="margin: 2rem 0;">
+                <h2 style="color: #5DA9E9; font-size: 1.8rem; font-weight: 600; margin-bottom: 1rem;">Typography Psychology</h2>
+                <p style="margin-bottom: 2rem;">How font choices create immediate comfort and reduce barriers to engagement for users with varying technological confidence.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                    <div style="background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 1.5rem; border-left: 4px solid #95C623;">
+                        <h3 style="color: #1D1D1D; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600;">Modern Sans-Serif</h3>
+                        <p style="color: #1D1D1D; line-height: 1.6;">Red Hat Text provides professional clarity while remaining approachable for users like Akasha who need clear interfaces. Its modern design appeals to younger users while maintaining excellent readability for all age groups.</p>
+                    </div>
+                    <div style="background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 1.5rem; border-left: 4px solid #95C623;">
+                        <h3 style="color: #1D1D1D; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600;">Generous Sizing</h3>
+                        <p style="color: #1D1D1D; line-height: 1.6;">Large headings and comfortable body text immediately signal accessibility, making the platform feel welcoming rather than intimidating for users seeking help. Red Hat Text's open letterforms enhance readability at all sizes.</p>
+                    </div>
+                    <div style="background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 1.5rem; border-left: 4px solid #95C623;">
+                        <h3 style="color: #1D1D1D; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600;">Clear Hierarchy</h3>
+                        <p style="color: #1D1D1D; line-height: 1.6;">Distinct size differences create instant understanding of content organization, reducing anxiety about navigating complex mental health information. Red Hat Text's variable font weights provide excellent hierarchical distinction.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </body>

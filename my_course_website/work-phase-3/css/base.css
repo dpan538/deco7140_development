@@ -13,7 +13,7 @@
 
 /* Base Typography */
 body {
-    font-family: 'Red Hat Text', Arial, sans-serif;
+    font-family: 'Red Hat Text', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
@@ -55,7 +55,7 @@ h3 {
 
 /* Page Title Component */
 .page-title {
-    text-align: center;
+    text-align: left;
     color: var(--primary-color);
 }
 
