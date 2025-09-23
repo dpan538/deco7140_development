@@ -61,7 +61,7 @@ h3 {
 
 @media (min-width: 768px) {
     .page-title {
-        text-align: left;
+        text-align: center;
         font-size: 3.5rem;
     }
 }

@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/component.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
 <body>
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="site_map.html">Site Map</a></li>
+            <li><a href="site_map.html" aria-current="page">Site Map</a></li>
             <li><a href="style_guide.html">Style Guide</a></li>
             <li><a href="visceral_design.html">Visceral</a></li>
             <li><a href="behavioural_design.html">Behavioural</a></li>
@@ -26,66 +27,118 @@
 
     <main>
         <div class="container">
-            <h1 class="page-title">Site Map</h1>
+            <h1 class="page-title m-t-3">Sitemap</h1>
             <p class="hero-text m-y-2">Wellness Community Platform Information Architecture</p>
 
             <div class="m-t-3">
-                <h2>Card Sorting Process</h2>
-                <p>Based on our user research with Akasha, Denisho, and Fligo, we identified key content areas and organized them through card sorting to create an intuitive navigation structure.</p>
+                <h2 class="m-b-2">Card Sorting Process</h2>
+                <p class="m-b-3">Based on our user research with Akasha, Denisho, and Fligo, we identified key content areas and organized them through card sorting to create an intuitive navigation structure.</p>
 
-                <h3 class="m-t-2">Content Organization</h3>
-                <div class="sitemap-section m-t-2">
-                    <h3>🏠 Homepage</h3>
-                    <ul class="sitemap-list">
-                        <li>Welcome message</li>
-                        <li>Platform overview</li>
-                        <li>Quick access to key features</li>
-                    </ul>
-                </div>
+                <img src="assets/sitemap.jpg" class="responsive-img m-y-3" alt="Card sorting process showing organization of wellness platform content into Community, Resources, and Personal Space categories">
 
-                <div class="sitemap-section m-t-2">
-                    <h3>💬 Community Support</h3>
-                    <ul class="sitemap-list">
-                        <li>Discussion forums</li>
-                        <li>Peer support groups</li>
-                        <li>Crisis support resources</li>
-                        <li>Mentorship programs</li>
-                    </ul>
-                </div>
+                <h2 class="m-t-3 m-b-2">Interactive Site Map</h2>
+                <section class="accordion m-y-3">
+                    <!-- Community Section -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">▷ Community</button>
+                        <div class="accordion-content">
+                            <p class="m-y-3">Forum for discussions and chats. Supports community connection and peer support based on user needs for social interaction and shared experiences (Denisho's multicultural support needs, Fligo's peer connection requirements).</p>
+                            
+                            <!-- Nested accordion for sub-pages -->
+                            <div class="accordion nested">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">▷ Group Chat</button>
+                                    <div class="accordion-content">
+                                        <p class="m-y-3">Real-time chat functionality for immediate peer support. Addresses Fligo's need for anonymous connection and Denisho's requirement for flexible communication.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header">▷ Discussion Board</button>
+                                    <div class="accordion-content">
+                                        <p class="m-y-3">Structured forum discussions for deeper conversations. Supports Akasha's preference for slower-paced communication and thoughtful exchanges.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="sitemap-section m-t-2">
-                    <h3>📚 Resources</h3>
-                    <ul class="sitemap-list">
-                        <li>Mental health information</li>
-                        <li>Self-care guides</li>
-                        <li>Professional services directory</li>
-                        <li>Educational materials</li>
-                    </ul>
-                </div>
+                    <!-- Resources Section -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">▷ Resources</button>
+                        <div class="accordion-content">
+                            <p class="m-y-3">Educational content and information resources. Addresses client need for knowledge sharing and user requirements for accessible, reliable mental health information.</p>
+                            
+                            <div class="accordion nested">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">▷ Information Source "Wikipedia"</button>
+                                    <div class="accordion-content">
+                                        <p class="m-y-3">Comprehensive mental health encyclopedia. Supports client goal of empowering users with knowledge and Akasha's preference for detailed, reliable information.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header">▷ Pharmaceutical Science Popularisation</button>
+                                    <div class="accordion-content">
+                                        <p class="m-y-3">Accessible information about mental health medications. Addresses user need for understanding treatment options and supports informed decision-making.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header">▷ Mental Health Preservation Articles</button>
+                                    <div class="accordion-content">
+                                        <p class="m-y-3">Evidence-based wellness content. Supports preventive mental health approach and addresses all users' needs for self-care guidance.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="sitemap-section m-t-2">
-                    <h3>👤 Personal Space</h3>
-                    <ul class="sitemap-list">
-                        <li>User profile</li>
-                        <li>Privacy settings</li>
-                        <li>Personal journal</li>
-                        <li>Saved resources</li>
-                    </ul>
-                </div>
-
-                <div class="sitemap-section m-t-2">
-                    <h3>ℹ️ Information</h3>
-                    <ul class="sitemap-list">
-                        <li>About the platform</li>
-                        <li>Community guidelines</li>
-                        <li>Privacy policy</li>
-                        <li>Contact support</li>
-                    </ul>
-                </div>
-
-                <p class="m-t-3">This organization prioritizes user safety, accessibility, and the diverse needs identified in our research, ensuring that elderly users like Akasha can navigate easily while providing the privacy features that users like Fligo require.</p>
+                    <!-- Personal Space Section -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">▷ Personal Space</button>
+                        <div class="accordion-content">
+                            <p class="m-y-3">Private area for personal wellness journey. Addresses privacy concerns (Fligo's safety needs, Denisho's workplace discretion) while providing personalized support.</p>
+                            
+                            <div class="accordion nested">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">▷ Questionnaire Assessment</button>
+                                    <div class="accordion-content">
+                                        <p class="m-y-3">Personal wellness evaluation tools. Supports individualized care approach and helps users understand their mental health status safely and privately.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header">▷ Personal Motivation</button>
+                                    <div class="accordion-content">
+                                        <p class="m-y-3">Encouraging content and progress tracking. Addresses user need for positive reinforcement and supports continued engagement with wellness journey.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header">▷ Privacy Explicit</button>
+                                    <div class="accordion-content">
+                                        <p class="m-y-3">Clear privacy policies and data protection information. Critical for Fligo's safety concerns and Denisho's workplace discretion needs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
+    
+    <script>
+        // JavaScript for accordion functionality
+        function initAccordion() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const accordionItem = header.parentElement;
+                    accordionItem.classList.toggle('open');
+                });
+            });
+        }
+
+        // Initialize accordion when page loads
+        document.addEventListener('DOMContentLoaded', initAccordion);
+    </script>
 </body>
 </html>

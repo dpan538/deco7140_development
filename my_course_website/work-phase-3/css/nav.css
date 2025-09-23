@@ -1,0 +1,63 @@
+/* NAVIGATION STYLES */
+/* Body spacing for fixed navigation */
+body {
+    padding-top: 80px;
+}
+
+/* Navigation base styles */
+nav {
+    background-color: var(--accent-color);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    line-height: 1.2;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: block;
+    min-width: 100px;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    background-color: var(--secondary-color);
+}
+
+nav ul li a[aria-current="page"] {
+    background-color: var(--secondary-color);
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+}
