@@ -1,7 +1,7 @@
 /* NAVIGATION STYLES */
 /* Body spacing for fixed navigation */
 body {
-    padding-top: 80px; /* Increased base padding for better header spacing */
+    padding-top: 80px;
 }
 
 /* Main Navigation */
@@ -16,6 +16,7 @@ nav {
     height: 60px;
     display: flex;
     align-items: center;
+    box-sizing: border-box; /* ★ KEY FIX 1: Ensure padding is included in the height */
 }
 
 nav ul {
@@ -38,13 +39,13 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 0.5rem 1rem; /* Reduced padding */
+    padding: 0.5rem 1rem;
     border-radius: 8px;
     transition: background-color 0.3s ease;
     font-weight: 600;
-    font-size: 1rem; /* Slightly smaller font */
+    font-size: 1rem;
     display: block;
-    min-width: 80px; /* Reduced width */
+    min-width: 80px;
     text-align: center;
 }
 
@@ -61,13 +62,14 @@ nav ul li a[aria-current="page"] {
     background-color: var(--primary-color);
     padding: 0.4rem;
     position: fixed;
-    top: 85px; /* Further increased gap for more breathing room */
+    top: 60px; /* ★ This is now correct because main nav is exactly 60px tall */
     width: 100%;
     z-index: 999;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    height: 45px; /* Reduced by 5px for more compact feel */
+    height: 45px;
     display: flex;
     align-items: center;
+    box-sizing: border-box; /* ★ KEY FIX 1: Good practice to add it here too */
 }
 
 .style-subnav ul {
@@ -77,7 +79,7 @@ nav ul li a[aria-current="page"] {
     display: flex;
     gap: 1rem;
     justify-content: center;
-    max-width: 600px; /* Further narrowed */
+    max-width: 600px;
     margin: 0 auto;
     width: 100%;
 }
@@ -85,31 +87,33 @@ nav ul li a[aria-current="page"] {
 .style-subnav ul li a {
     color: white;
     text-decoration: none;
-    padding: 0.4rem 0.8rem; /* Reduced padding */
+    padding: 0.4rem 0.8rem;
     border-radius: 6px;
     transition: background-color 0.3s ease;
-    font-weight: 400; /* Regular weight */
-    font-size: 0.9rem; /* Smaller font */
+    font-weight: 400;
+    font-size: 0.9rem;
     display: block;
     text-align: center;
-    min-width: 80px; /* Reduced width */
+    min-width: 80px;
 }
 
 .style-subnav ul li a:hover {
-    background-color: var(--accent-color); /* Black hover instead of green */
+    background-color: var(--accent-color);
 }
 
 .style-subnav ul li a[aria-current="page"] {
-    background-color: var(--accent-color); /* Black for current page */
+    background-color: var(--accent-color);
 }
 
 /* Body adjustment for pages with subnav */
 body.has-subnav {
-    padding-top: 155px; /* Adjusted for new subnav position and height */
+    /* ★ KEY FIX 2: Correctly calculated padding for both navs (60px + 45px = 105px) + 20px gap */
+    padding-top: 125px; 
 }
 
 /* Mobile navigation */
 @media (max-width: 768px) {
+    /* Mobile styles remain the same, but will now work correctly due to box-sizing */
     nav {
         height: auto;
         min-height: 60px;
@@ -125,7 +129,7 @@ body.has-subnav {
     .style-subnav {
         height: auto;
         min-height: 50px;
-        top: 80px; /* Still positioned after main nav with gap */
+        top: 80px; /* Assuming this value is intentional for mobile layout */
     }
     
     .style-subnav ul {
@@ -136,10 +140,10 @@ body.has-subnav {
     }
     
     body {
-        padding-top: 100px; /* Adjust for mobile main nav */
+        padding-top: 100px;
     }
     
     body.has-subnav {
-        padding-top: 180px; /* Adjust for both mobile navs */
+        padding-top: 180px; /* Assuming this value is intentional for mobile layout */
     }
 }

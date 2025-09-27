@@ -6,42 +6,75 @@
 
 /* TYPOGRAPHY COMPONENTS */
 .page-title {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     color: var(--primary-color);
-    text-align: left;
-    font-weight: bold;
-    margin-top: 1rem; /* Reduced from 2rem for better proportion */
-    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
 }
 
 .hero-text {
-    font-size: 1.25rem;
-    font-weight: 500;
+    font-size: 1.125rem;
+    font-weight: 400;
     color: var(--text-color);
-    text-align: left;
-    margin-bottom: 1.5rem; /* Slightly reduced for better balance */
+    text-align: center; /* ONLY hero text centered */
+    margin-bottom: 3rem;
+    line-height: 1.5;
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h2 {
     color: var(--primary-color);
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 600;
-    margin-top: 2rem; /* Add top margin for section separation */
+    margin-top: 4rem;
     margin-bottom: 1rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-align: left; /* All headings left aligned */
 }
 
 h3 {
-    color: var(--primary-color);
-    font-size: 1.4rem;
+    color: var(--text-color);
+    font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+    text-align: left; /* All headings left aligned */
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    text-align: left; /* ALL paragraphs left aligned */
+    max-width: 70ch;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* CONTAINER COMPONENT */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
+}
+
+/* SECTION SPACING */
+section {
+    margin-bottom: 4rem;
+}
+
+article {
+    margin-bottom: 4rem;
 }
 
 /* RESPONSIVE IMAGE COMPONENT */
@@ -50,19 +83,126 @@ h3 {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin: 2.5rem 0;
+}
+
+/* CARD COMPONENTS */
+.card {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    border: 2px solid #5DA9E9; /* Blue border on hover for all cards */
+}
+
+.card h3 {
+    font-size: 1.375rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.card p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+    color: rgba(29, 29, 29, 0.8);
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* INDEX PAGE FIXES */
+/* Large Project Overview card - 1000px width and center h2 */
+.container section:nth-child(2) .card {
+    width: 1000px !important;
+    max-width: 1000px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 3rem !important;
+    margin-top: 3rem !important;
+    margin-bottom: 4rem !important;
+}
+
+.container section:nth-child(2) .card h2 {
+    text-align: center !important;
+}
+
+/* Fix Project Overview card paragraph alignment */
+.container section:nth-child(2) .card p {
+    max-width: none !important; /* Remove width constraint */
+    margin-left: 0 !important; /* Remove auto centering */
+    margin-right: 0 !important; /* Remove auto centering */
+    text-align: left !important; /* Ensure left alignment */
+    padding: 0 !important; /* Remove any padding */
+}
+
+/* Three cards in a row for Key Design Principles - SIMPLE APPROACH */
+@media (min-width: 768px) {
+    .container section:nth-child(3) .card {
+        display: inline-block !important;
+        width: calc(33.333% - 1.33rem) !important;
+        margin-right: 2rem !important;
+        margin-bottom: 2rem !important;
+        vertical-align: top !important;
+    }
+    
+    .container section:nth-child(3) .card:last-child {
+        margin-right: 0 !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .container section:nth-child(3) .card {
+        display: block !important;
+        width: 100% !important;
+        margin-right: 0 !important;
+        margin-bottom: 2rem !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .container section:nth-child(3) {
+        flex-direction: column !important;
+    }
+    
+    .container section:nth-child(3) .card {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+    }
 }
 
 /* BUTTON COMPONENTS */
 .btn {
-    padding: var(--space-2) var(--space-3);
+    padding: 0.875rem 2rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     text-decoration: none;
     display: inline-block;
+    margin-top: 0.5rem;
+    letter-spacing: 0.01em;
 }
 
 .btn-primary {
@@ -72,6 +212,7 @@ h3 {
 
 .btn-primary:hover {
     background-color: var(--secondary-color);
+    transform: scale(1.05);
 }
 
 .btn-secondary {
@@ -81,28 +222,178 @@ h3 {
 
 .btn-secondary:hover {
     background-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+/* STYLE GUIDE SPECIFIC COMPONENTS */
+/* Card container for three design type cards */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+@media (min-width: 768px) {
+    .card-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .card-container .card {
+        width: calc(33.33% - 1rem);
+        margin-bottom: 0;
+    }
+}
+
+/* Individual card styling for different design types */
+.card.visceral {
+    border-left: 4px solid #5DA9E9;
+}
+
+.card.behavioural {
+    border-left: 4px solid #95C623;
+}
+
+.card.reflective {
+    border-left: 4px solid #1D1D1D;
+}
+
+/* Style sections for Design Foundation */
+.style-section {
+    margin: 3rem 0;
+    padding: 2.5rem;
+    border-left: 4px solid var(--primary-color);
+    background: linear-gradient(135deg, rgba(93, 169, 233, 0.03) 0%, rgba(93, 169, 233, 0.08) 100%);
+    border-radius: 0 12px 12px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.style-section h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Color grid layout */
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.color-card {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.color-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.color-sample {
+    width: 100%;
+    height: 80px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 2px solid rgba(0,0,0,0.06);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.color-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Typography examples */
+.typography-examples {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(93, 169, 233, 0.15);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+
+.typography-examples h1,
+.typography-examples h2,
+.typography-examples h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.typography-examples h1:first-child {
+    margin-top: 0;
+}
+
+/* Design principles list styling */
+.style-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.style-section li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.style-section li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 767px) {
+    .color-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+    
+    .color-sample {
+        height: 60px;
+    }
+    
+    .style-section {
+        padding: 1.5rem;
+    }
+    
+    .typography-examples {
+        padding: 1.5rem;
+    }
 }
 
 /* SPACING UTILITY CLASSES */
-.m-t-1 { margin-top: var(--space-1); }
-.m-t-2 { margin-top: var(--space-2); }
-.m-t-3 { margin-top: var(--space-3); }
+.m-t-1 { margin-top: 0.5rem; }
+.m-t-2 { margin-top: 1rem; }
+.m-t-3 { margin-top: 1.5rem; }
+.m-t-4 { margin-top: 2rem; }
+.m-t-5 { margin-top: 3rem; }
 
-.m-b-1 { margin-bottom: var(--space-1); }
-.m-b-2 { margin-bottom: var(--space-2); }
-.m-b-3 { margin-bottom: var(--space-3); }
+.m-b-1 { margin-bottom: 0.5rem; }
+.m-b-2 { margin-bottom: 1rem; }
+.m-b-3 { margin-bottom: 1.5rem; }
+.m-b-4 { margin-bottom: 2rem; }
+.m-b-5 { margin-bottom: 3rem; }
 
-.m-y-1 { margin-top: var(--space-1); margin-bottom: var(--space-1); }
-.m-y-2 { margin-top: var(--space-2); margin-bottom: var(--space-2); }
-.m-y-3 { margin-top: var(--space-3); margin-bottom: var(--space-3); }
-
-.m-x-1 { margin-left: var(--space-1); margin-right: var(--space-1); }
-.m-x-2 { margin-left: var(--space-2); margin-right: var(--space-2); }
-.m-x-3 { margin-left: var(--space-3); margin-right: var(--space-3); }
-
-.p-1 { padding: var(--space-1); }
-.p-2 { padding: var(--space-2); }
-.p-3 { padding: var(--space-3); }
+.m-y-1 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.m-y-2 { margin-top: 1rem; margin-bottom: 1rem; }
+.m-y-3 { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+.m-y-4 { margin-top: 2rem; margin-bottom: 2rem; }
+.m-y-5 { margin-top: 3rem; margin-bottom: 3rem; }
 
 /* TEXT ALIGNMENT UTILITIES */
 .text-center { text-align: center; }
@@ -111,22 +402,143 @@ h3 {
 
 /* RESPONSIVE DESIGN */
 @media (min-width: 768px) {
-    .hero-text {
-        font-size: 1.75rem;
-        text-align: left;
+    .page-title {
+        font-size: 3.25rem;
     }
     
-    .page-title {
-        text-align: left;
+    .hero-text {
+        font-size: 1.25rem;
+        margin-bottom: 4rem;
+    }
+    
+    h2 {
+        font-size: 2.25rem;
+    }
+    
+    .container {
+        padding: 0 3rem;
     }
 }
 
 @media (max-width: 767px) {
     .page-title {
         font-size: 2rem;
+        margin-bottom: 1rem;
     }
     
     .hero-text {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
     }
+    
+    h2 {
+        font-size: 1.625rem;
+        margin-top: 3rem;
+    }
+    
+    h3 {
+        font-size: 1.125rem;
+        margin-top: 2rem;
+    }
+    
+    .container {
+        padding: 0 1.25rem;
+    }
+    
+    .card {
+        padding: 2rem;
+    }
+}
+
+
+/* --- VISCERAL & OTHER SUB-PAGES ADDITIONS --- */
+
+/* SUB NAVIGATION STYLING */
+.sub-nav {
+    text-align: center;
+    margin: 2.5rem 0 3.5rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sub-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sub-nav li {
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+.sub-nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    background-color: #f0f8ff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.sub-nav a:hover {
+    background-color: #e1f0ff;
+    border-color: var(--primary-color);
+}
+
+.sub-nav a.active {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+/* FEATURE GRID FOR VISCERAL PAGE */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.07);
+}
+
+.feature-card h3 {
+    margin-top: 0;
+    color: var(--text-color);
+    font-size: 1.15rem;
+}
+
+.feature-card p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    max-width: none;
+}
+
+/* VISCERAL PAGE GALLERY ADJUSTMENTS */
+.gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.gallery-item h3 {
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-item p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    max-width: none;
+}
+
+/* FIX HEADING MARGIN INSIDE STYLE-SECTION */
+.style-section > h2 {
+    margin-top: 0;
+    color: var(--primary-color);
 }
