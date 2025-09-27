@@ -10,208 +10,8 @@
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <style>
-        /* Temporary inline styles for consistency */
-        .page-title {
-            color: #5DA9E9 !important;
-            font-size: 2.5rem;
-            font-weight: bold;
-            text-align: left;
-        }
-        
-        .hero-text {
-            color: #1D1D1D !important;
-            font-size: 1.25rem;
-            text-align: left;
-        }
-        
-        h2 {
-            color: #5DA9E9 !important;
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        /* Style nav cards to match site design */
-        .style-nav-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .nav-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-            border: 2px solid transparent;
-        }
-        
-        .nav-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-            border-color: #5DA9E9;
-        }
-        
-        .nav-card h3 {
-            color: #1D1D1D;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-        
-        .nav-card p {
-            color: #1D1D1D;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-        
-        .nav-card .btn {
-            display: inline-block;
-            padding: 0.75rem 2rem;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            font-size: 1rem;
-        }
-        
-        .nav-card.visceral .btn {
-            background-color: #5DA9E9;
-        }
-        
-        .nav-card.behavioural .btn {
-            background-color: #95C623;
-        }
-        
-        .nav-card.reflective .btn {
-            background-color: #1D1D1D;
-        }
-        
-        .nav-card .btn:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
-        }
-        
-        /* Design foundation sections */
-        .overview-section {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border-left: 4px solid #5DA9E9;
-        }
-        
-        .overview-section h3 {
-            color: #1D1D1D;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-        
-        /* Color showcase matching the style */
-        .color-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-        
-        .color-item {
-            text-align: center;
-            background: #FFFCF9;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border: 1px solid #f0f0f0;
-        }
-        
-        .color-sample {
-            width: 100%;
-            height: 80px;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            border: 2px solid rgba(0,0,0,0.1);
-        }
-        
-        .color-item p {
-            font-size: 0.9rem;
-            color: #1D1D1D;
-            line-height: 1.4;
-        }
-        
-        .color-item strong {
-            color: #1D1D1D;
-            font-weight: 600;
-        }
-        
-        /* Typography showcase */
-        .type-showcase {
-            background: #FFFCF9;
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 1.5rem 0;
-            border: 1px solid #f0f0f0;
-        }
-        
-        .type-showcase h1 {
-            font-size: 2.5rem;
-            color: #5DA9E9;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-        
-        .type-showcase h2 {
-            font-size: 2rem;
-            color: #5DA9E9;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        
-        .type-showcase h3 {
-            font-size: 1.5rem;
-            color: #5DA9E9;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        
-        .type-showcase p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #1D1D1D;
-            margin-bottom: 1rem;
-        }
-        
-        /* Design principles list styling */
-        .overview-section ul {
-            margin-left: 0;
-            padding-left: 0;
-            list-style: none;
-        }
-        
-        .overview-section li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #f0f0f0;
-            line-height: 1.6;
-        }
-        
-        .overview-section li:last-child {
-            border-bottom: none;
-        }
-        
-        .overview-section li strong {
-            color: #5DA9E9;
-            font-weight: 600;
-        }
-    </style>
 </head>
-<body>
+<body class="has-subnav">
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -222,65 +22,74 @@
         </ul>
     </nav>
 
+    <div class="style-subnav">
+        <ul>
+            <li><a href="style_guide.html" aria-current="page">Overview</a></li>
+            <li><a href="visceral_design.html">Visceral</a></li>
+            <li><a href="behavioural_design.html">Behavioural</a></li>
+            <li><a href="reflective_design.html">Reflective</a></li>
+        </ul>
+    </div>
+
     <main>
         <div class="container">
-            <h1 class="page-title m-t-3">Style Guide</h1>
-            <p class="hero-text m-y-2">Design system for our wellness community platform, focused on accessibility, emotional safety, and cultural sensitivity.</p>
+            <h1 class="page-title">Style Guide</h1>
+            <p class="hero-text">Design system for our wellness community platform, focused on accessibility, emotional safety, and cultural sensitivity.</p>
 
-            <!-- Navigation to Design Levels -->
-            <section class="style-nav-cards m-y-3">
-                <div class="nav-card visceral">
+            <!-- Navigation Cards -->
+            <section class="card-container m-y-3">
+                <div class="card visceral">
                     <h3>Visceral Design</h3>
                     <p>Explore the immediate emotional impact of our visual choices. Color psychology, typography, and layout decisions that create first impressions of trust and calm.</p>
                     <a href="visceral_design.html" class="btn">Explore Visceral</a>
                 </div>
 
-                <div class="nav-card behavioural">
+                <div class="card behavioural">
                     <h3>Behavioural Design</h3>
                     <p>Discover how interface design supports user goals. Navigation patterns, interactions, and usability features that make mental health resources accessible.</p>
                     <a href="behavioural_design.html" class="btn">Explore Behavioural</a>
                 </div>
 
-                <div class="nav-card reflective">
+                <div class="card reflective">
                     <h3>Reflective Design</h3>
                     <p>Understand deeper meanings in our design decisions. How the platform reflects values of inclusivity, empowerment, and respect for diverse wellness journeys.</p>
                     <a href="reflective_design.html" class="btn">Explore Reflective</a>
                 </div>
             </section>
 
-            <!-- Design Foundation Overview -->
+            <!-- Design Foundation -->
             <section class="m-y-3">
                 <h2>Design Foundation</h2>
                 
-                <div class="overview-section">
+                <div class="style-section">
                     <h3>Color Palette</h3>
-                    <p class="m-b-2">Colors chosen to promote calm, trust, and accessibility while respecting cultural sensitivities.</p>
+                    <p>Colors chosen to promote calm, trust, and accessibility while respecting cultural sensitivities.</p>
                     
-                    <div class="color-showcase">
-                        <div class="color-item">
+                    <div class="color-grid">
+                        <div class="color-card">
                             <div class="color-sample" style="background-color: #5DA9E9;"></div>
                             <p><strong>Primary</strong><br>#5DA9E9<br>Argentinian Blue</p>
                         </div>
-                        <div class="color-item">
+                        <div class="color-card">
                             <div class="color-sample" style="background-color: #95C623;"></div>
                             <p><strong>Secondary</strong><br>#95C623<br>Yellow Green</p>
                         </div>
-                        <div class="color-item">
+                        <div class="color-card">
                             <div class="color-sample" style="background-color: #1D1D1D;"></div>
                             <p><strong>Accent</strong><br>#1D1D1D<br>Eerie Black</p>
                         </div>
-                        <div class="color-item">
+                        <div class="color-card">
                             <div class="color-sample" style="background-color: #FFFCF9;"></div>
                             <p><strong>Background</strong><br>#FFFCF9<br>Baby Powder</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="overview-section">
+                <div class="style-section">
                     <h3>Typography System</h3>
-                    <p class="m-b-2">Font choices prioritizing readability across age groups and technological comfort levels.</p>
+                    <p>Font choices prioritizing readability across age groups and technological comfort levels.</p>
                     
-                    <div class="type-showcase">
+                    <div class="typography-examples">
                         <h1>Main Headings (H1)</h1>
                         <h2>Section Headings (H2)</h2>
                         <h3>Subsection Headings (H3)</h3>
@@ -288,9 +97,9 @@
                     </div>
                 </div>
 
-                <div class="overview-section">
+                <div class="style-section">
                     <h3>Design Principles</h3>
-                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <ul>
                         <li><strong>Accessibility First:</strong> Every design decision considers users with varying technological comfort and visual abilities</li>
                         <li><strong>Cultural Sensitivity:</strong> Colors and patterns respect diverse cultural backgrounds and avoid triggering associations</li>
                         <li><strong>Emotional Safety:</strong> Visual hierarchy and color choices promote psychological safety for vulnerable users</li>
