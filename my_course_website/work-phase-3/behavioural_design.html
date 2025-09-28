@@ -1,45 +1,544 @@
-<!-- behavioural_design.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Behavioural Design - Work Phase 3</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/component.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-</head>
-<body>
-    <nav id="nav-mobile" aria-label="Main Navigation">
-        <ul>
-            <li><a href="index.html"><span class="icon">🏠</span></a></li>
-            <li><a href="site_map.html"><span class="icon">🗺️</span></a></li>
-            <li><a href="style_guide.html"><span class="icon">🎨</span></a></li>
-            <li><a href="ethical_response.html"><span class="icon">💚</span></a></li>
-            <li><a href="genai_mt_acknowledgement.html"><span class="icon">😊</span></a></li>
-        </ul>
-    </nav>
-
-    <nav id="nav-desktop" aria-label="Main Navigation">
-        <ul>
-           <li><a href="index.html">Home</a></li>
-            <li><a href="site_map.html">Site Map</a></li>
-            <li><a href="style_guide.html">Style Guide</a></li>
-            <li><a href="visceral_design.html">Visceral</a></li>
-            <li><a href="behavioural_design.html">Behavioral</a></li>
-            <li><a href="reflective_design.html">Reflective</a></li>
-            <li><a href="ethical_response.html">Ethics</a></li>
-            <li><a href="genai_mt_acknowledgement.html">GenAI</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <div class="container">
-            <h1 class="page-title">Behavioural Design</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Behavioural Design - Work Phase 3</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/nav.css" />
+        <link rel="stylesheet" href="css/component.css" />
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    </head>
+    <body class="has-subnav">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="site_map.html">Site Map</a></li>
+                <li><a href="style_guide.html">Style Guide</a></li>
+                <li><a href="ethical_response.html">Ethics</a></li>
+                <li><a href="genai_mt_acknowledgement.html">GenAI</a></li>
+            </ul>
+        </nav>
+        <div class="style-subnav">
+            <ul>
+                <li><a href="style_guide.html">Overview</a></li>
+                <li><a href="visceral_design.html">Visceral</a></li>
+                <li>
+                    <a href="behavioural_design.html" aria-current="page"
+                        >Behavioural</a
+                    >
+                </li>
+                <li><a href="reflective_design.html">Reflective</a></li>
+            </ul>
         </div>
-    </main>
-</body>
+        <main>
+            <div class="container">
+                <h1 class="page-title">Behavioural Design</h1>
+                <p></p>
+                <p class="hero-text">
+                    The focus of this section of the Style Guide is ensuring
+                    user needs for usability and function are supported. This
+                    includes interactive components, navigation patterns, and
+                    forms that make mental health resources accessible and
+                    intuitive for all users.
+                </p>
+
+
+                <!-- Links Section -->
+                <section id="links" class="m-t-5">
+                    <h2>Link Styles</h2>
+                    <div class="style-section">
+                        <p class="section-description">
+                            This section demonstrates how link states support
+                            accessibility and visual clarity. Clear link design
+                            helps users understand interactive elements and
+                            navigate the site with confidence.
+                        </p>
+
+                        <div class="component-demo">
+                            <h3>Interactive Link States</h3>
+                            <div class="link-demo">
+                                <div class="link-example">
+                                    <p>
+                                        Default state:
+                                        <a href="#" class="link-default"
+                                            >This is a default link</a
+                                        >
+                                    </p>
+                                </div>
+                                <div class="link-example">
+                                    <p>
+                                        Hover state:
+                                        <a href="#" class="link-hover"
+                                            >This link shows hover feedback</a
+                                        >
+                                    </p>
+                                </div>
+                                <div class="link-example">
+                                    <p>
+                                        Active state:
+                                        <a href="#" class="link-active"
+                                            >This link shows active feedback</a
+                                        >
+                                    </p>
+                                </div>
+                                <div class="link-example">
+                                    <p>
+                                        Visited state:
+                                        <a href="#" class="link-visited"
+                                            >This link shows visited state</a
+                                        >
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="mt-3">
+                                <strong>Design Rationale:</strong> Links use
+                                color contrast and underline to clearly indicate
+                                interactivity. Hover and active states provide
+                                immediate feedback, while visited state helps
+                                users track their navigation history.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Navigation Section -->
+                <section id="navigation" class="m-t-5">
+                    <h2>Menus and Navigation</h2>
+                    <div class="style-section">
+                        <p class="section-description">
+                            The navigation system reflects the site's
+                            information architecture and supports usability
+                            through clear labels, logical grouping, and
+                            consistent interaction patterns.
+                        </p>
+
+                        <div class="component-demo">
+                            <h3>Main Navigation Menu</h3>
+                            <div class="nav-demo">
+                                <ul>
+                                    <li><a href="#" class="active">Home</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Resources</a></li>
+                                    <li><a href="#">Community</a></li>
+                                    <li><a href="#">Support</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                            <p class="mt-3">
+                                <strong>Key Features:</strong> Clear active
+                                state indicator, consistent spacing, and
+                                intuitive labeling. The menu adapts to different
+                                screen sizes while maintaining usability.
+                            </p>
+                        </div>
+
+                        <div class="component-demo mt-4">
+                            <h3>Secondary Navigation</h3>
+                            <div
+                                class="nav-demo"
+                                style="background-color: #f8f9fa">
+                                <ul>
+                                    <li><a href="#">Articles</a></li>
+                                    <li><a href="#">Videos</a></li>
+                                    <li><a href="#">Podcasts</a></li>
+                                    <li><a href="#">Downloads</a></li>
+                                </ul>
+                            </div>
+                            <p class="mt-3">
+                                <strong>Design Approach:</strong> Secondary
+                                navigation uses a lighter background to visually
+                                distinguish it from primary navigation while
+                                maintaining consistent interaction patterns.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cards Section -->
+                <section id="cards" class="m-t-5">
+                    <h2>Card Components</h2>
+                    <div class="style-section">
+                        <p class="section-description">
+                            Card components are used for summarizing content and
+                            presenting information in a scannable format. They
+                            provide clear visual hierarchy and consistent
+                            interaction patterns.
+                        </p>
+
+                        <div class="card-container">
+                            <div
+                                class="card"
+                                style="border-left: 4px solid #5da9e9">
+                                <h3>Resource Card</h3>
+                                <img
+                                    src="https://via.placeholder.com/400x200?text=Mental+Health+Resource"
+                                    alt="Resource Card Example"
+                                    class="responsive-img" />
+                                <p>
+                                    This card format is used for displaying
+                                    resources, articles, and community posts. It
+                                    includes a thumbnail image, title, and brief
+                                    description to help users quickly identify
+                                    relevant content.
+                                </p>
+                                <a href="#" class="btn btn-primary"
+                                    >Learn More</a
+                                >
+                            </div>
+
+                            <div
+                                class="card"
+                                style="border-left: 4px solid #95c623">
+                                <h3>Testimonial Card</h3>
+                                <div
+                                    style="
+                                        padding: 1rem;
+                                        background-color: #f8f9fa;
+                                        border-radius: 8px;
+                                        margin-bottom: 1rem;
+                                    ">
+                                    <p
+                                        style="
+                                            font-style: italic;
+                                            margin-bottom: 1rem;
+                                        ">
+                                        "The resources on this site have been
+                                        incredibly helpful for my mental health
+                                        journey. The clear organization makes it
+                                        easy to find what I need."
+                                    </p>
+                                    <p style="font-weight: 600">
+                                        - Sarah, Community Member
+                                    </p>
+                                </div>
+                                <p>
+                                    Testimonial cards feature user quotes with
+                                    proper attribution, helping to build trust
+                                    and community engagement.
+                                </p>
+                            </div>
+
+                            <div
+                                class="card"
+                                style="border-left: 4px solid #1d1d1d">
+                                <h3>Statistic Card</h3>
+                                <div
+                                    style="
+                                        text-align: center;
+                                        padding: 2rem;
+                                        background-color: #f8f9fa;
+                                        border-radius: 8px;
+                                        margin-bottom: 1rem;
+                                    ">
+                                    <span
+                                        style="
+                                            font-size: 3rem;
+                                            font-weight: 700;
+                                            color: #5da9e9;
+                                        "
+                                        >85%</span
+                                    >
+                                </div>
+                                <p>
+                                    Of users report improved mental health
+                                    awareness after using our resources.
+                                    Statistic cards use visual emphasis to
+                                    highlight important data points.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Icons Section -->
+                <section id="icons" class="m-t-5">
+                    <h2>Icon Set</h2>
+                    <div class="style-section">
+                        <p class="section-description">
+                            Icons are used to support understanding in buttons,
+                            navigation, and information displays. The design
+                            maintains consistency in shape, weight, and visual
+                            style.
+                        </p>
+
+                        <div class="component-demo">
+                            <h3>Core Icon Collection</h3>
+                            <div
+                                style="
+                                    display: grid;
+                                    grid-template-columns: repeat(
+                                        auto-fit,
+                                        minmax(100px, 1fr)
+                                    );
+                                    gap: 2rem;
+                                    text-align: center;
+                                    margin: 2rem 0;
+                                ">
+                                <div>
+                                    <div
+                                        style="
+                                            font-size: 2rem;
+                                            margin-bottom: 0.5rem;
+                                        ">
+                                        🔍
+                                    </div>
+                                    <p>Search</p>
+                                </div>
+                                <div>
+                                    <div
+                                        style="
+                                            font-size: 2rem;
+                                            margin-bottom: 0.5rem;
+                                        ">
+                                        📚
+                                    </div>
+                                    <p>Resources</p>
+                                </div>
+                                <div>
+                                    <div
+                                        style="
+                                            font-size: 2rem;
+                                            margin-bottom: 0.5rem;
+                                        ">
+                                        👥
+                                    </div>
+                                    <p>Community</p>
+                                </div>
+                                <div>
+                                    <div
+                                        style="
+                                            font-size: 2rem;
+                                            margin-bottom: 0.5rem;
+                                        ">
+                                        ❤️
+                                    </div>
+                                    <p>Support</p>
+                                </div>
+                                <div>
+                                    <div
+                                        style="
+                                            font-size: 2rem;
+                                            margin-bottom: 0.5rem;
+                                        ">
+                                        📝
+                                    </div>
+                                    <p>Articles</p>
+                                </div>
+                                <div>
+                                    <div
+                                        style="
+                                            font-size: 2rem;
+                                            margin-bottom: 0.5rem;
+                                        ">
+                                        🎥
+                                    </div>
+                                    <p>Videos</p>
+                                </div>
+                            </div>
+                            <p class="mt-3">
+                                <strong>Design Principles:</strong> Icons use
+                                consistent sizing and style. Each icon has a
+                                clear, intuitive meaning that supports the
+                                content without requiring additional
+                                explanation.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Buttons Section -->
+                <section id="buttons" class="m-t-5">
+                    <h2>Interactive Buttons</h2>
+                    <div class="style-section">
+                        <p class="section-description">
+                            Buttons provide clear calls-to-action with visual
+                            feedback for user interactions. This section
+                            demonstrates feedback (on hover) and feedforward
+                            (labels/icons) principles.
+                        </p>
+
+                        <div class="component-demo">
+                            <h3>Button Variants</h3>
+                            <div class="button-demo">
+                                <div class="button-variants">
+                                    <button class="btn btn-primary">
+                                        Primary Action
+                                    </button>
+                                    <button class="btn btn-secondary">
+                                        Secondary Action
+                                    </button>
+                                    <button class="btn btn-outline">
+                                        Outline Button
+                                    </button>
+                                </div>
+
+                                <div class="button-states">
+                                    <h4>Interactive States Demo</h4>
+                                    <p>
+                                        Hover over and click the button below to
+                                        see interaction feedback:
+                                    </p>
+                                    <button
+                                        class="btn btn-primary"
+                                        style="margin-top: 1rem">
+                                        Click Me
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="mt-3">
+                                <strong>Design Features:</strong> Buttons use
+                                color psychology to indicate importance (primary
+                                > secondary > outline). Hover and active states
+                                provide immediate feedback, while consistent
+                                padding ensures comfortable touch targets.
+                            </p>
+                        </div>
+
+                        <div class="component-demo mt-4">
+                            <h3>Button Sizes</h3>
+                            <div class="button-variants">
+                                <button
+                                    class="btn btn-primary"
+                                    style="
+                                        padding: 0.5rem 1rem;
+                                        font-size: 0.875rem;
+                                    ">
+                                    Small
+                                </button>
+                                <button class="btn btn-primary">
+                                    Medium (Default)
+                                </button>
+                                <button
+                                    class="btn btn-primary"
+                                    style="
+                                        padding: 1rem 2.5rem;
+                                        font-size: 1.125rem;
+                                    ">
+                                    Large
+                                </button>
+                            </div>
+                            <p class="mt-3">
+                                <strong>Usage Guidelines:</strong> Medium
+                                buttons are used for most actions. Large buttons
+                                draw attention to primary calls-to-action, while
+                                small buttons are used for secondary actions in
+                                tight spaces.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Forms Section -->
+                <section id="forms" class="m-t-5">
+                    <h2>Form Example</h2>
+                    <div class="style-section">
+                        <p class="section-description">
+                            This form includes real-time validation and provides
+                            clear feedback on both validation errors and
+                            submission status. The design prioritizes
+                            accessibility and user confidence.
+                        </p>
+
+                        <div class="component-demo">
+                            <h3>Community Registration Form</h3>
+                            <div class="form-demo">
+                                <form
+                                    id="community-form"
+                                    enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label for="name">Full Name</label>
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            class="form-control"
+                                            required
+                                            placeholder="Enter your full name" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="email">Email Address</label>
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            class="form-control"
+                                            required
+                                            placeholder="Enter your email address" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="location">Location</label>
+                                        <input
+                                            type="text"
+                                            id="location"
+                                            name="location"
+                                            class="form-control"
+                                            placeholder="Where are you from?" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="message"
+                                            >Tell Us About Yourself</label
+                                        >
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            class="form-control"
+                                            rows="4"
+                                            placeholder="Share a little about your mental health journey (optional)"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="photo">Profile Photo</label>
+                                        <input
+                                            type="file"
+                                            id="photo"
+                                            name="photo"
+                                            class="form-control"
+                                            accept="image/*" />
+                                    </div>
+
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary"
+                                        style="width: 100%">
+                                        Join the Community
+                                    </button>
+                                </form>
+
+                                <div
+                                    id="form-feedback"
+                                    class="form-feedback"
+                                    aria-live="polite"></div>
+                            </div>
+
+                            <p class="mt-4">
+                                <strong>Form Design Features:</strong>
+                            </p>
+                            <ul>
+                                <li>
+                                    Real-time validation with clear error
+                                    indicators
+                                </li>
+                                <li>Generous spacing between form fields</li>
+                                <li>Clear labels and placeholders</li>
+                                <li>
+                                    Responsive design that works on all devices
+                                </li>
+                                <li>
+                                    Accessibility features including ARIA
+                                    attributes
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <script type="module" src="js/behavioural_design.js"></script>
+    </body>
 </html>

@@ -7,20 +7,23 @@
 /* TYPOGRAPHY COMPONENTS */
 .page-title {
     font-size: 2.75rem;
-    color: var(--primary-color);
-    text-align: center;
-    font-weight: 700;
-    margin-top: 1rem;
-    margin-bottom: 0.75rem;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+    color: var(--primary-color) !important;
+    text-align: center !important;
+    font-weight: 700 !important;
+    margin-top: 1rem !important;
+    margin-bottom: 0.75rem !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em !important;
+    text-decoration: none !important;
+    border: none !important;
+    background: none !important;
 }
 
 .hero-text {
     font-size: 1.125rem;
     font-weight: 400;
     color: var(--text-color);
-    text-align: center; /* ONLY hero text centered */
+    text-align: center;
     margin-bottom: 3rem;
     line-height: 1.5;
     max-width: 65ch;
@@ -36,7 +39,7 @@ h2 {
     margin-bottom: 1rem;
     line-height: 1.2;
     letter-spacing: -0.01em;
-    text-align: left; /* All headings left aligned */
+    text-align: left;
 }
 
 h3 {
@@ -46,7 +49,7 @@ h3 {
     margin-top: 2.5rem;
     margin-bottom: 0.75rem;
     line-height: 1.3;
-    text-align: left; /* All headings left aligned */
+    text-align: left;
 }
 
 p {
@@ -55,20 +58,19 @@ p {
     color: var(--text-color);
     line-height: 1.6;
     margin-bottom: 1.25rem;
-    text-align: left; /* ALL paragraphs left aligned */
+    text-align: left;
     max-width: 70ch;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* CONTAINER COMPONENT */
+/* LAYOUT COMPONENTS */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
-/* SECTION SPACING */
 section {
     margin-bottom: 4rem;
 }
@@ -87,30 +89,7 @@ article {
     margin: 2.5rem 0;
 }
 
-/* CARD COMPONENTS */
-.card {
-    background-color: white;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    padding: 2rem;
-    margin-bottom: 2rem;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 2px solid transparent;
-    min-height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-}
-
-.card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    border: 2px solid #5DA9E9; /* Blue border on hover for all cards */
-}
-
+/* CARD COMPONENTS - Extended styles beyond skeleton */
 .card h3 {
     font-size: 1.375rem;
     margin-top: 0;
@@ -130,8 +109,7 @@ article {
     margin-right: 0;
 }
 
-/* INDEX PAGE FIXES */
-/* Large Project Overview card - 1000px width and center h2 */
+/* INDEX PAGE SPECIFIC STYLES */
 .container section:nth-child(2) .card {
     width: 1000px !important;
     max-width: 1000px !important;
@@ -146,16 +124,15 @@ article {
     text-align: center !important;
 }
 
-/* Fix Project Overview card paragraph alignment */
 .container section:nth-child(2) .card p {
-    max-width: none !important; /* Remove width constraint */
-    margin-left: 0 !important; /* Remove auto centering */
-    margin-right: 0 !important; /* Remove auto centering */
-    text-align: left !important; /* Ensure left alignment */
-    padding: 0 !important; /* Remove any padding */
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+    padding: 0 !important;
 }
 
-/* Three cards in a row for Key Design Principles - SIMPLE APPROACH */
+/* Key Design Principles Cards Layout */
 @media (min-width: 768px) {
     .container section:nth-child(3) .card {
         display: inline-block !important;
@@ -177,9 +154,7 @@ article {
         margin-right: 0 !important;
         margin-bottom: 2rem !important;
     }
-}
-
-@media (max-width: 767px) {
+    
     .container section:nth-child(3) {
         flex-direction: column !important;
     }
@@ -190,7 +165,7 @@ article {
     }
 }
 
-/* BUTTON COMPONENTS */
+/* BUTTONTON COMPONENTS */
 .btn {
     padding: 0.875rem 2rem;
     border: none;
@@ -226,7 +201,6 @@ article {
 }
 
 /* STYLE GUIDE SPECIFIC COMPONENTS */
-/* Card container for three design type cards */
 .card-container {
     display: flex;
     flex-direction: column;
@@ -246,7 +220,7 @@ article {
     }
 }
 
-/* Individual card styling for different design types */
+/* Design type cards */
 .card.visceral {
     border-left: 4px solid #5DA9E9;
 }
@@ -257,6 +231,34 @@ article {
 
 .card.reflective {
     border-left: 4px solid #1D1D1D;
+}
+
+/* Remove underline from style guide cards (fixed selector) */
+.card-container a.card {
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block;
+}
+
+/* Style guide card heading specific styles */
+.card-container .card h3 {
+    font-size: 1.375rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* Style guide card paragraph specific styles */
+.card-container .card p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+    color: rgba(29, 29, 29, 0.8);
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 /* Style sections for Design Foundation */
@@ -272,6 +274,32 @@ article {
 .style-section h3 {
     margin-top: 0;
     font-size: 1.25rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.style-section > h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+/* Design principles list styling */
+.style-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.style-section li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.style-section li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
     color: var(--primary-color);
     font-weight: 600;
 }
@@ -334,124 +362,6 @@ article {
 .typography-examples h1:first-child {
     margin-top: 0;
 }
-
-/* Design principles list styling */
-.style-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-}
-
-.style-section li {
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.style-section li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-    font-weight: 600;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 767px) {
-    .color-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1rem;
-    }
-    
-    .color-sample {
-        height: 60px;
-    }
-    
-    .style-section {
-        padding: 1.5rem;
-    }
-    
-    .typography-examples {
-        padding: 1.5rem;
-    }
-}
-
-/* SPACING UTILITY CLASSES */
-.m-t-1 { margin-top: 0.5rem; }
-.m-t-2 { margin-top: 1rem; }
-.m-t-3 { margin-top: 1.5rem; }
-.m-t-4 { margin-top: 2rem; }
-.m-t-5 { margin-top: 3rem; }
-
-.m-b-1 { margin-bottom: 0.5rem; }
-.m-b-2 { margin-bottom: 1rem; }
-.m-b-3 { margin-bottom: 1.5rem; }
-.m-b-4 { margin-bottom: 2rem; }
-.m-b-5 { margin-bottom: 3rem; }
-
-.m-y-1 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
-.m-y-2 { margin-top: 1rem; margin-bottom: 1rem; }
-.m-y-3 { margin-top: 1.5rem; margin-bottom: 1.5rem; }
-.m-y-4 { margin-top: 2rem; margin-bottom: 2rem; }
-.m-y-5 { margin-top: 3rem; margin-bottom: 3rem; }
-
-/* TEXT ALIGNMENT UTILITIES */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
-
-/* RESPONSIVE DESIGN */
-@media (min-width: 768px) {
-    .page-title {
-        font-size: 3.25rem;
-    }
-    
-    .hero-text {
-        font-size: 1.25rem;
-        margin-bottom: 4rem;
-    }
-    
-    h2 {
-        font-size: 2.25rem;
-    }
-    
-    .container {
-        padding: 0 3rem;
-    }
-}
-
-@media (max-width: 767px) {
-    .page-title {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-    
-    .hero-text {
-        font-size: 1rem;
-        margin-bottom: 2.5rem;
-    }
-    
-    h2 {
-        font-size: 1.625rem;
-        margin-top: 3rem;
-    }
-    
-    h3 {
-        font-size: 1.125rem;
-        margin-top: 2rem;
-    }
-    
-    .container {
-        padding: 0 1.25rem;
-    }
-    
-    .card {
-        padding: 2rem;
-    }
-}
-
-
-/* --- VISCERAL & OTHER SUB-PAGES ADDITIONS --- */
 
 /* SUB NAVIGATION STYLING */
 .sub-nav {
@@ -537,8 +447,93 @@ article {
     max-width: none;
 }
 
-/* FIX HEADING MARGIN INSIDE STYLE-SECTION */
-.style-section > h2 {
-    margin-top: 0;
-    color: var(--primary-color);
+/* SPACING UTILITY CLASSES */
+.m-t-1 { margin-top: 0.5rem; }
+.m-t-2 { margin-top: 1rem; }
+.m-t-3 { margin-top: 1.5rem; }
+.m-t-4 { margin-top: 2rem; }
+.m-t-5 { margin-top: 3rem; }
+
+.m-b-1 { margin-bottom: 0.5rem; }
+.m-b-2 { margin-bottom: 1rem; }
+.m-b-3 { margin-bottom: 1.5rem; }
+.m-b-4 { margin-bottom: 2rem; }
+.m-b-5 { margin-bottom: 3rem; }
+
+.m-y-1 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.m-y-2 { margin-top: 1rem; margin-bottom: 1rem; }
+.m-y-3 { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+.m-y-4 { margin-top: 2rem; margin-bottom: 2rem; }
+.m-y-5 { margin-top: 3rem; margin-bottom: 3rem; }
+
+/* TEXT ALIGNMENT UTILITIES */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* RESPONSIVE DESIGN */
+@media (min-width: 768px) {
+    .page-title {
+        font-size: 3.25rem !important;
+    }
+    
+    .hero-text {
+        font-size: 1.25rem;
+        margin-bottom: 4rem;
+    }
+    
+    h2 {
+        font-size: 2.25rem;
+    }
+    
+    .container {
+        padding: 0 3rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-title {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .hero-text {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 1.625rem;
+        margin-top: 3rem;
+    }
+    
+    h3 {
+        font-size: 1.125rem;
+        margin-top: 2rem;
+    }
+    
+    .container {
+        padding: 0 1.25rem;
+    }
+    
+    .card {
+        padding: 2rem;
+    }
+    
+    .color-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+    
+    .color-sample {
+        height: 60px;
+    }
+    
+    .style-section {
+        padding: 1.5rem;
+    }
+    
+    .typography-examples {
+        padding: 1.5rem;
+    }
 }
