@@ -194,6 +194,18 @@
                 <img src="screenshots/card_survey.png" alt="Survey Card" class="responsive-img">
             </div>
 
+            <!-- Search Card -->
+            <div class="style-section">
+                <h3>Search Component</h3>
+                <p>The search component provides intuitive input with clear visual hierarchy and immediate feedback:</p>
+                
+                <div class="search-demo">
+                    <div class="search-container">
+                        <img src="screenshots/card_search.png" alt="Testimonial Card" class="responsive-img">
+                    </div>
+                </div>
+            </section>
+            <section>
             <div class="design-note">
                 <h3>Card Design System</h3>
                 <ul>
@@ -205,39 +217,160 @@
             </div>
         </section>
 
-        <!-- Key Elements Section -->
-        <section id="forms" class="component-section">
-            <h2>Key Elements</h2>
+
+        <!-- Button Components Section -->
+        <section id="buttons" class="component-section">
+            <h2>Button Components</h2>
             <p>
-                These essential components prioritize both accessibility and user privacy. 
-                Design decisions reflect our commitment to protecting user data while maintaining 
-                the highest standards of usability.
+                Buttons serve as primary interactive elements, guiding users through key actions and workflows. 
+                Each button type is designed with clear visual hierarchy, accessible contrast ratios, and 
+                intuitive feedback states to support confident user interaction.
             </p>
 
-            <!-- Search Input Demo -->
+            <!-- Primary Button -->
             <div class="style-section">
-                <h3>Search Component</h3>
-                <p>The search component provides intuitive input with clear visual hierarchy and immediate feedback:</p>
+                <h3>Primary Button</h3>
+                <p>Used for primary calls-to-action like form submissions and key navigation paths.</p>
                 
-                <div class="search-demo">
-                    <div class="search-container">
-                        <img src="screenshots/card_search.png" alt="Testimonial Card" class="responsive-img">
+                <div class="button-demo">
+                    <div class="button-state-item">
+                        <h4>Default</h4>
+                        <button class="btn btn-primary">Join Community</button>
+                    </div>
+                    <div class="button-state-item">
+                        <h4>Hover</h4>
+                        <button class="btn btn-primary hover-state">Join Community</button>
+                    </div>
+                    <div class="button-state-item">
+                        <h4>Active</h4>
+                        <button class="btn btn-primary active-state">Join Community</button>
+                    </div>
+                    <div class="button-state-item">
+                        <h4>Disabled</h4>
+                        <button class="btn btn-primary" disabled>Join Community</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Settings Toggle Demo -->
+            <!-- Secondary Button -->
             <div class="style-section">
-                <h3>Privacy Controls</h3>
-                <p>This platform respects user privacy by design. 
-                    We do not passively collect personal data, and all privacy settings default to maximum protection, 
-                    giving users complete control over their information.</p>
+                <h3>Secondary Button</h3>
+                <p>Used for secondary actions and alternative navigation options.</p>
                 
-                        </div>
+                <div class="button-demo">
+                    <div class="button-state-item">
+                        <h4>Default</h4>
+                        <button class="btn btn-secondary">Learn More</button>
+                    </div>
+                    <div class="button-state-item">
+                        <h4>Hover</h4>
+                        <button class="btn btn-secondary hover-state">Learn More</button>
+                    </div>
+                    <div class="button-state-item">
+                        <h4>Disabled</h4>
+                        <button class="btn btn-secondary" disabled>Learn More</button>
                     </div>
                 </div>
+            </div>
+
+            <!-- Icon Button -->
+            <div class="style-section">
+                <h3>Icon Button</h3>
+                <p>Accessible icon-only buttons with proper ARIA labels for screen readers.</p>
+                    <p>In three sizes : 36--48--60px.
+                </p>
+                
+                <div class="button-demo">
+                    <button class="btn btn-icon" aria-label="Search">
+                        <img src="screenshots/setting.png" alt="" style="width: 36px; height: 36px;">
+                    </button>
+                    <button class="btn btn-icon" aria-label="Search">
+                        <img src="screenshots/setting.png" alt="" style="width: 48px; height: 48px;">
+                    </button>
+                    <button class="btn btn-icon" aria-label="Search">
+                        <img src="screenshots/setting.png" alt="" style="width: 60px; height: 60px;">
+                    </button>
+                </div>
+            </div>
+
+            <div class="design-note">
+                <h3>Button Design Principles</h3>
+                <ul>
+                    <li><strong>Affordance:</strong> Rounded corners and padding create clear button shapes that signal click-ability</li>
+                    <li><strong>Feedback:</strong> Hover states use color inversion and subtle scale transform to confirm interactivity</li>
+                    <li><strong>Signifiers:</strong> Active states provide immediate visual confirmation through color change and scale reduction</li>
+                    <li><strong>Accessibility:</strong> All buttons maintain 4.5:1 contrast ratio and include focus indicators for keyboard navigation</li>
+                    <li><strong>Consistency:</strong> Uniform padding (0.875rem × 2rem) and transition timing (0.3s) across all button types</li>
+                </ul>
+            </div>
+        </section>
+        <!-- Form Components Section -->
+        <section id="forms" class="component-section">
+            <h2>Form Components</h2>
+            <p>
+                Forms enable meaningful interaction between users and the platform. Each form element is 
+                designed with clear labeling, immediate validation feedback, and accessible error handling 
+                to support confident data entry and submission.
+            </p>
+
+            <!-- Community Form Example -->
+            <div class="style-section">
+                <h3>Community Member Form</h3>
+                <p>This form demonstrates our approach to collecting user information with built-in validation and API integration.</p>
+                
+                <div class="form-container">
+                    <form id="community-form" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="name" class="required">Full Name</label>
+                            <input type="text" id="name" name="name" required 
+                                placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="required">Email Address</label>
+                            <input type="email" id="email" name="email" required 
+                                placeholder="your.email@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" 
+                                placeholder="04XX XXX XXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="required">Message</label>
+                            <textarea id="message" name="message" required 
+                                    placeholder="Tell us why you'd like to join..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="image">Profile Photo (optional)</label>
+                            <input type="file" id="image" name="image" 
+                                accept="image/*">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Join the Community</button>
+                    </form>
+
+                    <!-- Feedback message area -->
+                    <p id="form-feedback" class="form-feedback" aria-live="polite"></p>
+                </div>
+            </div>
+
+            <div class="design-note">
+                <h3>Form Design Principles</h3>
+                <ul>
+                    <li><strong>Clear Labels:</strong> Every input has a descriptive label using proper <code>for</code> and <code>id</code> association for accessibility</li>
+                    <li><strong>Visual Hierarchy:</strong> Required fields marked with asterisk (*), consistent spacing guides the eye</li>
+                    <li><strong>Built-in Validation:</strong> HTML5 attributes (<code>required</code>, <code>type="email"</code>) provide immediate browser feedback</li>
+                    <li><strong>Focus States:</strong> Blue outline and shadow on focus provides clear indication of active field</li>
+                    <li><strong>Feedback Messages:</strong> Color-coded success/error messages with <code>aria-live</code> for screen reader announcements</li>
+                    <li><strong>API Integration:</strong> Form submits to real endpoint, demonstrating production-ready functionality</li>
+                </ul>
             </div>
         </section>
     </main>
+    <script type="module" src="js/behavioural_design.js"></script>
 </body>
 </html>
