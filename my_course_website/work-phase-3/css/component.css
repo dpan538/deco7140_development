@@ -537,3 +537,37 @@ article {
         padding: 1.5rem;
     }
 }
+
+/* Prevent card-container flex from affecting behavioural page */
+.component-section .card-container {
+    display: grid;
+}
+
+/* Ensure responsive images don't have fixed heights */
+.responsive-img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto !important; /* Override any height settings */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin: 2.5rem 0;
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+/* Better image rendering globally */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+.responsive-img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin: 2.5rem 0;
+    object-fit: contain;
+}
