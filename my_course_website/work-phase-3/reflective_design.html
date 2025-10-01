@@ -1,45 +1,310 @@
-<!-- reflective_design.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reflective Design - Work Phase 3</title>
+    <title>Reflective Design - Work Phase 3</title> 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/component.css">
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/component.css">
+    <link rel="stylesheet" href="css/reflective_design.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
-<body>
-    <nav id="nav-mobile" aria-label="Main Navigation">
-        <ul>
-            <li><a href="index.html"><span class="icon">🏠</span></a></li>
-            <li><a href="site_map.html"><span class="icon">🗺️</span></a></li>
-            <li><a href="style_guide.html"><span class="icon">🎨</span></a></li>
-            <li><a href="ethical_response.html"><span class="icon">💚</span></a></li>
-            <li><a href="genai_mt_acknowledgement.html"><span class="icon">😊</span></a></li>
-        </ul>
-    </nav>
-
-    <nav id="nav-desktop" aria-label="Main Navigation">
+<body class="has-subnav">
+    <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="site_map.html">Site Map</a></li>
             <li><a href="style_guide.html">Style Guide</a></li>
-            <li><a href="visceral_design.html">Visceral</a></li>
-            <li><a href="behavioural_design.html">Behavioral</a></li>
-            <li><a href="reflective_design.html">Reflective</a></li>
             <li><a href="ethical_response.html">Ethics</a></li>
             <li><a href="genai_mt_acknowledgement.html">GenAI</a></li>
         </ul>
     </nav>
 
-    <main>
-        <div class="container">
+    <div class="style-subnav">
+        <ul>
+            <li><a href="style_guide.html">Overview</a></li>
+            <li><a href="visceral_design.html">Visceral</a></li>
+            <li><a href="behavioural_design.html">Behavioural</a></li>
+            <li><a href="reflective_design.html" aria-current="page">Reflective</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Page Introduction -->
+        <section id="overview" class="page-intro">
             <h1 class="page-title">Reflective Design</h1>
-        </div>
+            <p class="hero-text">
+                Reflective design connects users to deeper meaning, identity, and values. This section 
+                demonstrates how our design choices express the mission of Connecting Communities Initiative, 
+                support user identity, and create lasting emotional resonance with the older adult community.
+            </p>
+        </section>
+
+        <!-- Values Mapping Section -->
+        <section id="values-mapping" class="component-section">
+            <h2>Values Mapping</h2>
+            <p>
+                The following values guide our design decisions, ensuring alignment between CCI's mission 
+                and the needs of older adults seeking community connection. Each value connects directly 
+                to specific design implementations across the website.
+            </p>
+
+            <div class="values-table-container">
+                <table class="values-table">
+                    <thead>
+                        <tr>
+                            <th>Value</th>
+                            <th>Design Implication</th>
+                            <th>Specific Element</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Privacy as Safety</strong>
+                                <p class="annotation">Privacy protects users facing workplace discrimination (Denisho), family rejection (Fligo), and vulnerability to scams (Akasha). For marginalized users, anonymity enables honest help-seeking without professional, personal, or safety risks.</p>
+                            </td>
+                            <td>
+                                <strong>Complete anonymity with secure data practices</strong>
+                                <p class="annotation">Enable users to engage without workplace-trackable information, family-discoverable browsing history, or personally identifiable data. End-to-end encryption protects transgender users from being outed and professionals from discrimination.</p>
+                            </td>
+                            <td>
+                                <strong>Anonymous usernames, encrypted connections, no tracking, incognito-mode support</strong>
+                                <p class="annotation">Community forum allows pseudonyms. No IP logging. Forms accept non-work emails. Resources accessible without accounts. Protects Denisho's career, Fligo's teaching position, and Akasha from scams.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Belonging Across Differences</strong>
+                                <p class="annotation">Users face isolation from different causes: Akasha (age-related social loss), Denisho (multicultural family discrimination), Fligo (transgender identity rejection). Community must validate diverse experiences without forcing shared identity beyond seeking connection.</p>
+                            </td>
+                            <td>
+                                <strong>Represent diverse paths to isolation without hierarchy</strong>
+                                <p class="annotation">Design shows people of different ages, cultural backgrounds, gender identities, and abilities. Testimonials reflect varied experiences. No single "typical user" dominates imagery. Avoids stereotypes about who "needs" mental health support.</p>
+                            </td>
+                            <td>
+                                <strong>Diverse imagery, varied testimonials, inclusive language, age-agnostic design</strong>
+                                <p class="annotation">Hero image shows intergenerational connection. Testimonials from different demographics. Language avoids "elderly" stereotypes and heteronormative assumptions. Design doesn't default to young, tech-savvy, or able-bodied users.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Cultural and Linguistic Inclusion</strong>
+                                <p class="annotation">Older adult communities are culturally diverse (Akasha's neighbor Mrs. Chen, Denisho's Buddhist wife). Simple English matters for limited literacy users, but cultural inclusivity requires respecting diverse communication styles, religious perspectives, and family structures.</p>
+                            </td>
+                            <td>
+                                <strong>Plain language with cultural sensitivity</strong>
+                                <p class="annotation">Use clear, direct language (WCAG 3.1.1) without cultural assumptions. Avoid idioms that exclude non-native speakers. Support diverse family configurations (interfaith, multicultural, chosen family). Never assume Christian-centric or nuclear family defaults.</p>
+                            </td>
+                            <td>
+                                <strong>"Older people" not "elderly/seniors," neutral relationship terms, simple sentence structure, cultural content examples</strong>
+                                <p class="annotation">Language respects Australian Style Manual inclusive terminology. Family references don't assume biological relationships. Testimonials show diverse backgrounds. Sentence length under 20 words. Jargon explained. Cultural events represented beyond dominant culture.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Dignity Through Accessibility</strong>
+                                <p class="annotation">Accessibility for older adults isn't just WCAG compliance—it's respecting users with memory confusion, declining vision, arthritis, and slower processing. Poor accessibility directly causes distress: "Sometimes I touch the wrong thing and everything disappears, and then I don't know how to get back."</p>
+                            </td>
+                            <td>
+                                <strong>Forgiveness, predictability, and clarity over efficiency</strong>
+                                <p class="annotation">Design must be patient with mistakes, maintain consistent layouts, provide large touch targets, and never punish errors. Slow loading is preferable to confusing interactions. Prioritize understandability over aesthetic minimalism.</p>
+                            </td>
+                            <td>
+                                <strong>Large text (16px+ base), high contrast (4.5:1+), undo buttons, consistent navigation, clear focus states</strong>
+                                <p class="annotation">All interactive elements 44×44px minimum. Focus indicators visible (2px outline). Layouts never change unexpectedly. Accidental clicks have clear undo. No auto-advancing content. Forms save progress. Error messages explain how to fix, not just what's wrong.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+            <section>
+            <div class="design-note">
+                <h3>Accessibility Considerations</h3>
+                <p>Based on A2 accessibility assessment</p>
+                    <p>Key WCAG success criteria most relevant to this project:</p>
+                <ul>
+                    <li><strong>1.4.3 Contrast (Minimum):</strong> All text meets 4.5:1 ratio; large text meets 3:1</li>
+                    <li><strong>1.4.11 Non-text Contrast:</strong> Interactive elements and icons maintain 3:1 contrast</li>
+                    <li><strong>2.4.7 Focus Visible:</strong> All interactive elements have clear focus indicators</li>
+                    <li><strong>3.1.1 Language of Page:</strong> Content uses plain English, avoiding jargon</li>
+                    <li><strong>4.1.3 Status Messages:</strong> Form feedback uses aria-live for screen reader announcements</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Imagery and Tone Section -->
+        <section id="imagery-tone" class="component-section">
+            <h2>Meaning through Imagery and Tone</h2>
+            
+            <div class="style-section">
+                <h3>Intended Identity and Emotional Tone</h3>
+                <p>
+                    <strong>Identity:</strong> Our website projects warmth, optimism, and genuine community. 
+                    The design communicates that connecting with others is accessible, rewarding, and life-enriching 
+                    for older adults.
+                </p>
+                <p>
+                    <strong>Emotional Tone:</strong> Welcoming and hopeful without being patronizing. The tone 
+                    balances professionalism with approachability, treating users as capable adults while 
+                    acknowledging their desire for meaningful social connection.
+                </p>
+            </div>
+
+            <div class="style-section">
+                <h3>Homepage Imagery Examples</h3>
+                <div class="imagery-grid">
+                    <div class="imagery-item">
+                        <img src="screenshots/card_discussion.png" alt="Community discussion example" class="responsive-img">
+                        <h4>Community Interaction</h4>
+                        <p class="annotation">
+                            Shows genuine engagement between community members through discussion forums. 
+                            Demonstrates that technology facilitates real connections, supporting the identity 
+                            of an active, engaged community.
+                        </p>
+                    </div>
+                    <div class="imagery-item">
+                        <img src="screenshots/card_resource.png" alt="Resource card example" class="responsive-img">
+                        <h4>Accessible Resources</h4>
+                        <p class="annotation">
+                            Clean, organized presentation of resources reinforces the value of empowerment—
+                            users can easily find information they need. Visual clarity supports confidence 
+                            and independence.
+                        </p>
+                    </div>
+                    <div class="imagery-item">
+                        <img src="screenshots/card_statistic.png" alt="Impact statistics" class="responsive-img">
+                        <h4>Community Impact</h4>
+                        <p class="annotation">
+                            Statistics show the positive impact of community engagement, creating hope and 
+                            motivation. The 85% figure demonstrates real outcomes, building trust in the 
+                            platform's effectiveness.
+                        </p>
+                    </div>
+                    <div class="imagery-item">
+                        <img src="screenshots/card_testimonial.png" alt="Member testimonial" class="responsive-img">
+                        <h4>Authentic Voices</h4>
+                        <p class="annotation">
+                            Testimonials from real community members (represented by Sarah) create relatability 
+                            and belonging. Seeing others' positive experiences helps new users envision themselves 
+                            as part of the community.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="style-section">
+                <h3>Homepage Welcome Message</h3>
+                <div class="text-example">
+                    <blockquote class="welcome-message">
+                        <p>
+                            "Welcome to a community where connection matters. Whether you're looking to share 
+                            experiences, learn something new, or simply have a conversation, you'll find a warm 
+                            and welcoming space here. Together, we're building connections that enrich our lives."
+                        </p>
+                    </blockquote>
+                    <p class="annotation">
+                        <strong>How this supports identity and tone:</strong> The message uses inclusive language 
+                        ("our lives" not "your lives"), positioning the organization as part of the community. 
+                        "Connection matters" affirms the core value. The casual, conversational tone ("simply have 
+                        a conversation") avoids formality while maintaining respect. Action words like "building" 
+                        suggest ongoing engagement and empowerment.
+                    </p>
+                </div>
+            </div>
+
+            <div class="design-note">
+                <h3>Visual-Verbal Alignment</h3>
+                <p>
+                    Our imagery and language work together to reinforce CCI's mission of reducing social isolation 
+                    among older adults. Images show real interaction and engagement, not stock photos of isolated 
+                    individuals. Language emphasizes connection, community, and empowerment rather than focusing on 
+                    problems or deficits. Together, they create a consistent message: this is an active, vibrant 
+                    community where older people support each other and build meaningful relationships.
+                </p>
+            </div>
+        </section>
+
+        <!-- Language and Expression Section -->
+        <section id="language-expression" class="component-section">
+            <h2>Reflective Language and Expression</h2>
+            
+            <div class="style-section">
+                <h3>Inclusive Language Checklist</h3>
+                <div class="checklist-container">
+                    <ul class="inclusive-checklist">
+                        <li><strong>Age:</strong> Use "older people" or "older adults" (not "elderly," "seniors," "the aged")</li>
+                        <li><strong>Disability:</strong> Use person-first language: "people with disability" (not "disabled people" or "handicapped")</li>
+                        <li><strong>Gender:</strong> Use inclusive pronouns and avoid assumptions (they/them when gender unknown)</li>
+                        <li><strong>Cultural diversity:</strong> Acknowledge and respect diverse cultural backgrounds within the older adult community</li>
+                        <li><strong>Ability:</strong> Avoid deficit language; focus on capabilities and participation rather than limitations</li>
+                        <li><strong>Complexity:</strong> Use plain English with clear sentence structure (WCAG 3.1.1); explain technical terms when necessary</li>
+                        <li><strong>Tone:</strong> Maintain respectful, empowering language that treats users as capable adults</li>
+                    </ul>
+                    <p class="annotation">
+                        This checklist is based on the Australian Government Style Manual for Inclusive Language 
+                        and directly addresses the needs identified in A2: older adults want to be treated with 
+                        respect and dignity, not patronized or stereotyped.
+                    </p>
+                </div>
+            </div>
+
+            <div class="style-section">
+                <h3>Language Revision Example</h3>
+                
+                <div class="text-comparison">
+                    <div class="text-version original">
+                        <h4>Original Text</h4>
+                        <blockquote>
+                            <p>
+                                "Our platform helps elderly seniors combat loneliness by providing them with online 
+                                resources and social opportunities. We understand that aged people often struggle with 
+                                technology, so we've made everything simple for them to use."
+                            </p>
+                        </blockquote>
+                    </div>
+
+                    <div class="text-version revised">
+                        <h4>Revised Text</h4>
+                        <blockquote>
+                            <p>
+                                "Our platform supports older adults in building meaningful connections through accessible 
+                                online resources and community activities. We've designed an intuitive interface that 
+                                welcomes people of all technology experience levels."
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="design-note">
+                    <h3>Changes Made and Rationale</h3>
+                    <ul>
+                        <li><strong>"elderly seniors" → "older adults":</strong> Uses preferred, respectful terminology per Australian Style Manual</li>
+                        <li><strong>"combat loneliness" → "building meaningful connections":</strong> Shifts from deficit-focused (problem) to asset-focused (solution); more empowering</li>
+                        <li><strong>"providing them" → "supports...in":</strong> Changes from paternalistic language to collaborative partnership language</li>
+                        <li><strong>"aged people often struggle with technology" → "people of all technology experience levels":</strong> Removes ageist assumption and stereotype; acknowledges diversity of experience</li>
+                        <li><strong>"made everything simple for them" → "designed an intuitive interface":</strong> Avoids condescending tone; "intuitive" is professional without being patronizing</li>
+                    </ul>
+                    <p>
+                        <strong>Values reflected:</strong> Revised text reflects respect, empowerment, and belonging. 
+                        It positions older adults as active participants rather than passive recipients, avoids stereotypes, 
+                        and uses inclusive language that acknowledges diversity within the older adult community.
+                    </p>
+                    <p>
+                        <strong>WCAG 3.1.1 compliance:</strong> Revised text uses clear, direct language with shorter 
+                        sentences and fewer complex phrases, making it easier to understand for all users including 
+                        those with cognitive disabilities.
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <script type="module" src="js/reflective_design.js"></script>
 </body>
 </html>
