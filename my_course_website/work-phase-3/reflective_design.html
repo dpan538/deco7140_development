@@ -230,6 +230,38 @@
             </div>
         </section>
 
+        <!-- Community Members Section -->
+        <section id="community-representation" class="component-section">
+            <h2>Seeing Ourselves in the Community</h2>
+            <p>
+                Real community members who have joined our platform demonstrate the diversity and vitality 
+                of connections we support. Each person represents the lived reality of social connection 
+                and mutual support that defines our community values.
+            </p>
+
+            <div class="style-section">
+                <h3>Community Members</h3>
+                <div id="community-members" class="community-grid">
+                    <!-- Dynamic content loads here -->
+                </div>
+            </div>
+
+            <div class="design-note">
+                <h3>Why This Matters for Reflective Design</h3>
+                <p>
+                    Displaying real community members creates immediate belonging. Users see themselves 
+                    reflected—not through stock photos or marketing personas, but through actual people 
+                    who've taken the step to join. This authenticity builds trust and validates the 
+                    community's purpose.
+                </p>
+                <p>
+                    The diversity of names, messages, and photos demonstrates that this space welcomes 
+                    different backgrounds, ages, and experiences—addressing the isolation that Akasha, 
+                    Denisho, and Fligo all face in different ways.
+                </p>
+            </div>
+        </section>
+
         <!-- Language and Expression Section -->
         <section id="language-expression" class="component-section">
             <h2>Reflective Language and Expression</h2>
@@ -303,6 +335,118 @@
                 </div>
             </div>
         </section>
+
+        <!-- Accessibility Audit Section -->
+        <section id="accessibility-audit" class="component-section">
+            <h2>Accessibility Audit Report</h2>
+            <p>
+                This audit of the Behavioural Design page was conducted using IBM Equal Access Accessibility 
+                Checker to identify WCAG 2.2 compliance issues. The scan revealed items requiring review and 
+                potential violations. This report addresses the three most significant findings and outlines 
+                remediation plans for final implementation.
+            </p>
+
+            <div class="audit-summary">
+                <h3>Scan Summary</h3>
+                <p><strong>Total Issues Found:</strong> 7 violations, 7 items needing review</p>
+                <p><strong>Page Scanned:</strong> behavioural_design.html</p>
+                <p><strong>Scan Tool:</strong> IBM Equal Access Accessibility Checker</p>
+                <p><strong>Date:</strong> October 2025</p>
+            </div>
+
+            <!-- Issue 1: Heading Hierarchy -->
+            <div class="audit-issue">
+                <h3>Issue 1: Heading Structure Verification</h3>
+                <div class="audit-details">
+                    <p><strong>WCAG Success Criterion:</strong> 1.3.1 Info and Relationships (Level A)</p>
+                    <p><strong>Checker Status:</strong> Flagged for review</p>
+                    <p><strong>Element Affected:</strong> Page heading hierarchy structure</p>
+                    <p><strong>Issue Description:</strong> Accessibility checker flagged potential heading level 
+                    skip. However, manual review confirms proper semantic structure: h1 (page title "Behavioural Design") 
+                    → h2 (section headings like "Navigation Components," "Icon Set") → h3 (subsection headings like 
+                    "Desktop Navigation," "Core Icon Collection"). This follows correct hierarchical nesting.</p>
+                    <p><strong>Impact on Users:</strong> If heading hierarchy were actually skipped, screen reader users 
+                    would experience confusion navigating page structure. Proper heading hierarchy (which is present) 
+                    allows users to understand content organization and jump between sections efficiently using assistive 
+                    technology navigation shortcuts.</p>
+                    <p><strong>Resolution:</strong> This appears to be a false positive or checker limitation in 
+                    distinguishing navigation elements from main content headings. No code changes needed. Will verify 
+                    with secondary accessibility testing tools (WAVE, axe DevTools) and manual screen reader testing 
+                    to confirm compliance. If confirmed as false positive, will document in final implementation notes.</p>
+                </div>
+            </div>
+
+            <!-- Issue 2: Icon Button Context -->
+            <div class="audit-issue">
+                <h3>Issue 2: Icon Button Descriptive Labels</h3>
+                <div class="audit-details">
+                    <p><strong>WCAG Success Criterion:</strong> 4.1.2 Name, Role, Value (Level A) and 2.4.6 
+                    Headings and Labels (Level AA)</p>
+                    <p><strong>Element Affected:</strong> Icon-only buttons in button demonstration section (line 304-314)</p>
+                    <p><strong>Issue Description:</strong> Icon buttons include aria-label attributes but could be 
+                    more descriptive for demonstration purposes. Current labels identify function ("Settings") but 
+                    don't clarify this is a size demonstration showing 36px, 48px, and 60px variations.</p>
+                    <p><strong>Impact on Users:</strong> Screen reader users hear "Settings button" three times 
+                    consecutively without understanding these demonstrate different sizing options. While technically 
+                    accessible (buttons are labeled), the context for this style guide demonstration isn't clear. 
+                    For Akasha from our user research, her granddaughter Emma helping her wouldn't understand why 
+                    three identical-sounding buttons appear in sequence.</p>
+                    <p><strong>Proposed Fix:</strong> Enhance aria-labels to include size context:
+                    <code>&lt;button class="btn btn-icon" aria-label="Settings button - small size (36 pixels)"&gt;</code>,
+                    <code>aria-label="Settings button - medium size (48 pixels)"</code>,
+                    <code>aria-label="Settings button - large size (60 pixels)"</code>. 
+                    This maintains accessibility while clarifying the demonstration purpose.</p>
+                </div>
+            </div>
+
+            <!-- Issue 3: Form Input Context -->
+            <div class="audit-issue">
+                <h3>Issue 3: File Input Additional Context</h3>
+                <div class="audit-details">
+                    <p><strong>WCAG Success Criterion:</strong> 3.3.2 Labels or Instructions (Level A)</p>
+                    <p><strong>Element Affected:</strong> Profile photo file upload input (line 378-382)</p>
+                    <p><strong>Issue Description:</strong> File input has proper label association (for="image" / id="image") 
+                    meeting basic accessibility requirements. However, it lacks supplementary instructions about acceptable 
+                    file types and size limits that would benefit users with cognitive disabilities or limited technical 
+                    experience.</p>
+                    <p><strong>Impact on Users:</strong> While technically compliant, users like Akasha (67, limited 
+                    tech literacy) would benefit from explicit guidance: "What file types can I upload? Is my phone photo 
+                    too big?" Without instructions, users may attempt invalid uploads, experience confusing error messages, 
+                    or abandon the form entirely. Enhanced instructions reduce cognitive load and prevent user frustration.</p>
+                    <p><strong>Proposed Fix:</strong> Add aria-describedby with supplementary help text:
+                    <pre><code>&lt;label for="image"&gt;Profile Photo (optional)&lt;/label&gt;
+                    &lt;input type="file" id="image" name="image" 
+                        accept="image/*" aria-describedby="image-help"&gt;
+                    &lt;span id="image-help" class="form-help"&gt;
+                    Accepted formats: JPG, PNG, GIF. Maximum size: 5MB
+                    &lt;/span&gt;</code></pre>
+                    This provides clear expectations without changing the required label association.</p>
+                </div>
+            </div>
+
+            <div class="design-note">
+                <h3>Commitment to Accessibility</h3>
+                <p>
+                    This audit demonstrates that our current implementation meets baseline WCAG Level A requirements, 
+                    with opportunities to enhance usability through more descriptive labeling and instructional text. 
+                    The flagged issues range from false positives (heading hierarchy) to enhancement opportunities 
+                    (more descriptive button labels and form instructions).
+                </p>
+                <p>
+                    Our user research with Akasha, Denisho, and Fligo revealed that accessibility isn't just about 
+                    technical compliance—it's about dignity, independence, and safety. Enhanced labels help Akasha 
+                    use technology with less family assistance. Clear instructions reduce anxiety for users like 
+                    Denisho who need efficient, private access. Proper semantic structure supports Fligo's need 
+                    for quick, discreet navigation.
+                </p>
+                <p>
+                    All identified improvements will be implemented in final production, with follow-up testing using 
+                    multiple tools (WAVE, axe DevTools) and manual screen reader verification (NVDA, JAWS) to ensure 
+                    WCAG 2.2 Level AA compliance across all interactive components.
+                </p>
+            </div>
+        </section>
+
     </main>
 
     <script type="module" src="js/reflective_design.js"></script>

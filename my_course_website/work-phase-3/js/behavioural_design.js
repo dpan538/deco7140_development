@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'https://deco7140-work.uqcloud.net/api/community/',
                 {
                     'student_number': '49547634', 
-                    'uqcloud_zone_id': 'deco7140-7a6b4b57.zones.eait.uq.edu.au'  
+                    'uqcloud_zone_id': '7a6b4b57'  
                 }
             );
 

@@ -220,7 +220,7 @@
 }
 
 .design-note h3 {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     margin-top: 0;
     margin-bottom: 1rem;
 }
@@ -247,7 +247,7 @@
 }
 
 .design-note strong {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: 600;
 }
 
@@ -269,3 +269,160 @@
     display: block !important;
 }
 
+/* Community Members Grid */
+.community-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.community-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.community-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.community-card-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.community-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 3px solid var(--primary-color);
+}
+
+.community-info {
+    flex: 1;
+}
+
+.community-name {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.community-message {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.no-data {
+    text-align: center;
+    color: #666;
+    padding: 2rem;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .community-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .community-card-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Accessibility Audit Styles */
+.audit-issue {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+}
+
+.audit-issue h3 {
+    color: #856404;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.audit-details p {
+    margin: 0.75rem 0;
+    line-height: 1.6;
+}
+
+.audit-details strong {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* Update for Ethics Files */
+/* Newsletter Response Styles */
+.ethical-concern {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+}
+
+.ethical-concern h4 {
+    color: #856404;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.ethical-concern strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.recommendation-list {
+    margin: 2rem 0;
+}
+
+.recommendation-item {
+    background-color: #d4edda;
+    border-left: 4px solid #28a745;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+}
+
+.recommendation-item h4 {
+    color: #155724;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.recommendation-item strong {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.concern-response {
+    background-color: #e7f3ff;
+    border-left: 4px solid var(--primary-color);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+}
+
+.concern-response h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+}

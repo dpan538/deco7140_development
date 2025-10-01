@@ -1,42 +1,132 @@
-<!-- genai_mt_acknowledgement.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GenAI Acknowledgement - Work Phase 3</title>
+    <title>GenAI & Machine Translation Acknowledgement</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/component.css">
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/component.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
 <body>
-    <nav id="nav-mobile" aria-label="Main Navigation">
-        <ul>
-            <li><a href="index.html"><span class="icon">🏠</span></a></li>
-            <li><a href="site_map.html"><span class="icon">🗺️</span></a></li>
-            <li><a href="style_guide.html"><span class="icon">🎨</span></a></li>
-            <li><a href="ethical_response.html"><span class="icon">💚</span></a></li>
-            <li><a href="genai_mt_acknowledgement.html"><span class="icon">😊</span></a></li>
-        </ul>
-    </nav>
-
-    <nav id="nav-desktop" aria-label="Main Navigation">
+    <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="site_map.html">Site Map</a></li>
             <li><a href="style_guide.html">Style Guide</a></li>
             <li><a href="ethical_response.html">Ethics</a></li>
-            <li><a href="genai_mt_acknowledgement.html">GenAI</a></li>
+            <li><a href="genai_mt_acknowledgement.html" aria-current="page">GenAI</a></li>
         </ul>
     </nav>
 
     <main>
         <div class="container">
-            <h1 class="page-title">GenAI Acknowledgement</h1>
-        </div>
-    </main>
-</body>
-</html>
+            <!-- Hero Section -->
+            <section class="m-t-3">
+                <h1 class="page-title">Generative AI & Machine Translation Acknowledgement</h1>
+                <p class="hero-text m-y-2">
+                    This project involved strategic use of AI tools to accelerate development while maintaining 
+                    critical evaluation of all generated content. This page documents which tools were used, 
+                    how they were applied, and demonstrates critical engagement with AI outputs.
+                </p>
+            </section>
+
+            <!-- AI Tools Used -->
+            <section class="m-y-4">
+                <h2>AI Tools Used</h2>
+                
+                <div class="card m-t-3">
+                    <h3>Claude Sonnet 4.0 & 4.5 (Anthropic)</h3>
+                    <p><strong>Primary Use:</strong> Code generation, CSS architecture, accessibility guidance, and content structuring</p>
+                    <p><strong>Strengths:</strong> Strong understanding of semantic HTML, WCAG compliance, and modern CSS practices. Explaining technical concepts and providing context-aware code suggestions.</p>
+                    <p><strong>Limitations Identified:</strong> Initially suggested overly complex solutions that needed simplification. 
+                        Sometimes included features beyond project scope (like localStorage that doesn't work in Claude.ai artifacts). 
+                        Required strong and restrict constraints to match existing design system.</p>
+                </div>
+            </section>
+
+            <!-- How AI Was Used -->
+            <section class="m-y-4">
+                <h2>Critical Application of AI Tools</h2>
+
+                <div class="style-section m-t-3">
+                    <h3>1. Code Debugging</h3>
+                    <p><strong>What AI Did:</strong> Refine my previous code structure, fix CSS conflicting, some inappropriate image display,
+                        issues in image size, view and shadow effects. Fix and test JavaScript modules for API integration (GET/POST modules, form validation, dynamic content rendering).</p>
+                    <h3><strong>Critical Evaluation Applied:</strong></h3>
+                    <ul>
+                        <li>Rejected AI's first attempt at icon button CSS using complex filters that made icons invisible—debugged through iterative questioning and testing</li>
+                        <li>Challenged AI when it suggested 24px icons were sufficient; insisted on 60px for accessibility based on user research showing elderly users need larger touch targets</li>
+                        <li>Modified AI-generated form CSS to better match existing component skeleton system rather than using standalone styles</li>
+                        <li>Identified when AI provided correct code but wrong explanation, or slight error in code when AI insists it is correct. (e.g., claiming form labels were missing when they were actually present)</li>
+                    </ul>
+                </div>
+
+                <div class="style-section">
+                    <h3>2. Accessibility Implementation</h3>
+                    <p><strong>What AI Did:</strong> Suggested WCAG compliance strategies, aria-label implementations, and heading hierarchy structures.</p>
+                    <h3><strong>Critical Evaluation Applied:</strong></h3>
+                    <ul>
+                        <li>Questioned AI when it claimed heading hierarchy was wrong—manually verified that h1→h2→h3 structure was semantically correct</li>
+                        <li>Pushed back on AI's recommendation to change h3 to h2 in icon section, recognizing this would break proper hierarchy</li>
+                        <li>Identified that accessibility checker flagged false positive; discuss whether I need to change strictly based on the checker. Ask AI to rewrite audit report to accurately reflect actual vs. perceived issues</li>
+                        <li>Required AI to provide specific WCAG criterion numbers and explain user impact in terms of actual research participants (Akasha, Denisho, Fligo)</li>
+                    </ul>
+                </div>
+
+                <div class="style-section">
+                    <h3>3. Content Writing & Documentation</h3>
+                    <p><strong>What AI Did:</strong> Drafted values mapping explanations, design rationale annotations, and ethical analysis content.</p>
+                    <h3><strong>Critical Evaluation Applied:</strong></h3>
+                    <ul>
+                        <li>Corrected AI when it assumed community was "older adults only"—clarified project serves diverse ages (21-67) facing different isolation causes</li>
+                        <li>Rejected generic design principles; demanded content grounded in actual user research quotes and specific pain points</li>
+                        <li>Rewrote AI's academic tone to match professional client presentation style appropriate for CCI</li>
+                    </ul>
+                </div>
+
+                <div class="style-section">
+                    <h3>4. Design System Development</h3>
+                    <p><strong>What AI Did:</strong> Proposed CSS architecture, component patterns, and responsive images.</p>
+                    <h3><strong>Critical Evaluation Applied:</strong></h3>
+                    <ul>
+                        <li>Identified conflict between AI's suggestion to use flexbox and existing grid-based card layout—chose grid for consistency</li>
+                        <li>Modified AI's image sizing from 100% width to fixed heights (220px) with object-fit to solve alignment issues AI didn't initially address</li>
+                        <li>Requested multiple iterations on button states until visual distinction was clear enough for actual usability</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Reflection -->
+            <section class="m-y-4">
+                <h2>Reflection on AI-Assisted Development</h2>
+                
+                <div class="style2-section">
+                    <h3>What Worked Well</h3>
+                    <p>AI tools significantly accelerated initial code generation and provided multiple implementation approaches to consider. 
+                        Claude Sonnet 4.5's understanding of accessibility standards and semantic HTML was particularly valuable. 
+                        The iterative dialogue format allowed progressive refinement—I could test outputs, identify issues, 
+                        and request specific corrections rather than accepting first attempts.</p>
+
+                    <p>AI's ability to explain technical concepts (like how aria-label works, why heading hierarchy matters) 
+                        enhanced my understanding rather than just providing code to copy-paste. 
+                        This educational aspect made me a more informed developer capable of evaluating future AI suggestions critically.</p>
+                </div>
+
+                <div class="style2-section">
+                    <h3>Limitations Encountered</h3>
+                    <p>AI tools lack visual understanding—they cannot "see" layout problems that are obvious in screenshots. Issues like misaligned images or inconsistent card heights required manual identification before AI could propose solutions. This gap meant I needed strong debugging skills; AI assistance was only useful after I correctly diagnosed the problem.</p>
+                    <p>AI sometimes prioritized theoretical best practices over pragmatic constraints. It would suggest elaborate solutions when simpler approaches better fit the existing codebase. I had to repeatedly specify "follow the current system" rather than accepting AI's tendency toward over-engineering.</p>
+                    <p>Context window limitations meant AI occasionally forgot earlier decisions or constraints. I maintained separate notes about project structure, color values, and design decisions to provide consistent context across multiple conversations.</p>
+                </div>
+
+                <div class="style2-section">
+                    <h3>Professional Implications</h3>
+                    <p>This experience demonstrated that AI tools are powerful accelerators but poor decision-makers. They excel at generating options and explaining concepts but cannot determine which solution best serves project goals, user needs, or ethical principles. That judgment remains human responsibility.</p>
+                    <p>Critical evaluation skills became more important, not less, when using AI assistance. I needed to understand accessibility standards, CSS specificity, semantic HTML, and user research methodology well enough to recognize when AI outputs were incorrect, incomplete, or contextually inappropriate.</p>
+                    <p>The most valuable skill wasn't prompt engineering—it was knowing when to reject AI suggestions entirely. Recognizing that "Network or server error" indicated VPN issues rather than code problems, or that accessibility checkers can flag false positives, required domain knowledge AI cannot provide.</p>
+                </div>
+            </section>

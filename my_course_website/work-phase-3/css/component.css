@@ -272,6 +272,15 @@ article {
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
+.style2-section {
+    margin: 3rem 0;
+    padding: 2.5rem;
+    border-left: 4px solid var(--secondary-color);
+    background: linear-gradient(135deg, rgba(93, 169, 233, 0.03) 0%, rgba(93, 169, 233, 0.08) 100%);
+    border-radius: 0 12px 12px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
 .style-section h3 {
     margin-top: 0;
     font-size: 1.25rem;
@@ -571,4 +580,11 @@ img {
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     margin: 2.5rem 0;
     object-fit: contain;
+}
+
+.form-help {
+    display: block;
+    font-size: 0.875rem;
+    color: #666;
+    margin-top: 0.25rem;
 }

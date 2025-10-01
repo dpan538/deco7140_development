@@ -66,7 +66,7 @@
                     <div class="nav-item default-state">Community</div>
                     <div class="nav-item default-state">Resources</div>
                     <div class="nav-item default-state">Personal Space</div>
-                    <div class="nav-item default-state">Support</div>
+                    <div class="nav-item default-state">Search</div>
                 </div>
             </div>
 
@@ -84,8 +84,7 @@
                     <div class="mobile-nav-item default-state">Home</div>
                     <div class="mobile-nav-item default-state">Community</div>
                     <div class="mobile-nav-item default-state">Resources</div>
-                    <div class="mobile-nav-item default-state">Personal Space</div>
-                    <div class="mobile-nav-item default-state">Support</div>
+                    <div class="mobile-nav-item default-state">Account</div>
                 </div>
             </div>
 
@@ -164,7 +163,7 @@
             <div class="design-note">
                 <h3>Icon Design Specifications</h3>
                 <ul>
-                    <li>Base size: 24×24px with 2px stroke weight for optimal clarity</li>
+                    <li>Base size: 48×48px with 2px stroke weight for optimal clarity</li>
                     <li>Uniform visual style: Outline icons with rounded corners</li>
                     <li>Interactive icons feature hover states</li>
                     <li>All icons meet WCAG accessibility standards through semantic labeling and sufficient color contrast</li>
@@ -281,15 +280,15 @@
                 </p>
                 
                 <div class="button-demo">
-                    <button class="btn btn-icon" aria-label="Search">
-                        <img src="screenshots/setting.png" alt="" style="width: 36px; height: 36px;">
-                    </button>
-                    <button class="btn btn-icon" aria-label="Search">
-                        <img src="screenshots/setting.png" alt="" style="width: 48px; height: 48px;">
-                    </button>
-                    <button class="btn btn-icon" aria-label="Search">
-                        <img src="screenshots/setting.png" alt="" style="width: 60px; height: 60px;">
-                    </button>
+                    <button class="btn btn-icon" aria-label="Settings - Small size">
+                    <img src="screenshots/setting.png" alt="" style="width: 36px; height: 36px;">
+                </button>
+                <button class="btn btn-icon" aria-label="Settings - Medium size">
+                    <img src="screenshots/setting.png" alt="" style="width: 48px; height: 48px;">
+                </button>
+                <button class="btn btn-icon" aria-label="Settings - Large size">
+                    <img src="screenshots/setting.png" alt="" style="width: 60px; height: 60px;">
+                </button>
                 </div>
             </div>
 
@@ -346,8 +345,9 @@
 
                         <div class="form-group">
                             <label for="image">Profile Photo (optional)</label>
-                            <input type="file" id="image" name="image" 
-                                accept="image/*">
+                            <input type="file" id="image" name="image" accept="image/*" 
+                                aria-describedby="image-help">
+                            <span id="image-help" class="form-help">Upload a profile photo (JPG, PNG, or GIF)</span>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Join the Community</button>
