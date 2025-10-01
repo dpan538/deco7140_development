@@ -147,3 +147,11 @@ body.has-subnav {
         padding-top: 180px; /* Assuming this value is intentional for mobile layout */
     }
 }
+
+@media (max-width: 768px) {
+    .nav-desktop { display: none; }
+}
+
+@media (min-width: 769px) {
+    .nav-mobile { display: none; }
+}
