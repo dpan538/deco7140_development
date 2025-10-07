@@ -588,3 +588,31 @@ img {
     color: #666;
     margin-top: 0.25rem;
 }
+
+.typography-examples h1 {
+    font-size: 2.75rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.typography-examples h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.typography-examples h3 {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.typography-examples h1:first-child {
+    margin-top: 0;
+}
