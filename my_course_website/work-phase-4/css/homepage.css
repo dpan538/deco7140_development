@@ -1,0 +1,319 @@
+/* 
+ * HOMEPAGE.CSS
+ * Homepage-specific styles
+ * Work Phase 4 - Wellness Community Platform
+ */
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+    position: relative;
+    width: 100%;
+    margin-bottom: var(--space-16);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    margin-bottom: var(--space-8);
+}
+
+/* 16:9 aspect ratio for hero image */
+.hero-image-container::before {
+    content: "";
+    display: block;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hero text content */
+.hero-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-8);
+    line-height: 1.6;
+}
+
+.hero-cta {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        margin-bottom: var(--space-12);
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+    }
+    
+    .hero-cta .btn {
+        width: 100%;
+    }
+}
+
+/* ============================================
+   WELCOME SECTION
+   ============================================ */
+
+.welcome-section {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto var(--space-16);
+    padding: var(--space-12) var(--space-4);
+}
+
+.welcome-section h2 {
+    font-size: 2rem;
+    margin-bottom: var(--space-6);
+    color: var(--text-primary);
+}
+
+.welcome-section p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+}
+
+.welcome-section p:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .welcome-section h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* ============================================
+   FEATURES SECTION
+   ============================================ */
+
+.features-section {
+    margin-bottom: var(--space-16);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    margin-top: var(--space-8);
+}
+
+@media (min-width: 768px) {
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.feature-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: var(--space-8);
+    text-align: center;
+    box-shadow: var(--shadow-subtle);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    box-shadow: var(--shadow-card);
+    transform: translateY(-4px);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+.feature-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--space-3);
+    color: var(--text-primary);
+}
+
+.feature-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+
+.cta-section {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: var(--space-16) var(--space-4);
+    border-radius: var(--radius-md);
+    text-align: center;
+    margin: var(--space-16) 0;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: var(--space-4);
+    color: var(--white);
+}
+
+.cta-section p {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-8);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--white);
+    opacity: 0.95;
+}
+
+.cta-section .btn {
+    background-color: var(--white);
+    color: var(--primary);
+    border-color: var(--white);
+}
+
+.cta-section .btn:hover {
+    background-color: var(--hover-green);
+    border-color: var(--hover-green);
+    color: var(--white);
+}
+
+@media (min-width: 768px) {
+    .cta-section {
+        padding: var(--space-20) var(--space-8);
+    }
+    
+    .cta-section h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* ============================================
+   CONTENT CARDS SECTION
+   ============================================ */
+
+.content-cards {
+    margin-bottom: var(--space-16);
+}
+
+.content-cards h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: var(--space-8);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-8);
+    }
+}
+
+@media (min-width: 1024px) {
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ============================================
+   SECTION HEADERS
+   ============================================ */
+
+.section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-12);
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    color: var(--text-primary);
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.25rem;
+    }
+}
