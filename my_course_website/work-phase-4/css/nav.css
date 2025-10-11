@@ -1,38 +1,32 @@
 /* 
- * NAV.CSS
- * Top navigation bar with search
+ * NAV.CSS - FIXED
+ * Navigation styles
  * Work Phase 4 - Wellness Community Platform
  */
 
 /* ============================================
-   MAIN NAVIGATION
+   NAVIGATION BAR
    ============================================ */
 
 nav {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
     height: 80px;
     background-color: var(--bg-nav);
     z-index: 1000;
-    box-shadow: var(--shadow-subtle);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: var(--container-width);
     margin: 0 auto;
     height: 100%;
-    padding: 0 var(--space-4);
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-@media (min-width: 768px) {
-    .nav-container {
-        padding: 0 var(--space-8);
-    }
+    padding: 0 var(--space-2);
 }
 
 /* ============================================
@@ -41,9 +35,10 @@ nav {
 
 .nav-menu {
     display: flex;
-    align-items: center;
-    gap: var(--space-2);
     list-style: none;
+    gap: var(--space-8);
+    margin: 0;
+    padding: 0;
 }
 
 .nav-menu li {
@@ -51,31 +46,23 @@ nav {
 }
 
 .nav-menu a {
-    display: block;
-    padding: var(--space-3) var(--space-4);
     color: var(--text-on-dark);
+    text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
-    text-decoration: none;
-    border-radius: var(--radius-sm);
-    transition: all 0.3s ease;
-    white-space: nowrap;
+    transition: color 0.3s ease;
+    padding: var(--space-2) var(--space-3);
+    display: block;
 }
 
-.nav-menu a:hover {
-    background-color: var(--hover-green);
-    color: var(--white);
-}
-
+.nav-menu a:hover,
 .nav-menu a:focus {
-    outline: 2px solid var(--hover-green);
-    outline-offset: 2px;
+    color: var(--hover-green);
 }
 
-/* Active/current page indicator */
 .nav-menu a[aria-current="page"] {
-    background-color: var(--hover-green);
-    color: var(--white);
+    color: var(--hover-green);
+    font-weight: 600;
 }
 
 /* ============================================
@@ -85,7 +72,6 @@ nav {
 .nav-search {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
 }
 
 .search-container {
@@ -94,20 +80,30 @@ nav {
     align-items: center;
 }
 
+.search-icon {
+    position: absolute;
+    left: var(--space-3);
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.search-icon img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+}
+
 .search-input {
-    width: 200px;
-    padding: var(--space-2) var(--space-4);
-    padding-left: var(--space-10);
+    padding: var(--space-2) var(--space-3) var(--space-2) var(--space-10);
     background-color: var(--white);
     border: 2px solid transparent;
     border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
     color: var(--text-primary);
-    font-size: 0.9rem;
     transition: all 0.3s ease;
-}
-
-.search-input::placeholder {
-    color: var(--text-muted);
+    min-width: 200px;
 }
 
 .search-input:hover {
@@ -120,26 +116,14 @@ nav {
     box-shadow: 0 0 0 3px rgba(4, 114, 77, 0.1);
 }
 
-/* Search icon */
-.search-icon {
-    position: absolute;
-    left: var(--space-3);
-    width: 20px;
-    height: 20px;
-    pointer-events: none;
-}
-
-.search-icon img {
-    width: 100%;
-    height: 100%;
-    opacity: 0.6;
+.search-input::placeholder {
+    color: var(--text-muted);
 }
 
 /* ============================================
-   MOBILE NAVIGATION
+   MOBILE MENU TOGGLE
    ============================================ */
 
-/* Mobile menu toggle button */
 .mobile-menu-toggle {
     display: none;
     background: none;
@@ -148,95 +132,76 @@ nav {
     font-size: 1.5rem;
     cursor: pointer;
     padding: var(--space-2);
+    line-height: 1;
 }
 
+/* ============================================
+   MOBILE STYLES
+   ============================================ */
+
 @media (max-width: 768px) {
+    .nav-container {
+        padding: 0 var(--space-1);
+    }
+
     .mobile-menu-toggle {
         display: block;
     }
-    
-    .nav-container {
-        flex-wrap: wrap;
-    }
-    
+
     .nav-menu {
-        display: none;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-nav);
         flex-direction: column;
-        width: 100%;
-        padding: var(--space-4) 0;
-        gap: var(--space-2);
+        gap: 0;
+        padding: var(--space-4);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-    
+
     .nav-menu.active {
-        display: flex;
+        transform: translateX(0);
     }
-    
+
     .nav-menu li {
         width: 100%;
     }
-    
-    .nav-menu a {
-        width: 100%;
-        text-align: center;
-        padding: var(--space-4);
-    }
-    
-    /* Mobile search */
-    .nav-search {
-        width: 100%;
-        margin-top: var(--space-4);
-        order: 3;
-    }
-    
-    .search-container {
-        width: 100%;
-    }
-    
-    .search-input {
-        width: 100%;
-    }
-    
-    /* When menu is open */
-    nav.menu-open {
-        height: auto;
-        min-height: 80px;
-    }
-}
 
-/* Desktop - hide mobile elements */
-@media (min-width: 769px) {
-    .mobile-menu-toggle {
-        display: none;
+    .nav-menu a {
+        padding: var(--space-4);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
-    .nav-menu {
-        display: flex !important;
+
+    .nav-search {
+        margin-right: var(--space-2);
+    }
+
+    .search-input {
+        min-width: 150px;
+        font-size: 0.875rem;
     }
 }
 
 /* ============================================
-   NAVIGATION ACCESSIBILITY
+   SKIP TO MAIN CONTENT (ACCESSIBILITY)
    ============================================ */
 
-/* Skip to main content link (for keyboard navigation) */
 .skip-to-main {
     position: absolute;
     top: -100px;
     left: 0;
-    background: var(--primary);
+    background-color: var(--primary);
     color: var(--white);
-    padding: var(--space-3) var(--space-4);
+    padding: var(--space-3) var(--space-6);
     text-decoration: none;
-    z-index: 2000;
+    font-weight: 600;
+    z-index: 10000;
+    transition: top 0.3s;
 }
 
 .skip-to-main:focus {
     top: 0;
-}
-
-/* Focus visible for keyboard navigation */
-nav a:focus-visible,
-.search-input:focus-visible {
-    outline: 2px solid var(--hover-green);
-    outline-offset: 2px;
 }

@@ -1,11 +1,11 @@
 /* 
- * COMPONENTS.CSS
+ * COMPONENTS.CSS - FIXED
  * Buttons, cards, and reusable components
  * Work Phase 4 - Wellness Community Platform
  */
 
 /* ============================================
-   BUTTONS
+   BUTTONS - FIXED FOR ACCESSIBILITY
    ============================================ */
 
 .btn {
@@ -13,18 +13,20 @@
     align-items: center;
     justify-content: center;
     padding: var(--space-4) var(--space-8);
-    font-size: 1rem;
-    font-weight: 500;
+    font-family: 'Comfortaa', cursive;    /* Comfortaa for buttons */
+    font-size: 1.125rem;                  /* INCREASED: 18px (was 16px) */
+    font-weight: 700;                     /* Extra bold */
     text-align: center;
     text-decoration: none;
     border-radius: var(--radius-sm);
     cursor: pointer;
     transition: all 0.3s ease;
     white-space: nowrap;
-    min-height: 48px; /* Accessibility - touch target */
+    min-height: 48px;                     /* Accessibility - touch target */
     border: 2px solid var(--black);
     background-color: transparent;
     color: var(--black);
+    line-height: 1.2;
 }
 
 /* Button hover state */
@@ -42,10 +44,19 @@
     box-shadow: none;
 }
 
-/* Button focus state for keyboard navigation */
+/* Button focus state for keyboard navigation - IMPROVED ACCESSIBILITY */
 .btn:focus {
-    outline: 2px solid var(--hover-green);
-    outline-offset: 2px;
+    outline: 3px solid var(--hover-green);  /* FIXED: Thicker outline for visibility */
+    outline-offset: 3px;                     /* FIXED: More spacing */
+}
+
+.btn:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.btn:focus-visible {
+    outline: 3px solid var(--hover-green);
+    outline-offset: 3px;
 }
 
 /* Disabled button */
@@ -63,7 +74,8 @@
 /* Large button */
 .btn-lg {
     padding: var(--space-5) var(--space-10);
-    font-size: 1.125rem;
+    font-size: 1.25rem;                   /* INCREASED: 20px */
+    font-weight: 700;
     min-height: 56px;
 }
 
@@ -71,6 +83,7 @@
 .btn-sm {
     padding: var(--space-2) var(--space-4);
     font-size: 0.875rem;
+    font-weight: 700;                   /* FIXED: Maintain bold */
     min-height: 40px;
 }
 
@@ -124,8 +137,17 @@ a.card {
 }
 
 a.card:focus {
-    outline: 2px solid var(--focus-outline);
-    outline-offset: 2px;
+    outline: 3px solid var(--focus-outline);  /* FIXED: Thicker for accessibility */
+    outline-offset: 3px;
+}
+
+a.card:focus:not(:focus-visible) {
+    outline: none;
+}
+
+a.card:focus-visible {
+    outline: 3px solid var(--focus-outline);
+    outline-offset: 3px;
 }
 
 /* Card header */
@@ -141,6 +163,7 @@ a.card:focus {
 /* Card body */
 .card-body {
     margin-bottom: var(--space-4);
+    font-weight: 500;                    /* FIXED: Added for readability */
 }
 
 .card-body:last-child {
@@ -175,7 +198,7 @@ a.card:focus {
 }
 
 /* ============================================
-   FORM ELEMENTS
+   FORM ELEMENTS - IMPROVED ACCESSIBILITY
    ============================================ */
 
 /* Input fields */
@@ -191,6 +214,7 @@ select {
     width: 100%;
     padding: var(--space-3) var(--space-4);
     font-size: 1rem;
+    font-weight: 500;                    /* FIXED: Added for readability */
     line-height: 1.5;
     color: var(--text-primary);
     background-color: var(--white);
@@ -229,7 +253,8 @@ textarea {
 .form-group label {
     display: block;
     margin-bottom: var(--space-2);
-    font-weight: 500;
+    font-weight: 600;                    /* FIXED: Was 500, now 600 */
+    font-size: 1rem;                     /* FIXED: Explicit size */
     color: var(--text-primary);
 }
 
@@ -237,6 +262,7 @@ textarea {
     display: block;
     margin-top: var(--space-2);
     font-size: 0.875rem;
+    font-weight: 500;                    /* FIXED: Added */
     color: var(--text-muted);
 }
 
@@ -255,7 +281,7 @@ textarea {
     align-items: center;
     padding: var(--space-1) var(--space-3);
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;                    /* FIXED: Was 600, now 700 */
     border-radius: var(--radius-sm);
     background-color: var(--primary);
     color: var(--white);
@@ -323,6 +349,7 @@ textarea {
     border-radius: var(--radius-md);
     margin-bottom: var(--space-6);
     border-left: 4px solid;
+    font-weight: 500;                    /* FIXED: Added for readability */
 }
 
 .alert-info {
@@ -385,6 +412,7 @@ textarea {
 .figure-caption {
     margin-top: var(--space-2);
     font-size: 0.875rem;
+    font-weight: 500;                    /* FIXED: Added */
     color: var(--text-muted);
     text-align: center;
 }
@@ -405,5 +433,106 @@ textarea {
     
     .card {
         padding: var(--space-4);
+    }
+}
+
+/* ============================================
+   ACCORDION STYLES
+   ============================================ */
+
+.accordion-item {
+    margin-bottom: var(--space-4);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.accordion-header {
+    padding: var(--space-4) var(--space-6);
+    background-color: var(--bg-card);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Google Sans Code', monospace, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 650;
+}
+
+.accordion-header:hover {
+    background-color: rgba(4, 114, 77, 0.05);
+    border-color: var(--hover-green);
+}
+
+.accordion-header::after {
+    content: '+';
+    font-size: 1.5rem;
+    font-weight: 400;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: var(--space-4);
+}
+
+.accordion-item.open .accordion-header::after {
+    content: '−';
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background-color: var(--bg-card);
+}
+
+.accordion-item.open .accordion-content {
+    max-height: 2000px;
+    transition: max-height 0.5s ease-in;
+}
+
+.accordion-body {
+    padding: var(--space-6);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-top: none;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.accordion-body > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Accordion 2-column layout (aligns with first 2 cards) */
+.accordion-wrapper {
+    grid-column: span 1;  /* Takes up 2 columns in 3-column grid */
+}
+
+@media (max-width: 1024px) {
+    .accordion-wrapper {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .accordion-wrapper {
+        grid-column: span 1;
+    }
+}
+
+.accordion-right {
+    grid-column: span 1;
+}
+
+@media (max-width: 1024px) {
+    .accordion-left,
+    .accordion-right {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .accordion-left,
+    .accordion-right {
+        grid-column: span 1;
     }
 }

@@ -1,49 +1,38 @@
 /* 
- * FOOTER.CSS
- * Footer navigation and copyright
+ * FOOTER.CSS - FIXED
+ * Footer styles - MUST be at bottom
  * Work Phase 4 - Wellness Community Platform
  */
 
 /* ============================================
-   FOOTER STRUCTURE
+   FOOTER - POSITIONED AT BOTTOM
    ============================================ */
 
 footer {
     background-color: var(--bg-footer);
     color: var(--text-on-dark);
-    padding: var(--space-8) 0;
+    padding: var(--space-12) 0 var(--space-8) 0;
     margin-top: var(--space-20);
+    width: 100%;
 }
 
 .footer-container {
-    max-width: 1200px;
+    max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 var(--space-4);
+    padding: 0 var(--space-2);
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .footer-container {
-        padding: 0 var(--space-8);
+        padding: 0 var(--space-1);
     }
 }
-
-/* ============================================
-   FOOTER CONTENT
-   ============================================ */
 
 .footer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--space-6);
-}
-
-@media (min-width: 768px) {
-    .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
 }
 
 /* ============================================
@@ -58,89 +47,60 @@ footer {
     justify-content: center;
 }
 
-@media (min-width: 768px) {
-    .footer-nav {
-        justify-content: flex-start;
-    }
-}
-
 .footer-nav a {
     color: var(--text-on-dark);
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 400;
-    padding: var(--space-2) var(--space-3);
-    border-radius: var(--radius-sm);
-    transition: all 0.3s ease;
-    opacity: 0.8;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: var(--space-2);
 }
 
-.footer-nav a:hover {
-    opacity: 1;
-    background-color: var(--hover-green);
-    color: var(--white);
-}
-
+.footer-nav a:hover,
 .footer-nav a:focus {
-    outline: 2px solid var(--hover-green);
-    outline-offset: 2px;
-    opacity: 1;
+    color: var(--hover-green);
 }
 
-/* Separator between footer links */
 .footer-nav .separator {
-    color: var(--text-on-dark);
-    opacity: 0.4;
+    color: rgba(255, 255, 255, 0.4);
     user-select: none;
 }
 
 /* ============================================
-   COPYRIGHT
+   FOOTER COPYRIGHT
    ============================================ */
 
 .footer-copyright {
     text-align: center;
-    font-size: 0.875rem;
-    opacity: 0.7;
-    color: var(--text-on-dark);
 }
 
-@media (min-width: 768px) {
-    .footer-copyright {
-        text-align: right;
-    }
+.footer-copyright p {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
 }
 
 /* ============================================
-   FOOTER MOBILE ADJUSTMENTS
+   MOBILE STYLES
    ============================================ */
 
 @media (max-width: 768px) {
     footer {
-        padding: var(--space-6) 0;
+        padding: var(--space-8) 0 var(--space-6) 0;
+        margin-top: var(--space-16);
     }
-    
+
     .footer-nav {
         flex-direction: column;
-        gap: var(--space-3);
+        gap: var(--space-2);
     }
-    
+
     .footer-nav .separator {
         display: none;
     }
-    
-    .footer-nav a {
-        padding: var(--space-3) var(--space-4);
-        width: 100%;
-        text-align: center;
+
+    .footer-copyright p {
+        font-size: 0.75rem;
     }
-}
-
-/* ============================================
-   FOOTER ACCESSIBILITY
-   ============================================ */
-
-.footer-nav a:focus-visible {
-    outline: 2px solid var(--hover-green);
-    outline-offset: 2px;
 }

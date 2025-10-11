@@ -1,35 +1,35 @@
 /* 
- * LAYOUT.CSS
+ * LAYOUT.CSS - FIXED v2
  * Container, grid systems, and page layout
  * Work Phase 4 - Wellness Community Platform
  */
 
 /* ============================================
-   CONTAINER SYSTEM
+   CONTAINER SYSTEM - REDUCED TO HALF WIDTH
    ============================================ */
 
 .container {
-    max-width: 1200px;
+    max-width: var(--container-width);  /* UNIFIED: 1380px */
     margin: 0 auto;
-    padding: 0 var(--space-4);  /* 16px on mobile */
+    padding: 0 var(--space-1);  /* 4px on mobile */
     width: 100%;
 }
 
 @media (min-width: 768px) {
     .container {
-        padding: 0 var(--space-8);  /* 32px on desktop */
+        padding: 0 var(--space-2);  /* 8px on desktop */
     }
 }
 
 /* Full-width container (no max-width) */
 .container-fluid {
     width: 100%;
-    padding: 0 var(--space-4);
+    padding: 0 var(--space-1);  /* FIXED: 4px on mobile */
 }
 
 @media (min-width: 768px) {
     .container-fluid {
-        padding: 0 var(--space-8);
+        padding: 0 var(--space-2);  /* FIXED: 8px on desktop */
     }
 }
 
@@ -197,6 +197,26 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* 2.39:1 aspect ratio (Cinematic widescreen - for hero images) */
+.aspect-2-39 {
+    position: relative;
+    width: 100%;
+    padding-bottom: 41.84%; /* 1/2.39 = 0.4184 */
+    overflow: hidden;
+    border-radius: var(--radius-md);
+}
+
+.aspect-2-39 img,
+.aspect-2-39 video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* Crops the image to fill the container */
+    object-position: center;  /* Centers the crop - adjust if needed */
 }
 
 /* 4:3 aspect ratio */
