@@ -1,6 +1,6 @@
 /* 
- * NAV.CSS - FIXED
- * Navigation styles
+ * NAV.CSS - ENHANCED VISUAL DESIGN
+ * Navigation styles with improved typography and modern search bar
  * Work Phase 4 - Wellness Community Platform
  */
 
@@ -30,13 +30,13 @@ nav {
 }
 
 /* ============================================
-   NAVIGATION MENU
+   NAVIGATION MENU - ENHANCED TYPOGRAPHY
    ============================================ */
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: var(--space-8);
+    gap: var(--space-10);  /* INCREASED: 40px spacing between items */
     margin: 0;
     padding: 0;
 }
@@ -48,11 +48,13 @@ nav {
 .nav-menu a {
     color: var(--text-on-dark);
     text-decoration: none;
-    font-weight: 500;
-    font-size: 1rem;
+    font-family: 'Onest', sans-serif;  /* ADDED: Explicit font */
+    font-weight: 600;                   /* INCREASED: from 500 to 600 */
+    font-size: 1.125rem;                /* INCREASED: 18px (was 16px) */
     transition: color 0.3s ease;
     padding: var(--space-2) var(--space-3);
     display: block;
+    letter-spacing: 0.01em;            /* ADDED: Slight letter spacing */
 }
 
 .nav-menu a:hover,
@@ -62,11 +64,11 @@ nav {
 
 .nav-menu a[aria-current="page"] {
     color: var(--hover-green);
-    font-weight: 600;
+    font-weight: 700;                   /* INCREASED: Extra bold for active page */
 }
 
 /* ============================================
-   SEARCH BAR
+   SEARCH BAR - CAPSULE/PILL SHAPE
    ============================================ */
 
 .nav-search {
@@ -80,48 +82,43 @@ nav {
     align-items: center;
 }
 
+/* Hide search icon */
 .search-icon {
-    position: absolute;
-    left: var(--space-3);
-    display: flex;
-    align-items: center;
-    pointer-events: none;
-}
-
-.search-icon img {
-    width: 20px;
-    height: 20px;
-    opacity: 0.6;
+    display: none;  /* REMOVED: Icon hidden, using text placeholder only */
 }
 
 .search-input {
-    padding: var(--space-2) var(--space-3) var(--space-2) var(--space-10);
+    padding: var(--space-3) var(--space-8);
     background-color: var(--white);
     border: 2px solid transparent;
-    border-radius: var(--radius-sm);
-    font-size: 0.875rem;
+    border-radius: 200px;                 /* INCREASED: 100px for perfect pill shape */
+    font-family: 'Onest', sans-serif;
+    font-size: 0.9375rem;
     font-weight: 500;
     color: var(--text-primary);
     transition: all 0.3s ease;
-    min-width: 200px;
+    min-width: 280px;                     /* INCREASED: Wider for better pill proportion */
+    height: 50px;                         /* INCREASED: Taller for more obvious pill shape */
 }
 
 .search-input:hover {
     border-color: var(--hover-green);
+    box-shadow: 0 0 0 1px rgba(4, 114, 77, 0.1);
 }
 
 .search-input:focus {
     outline: none;
     border-color: var(--hover-green);
-    box-shadow: 0 0 0 3px rgba(4, 114, 77, 0.1);
+    box-shadow: 0 0 0 3px rgba(4, 114, 77, 0.15);  /* ENHANCED: Stronger focus ring */
 }
 
 .search-input::placeholder {
     color: var(--text-muted);
+    font-weight: 500;
 }
 
 /* ============================================
-   MOBILE MENU TOGGLE
+   MOBILE MENU TOGGLE - HIDDEN ON DESKTOP
    ============================================ */
 
 .mobile-menu-toggle {
@@ -136,7 +133,7 @@ nav {
 }
 
 /* ============================================
-   MOBILE STYLES
+   MOBILE STYLES - ONLY APPLY BELOW 768px
    ============================================ */
 
 @media (max-width: 768px) {
@@ -144,10 +141,12 @@ nav {
         padding: 0 var(--space-1);
     }
 
+    /* Show mobile menu toggle button */
     .mobile-menu-toggle {
         display: block;
     }
 
+    /* Hide navigation menu by default on mobile */
     .nav-menu {
         position: fixed;
         top: 80px;
@@ -157,11 +156,12 @@ nav {
         flex-direction: column;
         gap: 0;
         padding: var(--space-4);
-        transform: translateX(-100%);
+        transform: translateX(-100%);  /* Hidden by default on mobile */
         transition: transform 0.3s ease;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
+    /* Show menu when active class is added */
     .nav-menu.active {
         transform: translateX(0);
     }
@@ -173,6 +173,7 @@ nav {
     .nav-menu a {
         padding: var(--space-4);
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 1rem;              /* Slightly smaller on mobile */
     }
 
     .nav-search {
@@ -180,8 +181,8 @@ nav {
     }
 
     .search-input {
-        min-width: 150px;
-        font-size: 0.875rem;
+        min-width: 160px;             /* Narrower on mobile */
+        font-size: 0.875rem;          /* 14px on mobile */
     }
 }
 

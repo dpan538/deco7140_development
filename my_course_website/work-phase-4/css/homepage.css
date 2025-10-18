@@ -257,7 +257,7 @@
    ============================================ */
 
 .content-cards {
-    margin-bottom: var(--space-16);
+    margin-bottom: var(--space-8);
 }
 
 .content-cards h2 {

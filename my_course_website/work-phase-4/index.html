@@ -29,7 +29,7 @@
                     class="mobile-menu-toggle"
                     aria-label="Toggle navigation menu"
                     aria-expanded="false">
-                    ☰
+                    &#9776;
                 </button>
 
                 <!-- Navigation Menu -->
@@ -43,9 +43,6 @@
                 <!-- Search Bar -->
                 <div class="nav-search">
                     <div class="search-container">
-                        <span class="search-icon">
-                            <img src="images/search-icon.svg" alt="" />
-                        </span>
                         <input
                             type="search"
                             class="search-input"
@@ -59,7 +56,7 @@
         <!-- Main Content -->
         <main id="main-content">
             <!-- Hero Section -->
-            <section class="hero" style="margin-bottom: var(--space-8);">
+            <section class="hero" style="margin-bottom: var(--space-8)">
                 <div class="container">
                     <div class="hero-content">
                         <!-- Hero Image (2.39:1 aspect ratio) -->
@@ -69,8 +66,10 @@
                                 alt="Wellness Community" />
                         </div>
 
-                        <!-- Hero Text - INCREASED SPACING -->
-                        <div class="hero-text" style="margin-top: var(--space-12);">
+                        <!-- Hero Text -->
+                        <div
+                            class="hero-text"
+                            style="margin-top: var(--space-12)">
                             <h1 class="hero-title">Welcome to the Community</h1>
                             <p class="hero-subtitle">
                                 Connect with others, access resources, and take
@@ -87,9 +86,23 @@
                 </div>
             </section>
 
-            <!-- Content Cards Section with Accordion INSIDE -->
+            <!-- Our Approach Section -->
+            <!-- Content Cards Section -->
             <section class="content-cards">
                 <div class="container">
+                    <div class="section-header">
+                        <h1 class="section-title">Our Approach</h1>
+                        <p
+                            class="section-subtitle"
+                            style="
+                                font-family: 'Onest', sans-serif;
+                                font-size: 1.175rem;
+                                font-weight: 500;
+                            ">
+                            Supporting mental health issues through community,
+                            evidence-based resources, and peer connection
+                        </p>
+                    </div>
                     <div class="cards-grid">
                         <!-- Community Card -->
                         <a href="community.html" class="card">
@@ -138,8 +151,8 @@
                                 <p>
                                     Take wellness assessments, track your mood,
                                     set goals, and access personalized resources
-                                    tailored to your needs in your private
-                                    space.
+                                    tailored to your needs in the most private
+                                    space ever met.
                                 </p>
                             </div>
                             <div class="card-footer">
@@ -149,7 +162,7 @@
                             </div>
                         </a>
 
-                        <!-- Accordion - Spans 2 columns, aligns with first 2 cards -->
+                        <!-- First Accordion - Left (spans 2 columns) -->
                         <div class="accordion-wrapper accordion-left">
                             <div class="accordion-item">
                                 <div class="accordion-header">
@@ -158,118 +171,540 @@
                                 <div class="accordion-content">
                                     <div class="accordion-body">
                                         <blockquote>
-                                            "Whether you're looking to share experiences, learn
-                                            something new, or simply have a conversation, you'll
-                                            find a warm and welcoming space here."
+                                            "Whether you're looking to share
+                                            experiences, learn something new, or
+                                            simply have a conversation, you'll
+                                            find a warm and welcoming space
+                                            here."
                                         </blockquote>
                                         <p>
-                                            Together, we're building connections that enrich our lives.
-                                            Our platform prioritizes your privacy, respects your
-                                            identity, and provides accessible tools to support your
+                                            Together, we're building connections
+                                            that enrich our lives. Our platform
+                                            prioritizes your privacy, respects
+                                            your identity, and provides
+                                            accessible tools to support your
                                             wellness journey at your own pace.
                                         </p>
-                                        <a href="resources.html" class="btn btn-lg"
+                                        <a
+                                            href="resources.html"
+                                            class="btn btn-lg"
                                             >Explore Resources</a
                                         >
                                     </div>
                                 </div>
                             </div>
-                                    <!-- Second Accordion - Aligns with right card (Your Wellness Journey) -->
-                            <div class="accordion-wrapper accordion-right">
-                                <div class="accordion-item">
-                                    <div class="accordion-header">
-                                        How to Use Our Platform
-                                    </div>
-                                    <div class="accordion-content">
-                                        <div class="accordion-body">
-                                            <blockquote>
-                                                "Navigate your wellness journey with ease - everything you need is just a click away."
-                                            </blockquote>
-                                            <p>
-                                                <strong>Getting Started:</strong> Create your free account to access personalized features, join community discussions, and track your progress. Browse our resource library anytime without logging in.
-                                            </p>
-                                            <p>
-                                                <strong>Explore Features:</strong> Use the navigation menu to discover community forums, wellness resources, and your private space. The search bar helps you find specific topics quickly.
-                                            </p>
-                                            <p>
-                                                <strong>Stay Connected:</strong> Participate in moderated discussions, save helpful resources, and set personal wellness goals. Your privacy is protected throughout your journey.
-                                            </p>
-                                            <a href="about.html" class="btn btn-lg">Learn More</a>
-                                        </div>
+                        </div>
+
+                        <!-- Second Accordion - Right (spans 1 column) -->
+                        <div class="accordion-wrapper accordion-right">
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    How to Use Our Platform
+                                </div>
+                                <div class="accordion-content">
+                                    <div class="accordion-body">
+                                        <blockquote>
+                                            "Navigate your wellness journey with
+                                            ease - everything you need is just a
+                                            click away."
+                                        </blockquote>
+                                        <p>
+                                            <strong>Getting Started:</strong>
+                                            Create your free account to access
+                                            personalized features, join
+                                            community discussions, and track
+                                            your progress. Browse our resource
+                                            library anytime without logging in.
+                                        </p>
+                                        <p>
+                                            <strong>Explore Features:</strong>
+                                            Use the navigation menu to discover
+                                            community forums, wellness
+                                            resources, and your private space.
+                                            The search bar helps you find
+                                            specific topics quickly.
+                                        </p>
+                                        <p>
+                                            <strong>Stay Connected:</strong>
+                                            Participate in moderated
+                                            discussions, save helpful resources,
+                                            and set personal wellness goals.
+                                            Your privacy is protected throughout
+                                            your journey.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
             <!-- Call to Action Section -->
             <section class="cta-section">
                 <div class="container">
                     <h2>Start Your Journey Here</h2>
-                    <p>
-                        Join our community today and take the first step toward
-                        better mental health and wellbeing. Connect with others,
-                        access resources, and discover your path to wellness.
+                    <p
+                        style="
+                            font-family: 'Onest', sans-serif;
+                            font-size: 1.125rem;
+                            font-weight: 500;
+                        ">
+                        Join us today and take the first step toward better
+                        mental health and wellbeing. Connect with others, access
+                        resources, and discover your path to wellness.
                     </p>
                     <a href="community.html" class="btn btn-lg">Get Started</a>
                 </div>
             </section>
 
-            <!-- Statistics/Impact Section - ALL GREEN -->
+            <!-- Our Impact Section - EXPANDED WITH CHARTS -->
             <section class="content-cards m-t-16">
                 <div class="container">
                     <div class="section-header">
-                        <h2 class="section-title">Our Impact</h2>
-                        <p class="section-subtitle">
+                        <h1 class="section-title">Our Impact</h1>
+                        <p
+                            class="section-subtitle"
+                            style="
+                                font-family: 'Onest', sans-serif;
+                                font-size: 1.175rem;
+                                font-weight: 500;
+                            ">
                             Real people, real stories, meaningful connections
                         </p>
                     </div>
 
+                    <!-- Primary Statistics -->
                     <div class="cards-grid">
                         <div class="card card-compact">
-                            <h3
-                                class="text-center"
-                                style="
-                                    color: var(--accent-green);
-                                    font-size: 3rem;
-                                    margin-bottom: var(--space-2);
-                                ">
-                                1,200+
-                            </h3>
-                            <p class="text-center" style="font-weight: 500">
-                                Active Community Members
-                            </p>
+                            <div class="card-body">
+                                <h3
+                                    class="text-center"
+                                    style="
+                                        color: var(--accent-green);
+                                        font-size: 3rem;
+                                        margin-bottom: var(--space-2);
+                                    ">
+                                    1,247
+                                </h3>
+                                <p
+                                    class="text-center"
+                                    style="
+                                        font-weight: 500;
+                                        margin-bottom: var(--space-2);
+                                    ">
+                                    Active Community Members
+                                </p>
+                                <p
+                                    class="text-center"
+                                    style="
+                                        font-size: 0.875rem;
+                                        color: var(--text-muted);
+                                        margin-bottom: var(--space-3);
+                                    ">
+                                    Joined in the last 12 months
+                                </p>
+                                <div class="text-center">
+                                    <span class="badge badge-green"
+                                        >Growing Daily</span
+                                    >
+                                </div>
+                            </div>
                         </div>
 
                         <div class="card card-compact">
-                            <h3
-                                class="text-center"
-                                style="
-                                    color: var(--accent-green);
-                                    font-size: 3rem;
-                                    margin-bottom: var(--space-2);
-                                ">
-                                500+
-                            </h3>
-                            <p class="text-center" style="font-weight: 500">
-                                Mental Health Resources
-                            </p>
+                            <div class="card-body">
+                                <h3
+                                    class="text-center"
+                                    style="
+                                        color: var(--accent-green);
+                                        font-size: 3rem;
+                                        margin-bottom: var(--space-2);
+                                    ">
+                                    8,392
+                                </h3>
+                                <p
+                                    class="text-center"
+                                    style="
+                                        font-weight: 500;
+                                        margin-bottom: var(--space-2);
+                                    ">
+                                    Forum Discussions
+                                </p>
+                                <p
+                                    class="text-center"
+                                    style="
+                                        font-size: 0.875rem;
+                                        color: var(--text-muted);
+                                        margin-bottom: var(--space-3);
+                                    ">
+                                    Over 45,000 supportive replies
+                                </p>
+                                <div class="text-center">
+                                    <span class="badge">Active Engagement</span>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="card card-compact">
-                            <h3
-                                class="text-center"
-                                style="
-                                    color: var(--accent-green);
-                                    font-size: 3rem;
-                                    margin-bottom: var(--space-2);
-                                ">
-                                85%
-                            </h3>
-                            <p class="text-center" style="font-weight: 500">
-                                Report Feeling More Connected
-                            </p>
+                            <div class="card-body">
+                                <h3
+                                    class="text-center"
+                                    style="
+                                        color: var(--accent-green);
+                                        font-size: 3rem;
+                                        margin-bottom: var(--space-2);
+                                    ">
+                                    573
+                                </h3>
+                                <p
+                                    class="text-center"
+                                    style="
+                                        font-weight: 500;
+                                        margin-bottom: var(--space-2);
+                                    ">
+                                    Wellness Resources
+                                </p>
+                                <p
+                                    class="text-center"
+                                    style="
+                                        font-size: 0.875rem;
+                                        color: var(--text-muted);
+                                        margin-bottom: var(--space-3);
+                                    ">
+                                    Articles, guides, and tools
+                                </p>
+                                <div class="text-center">
+                                    <span class="badge badge-yellow"
+                                        >Updated Weekly</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member Feedback with Visual Chart -->
+                    <div style="margin-top: var(--space-16)">
+                        <h3
+                            style="
+                                text-align: center;
+                                margin-bottom: var(--space-8);
+                            ">
+                            Member Survey Results
+                        </h3>
+
+                        <div class="cards-grid">
+                            <!-- Chart Card -->
+                            <div class="card" style="grid-column: span 2">
+                                <div class="card-header">
+                                    <h3>Community Impact Survey 2024</h3>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Simple CSS Pie Chart -->
+                                    <div
+                                        style="
+                                            display: flex;
+                                            gap: var(--space-8);
+                                            align-items: center;
+                                            flex-wrap: wrap;
+                                        ">
+                                        <!-- Pie Chart Visual -->
+                                        <div style="flex: 0 0 200px">
+                                            <svg
+                                                viewBox="0 0 200 200"
+                                                style="
+                                                    width: 200px;
+                                                    height: 200px;
+                                                ">
+                                                <!-- Background circle (light gray - 13%) -->
+                                                <circle
+                                                    cx="100"
+                                                    cy="100"
+                                                    r="70"
+                                                    fill="transparent"
+                                                    stroke="#e0e0e0"
+                                                    stroke-width="40" />
+
+                                                <!-- 87% slice (green) -->
+                                                <circle
+                                                    cx="100"
+                                                    cy="100"
+                                                    r="70"
+                                                    fill="transparent"
+                                                    stroke="#04724d"
+                                                    stroke-width="40"
+                                                    stroke-dasharray="383 440"
+                                                    transform="rotate(-90 100 100)" />
+
+                                                <!-- Center white circle -->
+                                                <circle
+                                                    cx="100"
+                                                    cy="100"
+                                                    r="50"
+                                                    fill="white" />
+
+                                                <!-- Center text -->
+                                                <text
+                                                    x="100"
+                                                    y="95"
+                                                    text-anchor="middle"
+                                                    style="
+                                                        font-size: 32px;
+                                                        font-weight: 700;
+                                                        fill: #04724d;
+                                                    ">
+                                                    87%
+                                                </text>
+                                                <text
+                                                    x="100"
+                                                    y="115"
+                                                    text-anchor="middle"
+                                                    style="
+                                                        font-size: 12px;
+                                                        fill: #666;
+                                                    ">
+                                                    feel less
+                                                </text>
+                                                <text
+                                                    x="100"
+                                                    y="128"
+                                                    text-anchor="middle"
+                                                    style="
+                                                        font-size: 12px;
+                                                        fill: #666;
+                                                    ">
+                                                    isolated
+                                                </text>
+                                            </svg>
+                                        </div>
+
+                                        <!-- Legend & Details -->
+                                        <div style="flex: 1; min-width: 250px">
+                                            <p
+                                                style="
+                                                    margin-bottom: var(
+                                                        --space-4
+                                                    );
+                                                    line-height: 1.6;
+                                                ">
+                                                <strong
+                                                    style="
+                                                        color: var(
+                                                            --accent-green
+                                                        );
+                                                    "
+                                                    >87% of members</strong
+                                                >
+                                                report feeling less isolated
+                                                after participating in community
+                                                discussions for one month
+                                            </p>
+                                            <p
+                                                style="
+                                                    margin-bottom: var(
+                                                        --space-4
+                                                    );
+                                                    line-height: 1.6;
+                                                ">
+                                                <strong
+                                                    style="
+                                                        color: var(--primary);
+                                                    "
+                                                    >72% of respondents</strong
+                                                >
+                                                learned new coping strategies
+                                                through peer discussions
+                                            </p>
+                                            <p
+                                                style="
+                                                    margin-bottom: var(
+                                                        --space-4
+                                                    );
+                                                    line-height: 1.6;
+                                                ">
+                                                <strong
+                                                    style="
+                                                        color: var(
+                                                            --accent-green
+                                                        );
+                                                    "
+                                                    >94% of members</strong
+                                                >
+                                                feel safe and respected in our
+                                                community spaces
+                                            </p>
+                                            <div
+                                                style="
+                                                    margin-top: var(--space-4);
+                                                ">
+                                                <span class="badge"
+                                                    >2024 Survey</span
+                                                >
+                                                <span class="badge badge-green"
+                                                    >n=423 respondents</span
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Supporting Data Card -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>Response Rate</h3>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Simple Bar Chart -->
+                                    <div style="margin-bottom: var(--space-4)">
+                                        <div
+                                            style="
+                                                display: flex;
+                                                justify-content: space-between;
+                                                margin-bottom: var(--space-2);
+                                            ">
+                                            <span style="font-size: 0.875rem"
+                                                >Survey Participation</span
+                                            >
+                                            <span
+                                                style="
+                                                    font-weight: 700;
+                                                    color: var(--accent-green);
+                                                "
+                                                >34%</span
+                                            >
+                                        </div>
+                                        <div
+                                            style="
+                                                background: #f0f0f0;
+                                                height: 24px;
+                                                border-radius: 12px;
+                                                overflow: hidden;
+                                            ">
+                                            <div
+                                                style="
+                                                    background: var(
+                                                        --accent-green
+                                                    );
+                                                    width: 34%;
+                                                    height: 100%;
+                                                "></div>
+                                        </div>
+                                    </div>
+
+                                    <p
+                                        style="
+                                            font-size: 0.875rem;
+                                            color: var(--text-muted);
+                                            line-height: 1.6;
+                                        ">
+                                        423 out of 1,247 active members
+                                        completed the survey, providing valuable
+                                        insights into community impact and
+                                        member satisfaction.
+                                    </p>
+
+                                    <div style="margin-top: var(--space-4)">
+                                        <span class="badge badge-yellow"
+                                            >High Engagement</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Metrics Grid -->
+                    <div class="cards-grid" style="margin-top: var(--space-12)">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3
+                                    style="
+                                        color: var(--accent-green);
+                                        font-size: 2rem;
+                                        margin-bottom: var(--space-2);
+                                    ">
+                                    4.7/5.0
+                                </h3>
+                                <p
+                                    style="
+                                        font-weight: 500;
+                                        margin-bottom: var(--space-2);
+                                    ">
+                                    Average Satisfaction Rating
+                                </p>
+                                <p
+                                    style="
+                                        font-size: 0.875rem;
+                                        color: var(--text-muted);
+                                        margin-bottom: var(--space-3);
+                                    ">
+                                    Based on member feedback
+                                </p>
+                                <span class="badge badge-green"
+                                    >Highly Rated</span
+                                >
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h3
+                                    style="
+                                        color: var(--accent-green);
+                                        font-size: 2rem;
+                                        margin-bottom: var(--space-2);
+                                    ">
+                                    2.4 hours
+                                </h3>
+                                <p
+                                    style="
+                                        font-weight: 500;
+                                        margin-bottom: var(--space-2);
+                                    ">
+                                    Average Response Time
+                                </p>
+                                <p
+                                    style="
+                                        font-size: 0.875rem;
+                                        color: var(--text-muted);
+                                        margin-bottom: var(--space-3);
+                                    ">
+                                    For moderation support
+                                </p>
+                                <span class="badge">Fast Support</span>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h3
+                                    style="
+                                        color: var(--accent-green);
+                                        font-size: 2rem;
+                                        margin-bottom: var(--space-2);
+                                    ">
+                                    68%
+                                </h3>
+                                <p
+                                    style="
+                                        font-weight: 500;
+                                        margin-bottom: var(--space-2);
+                                    ">
+                                    Return Weekly
+                                </p>
+                                <p
+                                    style="
+                                        font-size: 0.875rem;
+                                        color: var(--text-muted);
+                                        margin-bottom: var(--space-3);
+                                    ">
+                                    Members actively engaged
+                                </p>
+                                <span class="badge badge-yellow"
+                                    >Regular Use</span
+                                >
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -281,22 +716,30 @@
             <div class="footer-container">
                 <div class="footer-content">
                     <!-- Footer Navigation -->
-                    <nav class="footer-nav" aria-label="Footer navigation">
+                    <div
+                        class="footer-nav"
+                        role="navigation"
+                        aria-label="Footer navigation">
                         <a href="about.html">About</a>
                         <span class="separator">|</span>
                         <a href="privacy.html">Privacy</a>
-                    </nav>
+                        <span class="separator">|</span>
+                        <a href="implementation_rationale.html">Implement</a>
+                        <span class="separator">|</span>
+                        <a href="genai_mt_acknowledgement.html">GenAI</a>
+                    </div>
 
                     <!-- Copyright -->
                     <div class="footer-copyright">
-                        <p>&copy; 2025 CCI - All design copyright reserved</p>
+                        <p>
+                            &copy; 2025 DECO7140 - All design copyright reserved
+                        </p>
                     </div>
                 </div>
             </div>
         </footer>
 
-        <!-- JavaScript - Module Import -->
+        <!-- JavaScript -->
         <script type="module" src="js/main.js"></script>
-        <script type="module" src="js/accordion.js"></script>
     </body>
 </html>

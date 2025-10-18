@@ -13,9 +13,9 @@
     align-items: center;
     justify-content: center;
     padding: var(--space-4) var(--space-8);
-    font-family: 'Comfortaa', cursive;    /* Comfortaa for buttons */
-    font-size: 1.125rem;                  /* INCREASED: 18px (was 16px) */
-    font-weight: 700;                     /* Extra bold */
+    font-family: 'Onest', sans-serif;   /* Comfortaa for buttons */
+    font-size: 1.175rem;                  /* INCREASED: 18px (was 16px) */
+    font-weight: 800;                     /* Extra bold */
     text-align: center;
     text-decoration: none;
     border-radius: var(--radius-sm);

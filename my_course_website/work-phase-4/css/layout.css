@@ -130,12 +130,12 @@
    ============================================ */
 
 section {
-    padding: var(--space-12) 0;
+    padding: var(--space-8) 0;
 }
 
 @media (min-width: 768px) {
     section {
-        padding: var(--space-16) 0;
+        padding: var(--space-12) 0;
     }
 }
 
