@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GenAI and machine translation acknowledgement for wellness community platform.">
+    <title>GenAI Acknowledgement - Wellness Community Platform</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/homepage.css">
+</head>
+<body>
+    <!-- Skip to main content (accessibility) -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                &#9776;
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="personal-space.html">Personal Space</a></li>
+            </ul>
+            <div class="nav-search">
+                <div class="search-container">
+                    <input type="search" class="search-input" placeholder="Search..." aria-label="Search the site">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" style="margin-bottom: var(--space-4);">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text" style="margin-top: var(--space-12);">
+                        <h1 class="hero-title">GenAI Acknowledgement</h1>
+                        <p class="hero-subtitle">
+                            How AI tools served as coding assistants while design decisions remained human-driven
+                        </p>
+                    </div>
+                    <svg width="60%" height="30" viewBox="0 0 1200 30" preserveAspectRatio="none" style="display: block; margin: var(--space-2) auto 0;">
+                        <path d="M0,15 Q300,5 600,15 T1200,15" fill="none" stroke="var(--primary)" stroke-width="2" opacity="0.6"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Tools Used -->
+        <section class="content-cards">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">AI Tools Used</h2>
+                    <p class="section-subtitle">
+                        Specific tools and their applications
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="card" style="grid-column: span 2;">
+                        <div class="card-header">
+                            <h3>Claude Sonnet 4.5 (Anthropic)</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Primary Use:</strong> Technical implementation, CSS architecture, HTML semantic structure, accessibility compliance, and code debugging.</p>
+                            <p style="margin-top: var(--space-3);"><strong>Why This Tool:</strong> Claude excels at explaining technical concepts, which supported my learning-first approach. Rather than copying code blindly, I asked Claude to teach me how SVG path commands work, why certain CSS properties solve specific problems, and how WCAG criteria apply to real user scenarios.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge badge-green">Code Generation</span>
+                            <span class="badge">Technical Explanations</span>
+                            <span class="badge badge-yellow">Debugging</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>ChatGPT Voice (OpenAI)</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Primary Use:</strong> Simulating user conversations and mock code interviews to test my understanding.</p>
+                            <p style="margin-top: var(--space-3);"><strong>Why This Tool:</strong> Voice interaction allowed me to practice explaining design rationale verbally, simulating client presentations or user research sessions. ChatGPT would role-play as Akasha or Denisho, helping me test whether my design decisions actually addressed their needs.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge">User Simulation</span>
+                            <span class="badge badge-green">Interview Prep</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How AI Was Used -->
+        <section class="content-cards">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Critical Application Examples</h2>
+                    <p class="section-subtitle">
+                        Specific instances of AI use and critical evaluation
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+                    <!-- Learning SVG -->
+                    <div class="accordion-wrapper" style="grid-column: span 3;">
+                        <div class="accordion-item">
+                            <div class="accordion-header">Learning SVG Through Guided Instruction</div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p><strong>Context:</strong> I wanted to add a lock icon to the Privacy page but didn't know how to create SVG graphics programmatically.</p>
+                                    
+                                    <p style="margin-top: var(--space-4);"><strong>My Approach:</strong></p>
+                                    <ul style="margin-left: var(--space-6); margin-top: var(--space-2);">
+                                        <li>Asked Claude to explain SVG coordinate systems, viewBox, and basic shapes first</li>
+                                        <li>Requested detailed breakdown of path commands (M, L, Q, C, Z) with visual examples</li>
+                                        <li>Only after understanding the fundamentals did I ask for lock icon implementation</li>
+                                        <li>Asked Claude to annotate the code explaining why each path command was chosen</li>
+                                    </ul>
+
+                                    <p style="margin-top: var(--space-4);"><strong>Critical Evaluation:</strong></p>
+                                    <ul style="margin-left: var(--space-6); margin-top: var(--space-2);">
+                                        <li>When Claude's first lock design looked too complex, I requested simplification—I needed clean lines that would render clearly at small sizes</li>
+                                        <li>Modified opacity values Claude suggested (0.3) to better balance with my existing design system</li>
+                                        <li>Asked Claude to explain corner decoration SVGs, then designed my own variation for card corners</li>
+                                    </ul>
+
+                                    <p style="margin-top: var(--space-4);"><strong>Outcome:</strong> I now understand SVG well enough to create and modify decorative elements independently. The learning process was more valuable than the code output.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Layout Problems -->
+                    <div class="accordion-wrapper" style="grid-column: span 2;">
+                        <div class="accordion-item">
+                            <div class="accordion-header">Solving Grid Layout Issues</div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p><strong>Context:</strong> Cards on the About page weren't aligning properly in the grid, and accordions needed to span different column widths.</p>
+                                    
+                                    <p style="margin-top: var(--space-4);"><strong>My Diagnosis:</strong> I identified that some cards needed to span 2 columns while others span 1, but CSS grid wasn't behaving as expected. I provided screenshots showing the misalignment.</p>
+
+                                    <p style="margin-top: var(--space-4);"><strong>Claude's Role:</strong> After I explained the desired layout (e.g., "Who We Are should span 2 columns, Non-Commercial should span 1, CCI should span 2"), Claude provided the correct `grid-column: span 2` syntax and explained how CSS Grid's auto-placement algorithm works.</p>
+
+                                    <p style="margin-top: var(--space-4);"><strong>Critical Moment:</strong> When Claude suggested using flexbox instead, I rejected this because it would conflict with the existing grid system used across all pages. Consistency mattered more than solving this one layout problem with a different approach.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spacing System -->
+                    <div class="accordion-wrapper">
+                        <div class="accordion-item">
+                            <div class="accordion-header">Spacing Helper Classes</div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p><strong>Problem:</strong> I needed consistent spacing across pages but didn't want to write inline styles everywhere.</p>
+                                    
+                                    <p style="margin-top: var(--space-4);"><strong>Request:</strong> I asked Claude to generate utility classes for my 8-point spacing system (--space-1 through --space-24).</p>
+
+                                    <p style="margin-top: var(--space-4);"><strong>Critical Evaluation:</strong> Claude generated margin and padding helpers (.m-t-4, .p-y-6, etc.). I reviewed each class to ensure it followed my existing naming conventions and didn't conflict with component-specific spacing. These utility classes significantly accelerated layout adjustments.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Implementation Page Iteration -->
+                    <div class="accordion-wrapper" style="grid-column: span 3;">
+                        <div class="accordion-item">
+                            <div class="accordion-header">Implementation Page: Design Through Dialogue</div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p><strong>Context:</strong> The Implementation Rationale page needed to explain design decisions to instructors.</p>
+                                    
+                                    <p style="margin-top: var(--space-4);"><strong>Iterative Process:</strong></p>
+                                    <ol style="margin-left: var(--space-6); margin-top: var(--space-2);">
+                                        <li style="margin-bottom: var(--space-2);"><strong>Framework Discussion:</strong> I outlined what content sections I wanted (color system, typography, components, process). Claude proposed a structure.</li>
+                                        <li style="margin-bottom: var(--space-2);"><strong>First Draft Rejection:</strong> Claude wrote comprehensive paragraphs for every section. I called this "too boring" and "too much text without visual interest."</li>
+                                        <li style="margin-bottom: var(--space-2);"><strong>Requirements Refinement:</strong> I specified: "Show actual color swatches, render typography examples in their actual fonts, display button sizes visually. Use accordions to hide detailed explanations."</li>
+                                        <li style="margin-bottom: var(--space-2);"><strong>Content Revision:</strong> I rejected the "Design Process" section that focused on my background. Requested rewrite focusing on design thinking principles instead.</li>
+                                        <li style="margin-bottom: var(--space-2);"><strong>Visual Format:</strong> I asked for the final Design Principles section to use "quote cards" format—something not used elsewhere on the site—to create visual interest.</li>
+                                    </ol>
+
+                                    <p style="margin-top: var(--space-4);"><strong>Outcome:</strong> The final page structure emerged through negotiation. Claude proposed; I critiqued; Claude revised. This back-and-forth created a page that balanced information density with visual presentation—a design decision AI couldn't make independently.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ChatGPT Voice for User Testing -->
+                    <div class="accordion-wrapper" style="grid-column: span 2;">
+                        <div class="accordion-item">
+                            <div class="accordion-header">Voice AI for User Simulation</div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p><strong>Context:</strong> I couldn't conduct live user testing with older adults, but needed to stress-test whether my design decisions addressed their needs.</p>
+                                    
+                                    <p style="margin-top: var(--space-4);"><strong>Method:</strong> Used ChatGPT voice to role-play conversations:</p>
+                                    <ul style="margin-left: var(--space-6); margin-top: var(--space-2);">
+                                        <li>"Pretend you're Akasha, 67 years old with limited tech literacy. I'll describe the interface, and you tell me what confuses you."</li>
+                                        <li>"Act as Denisho, who needs to access this site privately at work. Would you feel safe clicking the 'Join Community' button?"</li>
+                                    </ul>
+
+                                    <p style="margin-top: var(--space-4);"><strong>Value:</strong> These simulations exposed assumptions I hadn't questioned. For example, "ChatGPT-as-Akasha" asked why there were four ways to access Community—did that mean they were different features? This validated my redundancy strategy but also revealed I needed clearer labeling.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Code Interview Prep -->
+                    <div class="accordion-wrapper">
+                        <div class="accordion-item">
+                            <div class="accordion-header">Mock Code Interviews</div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p><strong>Purpose:</strong> Practice explaining my code and design decisions under pressure.</p>
+                                    
+                                    <p style="margin-top: var(--space-4);"><strong>Setup:</strong> I asked ChatGPT voice to interview me: "You're a senior developer reviewing my code. Ask me why I made specific implementation choices."</p>
+
+                                    <p style="margin-top: var(--space-4);"><strong>Example Questions ChatGPT Asked:</strong></p>
+                                    <ul style="margin-left: var(--space-6); margin-top: var(--space-2);">
+                                        <li>"Why did you choose CSS Grid over Flexbox for the card layout?"</li>
+                                        <li>"Your buttons use min-height: 48px. Where does that number come from?"</li>
+                                        <li>"I see you're using font-weight: 500 for body text instead of 400. Justify that decision."</li>
+                                    </ul>
+
+                                    <p style="margin-top: var(--space-4);"><strong>Value:</strong> Forced me to articulate the 'why' behind every decision, revealing gaps in my understanding that I then researched properly.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Limitations and Critical Evaluation -->
+        <section class="content-cards">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">AI Limitations Encountered</h2>
+                    <p class="section-subtitle">
+                        Where AI fell short and human judgment prevailed
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>No Visual Understanding</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                AI cannot "see" layout problems. When cards misaligned or spacing looked off, I had to diagnose the issue first—identify the specific CSS property causing problems—before AI could help fix it. Screenshots helped communicate problems, but AI couldn't independently identify visual design flaws.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge badge-yellow">Diagnosis Required</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Design Judgment Absence</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                AI proposed technically correct solutions that violated design principles. When I wanted to add visual interest to the Implementation page, Claude suggested adding images. But what images? Of what? AI couldn't determine that color swatches, font specimens, and button size comparisons would be more meaningful than decorative photos.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge">Lacks Context</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Over-Engineering Tendency</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Claude frequently suggested complex solutions when simple ones sufficed. I had to repeatedly specify "use existing component classes" rather than accepting AI's tendency to write new, custom CSS for every situation. Maintaining system consistency required constant vigilance.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge badge-green">Simplicity Enforced</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reflection -->
+        <section class="content-cards" style="margin-bottom: var(--space-16);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Reflection on AI-Assisted Development</h2>
+                    <p class="section-subtitle">
+                        What this experience revealed about human-AI collaboration
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="card" style="grid-column: span 3;">
+                        <div class="card-body">
+                            <p>
+                                AI tools accelerated implementation but didn't replace design thinking. Every significant decision—color palette, typography system, component hierarchy, spacing strategy—originated from my analysis of Phase 3 research and design training. AI helped me execute those decisions efficiently, explained technical concepts I didn't understand, and generated code scaffolding I could then refine.
+                            </p>
+                            <p style="margin-top: var(--space-4);">
+                                The most valuable skill wasn't prompt engineering—it was critical evaluation. Knowing when to reject AI suggestions required understanding accessibility standards, CSS architecture, semantic HTML, and user needs well enough to recognize when outputs were technically correct but contextually inappropriate. AI cannot determine whether a solution serves project goals, respects user dignity, or aligns with ethical principles. That judgment remains fundamentally human.
+                            </p>
+                            <p style="margin-top: var(--space-4);">
+                                The learning-first approach proved essential. By asking AI to explain concepts before generating code, I built understanding that made me a better evaluator of AI outputs. I didn't just get working code—I learned how to write, debug, and improve it independently. AI became a teacher and assistant, not a replacement for learning.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge badge-green">Human-Centered</span>
+                            <span class="badge">Critical Thinking</span>
+                            <span class="badge badge-yellow">Learning-Focused</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-nav" role="navigation" aria-label="Footer navigation">
+                    <a href="about.html">About</a>
+                    <span class="separator">|</span>
+                    <a href="privacy.html">Privacy</a>
+                    <span class="separator">|</span>
+                    <a href="implementation_rationale.html">Implement</a>
+                    <span class="separator">|</span>
+                    <a href="genai_mt_acknowledgement.html">GenAI</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 DECO7140 - All design copyright reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

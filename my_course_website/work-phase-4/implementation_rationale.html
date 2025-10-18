@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Design implementation rationale and decision-making process for the wellness community platform.">
+    <title>Implementation Rationale - Wellness Community Platform</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/homepage.css">
+    
+    <style>
+        /* Color Palette Display */
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-6);
+            margin: var(--space-8) 0;
+        }
+        
+        .color-swatch {
+            text-align: center;
+        }
+        
+        .color-box {
+            width: 100%;
+            height: 120px;
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-3);
+            box-shadow: var(--shadow-subtle);
+        }
+        
+        .color-box.primary { background-color: #3626a7; }
+        .color-box.accent-green { background-color: #04724d; }
+        .color-box.accent-yellow { background-color: #ffe76d; }
+        .color-box.black { background-color: #0b0a07; }
+        .color-box.cream { background-color: #fdf9f4; border: 1px solid rgba(0,0,0,0.1); }
+        
+        .color-info h4 {
+            font-size: 1rem;
+            margin-bottom: var(--space-1);
+        }
+        
+        .color-code {
+            font-family: 'Google Sans Code', monospace;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+        
+        /* Typography Display */
+        .type-showcase {
+            display: grid;
+            gap: var(--space-8);
+            margin: var(--space-8) 0;
+        }
+        
+        .type-example {
+            padding: var(--space-6);
+            background-color: var(--bg-card);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-subtle);
+        }
+        
+        .type-demo-google {
+            font-family: 'Google Sans Code', monospace;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: var(--space-3);
+        }
+        
+        .type-demo-comfortaa {
+            font-family: 'Comfortaa', cursive;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: var(--space-3);
+        }
+        
+        .type-demo-onest {
+            font-family: 'Onest', sans-serif;
+            font-size: 1.125rem;
+            font-weight: 500;
+            line-height: 1.7;
+        }
+        
+        /* Button Sizing Visual */
+        .button-showcase {
+            display: flex;
+            align-items: center;
+            gap: var(--space-6);
+            flex-wrap: wrap;
+            margin: var(--space-6) 0;
+        }
+        
+        .button-demo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-2);
+        }
+        
+        .size-label {
+            font-family: 'Google Sans Code', monospace;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* Design Principle Cards */
+        .principle-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-6);
+            margin: var(--space-8) 0;
+        }
+        
+        .principle-card {
+            padding: var(--space-8);
+            background: linear-gradient(135deg, rgba(54, 38, 167, 0.05) 0%, rgba(4, 114, 77, 0.05) 100%);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--primary);
+            box-shadow: var(--shadow-subtle);
+        }
+        
+        .principle-quote {
+            font-family: 'Comfortaa', cursive;
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-style: italic;
+            color: var(--primary);
+            margin-bottom: var(--space-4);
+            line-height: 1.4;
+        }
+        
+        .principle-text {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content (accessibility) -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                &#9776;
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="personal-space.html">Personal Space</a></li>
+            </ul>
+            <div class="nav-search">
+                <div class="search-container">
+                    <input type="search" class="search-input" placeholder="Search..." aria-label="Search the site">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" style="margin-bottom: var(--space-4);">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text" style="margin-top: var(--space-12);">
+                        <h1 class="hero-title">Implementation Rationale</h1>
+                        <p class="hero-subtitle">
+                            From research insights to visual design: How Phase 3 findings shaped Phase 4 implementation decisions.
+                        </p>
+                    </div>
+                    <svg width="60%" height="30" viewBox="0 0 1200 30" preserveAspectRatio="none" style="display: block; margin: var(--space-2) auto 0;">
+                        <path d="M0,15 Q300,5 600,15 T1200,15" fill="none" stroke="var(--primary)" stroke-width="2" opacity="0.6"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Philosophy -->
+        <section class="content-cards">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Core Design Philosophy</h2>
+                    <p class="section-subtitle">
+                        Accessibility first, aesthetics second—but never compromising visual integrity
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="card" style="grid-column: span 3;">
+                        <div class="card-body">
+                            <p>
+                                My design process prioritized readability and accessibility as foundational requirements, with aesthetic refinement following as a secondary layer. This wasn't a compromise—it was a recognition that information design, like poster design, relies on contrast, hierarchy, and visual clarity. The research from Phase 3 revealed that older adults like Akasha need interfaces that reduce cognitive load, not add to it. Every design decision emerged from this principle: make information accessible without sacrificing visual interest.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Color System -->
+        <section class="content-cards">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Color System: Restraint & Balance</h2>
+                    <p class="section-subtitle">
+                        Warm neutrals anchored by strategic accent colors
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+                    <!-- Color Palette Visual -->
+                    <div class="card" style="grid-column: span 3;">
+                        <div class="card-header">
+                            <h3>Color Palette</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="color-palette">
+                                <div class="color-swatch">
+                                    <div class="color-box primary"></div>
+                                    <div class="color-info">
+                                        <h4>Primary</h4>
+                                        <p class="color-code">#3626a7</p>
+                                        <p style="font-size: 0.875rem;">Zaffre Purple</p>
+                                    </div>
+                                </div>
+                                <div class="color-swatch">
+                                    <div class="color-box accent-green"></div>
+                                    <div class="color-info">
+                                        <h4>Accent</h4>
+                                        <p class="color-code">#04724d</p>
+                                        <p style="font-size: 0.875rem;">Spring Green</p>
+                                    </div>
+                                </div>
+                                <div class="color-swatch">
+                                    <div class="color-box accent-yellow"></div>
+                                    <div class="color-info">
+                                        <h4>Accent</h4>
+                                        <p class="color-code">#ffe76d</p>
+                                        <p style="font-size: 0.875rem;">Maize Yellow</p>
+                                    </div>
+                                </div>
+                                <div class="color-swatch">
+                                    <div class="color-box black"></div>
+                                    <div class="color-info">
+                                        <h4>Text</h4>
+                                        <p class="color-code">#0b0a07</p>
+                                        <p style="font-size: 0.875rem;">Smoky Black</p>
+                                    </div>
+                                </div>
+                                <div class="color-swatch">
+                                    <div class="color-box cream"></div>
+                                    <div class="color-info">
+                                        <h4>Background</h4>
+                                        <p class="color-code">#fdf9f4</p>
+                                        <p style="font-size: 0.875rem;">Isabelline</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion: Chromatic Restraint -->
+                    <div class="accordion-wrapper" style="grid-column: span 2;">
+                        <div class="accordion-item">
+                            <div class="accordion-header">Chromatic Restraint</div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>
+                                        Color acceptance varies dramatically across users, particularly among older adults who may have color vision changes or strong preferences. I chose a warm black-and-white foundation (smoky black #0b0a07 and isabelline off-white #fdf9f4) because neutrals provide universal accessibility while establishing a calm, approachable atmosphere. The cream background reduces eye strain compared to pure white, particularly important for extended reading sessions.
+                                    </p>
+                                    <p style="margin-top: var(--space-4);">
+                                        Accent colors—dark spring green (#04724d) and maize yellow (#ffe76d)—serve as visual punctuation, not paragraphs. Green and yellow are relatively universal colors with broad cultural acceptance. The zaffre purple (#3626a7) primary color adds creative distinction while the green and yellow accents provide chromatic balance, preventing the purple from dominating. This triadic relationship creates visual interest without overwhelming users who might find saturated color palettes distracting or stressful.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Functional Color Usage -->
+                    <div class="accordion-wrapper">
+                        <div class="accordion-item">
+                            <div class="accordion-header">Functional Color Usage</div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>
+                                        Colors serve functional roles: green indicates positive actions and trustworthy information (badges like "Active Community", hover states), yellow highlights important but non-critical information ("Private & Secure", "Updated Weekly"), and purple anchors primary navigation and focus states. This semantic consistency helps users build mental models—green means "safe to proceed", yellow means "pay attention", purple means "current location or interactive element".
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography System -->
+        <section class="content-cards">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Typography: Warmth Meets Structure</h2>
+                    <p class="section-subtitle">
+                        Three typefaces balancing readability with personality
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+                    <!-- Typography Visual Examples -->
+                    <div class="card" style="grid-column: span 3;">
+                        <div class="card-body">
+                            <div class="type-showcase">
+                                <!-- Google Sans Code Example -->
+                                <div class="type-example">
+                                    <div class="type-demo-google">Card Titles & Accordion Headers</div>
+                                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: var(--space-3);">
+                                        <strong>Google Sans Code (Monospace)</strong> — h3, accordion headers
+                                    </p>
+                                    <p>
+                                        Playful, slightly technical personality—reminiscent of American Typewriter but with contemporary digital clarity. The monospace rhythm creates predictable character width, aiding scanning and comprehension. Adds gentle structure and a hint of whimsy.
+                                    </p>
+                                </div>
+
+                                <!-- Comfortaa Example -->
+                                <div class="type-example">
+                                    <div class="type-demo-comfortaa">Section Titles & Buttons</div>
+                                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: var(--space-3);">
+                                        <strong>Comfortaa (Rounded Sans)</strong> — h1, h2, blockquotes, buttons
+                                    </p>
+                                    <p>
+                                        Rounded letterforms convey warmth, approachability, and safety. In a mental health context, sharp serifs or geometric sans-serifs can feel clinical; Comfortaa's soft curves create psychological comfort. Bold enough for emphasis but never aggressive.
+                                    </p>
+                                </div>
+
+                                <!-- Onest Example -->
+                                <div class="type-example">
+                                    <div class="type-demo-onest">
+                                        The workhorse typeface for all body text, set at font-weight 500 (medium) rather than the standard 400 (regular). On the cream background, the slightly heavier weight improves contrast and readability without appearing bold. This decision prioritizes legibility for users with declining vision—Akasha shouldn't need to squint. The 18px base size and 1.7 line-height create generous vertical rhythm, reducing eye strain during extended reading.
+                                    </div>
+                                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: var(--space-3);">
+                                        <strong>Onest (Body Text)</strong> — All body content
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Component Design -->
+        <section class="content-cards">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Component Design Decisions</h2>
+                    <p class="section-subtitle">
+                        Thoughtful choices behind cards, badges, buttons, and accordions
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+                    <!-- Button Sizing Visual -->
+                    <div class="card" style="grid-column: span 3;">
+                        <div class="card-header">
+                            <h3>Button Sizing & Touch Targets</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="button-showcase">
+                                <div class="button-demo">
+                                    <button class="btn" style="min-height: 48px;">Standard Button</button>
+                                    <span class="size-label">48×48px</span>
+                                </div>
+                                <div class="button-demo">
+                                    <button class="btn btn-lg" style="min-height: 60px;">Large Button</button>
+                                    <span class="size-label">60px height</span>
+                                </div>
+                            </div>
+                            <p style="margin-top: var(--space-4);">
+                                All interactive elements meet or exceed 48×48px touch targets, with primary buttons sized at 48×48px or 60×60px. This isn't just WCAG compliance—it's pragmatic recognition that users with arthritis, tremors, or simply larger fingers need generous hit areas. The larger sizing also ensures button text remains fully legible at a glance.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge badge-green">WCAG 2.5.5</span>
+                            <span class="badge">Accessible</span>
+                            <span class="badge badge-yellow">Generous</span>
+                        </div>
+                    </div>
+
+                    <!-- Card System -->
+                    <div class="accordion-wrapper" style="grid-column: span 2;">
+                        <div class="accordion-item">
+                            <div class="accordion-header">Card System as Clickable Links</div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>
+                                        Entire cards are wrapped in anchor tags, making the full card surface clickable rather than limiting interaction to a single button. This decision emerged from recognizing unpredictable user behavior—some users will click the headline, others the description, others will aim for a button that may not exist. By making the entire card interactive, I maximize the probability of successful navigation while maintaining clear visual hierarchy through hover states and focus indicators.
+                                    </p>
+                                    <p style="margin-top: var(--space-4);">
+                                        This approach also reduces decision fatigue. Users don't need to locate a specific "Learn More" button; anywhere they click on the card advances them toward their goal. For users like Akasha with limited tech literacy, this forgiving interaction model prevents the frustration of "clicking the wrong place" and having nothing happen.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Badge System -->
+                    <div class="accordion-wrapper">
+                        <div class="accordion-item">
+                            <div class="accordion-header">Badge System</div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>
+                                        Badges distill information into scannable labels—"Active Community", "Evidence-Based", "Private & Secure". This serves users who don't want to read full paragraphs but need quick confirmation of key attributes. The badge system does information subtraction, removing cognitive load while preserving essential meaning. Color-coding (green for positive/safe, yellow for attention/important, purple for general categorization) creates visual patterns that aid recognition across pages.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Pattern -->
+                    <div class="accordion-wrapper" style="grid-column: span 3;">
+                        <div class="accordion-item">
+                            <div class="accordion-header">Accordion Pattern</div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>
+                                        Accordions progressively disclose information, giving users control over their experience. Rather than forcing users to consume all content immediately (information overload), accordions let them choose what to explore. This respects cognitive capacity and attention span—particularly important for older adults who may feel overwhelmed by dense pages. Accordions also preserve visual purity; the closed state maintains clean, breathable layouts while the open state provides depth for engaged users.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Information Architecture & Redundancy -->
+        <section class="content-cards">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Information Architecture & Strategic Redundancy</h2>
+                    <p class="section-subtitle">
+                        Multiple pathways ensure users find what they need
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+                    <!-- Navigation Structure -->
+                    <div class="accordion-wrapper" style="grid-column: span 2;">
+                        <div class="accordion-item">
+                            <div class="accordion-header">Navigation Structure</div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>
+                                        Primary functions live in the top navigation (Community, Resources, Personal Space), while meta-informational pages reside in the footer (About, Privacy, Implementation). This separation creates a clear mental model: the top navigation answers "What can I do?", while the footer answers "Who are you and how does this work?". This purely functional approach emerged from my undergraduate design research experience in New York and graduate IT systems training—merging design thinking with information systems architecture.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modular CSS -->
+                    <div class="accordion-wrapper">
+                        <div class="accordion-item">
+                            <div class="accordion-header">Modular CSS Architecture</div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>
+                                        The CSS is deliberately split into semantic modules: nav.css, footer.css, components.css, base.css, layout.css. This modular approach enables component reusability and maintainability. Each file serves a distinct purpose—base.css establishes the design system (colors, typography, spacing), components.css defines reusable UI elements (buttons, cards, badges), and page-specific files handle unique layouts.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Strategic Redundancy -->
+                    <div class="card" style="grid-column: span 3;">
+                        <div class="card-header">
+                            <h3>Unpredictable User Behavior</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Users don't follow designer-prescribed paths. On the homepage, users can access the Community feature through: (1) top navigation menu "Community", (2) hero section "Join the Community" button, (3) "Community Discussions" card in the approach section, (4) "Get Started" button in the CTA section. Each entry point serves users with different browsing patterns. This isn't lazy design—it's intentional redundancy that ensures critical functions remain accessible regardless of how users navigate.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge badge-green">Multiple Pathways</span>
+                            <span class="badge">Forgiving</span>
+                            <span class="badge badge-yellow">User-Centered</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visual Interest & Spacing -->
+        <section class="content-cards">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Visual Balance & Rhythm</h2>
+                    <p class="section-subtitle">
+                        SVG decorations and spacing systems create hierarchy
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+                    <!-- SVG Decorations -->
+                    <div class="accordion-wrapper" style="grid-column: span 2;">
+                        <div class="accordion-item">
+                            <div class="accordion-header">SVG Decorations</div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>
+                                        Pure text and utilitarian interfaces risk becoming monotonous, potentially causing users to disengage. However, excessive decoration creates visual noise. SVG decorations—wave dividers, lock icons, corner embellishments—strike a balance. They add personality and visual rhythm without demanding attention or conveying functional meaning that users might misinterpret.
+                                    </p>
+                                    <p style="margin-top: var(--space-4);">
+                                        On the About page, subtle wave dividers create sectional breaks. On the Privacy page, the lock icon immediately communicates security through universal symbolism. These elements use the primary color with reduced opacity (0.3-0.6), ensuring they remain decorative rather than dominant.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spacing System -->
+                    <div class="accordion-wrapper">
+                        <div class="accordion-item">
+                            <div class="accordion-header">Spacing System</div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>
+                                        The spacing system uses an 8-point scale (--space-1: 4px through --space-24: 96px), creating visual consistency and rhythm. However, I don't follow it dogmatically. Information design is about grouping—certain elements need to be visually clustered to signal relationships. When standardized values would create awkward gaps, I adjust. The system provides guardrails, not prison walls.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Privacy-First Technical Decisions -->
+                    <div class="accordion-wrapper" style="grid-column: span 3;">
+                        <div class="accordion-item">
+                            <div class="accordion-header">Privacy-First Technical Decisions</div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p>
+                                        This platform deliberately avoids common web practices like analytics tracking, geolocation APIs, and third-party integrations. Users like Denisho face workplace discrimination; Fligo risks family rejection; Akasha is vulnerable to scams. For them, privacy isn't convenience—it's safety. We don't collect location data, even though it could personalize resources. We don't embed analytics scripts. We don't use localStorage or persistent cookies. Each of these technologies represents a potential vulnerability. Trust is built through restraint—by not collecting data we don't absolutely need, we signal respect for user autonomy and safety.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Design Principles -->
+        <section class="content-cards" style="margin-bottom: var(--space-16);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Design Principles</h2>
+                    <p class="section-subtitle">
+                        Core insights that guided every decision
+                    </p>
+                </div>
+
+                <div class="principle-cards">
+                    <div class="principle-card">
+                        <div class="principle-quote">
+                            "Design isn't decoration—it's information architecture."
+                        </div>
+                        <p class="principle-text">
+                            Color, typography, spacing, and components form relationships that clarify or obscure meaning. Badges transform complexity into visual tokens. Consistency turns elements from decoration into signal.
+                        </p>
+                    </div>
+
+                    <div class="principle-card">
+                        <div class="principle-quote">
+                            "The hardest skill is knowing what to remove."
+                        </div>
+                        <p class="principle-text">
+                            Restraint isn't minimalism—it's strategic editing. SVG decorations add breathing room but stay opacity-reduced. Visual interest serves user tasks, not ego.
+                        </p>
+                    </div>
+
+                    <div class="principle-card">
+                        <div class="principle-quote">
+                            "Systems serve content, not vice versa."
+                        </div>
+                        <p class="principle-text">
+                            The spacing scale creates rhythm 90% of the time. The other 10% requires judgment. Good systems have clear rules and the wisdom to break them when necessary.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-nav" role="navigation" aria-label="Footer navigation">
+                    <a href="about.html">About</a>
+                    <span class="separator">|</span>
+                    <a href="privacy.html">Privacy</a>
+                    <span class="separator">|</span>
+                    <a href="implementation_rationale.html">Implement</a>
+                    <span class="separator">|</span>
+                    <a href="genai_mt_acknowledgement.html">GenAI</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 DECO7140 - All design copyright reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
