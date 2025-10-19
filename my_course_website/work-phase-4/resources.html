@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mental health resources, articles, and educational content for your wellness journey.">
+    <meta name="description" content="Browse wellness activities and mental health resources.">
     <title>Resources - Wellness Community Platform</title>
-    
+
     <!-- CSS Files -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
@@ -13,41 +13,28 @@
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/components.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/resources.css">
 </head>
 <body>
-    <!-- Skip to main content -->
+    <!-- Skip to main content (accessibility) -->
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
 
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <!-- Mobile menu toggle -->
             <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                ☰
+                &#9776;
             </button>
-
-            <!-- Navigation Menu -->
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="community.html">Community</a></li>
                 <li><a href="resources.html" aria-current="page">Resources</a></li>
-                <li><a href="personal_space.html">Personal Space</a></li>
+                <li><a href="personal-space.html">Personal Space</a></li>
             </ul>
-
-            <!-- Search Bar -->
             <div class="nav-search">
                 <div class="search-container">
-                    <span class="search-icon">
-                        <img src="images/search-icon.svg" alt="">
-                    </span>
-                    <input 
-                        type="search" 
-                        class="search-input" 
-                        placeholder="Search..." 
-                        aria-label="Search the site">
+                    <input type="search" class="search-input" placeholder="Search..." aria-label="Search the site">
                 </div>
             </div>
         </div>
@@ -55,34 +42,282 @@
 
     <!-- Main Content -->
     <main id="main-content">
-        <div class="container">
-            <section class="m-t-8">
-                <h1>Resources</h1>
-                <p class="m-t-4">Mental Health Information and Educational Content</p>
-            </section>
+        <!-- Hero Section -->
+        <section class="hero" style="margin-bottom: var(--space-4);">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text" style="margin-top: var(--space-12);">
+                        <h1 class="hero-title">Wellness Resources</h1>
+                        <p class="hero-subtitle">
+                            Discover activities, articles, guides, and tools to support your mental health journey
+                        </p>
+                    </div>
+                    <svg width="60%" height="30" viewBox="0 0 1200 30" preserveAspectRatio="none" style="display: block; margin: var(--space-2) auto 0;">
+                        <path d="M0,15 Q300,5 600,15 T1200,15" fill="none" stroke="var(--primary)" stroke-width="2" opacity="0.6"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
 
-            <!-- Content will be added in future development -->
-        </div>
+        <!-- Activities Section -->
+        <section class="content-cards" style="margin-top: var(--space-8);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Upcoming Activities</h2>
+                    <p class="section-subtitle">
+                        Join community events, workshops, and support groups
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+                    <!-- Activity 1 - Clickable -->
+                    <a href="activity.html" class="card activity-card">
+                        <div class="activity-image-wrapper">
+                            <img src="images/activity1.jpg" alt="Mindfulness Workshop">
+                        </div>
+                        <div class="card-header">
+                            <h3>Mindfulness & Meditation Workshop</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="activity-date">March 15, 2025</p>
+                            <p class="activity-time">6:00 PM - 8:00 PM</p>
+                            <p class="activity-location">Community Centre, Melbourne CBD</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge badge-green">Free Event</span>
+                            <span class="badge">In-Person</span>
+                        </div>
+                    </a>
+
+                    <!-- Activity 2 -->
+                    <div class="card activity-card">
+                        <div class="activity-image-wrapper">
+                            <img src="images/activity2.jpg" alt="Peer Support Group">
+                        </div>
+                        <div class="card-header">
+                            <h3>Peer Support Circle</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="activity-date">March 18, 2025</p>
+                            <p class="activity-time">7:00 PM - 9:00 PM</p>
+                            <p class="activity-location">Online via Zoom</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge badge-green">Free Event</span>
+                            <span class="badge badge-yellow">Online</span>
+                        </div>
+                    </div>
+
+                    <!-- Activity 3 -->
+                    <div class="card activity-card">
+                        <div class="activity-image-wrapper">
+                            <img src="images/activity3.jpg" alt="Art Therapy">
+                        </div>
+                        <div class="card-header">
+                            <h3>Creative Art Therapy Session</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="activity-date">March 22, 2025</p>
+                            <p class="activity-time">10:00 AM - 12:00 PM</p>
+                            <p class="activity-location">Wellness Hub, Richmond</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge">Registration Required</span>
+                            <span class="badge">In-Person</span>
+                        </div>
+                    </div>
+
+                    <!-- Activity 4 -->
+                    <div class="card activity-card">
+                        <div class="activity-image-wrapper">
+                            <img src="images/activity4.jpg" alt="Yoga Class">
+                        </div>
+                        <div class="card-header">
+                            <h3>Gentle Yoga for Wellbeing</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="activity-date">March 25, 2025</p>
+                            <p class="activity-time">5:30 PM - 6:30 PM</p>
+                            <p class="activity-location">Fitzroy Gardens</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge badge-green">Free Event</span>
+                            <span class="badge">In-Person</span>
+                        </div>
+                    </div>
+
+                    <!-- Activity 5 -->
+                    <div class="card activity-card">
+                        <div class="activity-image-wrapper">
+                            <img src="images/activity5.jpg" alt="Mental Health Talk">
+                        </div>
+                        <div class="card-header">
+                            <h3>Understanding Anxiety: Expert Talk</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="activity-date">March 28, 2025</p>
+                            <p class="activity-time">6:00 PM - 7:30 PM</p>
+                            <p class="activity-location">Online Webinar</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge badge-green">Free Event</span>
+                            <span class="badge badge-yellow">Online</span>
+                        </div>
+                    </div>
+
+                    <!-- Activity 6 -->
+                    <div class="card activity-card">
+                        <div class="activity-image-wrapper">
+                            <img src="images/activity6.jpg" alt="Walking Group">
+                        </div>
+                        <div class="card-header">
+                            <h3>Social Walking Group</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="activity-date">Every Saturday</p>
+                            <p class="activity-time">9:00 AM - 10:30 AM</p>
+                            <p class="activity-location">Various Parks (Check Schedule)</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge badge-green">Free Event</span>
+                            <span class="badge">In-Person</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles Section -->
+        <section class="content-cards" style="margin-top: var(--space-16);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Articles & Guides</h2>
+                    <p class="section-subtitle">
+                        Browse 573 evidence-based resources on mental health and wellbeing
+                    </p>
+                </div>
+
+                <div class="articles-grid">
+                    <!-- Article 1 - Clickable -->
+                    <a href="article.html" class="card article-card">
+                        <div class="article-image">
+                            <img src="images/article1.jpg" alt="Understanding Depression">
+                        </div>
+                        <div class="article-info">
+                            <h3>Understanding Depression: Signs, Symptoms, and Support</h3>
+                            <p class="article-meta">Mental Health · 8 min read</p>
+                            <div class="article-badges">
+                                <span class="badge badge-green">Mental Health</span>
+                                <span class="badge">Evidence-Based</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Article 2 -->
+                    <div class="card article-card">
+                        <div class="article-image">
+                            <img src="images/article2.jpg" alt="Sleep and Mental Health">
+                        </div>
+                        <div class="article-info">
+                            <h3>The Sleep-Mental Health Connection: A Practical Guide</h3>
+                            <p class="article-meta">Wellness Guide · 6 min read</p>
+                            <div class="article-badges">
+                                <span class="badge">Guide</span>
+                                <span class="badge badge-yellow">Self-Care</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article 3 -->
+                    <div class="card article-card">
+                        <div class="article-image">
+                            <img src="images/article3.jpg" alt="Stress Management Tools">
+                        </div>
+                        <div class="article-info">
+                            <h3>Five Evidence-Based Stress Management Techniques</h3>
+                            <p class="article-meta">Tools & Techniques · 5 min read</p>
+                            <div class="article-badges">
+                                <span class="badge badge-green">Tool</span>
+                                <span class="badge">Practical</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article 4 -->
+                    <div class="card article-card">
+                        <div class="article-image">
+                            <img src="images/article4.jpg" alt="Social Connection">
+                        </div>
+                        <div class="article-info">
+                            <h3>Building Social Connections After Isolation</h3>
+                            <p class="article-meta">Community Building · 7 min read</p>
+                            <div class="article-badges">
+                                <span class="badge">Community</span>
+                                <span class="badge badge-yellow">Guide</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article 5 -->
+                    <div class="card article-card">
+                        <div class="article-image">
+                            <img src="images/article5.jpg" alt="Neuroscience of Mindfulness">
+                        </div>
+                        <div class="article-info">
+                            <h3>The Neuroscience Behind Mindfulness and Meditation</h3>
+                            <p class="article-meta">Research · 10 min read</p>
+                            <div class="article-badges">
+                                <span class="badge badge-green">Research</span>
+                                <span class="badge">Neuroscience</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article 6 -->
+                    <div class="card article-card">
+                        <div class="article-image">
+                            <img src="images/article6.jpg" alt="Cognitive Behavioral Therapy">
+                        </div>
+                        <div class="article-info">
+                            <h3>Introduction to Cognitive Behavioral Therapy (CBT)</h3>
+                            <p class="article-meta">Therapy Guide · 9 min read</p>
+                            <div class="article-badges">
+                                <span class="badge">Guide</span>
+                                <span class="badge badge-yellow">Therapy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="btn btn-sm" disabled>Previous</button>
+                    <span class="page-info">Page 1 of 96</span>
+                    <button class="btn btn-sm">Next</button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-content">
-                <!-- Footer Navigation -->
-                <nav class="footer-nav" aria-label="Footer navigation">
+                <div class="footer-nav" role="navigation" aria-label="Footer navigation">
                     <a href="about.html">About</a>
                     <span class="separator">|</span>
                     <a href="privacy.html">Privacy</a>
-                </nav>
-
-                <!-- Copyright -->
+                    <span class="separator">|</span>
+                    <a href="implementation_rationale.html">Implement</a>
+                    <span class="separator">|</span>
+                    <a href="genai_mt_acknowledgement.html">GenAI</a>
+                </div>
                 <div class="footer-copyright">
-                    <p>&copy; 2025 CCI - All design copyright reserved</p>
+                    <p>&copy; 2025 DECO7140 - All design copyright reserved</p>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
