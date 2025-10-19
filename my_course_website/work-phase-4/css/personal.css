@@ -1,0 +1,267 @@
+/* 
+ * PERSONAL.CSS
+ * Personal Space page specific styles
+ * Work Phase 4 - Wellness Community Platform
+ */
+
+/* ============================================
+   PERSONAL SPACE GRID LAYOUT
+   ============================================ */
+
+.personal-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-8);
+    margin-top: var(--space-8);
+}
+
+@media (max-width: 1024px) {
+    .personal-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .personal-sidebar {
+        margin-top: var(--space-8);
+    }
+}
+
+/* ============================================
+   FORM PREFERENCES
+   ============================================ */
+
+.preference-group {
+    margin-bottom: var(--space-6);
+}
+
+.preference-group:last-child {
+    margin-bottom: 0;
+}
+
+.preference-label {
+    display: block;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: var(--space-3);
+    color: var(--text-primary);
+}
+
+/* ============================================
+   FONT SIZE SELECTOR
+   ============================================ */
+
+.font-size-selector {
+    display: flex;
+    gap: var(--space-3);
+}
+
+.size-option {
+    flex: 1;
+    padding: var(--space-3) var(--space-4);
+    background-color: var(--white);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-sm);
+    font-family: 'Onest', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.size-option:hover {
+    border-color: var(--hover-green);
+    background-color: rgba(4, 114, 77, 0.05);
+}
+
+.size-option.active {
+    background-color: var(--accent-green);
+    border-color: var(--accent-green);
+    color: var(--white);
+}
+
+.size-option:focus {
+    outline: 3px solid var(--focus-outline);
+    outline-offset: 2px;
+}
+
+/* ============================================
+   SURVEY COMPONENTS
+   ============================================ */
+
+.survey-question {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: var(--space-4);
+    color: var(--text-primary);
+}
+
+.survey-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.survey-option {
+    display: flex;
+    align-items: center;
+    padding: var(--space-3) var(--space-4);
+    background-color: var(--white);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.survey-option:hover {
+    border-color: var(--hover-green);
+    background-color: rgba(4, 114, 77, 0.05);
+}
+
+.survey-option input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: var(--space-3);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.survey-option span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.survey-option:has(input:checked) {
+    border-color: var(--accent-green);
+    background-color: rgba(4, 114, 77, 0.1);
+}
+
+.survey-thanks {
+    text-align: center;
+    padding: var(--space-6);
+}
+
+/* ============================================
+   CONTRAST SLIDER
+   ============================================ */
+
+.contrast-slider-container {
+    margin: var(--space-4) 0;
+}
+
+.contrast-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: linear-gradient(to right, 
+        rgba(0, 0, 0, 0.1) 0%, 
+        var(--accent-green) 50%, 
+        var(--primary) 100%);
+    outline: none;
+    cursor: pointer;
+}
+
+.contrast-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 3px solid var(--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contrast-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 3px solid var(--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contrast-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    background: var(--hover-green);
+}
+
+.contrast-slider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    background: var(--hover-green);
+}
+
+.slider-value {
+    display: inline-block;
+    font-family: 'Google Sans Code', monospace;
+}
+
+/* ============================================
+   CHECKBOX OPTIONS
+   ============================================ */
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.checkbox-option:last-child {
+    border-bottom: none;
+}
+
+.checkbox-option input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: var(--space-3);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-option span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.checkbox-option:hover {
+    background-color: rgba(4, 114, 77, 0.03);
+}
+
+/* ============================================
+   TESTIMONIAL EXAMPLE
+   ============================================ */
+
+.testimonial-example {
+    background-color: rgba(54, 38, 167, 0.03);
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .font-size-selector {
+        flex-direction: column;
+    }
+    
+    .size-option {
+        width: 100%;
+    }
+    
+    .personal-grid {
+        gap: var(--space-6);
+    }
+}
