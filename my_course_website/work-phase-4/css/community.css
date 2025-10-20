@@ -16,6 +16,7 @@
 
 .discussion-card {
     padding: var(--space-4);
+    margin-bottom: var(--space-4);
 }
 
 .discussion-card h3 {
