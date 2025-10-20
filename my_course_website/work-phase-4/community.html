@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join our wellness community - Connect with others through discussions and group chats.">
+    <meta name="description" content="Join our wellness community discussions and group chats for mental health support.">
     <title>Community - Wellness Community Platform</title>
-    
+
     <!-- CSS Files -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/components.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/personal.css">
+    <link rel="stylesheet" href="css/community.css">
 </head>
 <body>
     <!-- Skip to main content -->
@@ -24,30 +24,18 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <!-- Mobile menu toggle -->
             <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                ☰
+                &#9776;
             </button>
-
-            <!-- Navigation Menu -->
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="community.html" aria-current="page">Community</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="personal_space.html">Personal Space</a></li>
             </ul>
-
-            <!-- Search Bar -->
             <div class="nav-search">
                 <div class="search-container">
-                    <span class="search-icon">
-                        <img src="images/search-icon.svg" alt="">
-                    </span>
-                    <input 
-                        type="search" 
-                        class="search-input" 
-                        placeholder="Search..." 
-                        aria-label="Search the site">
+                    <input type="search" class="search-input" placeholder="Search..." aria-label="Search the site">
                 </div>
             </div>
         </div>
@@ -55,56 +43,303 @@
 
     <!-- Main Content -->
     <main id="main-content">
-        <div class="container">
-            <section class="m-t-8">
-                <h1>Community</h1>
-                <p class="m-t-4">Mental Health and Wellness Community</p>
-            </section>
+        <!-- Hero Section -->
+        <section class="hero" style="margin-bottom: var(--space-4);">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text" style="margin-top: var(--space-12);">
+                        <h1 class="hero-title">Community</h1>
+                        <p class="hero-subtitle">
+                            Connect with others, share experiences, and find support in our community
+                        </p>
+                    </div>
+                    <svg width="60%" height="30" viewBox="0 0 1200 30" preserveAspectRatio="none" style="display: block; margin: var(--space-2) auto 0;">
+                        <path d="M0,15 Q300,5 600,15 T1200,15" fill="none" stroke="var(--primary)" stroke-width="2" opacity="0.6"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
 
-            <!-- Content will be added in future development -->
-        </div>
+        <!-- Community Grid -->
+        <section class="content-cards" style="margin-top: var(--space-8);">
+            <div class="container">
+                <div class="personal-grid">
+                    <!-- Left Column - Discussions -->
+                    <div class="discussions-column">
+                        <div class="section-header">
+                            <h2 class="section-title">Discussions</h2>
+                        </div>
+
+                        <!-- Search Bar -->
+                        <div class="nav-search" style="margin-bottom: var(--space-6);">
+                            <div class="search-container">
+                                <input type="search" class="search-input" placeholder="Search discussions..." aria-label="Search discussions">
+                            </div>
+                        </div>
+
+                        <!-- Discussion List -->
+                        <div class="discussion-list">
+                            <!-- Discussion 1 -->
+                            <div class="card discussion-card">
+                                <div class="card-header">
+                                    <div style="margin-bottom: var(--space-2);">
+                                        <span class="badge badge-green">Anxiety</span>
+                                        <span class="badge">Support</span>
+                                    </div>
+                                    <h3>Managing Social Anxiety in Everyday Life</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p class="discussion-meta">by @sarah_m · 2 hours ago</p>
+                                    <p class="discussion-stats">💬 34 replies · Latest reply 15 min ago</p>
+                                </div>
+                            </div>
+
+                            <!-- Discussion 2 -->
+                            <div class="card discussion-card">
+                                <div class="card-header">
+                                    <div style="margin-bottom: var(--space-2);">
+                                        <span class="badge">Sleep</span>
+                                        <span class="badge badge-yellow">Tips</span>
+                                    </div>
+                                    <h3>Improving Sleep Quality When Dealing with Stress</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p class="discussion-meta">by @alex_chen · 5 hours ago</p>
+                                    <p class="discussion-stats">💬 28 replies · Latest reply 1 hour ago</p>
+                                </div>
+                            </div>
+
+                            <!-- Discussion 3 - Clickable -->
+                            <a href="discussion.html" class="card discussion-card">
+                                <div class="card-header">
+                                    <div style="margin-bottom: var(--space-2);">
+                                        <span class="badge badge-green">Depression</span>
+                                        <span class="badge">Coping</span>
+                                    </div>
+                                    <h3>Finding Motivation During Tough Times</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p class="discussion-meta">by @james_w · 1 day ago</p>
+                                    <p class="discussion-stats">💬 52 replies · Latest reply 30 min ago</p>
+                                </div>
+                            </a>
+
+                            <!-- Discussion 4 -->
+                            <div class="card discussion-card">
+                                <div class="card-header">
+                                    <div style="margin-bottom: var(--space-2);">
+                                        <span class="badge">Parenting</span>
+                                        <span class="badge badge-yellow">Advice</span>
+                                    </div>
+                                    <h3>Supporting Children's Mental Health at Home</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p class="discussion-meta">by @parent_voice · 1 day ago</p>
+                                    <p class="discussion-stats">💬 19 replies · Latest reply 2 hours ago</p>
+                                </div>
+                            </div>
+
+                            <!-- Discussion 5 -->
+                            <div class="card discussion-card">
+                                <div class="card-header">
+                                    <div style="margin-bottom: var(--space-2);">
+                                        <span class="badge badge-green">Mindfulness</span>
+                                        <span class="badge">Practice</span>
+                                    </div>
+                                    <h3>Daily Meditation Techniques for Beginners</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p class="discussion-meta">by @zen_journey · 2 days ago</p>
+                                    <p class="discussion-stats">💬 45 replies · Latest reply 3 hours ago</p>
+                                </div>
+                            </div>
+
+                            <!-- Discussion 6 -->
+                            <div class="card discussion-card">
+                                <div class="card-header">
+                                    <div style="margin-bottom: var(--space-2);">
+                                        <span class="badge">Work</span>
+                                        <span class="badge badge-yellow">Burnout</span>
+                                    </div>
+                                    <h3>Recognizing and Preventing Workplace Burnout</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p class="discussion-meta">by @career_balance · 2 days ago</p>
+                                    <p class="discussion-stats">💬 67 replies · Latest reply 4 hours ago</p>
+                                </div>
+                            </div>
+
+                            <!-- Discussion 7 -->
+                            <div class="card discussion-card">
+                                <div class="card-header">
+                                    <div style="margin-bottom: var(--space-2);">
+                                        <span class="badge badge-green">LGBTQ+</span>
+                                        <span class="badge">Community</span>
+                                    </div>
+                                    <h3>Finding Affirming Mental Health Support</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p class="discussion-meta">by @pride_wellness · 3 days ago</p>
+                                    <p class="discussion-stats">💬 23 replies · Latest reply 5 hours ago</p>
+                                </div>
+                            </div>
+
+                            <!-- Discussion 8 -->
+                            <div class="card discussion-card">
+                                <div class="card-header">
+                                    <div style="margin-bottom: var(--space-2);">
+                                        <span class="badge">Relationships</span>
+                                        <span class="badge badge-yellow">Communication</span>
+                                    </div>
+                                    <h3>Healthy Communication in Close Relationships</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p class="discussion-meta">by @together_strong · 3 days ago</p>
+                                    <p class="discussion-stats">💬 41 replies · Latest reply 6 hours ago</p>
+                                </div>
+                            </div>
+
+                            <!-- Discussion 9 -->
+                            <div class="card discussion-card">
+                                <div class="card-header">
+                                    <div style="margin-bottom: var(--space-2);">
+                                        <span class="badge badge-green">Young Adults</span>
+                                        <span class="badge">Transitions</span>
+                                    </div>
+                                    <h3>Navigating Life Changes in Your 20s</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p class="discussion-meta">by @new_chapter · 4 days ago</p>
+                                    <p class="discussion-stats">💬 38 replies · Latest reply 8 hours ago</p>
+                                </div>
+                            </div>
+
+                            <!-- Discussion 10 -->
+                            <div class="card discussion-card">
+                                <div class="card-header">
+                                    <div style="margin-bottom: var(--space-2);">
+                                        <span class="badge">Grief</span>
+                                        <span class="badge badge-yellow">Support</span>
+                                    </div>
+                                    <h3>Coping with Loss and Finding Hope Again</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p class="discussion-meta">by @healing_heart · 5 days ago</p>
+                                    <p class="discussion-stats">💬 29 replies · Latest reply 10 hours ago</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <span class="page-info">1 - 10 of 8,392</span>
+                            <span class="page-info">Rows per page: 10</span>
+                        </div>
+                    </div>
+
+                    <!-- Right Column - Group Chats -->
+                    <div class="chats-column">
+                        <div class="section-header" style="text-align: left; margin-bottom: var(--space-6);">
+                            <h2 class="section-title">Group Chats</h2>
+                        </div>
+
+                        <div class="chat-list">
+                            <!-- Chat 1 - Clickable -->
+                            <a href="chat.html" class="card chat-card">
+                                <div class="chat-avatar">
+                                    <img src="images/chat1.jpg" alt="Local Brisbane">
+                                </div>
+                                <h3>Local Brisbane</h3>
+                                <p class="chat-members">142 members</p>
+                                <p class="chat-online">🟢 23 online</p>
+                            </a>
+
+                            <!-- Chat 2 -->
+                            <div class="card chat-card">
+                                <div class="chat-avatar">
+                                    <img src="images/chat2.jpg" alt="Parents Support">
+                                </div>
+                                <h3>Parents Support</h3>
+                                <p class="chat-members">198 members</p>
+                                <p class="chat-online">🟢 34 online</p>
+                            </div>
+
+                            <!-- Chat 3 -->
+                            <div class="card chat-card">
+                                <div class="chat-avatar">
+                                    <img src="images/chat3.jpg" alt="LGBTQ+ Wellness">
+                                </div>
+                                <h3>LGBTQ+ Wellness</h3>
+                                <p class="chat-members">167 members</p>
+                                <p class="chat-online">🟢 18 online</p>
+                            </div>
+
+                            <!-- Chat 4 -->
+                            <div class="card chat-card">
+                                <div class="chat-avatar">
+                                    <img src="images/chat4.jpg" alt="Young Adults">
+                                </div>
+                                <h3>Young Adults</h3>
+                                <p class="chat-members">223 members</p>
+                                <p class="chat-online">🟢 41 online</p>
+                            </div>
+
+                            <!-- Chat 5 -->
+                            <div class="card chat-card">
+                                <div class="chat-avatar">
+                                    <img src="images/chat5.jpg" alt="Mindfulness Circle">
+                                </div>
+                                <h3>Mindfulness Circle</h3>
+                                <p class="chat-members">156 members</p>
+                                <p class="chat-online">🟢 27 online</p>
+                            </div>
+
+                            <!-- Chat 6 -->
+                            <div class="card chat-card">
+                                <div class="chat-avatar">
+                                    <img src="images/chat6.jpg" alt="Brisbane Westside">
+                                </div>
+                                <h3>Brisbane Westside</h3>
+                                <p class="chat-members">89 members</p>
+                                <p class="chat-online">🟢 12 online</p>
+                            </div>
+
+                            <!-- Chat 7 -->
+                            <div class="card chat-card">
+                                <div class="chat-avatar">
+                                    <img src="images/chat8.jpg" alt="Night Owls Support">
+                                </div>
+                                <h3>Night Owls Support</h3>
+                                <p class="chat-members">112 members</p>
+                                <p class="chat-online">🟢 31 online</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-content">
-                <!-- Footer Navigation -->
-                <nav class="footer-nav" aria-label="Footer navigation">
+                <div class="footer-nav" role="navigation" aria-label="Footer navigation">
                     <a href="about.html">About</a>
                     <span class="separator">|</span>
                     <a href="privacy.html">Privacy</a>
-                </nav>
-
-                <!-- Copyright -->
+                    <span class="separator">|</span>
+                    <a href="implementation_rationale.html">Implement</a>
+                    <span class="separator">|</span>
+                    <a href="genai_mt_acknowledgement.html">GenAI</a>
+                </div>
                 <div class="footer-copyright">
-                    <p>&copy; 2025 CCI - All design copyright reserved</p>
+                    <p>&copy; 2025 DECO7140 - All design copyright reserved</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for mobile menu -->
-    <script>
-        const mobileToggle = document.querySelector('.mobile-menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        const nav = document.querySelector('nav');
-
-        mobileToggle.addEventListener('click', function() {
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            navMenu.classList.toggle('active');
-            nav.classList.toggle('menu-open');
-        });
-
-        const navLinks = document.querySelectorAll('.nav-menu a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                nav.classList.remove('menu-open');
-                mobileToggle.setAttribute('aria-expanded', 'false');
-            });
-        });
-    </script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
