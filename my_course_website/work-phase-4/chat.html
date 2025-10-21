@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Local Brisbane group chat - Connect with Brisbane locals">
+    <title>Local Brisbane - Wellness Community Platform</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/personal.css">
+    <link rel="stylesheet" href="css/community.css">
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                &#9776;
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="community.html" aria-current="page">Community</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="personal-space.html">Personal Space</a></li>
+            </ul>
+            <div class="nav-search">
+                <div class="search-container">
+                    <input type="search" class="search-input" placeholder="Search..." aria-label="Search the site">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <section class="content-cards" style="margin-top: var(--space-8);">
+            <div class="container">
+                <div class="personal-grid">
+                    <!-- Left Column - Chat Messages -->
+                    <div class="chat-messages-column">
+
+                        <!-- Messages Area -->
+                        <div class="messages-container">
+                            <p style="text-align: center; color: var(--text-muted); font-size: 0.875rem; margin-bottom: var(--space-6);">↓ Scroll to see earlier messages</p>
+
+                            <!-- Message 1 -->
+                            <div class="chat-message">
+                                <p class="message-meta">@sarah_bris · 3 hours ago</p>
+                                <p class="message-content">Hey everyone! Does anyone know of good walking trails around Mt Coot-tha? Looking for something peaceful to clear my mind this weekend.</p>
+                            </div>
+
+                            <!-- Message 2 -->
+                            <div class="chat-message">
+                                <p class="message-meta">@local_mike · 2 hours ago</p>
+                                <p class="message-content">The Botanic Gardens trail is beautiful and really calming. I go there when I need some headspace.</p>
+                            </div>
+
+                            <!-- Message 3 -->
+                            <div class="chat-message">
+                                <p class="message-meta">@wellness_walker · 2 hours ago</p>
+                                <p class="message-content">+1 for the gardens! Also, there's a mindfulness walking group that meets Saturday mornings at South Bank if you're interested.</p>
+                            </div>
+
+                            <!-- Message 4 -->
+                            <div class="chat-message">
+                                <p class="message-meta">@bris_parent · 1 hour ago</p>
+                                <p class="message-content">Quick question - has anyone tried the new counseling service at West End? My teen is going through a rough patch.</p>
+                            </div>
+
+                            <!-- Message 5 -->
+                            <div class="chat-message">
+                                <p class="message-meta">@support_squad · 1 hour ago</p>
+                                <p class="message-content">Yes! They're great. Very youth-friendly and bulk-billed. I can DM you details if you like.</p>
+                            </div>
+
+                            <!-- Message 6 -->
+                            <div class="chat-message">
+                                <p class="message-meta">@coffee_lover · 45 min ago</p>
+                                <p class="message-content">Anyone free for a coffee catch-up tomorrow? Been feeling a bit isolated lately and could use some company.</p>
+                            </div>
+
+                            <!-- Message 7 -->
+                            <div class="chat-message">
+                                <p class="message-meta">@friendly_face · 30 min ago</p>
+                                <p class="message-content">I'm free tomorrow afternoon! Let's meet at that café near the City Botanic Gardens? I know how you feel.</p>
+                            </div>
+
+                            <!-- Message 8 -->
+                            <div class="chat-message">
+                                <p class="message-meta">@brisbane_life · 10 min ago</p>
+                                <p class="message-content">This group has been such a lifeline for me. Thanks everyone for being so welcoming and supportive! 💚</p>
+                            </div>
+
+                            <!-- New messages will appear here -->
+                            <div id="new-messages"></div>
+                        </div>
+
+                        <!-- Message Input -->
+                        <div class="message-input-container">
+                            <form id="chat-message-form">
+                                <div class="form-group">
+                                    <input type="text" id="person_name" name="person_name" class="input" placeholder="Your name (or Anonymous)" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea id="chat_post_content" name="chat_post_content" rows="3" class="input" placeholder="Type your message..." required></textarea>
+                                </div>
+                                <input type="hidden" name="chat_post_title" value="Local Brisbane Chat">
+                                <button type="submit" class="btn btn-block">Send Message</button>
+                            </form>
+                            <p id="chat-feedback" style="margin-top: var(--space-3); font-size: 0.875rem;"></p>
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar - Chat Info -->
+                    <div class="chat-info-column">
+                        <!-- Chat Info Card -->
+                        <div class="card" style="margin-bottom: var(--space-6);">
+                            <div class="card-header">
+                                <h3>Group Info</h3>
+                            </div>
+                            <div class="card-body">
+                                <p style="font-weight: 600; margin-bottom: var(--space-2);">Local Brisbane</p>
+                                <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: var(--space-2);">142 members</p>
+                                <p style="font-size: 0.875rem; color: var(--accent-green); font-weight: 600;">🟢 23 online</p>
+                            </div>
+                        </div>
+
+                        <!-- About Card -->
+                        <div class="card" style="margin-bottom: var(--space-6);">
+                            <div class="card-header">
+                                <h3>About this chat</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>A welcoming space for Brisbane locals to connect, share experiences, and support each other's wellbeing. Whether you're looking for activity buddies, local recommendations, or just friendly conversation, you're in the right place.</p>
+                            </div>
+                        </div>
+
+                        <!-- Rules Card -->
+                        <div class="card" style="margin-bottom: var(--space-6);">
+                            <div class="card-header">
+                                <h3>Rules & Guidelines</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul style="margin-left: var(--space-4); line-height: 1.8;">
+                                    <li>Be respectful and kind to all members</li>
+                                    <li>Stay on topic - Brisbane life and wellbeing</li>
+                                    <li>No spam, advertising, or self-promotion</li>
+                                    <li>Respect privacy - no personal information sharing</li>
+                                    <li>Keep conversations supportive and constructive</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Report Card -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Report Concerns</h3>
+                            </div>
+                            <div class="card-body">
+                                <p style="margin-bottom: var(--space-4); font-size: 0.875rem; line-height: 1.6;">
+                                    If you notice any content that raises mental health or safety concerns, please report it to our team. We're here to keep this space safe for everyone.
+                                </p>
+                                <div id="report-buttons">
+                                    <button class="btn btn-block" onclick="reportConcern()">Report to Team</button>
+                                </div>
+                                <p id="report-feedback" style="margin-top: var(--space-3); font-weight: 600; color: var(--accent-green); display: none;"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-nav" role="navigation" aria-label="Footer navigation">
+                    <a href="about.html">About</a>
+                    <span class="separator">|</span>
+                    <a href="privacy.html">Privacy</a>
+                    <span class="separator">|</span>
+                    <a href="implementation_rationale.html">Implement</a>
+                    <span class="separator">|</span>
+                    <a href="genai_mt_acknowledgement.html">GenAI</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 DECO7140 - All design copyright reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/chat.js"></script>
+    <script>
+        // Report button feedback
+        function reportConcern() {
+            const buttons = document.getElementById('report-buttons');
+            const feedback = document.getElementById('report-feedback');
+            
+            buttons.style.display = 'none';
+            feedback.style.display = 'block';
+            feedback.textContent = 'Thank you for reporting. Our team will review this.';
+        }
+    </script>
+</body>
+</html>
