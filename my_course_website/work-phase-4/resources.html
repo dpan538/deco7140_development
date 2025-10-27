@@ -34,7 +34,8 @@
             </ul>
             <div class="nav-search">
                 <div class="search-container">
-                    <input type="search" class="search-input" placeholder="Search..." aria-label="Search the site">
+                    <label for="resources-search" class="sr-only">Search the site</label>
+                    <input type="search" id="resources-search" class="search-input" placeholder="Search..." title="Search the site">
                 </div>
             </div>
         </div>
@@ -43,7 +44,7 @@
     <!-- Main Content -->
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="hero" style="margin-bottom: var(--space-4);">
+        <section class="hero" style="margin-bottom: calc(var(--space-8) * -1);">
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text" style="margin-top: var(--space-12);">
@@ -52,19 +53,78 @@
                             Discover activities, articles, guides, and tools to support your mental health journey
                         </p>
                     </div>
-                    <svg width="60%" height="30" viewBox="0 0 1200 30" preserveAspectRatio="none" style="display: block; margin: var(--space-2) auto 0;">
-                        <path d="M0,15 Q300,5 600,15 T1200,15" fill="none" stroke="var(--primary)" stroke-width="2" opacity="0.6"/>
-                    </svg>
+                    <!-- Simple book icon with divider - standardized layout like personal_space -->
+                    <div style="display: flex; align-items: center; justify-content: center; margin: var(--space-6) auto 0; max-width: 600px;">
+                        <!-- Left decorative wave -->
+                        <svg width="25%" height="40" viewBox="0 0 300 40" preserveAspectRatio="none" style="flex-shrink: 1;" aria-hidden="true" role="presentation">
+                            <path d="M0,20 Q75,10 150,20 T300,20" fill="none" stroke="var(--accent-green)" stroke-width="2.5" opacity="0.6"/>
+                            <circle cx="60" cy="20" r="3" fill="var(--accent-green)" opacity="0.7"/>
+                            <circle cx="150" cy="20" r="2" fill="var(--accent-green)" opacity="0.5"/>
+                        </svg>
+                        
+                        <!-- Center book icon - standardized to 80x80 -->
+                        <svg width="80" height="80" viewBox="0 0 100 100" style="flex-shrink: 0; margin: 0 var(--space-4);" aria-label="Resources book icon" role="img">
+                            <title>Resources Book Icon</title>
+                            <desc>A simple book icon representing wellness resources</desc>
+                            
+                            <!-- Natural open book -->
+                            <g transform="translate(50, 50)">
+                                <!-- Left page with slight curve -->
+                                <path d="M -40,-25 Q -42,-23 -40,-20 L -40,28 Q -42,31 -40,33 L -8,33 Q -6,31 -8,28 L -8,-20 Q -6,-23 -8,-25 Z" 
+                                      fill="var(--secondary)" 
+                                      stroke="var(--accent-green)" 
+                                      stroke-width="2.5"
+                                      stroke-linejoin="round"/>
+                                
+                                <!-- Page lines (left) with slight curve -->
+                                <path d="M -36,-12 Q -24,-11 -12,-12" stroke="var(--text-muted)" stroke-width="1" opacity="0.5" fill="none"/>
+                                <path d="M -36,-4 Q -24,-3 -12,-4" stroke="var(--text-muted)" stroke-width="1" opacity="0.5" fill="none"/>
+                                <path d="M -36,4 Q -24,5 -12,4" stroke="var(--text-muted)" stroke-width="1" opacity="0.5" fill="none"/>
+                                <path d="M -36,12 Q -24,13 -12,12" stroke="var(--text-muted)" stroke-width="1" opacity="0.5" fill="none"/>
+                                <path d="M -36,20 Q -28,21 -20,20" stroke="var(--text-muted)" stroke-width="1" opacity="0.4" fill="none"/>
+                                
+                                <!-- Right page with slight curve -->
+                                <path d="M 8,-25 Q 6,-23 8,-20 L 8,28 Q 6,31 8,33 L 40,33 Q 42,31 40,28 L 40,-20 Q 42,-23 40,-25 Z" 
+                                      fill="var(--secondary)" 
+                                      stroke="var(--accent-green)" 
+                                      stroke-width="2.5"
+                                      stroke-linejoin="round"/>
+                                
+                                <!-- Page lines (right) with slight curve -->
+                                <path d="M 12,-12 Q 24,-11 36,-12" stroke="var(--text-muted)" stroke-width="1" opacity="0.5" fill="none"/>
+                                <path d="M 12,-4 Q 24,-3 36,-4" stroke="var(--text-muted)" stroke-width="1" opacity="0.5" fill="none"/>
+                                <path d="M 12,4 Q 24,5 36,4" stroke="var(--text-muted)" stroke-width="1" opacity="0.5" fill="none"/>
+                                <path d="M 12,12 Q 24,13 36,12" stroke="var(--text-muted)" stroke-width="1" opacity="0.5" fill="none"/>
+                                <path d="M 20,20 Q 28,21 36,20" stroke="var(--text-muted)" stroke-width="1" opacity="0.4" fill="none"/>
+                                
+                                <!-- Center spine with shadow -->
+                                <ellipse cx="0" cy="4" rx="3" ry="29" 
+                                         fill="var(--accent-green)" 
+                                         opacity="0.2"/>
+                                <line x1="0" y1="-23" x2="0" y2="31" 
+                                      stroke="var(--accent-green)" 
+                                      stroke-width="1.2" 
+                                      opacity="0.4"/>
+                            </g>
+                        </svg>
+                        
+                        <!-- Right decorative wave -->
+                        <svg width="25%" height="40" viewBox="0 0 300 40" preserveAspectRatio="none" style="flex-shrink: 1;" aria-hidden="true" role="presentation">
+                            <path d="M0,20 Q75,30 150,20 T300,20" fill="none" stroke="var(--accent-green)" stroke-width="2.5" opacity="0.6"/>
+                            <circle cx="150" cy="20" r="2" fill="var(--accent-green)" opacity="0.5"/>
+                            <circle cx="240" cy="20" r="3" fill="var(--accent-green)" opacity="0.7"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Activities Section -->
-        <section class="content-cards" style="margin-top: var(--space-8);">
+        <section class="content-cards" style="margin-top: calc(var(--space-8) * -1);">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Upcoming Activities</h2>
-                    <p class="section-subtitle">
+                    <p class="section-subtitle" role="doc-subtitle">
                         Join community events, workshops, and support groups
                     </p>
                 </div>
@@ -192,7 +252,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Articles & Guides</h2>
-                    <p class="section-subtitle">
+                    <p class="section-subtitle" role="doc-subtitle">
                         Browse 573 evidence-based resources on mental health and wellbeing
                     </p>
                 </div>

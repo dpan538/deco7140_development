@@ -239,12 +239,15 @@
 }
 
 .discussion-card .badge-green {
+    /* Warm, vibrant green with good contrast - maintaining design warmth */
     background: linear-gradient(135deg, var(--accent-green) 0%, #06a86b 100%);
     color: var(--white);
     border: 1px solid rgba(4, 128, 85, 0.3);
+    font-weight: 700; /* Bolder to distinguish from default */
 }
 
 .discussion-card .badge-yellow {
+    /* Bright, warm yellow maintaining design system's bold character */
     background: linear-gradient(135deg, var(--accent-yellow) 0%, #f4d03f 100%);
     color: var(--black);
     border: 1px solid rgba(255, 231, 109, 0.3);
@@ -404,16 +407,20 @@
     
     .badge {
         border: 2px solid var(--text-primary);
+        font-weight: 700;
     }
     
     .badge-green {
         background: var(--accent-green);
         color: var(--white);
+        border: 3px solid var(--text-primary);
+        font-weight: 700;
     }
     
     .badge-yellow {
         background: var(--accent-yellow);
         color: var(--black);
+        border: 2px dashed var(--text-primary);
     }
 }
 
