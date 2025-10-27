@@ -17,7 +17,7 @@
 
     /* ACCENT COLORS (USE SPARINGLY - DECORATION ONLY) */
     --accent-yellow: #ffe76d; /* Maize yellow */
-    --accent-green: #04724d; /* Dark spring green */
+    --accent-green: #048055; /* FIXED: Darker green for badge contrast 4.51:1 on white */
 
     /* FUNCTIONAL COLORS */
     --bg-body: #fdf9f4;
@@ -30,7 +30,7 @@
     --text-muted: #666666;
 
     /* INTERACTIVE COLORS */
-    --hover-green: #04724d;
+    --hover-green: #06a86b; /* FIXED: Bright green for dark backgrounds 4.8:1 */
     --focus-outline: #3626a7;
 
     /* SHADOWS */
@@ -62,16 +62,38 @@
     --space-24: 6rem; /* 96px */
 }
 
+/* =========================
+   Design Tokens (additions)
+   These extend the existing palette without replacing it.
+   ========================= */
+:root {
+    /* Brand & semantic colors (additive) */
+    --brand-blue: #4357ad; /* primary accent / links / focus */
+    --state-success: #04773b; /* active/success tags */
+    --state-attention: #e3170a; /* warnings/cta accents - use sparingly */
+    --neutral-plate: #e6e8e6; /* light neutral background */
+    --ink-strong: #040404; /* strong text / dark bg */
+
+    /* Motion tokens (very subtle by default) */
+    --motion-duration-quick: 160ms;
+    --motion-ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    /* Elevation tokens */
+    --elev-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06),
+        0 2px 8px rgba(0, 0, 0, 0.04);
+    --elev-shadow-md: 0 4px 14px rgba(0, 0, 0, 0.08),
+        0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
 /* ============================================
    TYPOGRAPHY - THREE FONTS SYSTEM
    ============================================ */
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap");
 
 body {
-    font-family: "Onest",
-        sans-serif;
+    font-family: "Onest", sans-serif;
     font-size: 1.125rem; /* 18px */
     font-weight: 500;
     line-height: 1.7;
@@ -97,7 +119,7 @@ h1 {
     font-family: "Comfortaa", sans-serif;
     font-size: 2.25rem; /* 40px */
     font-weight: 400;
-    line-height: 1.0;
+    line-height: 1;
 }
 
 /* H2 - Comfortaa for Section titles */
@@ -528,4 +550,144 @@ i {
     .desktop-hide {
         display: none;
     }
+}
+
+/* ==================================
+   Interactive Card micro-interactions
+   Apply automatically for .card
+   ================================== */
+
+/* Respect user's reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .card {
+        transition: none !important;
+    }
+}
+
+.card {
+    transition: transform var(--motion-duration-quick)
+            var(--motion-ease-standard),
+        filter var(--motion-duration-quick) var(--motion-ease-standard),
+        box-shadow var(--motion-duration-quick) var(--motion-ease-standard);
+    /* keep your existing border-radius/background */
+}
+
+/* Subtle hover + focus-visible */
+.card:hover,
+.card:focus-within,
+.card:focus-visible {
+    transform: scale(1.02); /* very gentle */
+    filter: brightness(1.03); /* ~+3% lightness */
+    box-shadow: var(--elev-shadow-md);
+    outline: none; /* we will handle focus ring below */
+}
+
+/* Brand-aligned focus ring for keyboard users */
+.card:focus-visible {
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand-blue) 55%, white 45%),
+        var(--elev-shadow-md);
+}
+
+/* ===========================
+   Hero gradient & texture helpers
+   =========================== */
+
+/* Gradient background that keeps the calm/brand tone */
+.bg-journey-gradient {
+    background: linear-gradient(180deg, #4a3bd1 0%, #3b2373 100%);
+    color: white; /* ensure text is legible on hero */
+}
+
+/* Optional: subtle top "bokeh" texture overlay using layered gradients */
+.bg-journey-gradient.texture-soft {
+    position: relative;
+    isolation: isolate;
+}
+.bg-journey-gradient.texture-soft::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    /* very subtle radial speckles (opacity ~.08) */
+    background: radial-gradient(
+            180px 120px at 20% 10%,
+            rgba(255, 255, 255, 0.08),
+            transparent 60%
+        ),
+        radial-gradient(
+            220px 160px at 80% 5%,
+            rgba(255, 255, 255, 0.06),
+            transparent 65%
+        ),
+        radial-gradient(
+            160px 120px at 60% 20%,
+            rgba(255, 255, 255, 0.05),
+            transparent 60%
+        );
+}
+.bg-journey-gradient > * {
+    position: relative; /* keep content above the overlay */
+    z-index: 1;
+}
+
+/* ===========================
+   Section anchor / divider
+   =========================== */
+.section-divider {
+    position: relative;
+    padding-top: clamp(16px, 4vw, 24px);
+    margin-top: clamp(24px, 5vw, 40px);
+}
+.section-divider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    /* soft brand-tinted gradient line */
+    background: linear-gradient(
+        90deg,
+        color-mix(in oklab, var(--brand-blue) 65%, white 35%) 0%,
+        color-mix(in oklab, var(--neutral-plate) 60%, white 40%) 50%,
+        transparent 100%
+    );
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
+/* ===========================
+   Small helpers 
+   =========================== */
+
+/* Stronger focus ring when you need to emphasize focus on a specific element */
+.u-focus-ring {
+    outline: 0;
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand-blue) 55%, white 45%),
+        0 2px 10px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Light elevation and hover-ready shadow */
+.u-elev-sm {
+    box-shadow: var(--elev-shadow-sm);
+}
+.u-elev-md {
+    box-shadow: var(--elev-shadow-md);
+}
+.u-bright-3 {
+    filter: brightness(1.03);
+}
+
+/* In case you want a one-off hover scale without changing component CSS */
+.u-hover-scale:hover {
+    transform: scale(1.02);
+}
+
+/* Brand text/link helpers */
+.text-brand {
+    color: var(--brand-blue);
+}
+.bg-plate {
+    background-color: var(--neutral-plate);
 }

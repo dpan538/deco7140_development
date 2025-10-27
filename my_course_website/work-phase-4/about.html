@@ -47,7 +47,7 @@
     <!-- Main Content -->
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="hero" style="margin-bottom: 1rem;">
+        <section class="hero" style="margin-bottom: calc(var(--space-1) * -1);">
             <div class="container">
                 <div class="hero-content">
                     <!-- Hero Text -->
@@ -57,23 +57,64 @@
                             We are building a supportive community where everyone can access mental health resources, friendly connections, and find path to wellness. 
                         </p>
                     </div>
-                    <!-- Decorative Divider -->
-            <svg width="60%" height="40" viewBox="0 0 1200 40" preserveAspectRatio="none" style="display: block; margin: var(--space-6) auto;">
-    <path d="M0,20 Q300,5 600,20 T1200,20" fill="none" stroke="var(--primary)" stroke-width="2" opacity="0.6"/>
-</svg>
+                    
+                    <!-- Decorative Community Icon with Dividers -->
+                    <div style="display: flex; align-items: center; justify-content: center; margin: 0 auto; max-width: 700px;">
+                        <!-- Left divider -->
+                        <svg width="35%" height="30" viewBox="0 0 400 30" preserveAspectRatio="none" style="flex-shrink: 1;" aria-hidden="true" role="presentation">
+                            <path d="M0,15 L400,15" fill="none" stroke="var(--primary)" stroke-width="2" opacity="0.6"/>
+                        </svg>
+                        
+                        <!-- Community Icon (3 people) -->
+                        <svg width="100" height="100" viewBox="0 0 120 120" style="flex-shrink: 0; margin: 0 var(--space-4);" aria-label="Community and connection icon" role="img">
+                            <title>Community icon representing people connecting</title>
+                            <!-- Center person (larger) -->
+                            <circle cx="60" cy="42" r="12" fill="none" stroke="var(--primary)" stroke-width="2.5" opacity="0.7"/>
+                            <path d="M 45 70 Q 45 55 60 55 Q 75 55 75 70" fill="none" stroke="var(--primary)" stroke-width="2.5" opacity="0.7"/>
+                            
+                            <!-- Left person (smaller) -->
+                            <circle cx="30" cy="48" r="9" fill="none" stroke="var(--accent-green)" stroke-width="2" opacity="0.6"/>
+                            <path d="M 20 68 Q 20 58 30 58 Q 40 58 40 68" fill="none" stroke="var(--accent-green)" stroke-width="2" opacity="0.6"/>
+                            
+                            <!-- Right person (smaller) -->
+                            <circle cx="90" cy="48" r="9" fill="none" stroke="var(--accent-green)" stroke-width="2" opacity="0.6"/>
+                            <path d="M 80 68 Q 80 58 90 58 Q 100 58 100 68" fill="none" stroke="var(--accent-green)" stroke-width="2" opacity="0.6"/>
+                            
+                            <!-- Connection lines -->
+                            <path d="M 42 52 L 48 48" stroke="var(--primary)" stroke-width="1.5" opacity="0.4"/>
+                            <path d="M 78 52 L 72 48" stroke="var(--primary)" stroke-width="1.5" opacity="0.4"/>
+                        </svg>
+                        
+                        <!-- Right divider -->
+                        <svg width="35%" height="30" viewBox="0 0 400 30" preserveAspectRatio="none" style="flex-shrink: 1;" aria-hidden="true" role="presentation">
+                            <path d="M0,15 L400,15" fill="none" stroke="var(--primary)" stroke-width="2" opacity="0.6"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
             
         </section>
 
         <!-- Our Team Section -->
-        <section class="content-cards">
+        <section class="content-cards" style="margin-top: calc(var(--space-2) * -1);">
             <div class="container">
                 <div class="cards-grid">
                     <!-- Card 1: Who We Are (spans 2 columns) -->
                     <div class="card" style="grid-column: span 2;">
-                        <div class="card-header">
-                            <h3>Who We Are</h3>
+                        <div class="card-header" style="display: flex; align-items: center; gap: var(--space-3);">
+                            <!-- Lightbulb icon (idea/innovation) -->
+                            <svg width="32" height="32" viewBox="0 0 40 40" aria-hidden="true" role="presentation">
+                                <!-- Bulb -->
+                                <circle cx="20" cy="14" r="8" fill="none" stroke="var(--primary)" stroke-width="2.5" opacity="0.7"/>
+                                <!-- Filament lines -->
+                                <line x1="20" y1="8" x2="20" y2="12" stroke="var(--accent-green)" stroke-width="2" opacity="0.6"/>
+                                <line x1="16" y1="10" x2="18" y2="12" stroke="var(--accent-green)" stroke-width="2" opacity="0.6"/>
+                                <line x1="24" y1="10" x2="22" y2="12" stroke="var(--accent-green)" stroke-width="2" opacity="0.6"/>
+                                <!-- Base -->
+                                <rect x="17" y="22" width="6" height="3" rx="1" fill="none" stroke="var(--primary)" stroke-width="2" opacity="0.7"/>
+                                <rect x="18" y="25" width="4" height="2" rx="1" fill="none" stroke="var(--primary)" stroke-width="2" opacity="0.7"/>
+                            </svg>
+                            <h3 style="margin: 0;">Who We Are</h3>
                         </div>
                         <div class="card-body">
                             <p>We're a diverse team of mental health advocates, community organizers, and tech professionals. Some of us have lived through mental health challenges ourselves, others have supported loved ones through theirs. </p>
@@ -89,8 +130,13 @@
 
                     <!-- Card 2: Our Dream -->
                     <div class="card">
-                        <div class="card-header">
-                            <h3>Our Dream</h3>
+                        <div class="card-header" style="display: flex; align-items: center; gap: var(--space-3);">
+                            <!-- Star icon -->
+                            <svg width="32" height="32" viewBox="0 0 40 40" aria-hidden="true" role="presentation">
+                                <path d="M 20 5 L 23 15 L 33 15 L 25 22 L 28 32 L 20 26 L 12 32 L 15 22 L 7 15 L 17 15 Z" 
+                                      fill="none" stroke="var(--primary)" stroke-width="2.5" opacity="0.75"/>
+                            </svg>
+                            <h3 style="margin: 0;">Our Dream</h3>
                         </div>
                         <div class="card-body">
                             <p>Imagine mental health support as easy as texting a friend. No complex systems to navigate, no judgment, just genuine connection when you need it most.</p>
@@ -103,8 +149,13 @@
 
                     <!-- Card 3: Our Commitment -->
                     <div class="card">
-                        <div class="card-header">
-                            <h3>Our Commitment</h3>
+                        <div class="card-header" style="display: flex; align-items: center; gap: var(--space-3);">
+                            <!-- Heart icon -->
+                            <svg width="32" height="32" viewBox="0 0 40 40" aria-hidden="true" role="presentation">
+                                <path d="M 20 34 L 6 20 C 2 16 2 10 6 6 C 10 2 16 2 20 6 C 24 2 30 2 34 6 C 38 10 38 16 34 20 Z" 
+                                      fill="none" stroke="var(--accent-green)" stroke-width="2" opacity="0.7"/>
+                            </svg>
+                            <h3 style="margin: 0;">Our Commitment</h3>
                         </div>
                         <div class="card-body">
                             <p>People before profit, always. We prioritize accessibility, protect your privacy, support peer-led initiatives, and share evidence-based resources. Your feedback shapes how we grow.</p>
@@ -118,8 +169,14 @@
 
                     <!-- Card 4: Our Values -->
                     <div class="card">
-                        <div class="card-header">
-                            <h3>Our Values</h3>
+                        <div class="card-header" style="display: flex; align-items: center; gap: var(--space-3);">
+                            <!-- Shield icon -->
+                            <svg width="32" height="32" viewBox="0 0 40 40" aria-hidden="true" role="presentation">
+                                <path d="M 20 4 L 32 8 L 32 20 C 32 28 20 36 20 36 C 20 36 8 28 8 20 L 8 8 Z" 
+                                      fill="none" stroke="var(--primary)" stroke-width="2" opacity="0.7"/>
+                                <path d="M 16 20 L 18 22 L 24 16" fill="none" stroke="var(--primary)" stroke-width="2" opacity="0.5"/>
+                            </svg>
+                            <h3 style="margin: 0;">Our Values</h3>
                         </div>
                         <div class="card-body">
                             <p>Honesty, respect, and trust guide everything we do. We're transparent about how we operate, embrace diverse perspectives, and back up our words with consistent action.</p>
@@ -134,10 +191,12 @@
                     <!-- Accordion 1: Non-Commercial At All -->
                     <div class="accordion-wrapper">
                         <div class="accordion-item">
-                            <div class="accordion-header">Non-Commercial At All</div>
+                            <button class="accordion-header" aria-expanded="false">
+                                <span>Non-Commercial At All</span>
+                            </button>
                             <div class="accordion-content">
                                 <div class="accordion-body">
-                                    <blockquote>
+                                    <blockquote cite="#">
                                         "Mental health support should never be a commodity."
                                     </blockquote>
                                     <p>
@@ -157,10 +216,12 @@
                     <!-- Accordion 2: Connect Communities Initiative (spans 2 columns) -->
                     <div class="accordion-wrapper" style="grid-column: span 2;">
                         <div class="accordion-item">
-                            <div class="accordion-header">Connect Communities Initiative (CCI)</div>
+                            <button class="accordion-header" aria-expanded="false">
+                                <span>Connect Communities Initiative (CCI)</span>
+                            </button>
                             <div class="accordion-content">
                                 <div class="accordion-body">
-                                    <blockquote>
+                                    <blockquote cite="#">
                                         "We believe that strong communities are built on genuine connections and mutual support."
                                     </blockquote>
                                     <p>

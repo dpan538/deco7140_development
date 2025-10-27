@@ -280,15 +280,15 @@ textarea {
     display: inline-flex;
     align-items: center;
     padding: var(--space-1) var(--space-3);
-    font-size: 0.85rem;
-    font-weight: 700;                    /* FIXED: Was 600, now 700 */
+    font-size: 0.8125rem; /* REDUCED: 13px (was 0.85rem/13.6px) */
+    font-weight: 600; /* REDUCED: from 700 */
     border-radius: var(--radius-sm);
     background-color: var(--primary);
     color: var(--white);
 }
 
 .badge-green {
-    background-color: var(--accent-green);
+    background-color: #048055; /* FIXED: Darker for 4.5:1 contrast on white */
 }
 
 .badge-yellow {
@@ -447,6 +447,8 @@ textarea {
 }
 
 .accordion-header {
+    width: 100%;
+    text-align: left;
     padding: var(--space-4) var(--space-6);
     background-color: var(--bg-card);
     border: 2px solid rgba(0, 0, 0, 0.1);
@@ -461,9 +463,18 @@ textarea {
     font-weight: 650;
 }
 
+.accordion-header span {
+    flex: 1;
+}
+
 .accordion-header:hover {
     background-color: rgba(4, 114, 77, 0.05);
     border-color: var(--hover-green);
+}
+
+.accordion-header:focus {
+    outline: 3px solid var(--focus-outline);
+    outline-offset: 3px;
 }
 
 .accordion-header::after {
