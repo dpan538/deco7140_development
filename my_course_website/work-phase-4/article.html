@@ -17,6 +17,52 @@
         <link rel="stylesheet" href="css/components.css" />
         <link rel="stylesheet" href="css/homepage.css" />
         <link rel="stylesheet" href="css/resources.css" />
+        
+        <style>
+            /* Screen reader only class */
+            .sr-only {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
+                border: 0;
+            }
+            
+            /* High contrast mode support */
+            @media (prefers-contrast: high) {
+                .accordion-item {
+                    border: 2px solid var(--text-primary);
+                    background: var(--white);
+                }
+                
+                .accordion-header {
+                    border-bottom: 2px solid var(--text-primary);
+                }
+                
+                .card {
+                    border: 2px solid var(--text-primary);
+                    background: var(--white);
+                    box-shadow: none;
+                }
+                
+                .alert {
+                    border: 2px solid var(--text-primary);
+                    background: var(--white);
+                }
+                
+                .badge {
+                    border: 2px solid var(--text-primary);
+                }
+                
+                figure {
+                    border: 2px solid var(--text-primary);
+                }
+            }
+        </style>
     </head>
     <body>
         <!-- Skip to main content -->
@@ -43,11 +89,13 @@
                 </ul>
                 <div class="nav-search">
                     <div class="search-container">
+                        <label for="article-search" class="sr-only">Search the site</label>
                         <input
                             type="search"
+                            id="article-search"
                             class="search-input"
                             placeholder="Search..."
-                            aria-label="Search the site" />
+                            title="Search the site" />
                     </div>
                 </div>
             </div>
@@ -141,11 +189,11 @@
                         <h3>Important to know:</h3> Depression can
                         affect anyone, regardless of age, gender, or background.
                         It's not a sign of personal weakness, and it's not
-                        something you can simply "snap out of."
+                        something you can simply <q>snap out of.</q>
                     </p>
                 </div>
 
-                <figure class="figure">
+                <figure class="figure" aria-label="Depression awareness illustration">
                     <div class="aspect-2-39">
                         <img
                             src="images/article7.jpg"
@@ -160,6 +208,7 @@
                                 border-radius: var(--radius-lg);
                             " />
                     </div>
+                    <figcaption class="sr-only">Illustration depicting the emotional challenges of depression</figcaption>
                 </figure>
 
                 <p>
@@ -188,6 +237,7 @@
                             ">
                             <div>
                                 <p
+                                    aria-label="Statistic: 1 in 7 Australians will experience depression in their lifetime"
                                     style="
                                         font-size: 3rem;
                                         font-weight: 700;
@@ -195,15 +245,16 @@
                                         line-height: 1;
                                         margin-bottom: var(--space-3);
                                     ">
-                                    1 in 7
+                                    <span aria-hidden="true">1 in 7</span>
                                 </p>
-                                <p style="color: var(--text-muted)">
+                                <p style="color: var(--text-primary); font-weight: 500;">
                                     Australians will experience depression in
                                     their lifetime
                                 </p>
                             </div>
                             <div>
                                 <p
+                                    aria-label="Statistic: 35% of people with depression seek professional help"
                                     style="
                                         font-size: 3rem;
                                         font-weight: 700;
@@ -211,15 +262,16 @@
                                         line-height: 1;
                                         margin-bottom: var(--space-3);
                                     ">
-                                    35%
+                                    <span aria-hidden="true">35%</span>
                                 </p>
-                                <p style="color: var(--text-muted)">
+                                <p style="color: var(--text-primary); font-weight: 500;">
                                     Of people with depression seek professional
                                     help
                                 </p>
                             </div>
                             <div>
                                 <p
+                                    aria-label="Statistic: 80 to 90 percent respond positively to treatment"
                                     style="
                                         font-size: 3rem;
                                         font-weight: 700;
@@ -227,9 +279,9 @@
                                         line-height: 1;
                                         margin-bottom: var(--space-3);
                                     ">
-                                    80-90%
+                                    <span aria-hidden="true">80-90%</span>
                                 </p>
-                                <p style="color: var(--text-muted)">
+                                <p style="color: var(--text-primary); font-weight: 500;">
                                     Respond positively to treatment
                                 </p>
                             </div>
@@ -243,12 +295,12 @@
 
                 <!-- Symptoms Accordion -->
                 <div class="accordion-item">
-                    <div class="accordion-header">
+                    <h3 class="accordion-header">
                         Common Symptoms of Depression
-                    </div>
+                    </h3>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            <h3>Emotional Symptoms</h3>
+                            <h4 style="font-size: 1.5625rem; font-weight: 700; margin-bottom: var(--space-4);">Emotional Symptoms</h4>
                             <ul>
                                 <li>
                                     Persistent sad, anxious, or "empty" mood
@@ -266,7 +318,7 @@
                             </ul>
                             <br />
 
-                            <h3>Physical Symptoms</h3>
+                            <h4 style="font-size: 1.5625rem; font-weight: 700; margin-bottom: var(--space-4);">Physical Symptoms</h4>
                             <ul>
                                 <li>
                                     Changes in appetite or weight (either
@@ -284,7 +336,7 @@
                             </ul>
                             <br />
 
-                            <h3>Cognitive and Behavioral Changes</h3>
+                            <h4 style="font-size: 1.5625rem; font-weight: 700; margin-bottom: var(--space-4);">Cognitive and Behavioral Changes</h4>
                             <ul>
                                 <li>
                                     Difficulty concentrating, remembering, or
@@ -308,7 +360,7 @@
                     If you've been experiencing several symptoms of depression
                     for more than two weeks, it's important to reach out for
                     professional support. Depression rarely improves without
-                    treatment, and it may get worse if left unaddressed.
+                    treatment, and it may get worse if unaddressed.
                 </p>
 
                 <div class="alert alert-warning">
@@ -342,10 +394,10 @@
                 </p>
 
                 <div class="accordion-item">
-                    <div class="accordion-header">To Do and To Avoid</div>
+                    <h3 class="accordion-header">Treatment Options</h3>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            <h3>Psychotherapy (Talk Therapy)</h3>
+                            <h4 style="font-size: 1.5625rem; font-weight: 700; margin-bottom: var(--space-4);">Psychotherapy (Talk Therapy)</h4>
                             <p>
                                 Cognitive Behavioral Therapy (CBT) and other forms of
                                 psychotherapy help you identify and change negative thought
@@ -353,7 +405,7 @@
                                 strategies for managing symptoms and preventing relapse.
                             </p>
 
-                            <h3>Medication</h3>
+                            <h4 style="font-size: 1.5625rem; font-weight: 700; margin-bottom: var(--space-4);">Medication</h4>
                             <p>
                                 Antidepressant medications can help correct chemical
                                 imbalances in the brain. They're often most effective when
@@ -361,7 +413,7 @@
                                 your doctor to find the right medication and dosage for you.
                             </p>
 
-                            <h3>Lifestyle Changes</h3>
+                            <h4 style="font-size: 1.5625rem; font-weight: 700; margin-bottom: var(--space-4);">Lifestyle Changes</h4>
                             <p>
                                 While not replacements for professional treatment, lifestyle
                                 changes can support recovery. Regular exercise, a balanced
@@ -375,10 +427,10 @@
                 </div>
 
                 <div class="accordion-item">
-                    <div class="accordion-header">To Do and To Avoid</div>
+                    <h3 class="accordion-header">Supporting Someone with Depression</h3>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            <h3>Do:</h3>
+                            <h4 style="font-size: 1.5625rem; font-weight: 700; margin-bottom: var(--space-4);">Do:</h4>
                             <ul>
                                 <li>
                                     Listen without judgment and validate their
@@ -393,11 +445,11 @@
                             </ul>
                             <br />
 
-                            <h3>Avoid:</h3>
+                            <h4 style="font-size: 1.5625rem; font-weight: 700; margin-bottom: var(--space-4);">Avoid:</h4>
                             <ul>
                                 <li>
-                                    Telling them to "snap out of it" or "think
-                                    positive"
+                                    Telling them to <q>snap out of it</q> or <q>think
+                                    positive</q>
                                 </li>
                                 <li>Minimizing their experience</li>
                                 <li>Giving unsolicited advice</li>
