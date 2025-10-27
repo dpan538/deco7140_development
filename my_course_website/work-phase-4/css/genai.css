@@ -1,0 +1,418 @@
+/*
+ * GENAI.CSS
+ * GenAI Acknowledgement page specific styles
+ */
+
+/* ============================================
+   AI TOOLS ACCORDION SECTION
+   ============================================ */
+
+/* Custom accordion styling for AI tools */
+.ai-tool-name {
+    font-family: "Google Sans Code", monospace, sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    flex: 1;
+    transition: color var(--motion-duration-quick) var(--motion-ease-standard);
+}
+
+.tool-badges {
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+}
+
+/* AI Tools accordion header enhancement */
+.accordion-item .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(253, 249, 244, 0.9) 100%);
+    border-left: 4px solid var(--primary);
+    transition: all var(--motion-duration-quick) var(--motion-ease-standard);
+}
+
+.accordion-item .accordion-header:hover {
+    background: linear-gradient(135deg, rgba(4, 128, 85, 0.08) 0%, rgba(255, 231, 109, 0.05) 100%);
+    border-left-color: var(--accent-green);
+    transform: translateX(2px);
+}
+
+.accordion-item .accordion-header:hover .ai-tool-name {
+    color: var(--accent-green);
+}
+
+.accordion-item .accordion-header::after {
+    font-size: 1.5rem;
+    color: var(--primary);
+    transition: transform var(--motion-duration-quick) var(--motion-ease-standard), 
+                color var(--motion-duration-quick) var(--motion-ease-standard);
+}
+
+.accordion-item .accordion-header:hover::after {
+    color: var(--accent-green);
+}
+
+.accordion-item.active .accordion-header::after {
+    transform: rotate(180deg);
+    color: var(--accent-green);
+}
+
+/* Accordion body styling */
+.accordion-item .accordion-body {
+    background: var(--white);
+    padding: var(--space-5);
+    line-height: 1.8;
+}
+
+.accordion-item .accordion-body ul {
+    list-style: none;
+    position: relative;
+}
+
+.accordion-item .accordion-body ul li {
+    padding-left: var(--space-4);
+    margin-bottom: var(--space-3);
+    position: relative;
+}
+
+.accordion-item .accordion-body ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent-green);
+    font-weight: 700;
+}
+
+/* ============================================
+   LIMITATION CARDS
+   ============================================ */
+
+.limitation-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(253, 249, 244, 0.95) 100%);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    gap: var(--space-4);
+    transition: all var(--motion-duration-quick) var(--motion-ease-standard);
+    position: relative;
+    overflow: hidden;
+}
+
+.limitation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent-yellow) 0%, var(--accent-green) 100%);
+    opacity: 0.6;
+    transition: opacity var(--motion-duration-quick) var(--motion-ease-standard);
+}
+
+.limitation-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--elev-shadow-md);
+}
+
+.limitation-card:hover::before {
+    opacity: 1;
+}
+
+.limitation-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(4, 128, 85, 0.1) 0%, rgba(255, 231, 109, 0.1) 100%);
+    border-radius: var(--radius-sm);
+    transition: transform var(--motion-duration-quick) var(--motion-ease-standard);
+}
+
+.limitation-card:hover .limitation-icon {
+    transform: scale(1.1);
+}
+
+.limitation-content {
+    flex: 1;
+}
+
+.limitation-content h3 {
+    color: var(--text-primary);
+    font-family: "Onest", sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: var(--space-3);
+    line-height: 1.3;
+}
+
+.limitation-content p {
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.limitation-content strong {
+    color: var(--accent-green);
+    font-weight: 600;
+}
+
+/* ============================================
+   LEARNING HIGHLIGHT SECTION
+   ============================================ */
+
+.learning-highlight {
+    background: linear-gradient(135deg, rgba(4, 128, 85, 0.05) 0%, rgba(255, 231, 109, 0.08) 100%);
+    border-radius: var(--radius-md);
+    padding: var(--space-8);
+    border: 2px solid rgba(4, 128, 85, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.learning-highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-green) 0%, var(--accent-yellow) 50%, var(--accent-green) 100%);
+}
+
+.learning-highlight h3 {
+    font-family: "Onest", sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+    margin-top: var(--space-4);
+}
+
+.learning-item {
+    background: var(--white);
+    padding: var(--space-5);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-subtle);
+    transition: all var(--motion-duration-quick) var(--motion-ease-standard);
+    position: relative;
+}
+
+.learning-item::before {
+    content: '✓';
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--accent-green) 0%, rgba(4, 128, 85, 0.7) 100%);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    opacity: 0.8;
+}
+
+.learning-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--elev-shadow-sm);
+}
+
+.learning-item:hover::before {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.learning-item h4 {
+    color: var(--accent-green);
+    font-family: "Onest", sans-serif;
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: var(--space-3);
+    padding-right: var(--space-8);
+}
+
+.learning-item p {
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-size: 0.9375rem;
+}
+
+.learning-item strong {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* ============================================
+   DECLARATION CARD
+   ============================================ */
+
+.declaration-card {
+    background: linear-gradient(135deg, rgba(4, 128, 85, 0.12) 0%, rgba(255, 231, 109, 0.15) 100%);
+    border-radius: var(--radius-md);
+    padding: 0;
+    box-shadow: var(--elev-shadow-md);
+    border: 3px solid var(--accent-green);
+    position: relative;
+    overflow: hidden;
+}
+
+.declaration-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        var(--accent-green) 0%, 
+        var(--accent-yellow) 25%, 
+        var(--accent-green) 50%, 
+        var(--accent-yellow) 75%, 
+        var(--accent-green) 100%);
+}
+
+.declaration-content {
+    padding: var(--space-8);
+    padding-top: calc(var(--space-8) + 6px);
+}
+
+.declaration-content h3 {
+    color: var(--accent-green);
+    font-family: "Onest", sans-serif;
+    font-weight: 800;
+    font-size: 1.75rem;
+    margin-bottom: var(--space-4);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.declaration-content p {
+    color: var(--text-primary);
+    font-size: 1.125rem;
+    line-height: 1.8;
+    font-weight: 500;
+    text-align: center;
+}
+
+.declaration-content strong {
+    color: var(--accent-green);
+    font-weight: 700;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .tool-badges {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-1);
+    }
+
+    .accordion-item .accordion-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+    }
+
+    .limitation-card {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+
+    .limitation-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+    }
+
+    .learning-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .declaration-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .declaration-content p {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================
+   HIGH CONTRAST MODE SUPPORT
+   ============================================ */
+
+@media (prefers-contrast: high) {
+    .accordion-item .accordion-header,
+    .limitation-card,
+    .learning-item,
+    .declaration-card {
+        border: 2px solid var(--text-primary);
+        background: var(--white);
+    }
+
+    .accordion-item .accordion-header::before,
+    .limitation-card::before,
+    .learning-highlight::before,
+    .declaration-card::before {
+        display: none;
+    }
+
+    .limitation-icon,
+    .learning-item::before {
+        background: var(--accent-green);
+        border: 2px solid var(--text-primary);
+    }
+
+    .accordion-item .accordion-header:hover,
+    .limitation-card:hover,
+    .learning-item:hover {
+        outline: 2px solid Highlight;
+        outline-offset: -2px;
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    .accordion-item .accordion-content {
+        display: block !important;
+        max-height: none !important;
+    }
+
+    .accordion-item .accordion-header::after {
+        display: none;
+    }
+
+    .limitation-card,
+    .learning-item {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
