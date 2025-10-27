@@ -50,7 +50,7 @@ nav {
     text-decoration: none;
     font-family: 'Onest', sans-serif;  /* ADDED: Explicit font */
     font-weight: 600;                   /* INCREASED: from 500 to 600 */
-    font-size: 1.125rem;                /* INCREASED: 18px (was 16px) */
+    font-size: 1.40625rem;              /* INCREASED: 22.5px (25% increase from 18px) */
     transition: color 0.3s ease;
     padding: var(--space-2) var(--space-3);
     display: block;

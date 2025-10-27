@@ -26,6 +26,63 @@
 }
 
 /* ============================================
+   CARD ENHANCEMENTS
+   ============================================ */
+
+.personal-main .card,
+.personal-sidebar .card {
+    transition: all var(--motion-duration-quick) var(--motion-ease-standard);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle gradient overlay on hover */
+.personal-main .card::after,
+.personal-sidebar .card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(4, 128, 85, 0.02) 0%, rgba(255, 231, 109, 0.02) 100%);
+    opacity: 0;
+    transition: opacity var(--motion-duration-quick) var(--motion-ease-standard);
+    pointer-events: none;
+}
+
+.personal-main .card:hover::after,
+.personal-sidebar .card:hover::after {
+    opacity: 1;
+}
+
+.personal-main .card:hover,
+.personal-sidebar .card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--elev-shadow-md);
+}
+
+.personal-main .card-header h3,
+.personal-sidebar .card-header h3 {
+    font-family: "Google Sans Code", monospace, sans-serif;
+    font-weight: 600;
+    transition: font-weight var(--motion-duration-quick) var(--motion-ease-standard);
+    position: relative;
+    z-index: 1;
+}
+
+.personal-main .card:hover .card-header h3,
+.personal-sidebar .card:hover .card-header h3 {
+    font-weight: 800;
+}
+
+.personal-main .card-body,
+.personal-sidebar .card-body {
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================
    FORM PREFERENCES
    ============================================ */
 
@@ -43,6 +100,101 @@
     font-size: 1rem;
     margin-bottom: var(--space-3);
     color: var(--text-primary);
+}
+
+/* Form input enhancements */
+.personal-main .input,
+.personal-sidebar .input {
+    transition: all var(--motion-duration-quick) var(--motion-ease-standard);
+}
+
+.personal-main .input:hover,
+.personal-sidebar .input:hover {
+    border-color: var(--accent-green);
+}
+
+.personal-main .input:focus,
+.personal-sidebar .input:focus {
+    border-color: var(--accent-green);
+    box-shadow: 0 0 0 3px rgba(4, 128, 85, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Checkbox options styling */
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    padding: var(--space-3);
+    margin-bottom: var(--space-3);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--motion-duration-quick) var(--motion-ease-standard);
+}
+
+.checkbox-option:hover {
+    border-color: var(--accent-green);
+    background-color: rgba(4, 128, 85, 0.05);
+}
+
+.checkbox-option input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: var(--space-3);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-option span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.checkbox-option:has(input:checked) {
+    border-color: var(--accent-green);
+    background-color: rgba(4, 128, 85, 0.1);
+}
+
+/* Notification options - simplified without borders */
+.notification-option {
+    display: flex;
+    align-items: center;
+    padding: var(--space-2) 0;
+    cursor: pointer;
+    transition: all var(--motion-duration-quick) var(--motion-ease-standard);
+}
+
+.notification-option input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: var(--space-3);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.notification-option span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.notification-option:hover span {
+    color: var(--accent-green);
+}
+
+/* Screen reader only content */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* ============================================
@@ -79,14 +231,16 @@
     color: var(--white);
 }
 
-.size-option:focus {
-    outline: 3px solid var(--focus-outline);
-    outline-offset: 2px;
-}
-
 /* ============================================
    SURVEY COMPONENTS
    ============================================ */
+
+/* Sidebar button enhancements */
+.personal-sidebar .btn-sm {
+    padding: var(--space-3) var(--space-4);
+    font-size: 1rem;
+    min-height: 44px;
+}
 
 .survey-question {
     font-size: 1.125rem;
@@ -160,7 +314,6 @@
         rgba(0, 0, 0, 0.1) 0%, 
         var(--accent-green) 50%, 
         var(--primary) 100%);
-    outline: none;
     cursor: pointer;
 }
 
@@ -196,6 +349,43 @@
 .contrast-slider::-moz-range-thumb:hover {
     transform: scale(1.2);
     background: var(--hover-green);
+}
+
+/* ============================================
+   HIGH CONTRAST MODE SUPPORT
+   ============================================ */
+
+@media (prefers-contrast: high) {
+    .personal-main .card,
+    .personal-sidebar .card {
+        border: 2px solid var(--text-primary);
+        background: var(--white);
+    }
+    
+    .personal-main .input,
+    .personal-sidebar .input {
+        border: 2px solid var(--text-primary);
+        background: var(--white);
+    }
+    
+    .size-option {
+        border: 2px solid var(--text-primary);
+        background: var(--white);
+    }
+    
+    .size-option.active {
+        background: var(--text-primary);
+        color: var(--white);
+    }
+    
+    .survey-option {
+        border: 2px solid var(--text-primary);
+        background: var(--white);
+    }
+    
+    .contrast-slider {
+        background: var(--text-primary);
+    }
 }
 
 .slider-value {

@@ -50,7 +50,7 @@ footer {
 .footer-nav a {
     color: var(--text-on-dark);
     text-decoration: none;
-    font-size: 0.875rem;
+    font-size: 1.09375rem;  /* 17.5px - increased by 25% from 14px */
     font-weight: 500;
     transition: color 0.3s ease;
     padding: var(--space-2);
@@ -75,7 +75,7 @@ footer {
 }
 
 .footer-copyright p {
-    font-size: 0.875rem;
+    font-size: 1.09375rem;  /* 17.5px - increased by 25% from 14px */
     font-weight: 400;
     color: rgba(255, 255, 255, 0.7);
     margin: 0;

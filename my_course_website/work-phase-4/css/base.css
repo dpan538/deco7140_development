@@ -5,6 +5,13 @@
  */
 
 /* ============================================
+   FONT IMPORTS - MUST BE AT TOP
+   ============================================ */
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap");
+
+/* ============================================
    CSS VARIABLES - COLOR PALETTE
    ============================================ */
 
@@ -88,9 +95,6 @@
 /* ============================================
    TYPOGRAPHY - THREE FONTS SYSTEM
    ============================================ */
-@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap");
 
 body {
     font-family: "Onest", sans-serif;
@@ -117,7 +121,7 @@ h6 {
 
 h1 {
     font-family: "Comfortaa", sans-serif;
-    font-size: 2.25rem; /* 40px */
+    font-size: 2.8125rem; /* 45px - increased by 25% from 36px */
     font-weight: 400;
     line-height: 1;
 }
@@ -125,7 +129,7 @@ h1 {
 /* H2 - Comfortaa for Section titles */
 h2 {
     font-family: "Onest", sans-serif;
-    font-size: 2.5rem; /* MUCH LARGER: 44px (was 36px) */
+    font-size: 3.125rem; /* 50px - increased by 25% from 40px */
     font-weight: 700; /* Bold Comfortaa */
     line-height: 1.2;
 }
@@ -133,20 +137,20 @@ h2 {
 /* H3 - Onest for Card titles */
 h3 {
     font-family: "Google Sans Code", monospace, sans-serif;
-    font-size: 1.75rem; /* 24px */
+    font-size: 2.1875rem; /* 35px - increased by 25% from 28px */
     font-weight: 700;
 }
 
 h4 {
-    font-size: 1.25rem; /* 20px */
+    font-size: 1.5625rem; /* 25px - increased by 25% from 20px */
 }
 
 h5 {
-    font-size: 1.125rem; /* 18px */
+    font-size: 1.40625rem; /* 22.5px - increased by 25% from 18px */
 }
 
 h6 {
-    font-size: 1rem; /* 16px */
+    font-size: 1.25rem; /* 20px - increased by 25% from 16px */
 }
 
 /* Paragraphs */
@@ -690,4 +694,33 @@ i {
 }
 .bg-plate {
     background-color: var(--neutral-plate);
+}
+
+/* ============================================
+   CONSISTENT FOCUS STYLES
+   ============================================ */
+
+/* Universal focus outline for all interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[role="button"]:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid var(--accent-green);
+    outline-offset: 2px;
+}
+
+/* Special focus for checkboxes and radios */
+input[type="checkbox"]:focus-visible,
+input[type="radio"]:focus-visible {
+    outline: 3px solid var(--accent-green);
+    outline-offset: 2px;
+}
+
+/* Range slider focus */
+input[type="range"]:focus-visible {
+    outline: 3px solid var(--accent-green);
+    outline-offset: 4px;
 }

@@ -34,7 +34,8 @@
             </ul>
             <div class="nav-search">
                 <div class="search-container">
-                    <input type="search" class="search-input" placeholder="Search..." aria-label="Search the site">
+                    <label for="personal-search" class="sr-only">Search the site</label>
+                                    <input type="search" id="personal-search" class="search-input" placeholder="Search..." title="Search the site">
                 </div>
             </div>
         </div>
@@ -52,15 +53,43 @@
                             Manage your profile, share your experience, and customize your wellness journey
                         </p>
                     </div>
-                    <svg width="60%" height="30" viewBox="0 0 1200 30" preserveAspectRatio="none" style="display: block; margin: var(--space-2) auto 0;">
-                        <path d="M0,15 Q300,5 600,15 T1200,15" fill="none" stroke="var(--primary)" stroke-width="2" opacity="0.6"/>
-                    </svg>
+                    <!-- Decorative SVG with Personal Space Theme -->
+                    <div style="display: flex; align-items: center; justify-content: center; margin: var(--space-4) auto 0; max-width: 800px;">
+                        <!-- Left decorative element -->
+                        <svg width="25%" height="40" viewBox="0 0 300 40" preserveAspectRatio="none" style="flex-shrink: 1;" aria-hidden="true" role="presentation">
+                            <path d="M0,20 Q75,10 150,20 T300,20" fill="none" stroke="#048055" stroke-width="2.5" opacity="0.6"/>
+                            <circle cx="60" cy="20" r="3" fill="#048055" opacity="0.7"/>
+                            <circle cx="140" cy="20" r="2" fill="#ffe76d" opacity="0.6"/>
+                        </svg>
+                        
+                        <!-- Center user icon -->
+                        <svg width="80" height="80" viewBox="0 0 80 80" style="flex-shrink: 0; margin: 0 var(--space-4);" aria-label="Personal space icon" role="img">
+                            <title>Personal space icon representing user profile and settings</title>
+                            <desc>A stylized user icon with customization symbols, representing personal settings and preferences</desc>
+                            <!-- User circle -->
+                            <circle cx="40" cy="30" r="12" fill="none" stroke="#048055" stroke-width="2.5" opacity="0.8"/>
+                            <!-- Body -->
+                            <path d="M 20 60 Q 20 45 40 45 T 60 60" fill="none" stroke="#048055" stroke-width="2.5" opacity="0.8"/>
+                            <!-- Settings gear -->
+                            <circle cx="60" cy="25" r="6" fill="none" stroke="#ffe76d" stroke-width="2" opacity="0.7"/>
+                            <circle cx="60" cy="25" r="3" fill="#ffe76d" opacity="0.4"/>
+                            <!-- Heart symbol -->
+                            <path d="M 25 15 C 23 13, 20 13, 20 16 C 20 19, 25 22, 25 22 C 25 22, 30 19, 30 16 C 30 13, 27 13, 25 15 Z" fill="#e3170a" opacity="0.6"/>
+                        </svg>
+                        
+                        <!-- Right decorative element -->
+                        <svg width="25%" height="40" viewBox="0 0 300 40" preserveAspectRatio="none" style="flex-shrink: 1;" aria-hidden="true" role="presentation">
+                            <path d="M0,20 Q75,30 150,20 T300,20" fill="none" stroke="#048055" stroke-width="2.5" opacity="0.6"/>
+                            <circle cx="160" cy="20" r="2" fill="#ffe76d" opacity="0.6"/>
+                            <circle cx="240" cy="20" r="3" fill="#048055" opacity="0.7"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Personal Space Grid -->
-        <section class="content-cards" style="margin-top: var(--space-6);">
+        <section class="content-cards" style="margin-top: calc(var(--space-6) * -1);">
             <div class="container">
                 <div class="personal-grid">
                     <!-- Left Column: Main Content -->
@@ -71,52 +100,136 @@
                                 <h3>Profile Settings</h3>
                             </div>
                             <div class="card-body">
-                                <div class="form-group">
-                                    <label for="username">Username (Required)</label>
-                                    <input type="text" id="username" name="username" class="input" value="Alex Chen" required>
-                                </div>
+                                <fieldset style="border: none; padding: 0; margin: 0;">
+                                    <legend class="sr-only">Personal information</legend>
+                                    <div class="form-group">
+                                        <label for="username">Username (Required)</label>
+                                        <input type="text" id="username" name="username" class="input" value="Alex Chen" autocomplete="username" required>
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="email">Email (Required)</label>
-                                    <input type="email" id="email" name="email" class="input" value="alex.chen@email.com" required>
-                                </div>
+                                    <div class="form-group">
+                                        <label for="email">Email (Required)</label>
+                                        <input type="email" id="email" name="email" class="input" value="alex.chen@email.com" autocomplete="email" required>
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="phone">Phone Number (Optional)</label>
-                                    <input type="tel" id="phone" name="phone" class="input" placeholder="+61 XXX XXX XXX">
-                                </div>
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number (Optional)</label>
+                                        <input type="tel" id="phone" name="phone" class="input" placeholder="+61 XXX XXX XXX" autocomplete="tel">
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="pronouns">Preferred Pronouns (Optional)</label>
-                                    <select id="pronouns" name="pronouns" class="input">
-                                        <option value="">Select pronouns</option>
-                                        <option value="he/him">He/Him</option>
-                                        <option value="she/her" selected>She/Her</option>
-                                        <option value="they/them">They/Them</option>
-                                        <option value="other">Prefer not to say</option>
-                                    </select>
-                                </div>
+                                    <div class="form-group">
+                                        <label for="pronouns">Preferred Pronouns (Optional)</label>
+                                        <select id="pronouns" name="pronouns" class="input">
+                                            <option value="">Select pronouns</option>
+                                            <option value="he/him">He/Him</option>
+                                            <option value="she/her" selected>She/Her</option>
+                                            <option value="they/them">They/Them</option>
+                                            <option value="other">Prefer not to say</option>
+                                        </select>
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="bio">Bio (Optional)</label>
-                                    <textarea id="bio" name="bio" class="input" rows="3" placeholder="Tell us a bit about yourself...">Community member since 2024. Interested in mindfulness and peer support.</textarea>
-                                </div>
+                                    <div class="form-group">
+                                        <label for="bio">Bio (Optional)</label>
+                                        <textarea id="bio" name="bio" class="input" rows="3" placeholder="Tell us a bit about yourself...">Community member since 2024. Interested in mindfulness and peer support.</textarea>
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="timezone">Time Zone (Optional)</label>
-                                    <select id="timezone" name="timezone" class="input">
+                                    <div class="form-group">
+                                        <label for="timezone">Time Zone (Optional)</label>
+                                        <select id="timezone" name="timezone" class="input">
                                         <option value="">Select timezone</option>
-                                        <option value="AEST" selected>Australian Eastern (AEST)</option>
-                                        <option value="ACST">Australian Central (ACST)</option>
-                                        <option value="AWST">Australian Western (AWST)</option>
+                                        <optgroup label="Australia">
+                                            <option value="AEST" selected>Australian Eastern (AEST/AEDT)</option>
+                                            <option value="ACST">Australian Central (ACST/ACDT)</option>
+                                            <option value="AWST">Australian Western (AWST)</option>
+                                        </optgroup>
+                                        <optgroup label="Asia">
+                                            <option value="JST">Japan (JST)</option>
+                                            <option value="KST">Korea (KST)</option>
+                                            <option value="CST">China (CST)</option>
+                                            <option value="SGT">Singapore (SGT)</option>
+                                            <option value="HKT">Hong Kong (HKT)</option>
+                                            <option value="IST">India (IST)</option>
+                                            <option value="ICT">Thailand (ICT)</option>
+                                            <option value="WIB">Indonesia Western (WIB)</option>
+                                        </optgroup>
+                                        <optgroup label="Americas">
+                                            <option value="PST">Pacific (PST/PDT)</option>
+                                            <option value="MST">Mountain (MST/MDT)</option>
+                                            <option value="CST_US">Central (CST/CDT)</option>
+                                            <option value="EST">Eastern (EST/EDT)</option>
+                                        </optgroup>
+                                        <optgroup label="Europe">
+                                            <option value="GMT">GMT (London)</option>
+                                            <option value="CET">Central European (CET/CEST)</option>
+                                            <option value="EET">Eastern European (EET/EEST)</option>
+                                        </optgroup>
+                                        <optgroup label="Pacific">
+                                            <option value="NZST">New Zealand (NZST/NZDT)</option>
+                                            <option value="FJT">Fiji (FJT)</option>
+                                        </optgroup>
                                     </select>
                                 </div>
 
                                 <button class="btn btn-lg" style="width: 100%; margin-top: var(--space-4);">Save Changes</button>
+                                </fieldset>
                             </div>
                             <div class="card-footer">
                                 <span class="badge badge-green">Private & Secure</span>
                                 <span class="badge">Your Info Protected</span>
+                            </div>
+                        </div>
+
+                        <!-- Security Settings Card -->
+                        <div class="card" style="margin-top: var(--space-8);">
+                            <div class="card-header">
+                                <h3>Security & Privacy</h3>
+                            </div>
+                            <div class="card-body">
+                                <fieldset style="border: none; padding: 0; margin: 0;">
+                                    <legend class="sr-only">Change password</legend>
+                                    <h4 style="margin-bottom: var(--space-4); font-size: 1.125rem;">Change Password</h4>
+                                    <div class="form-group">
+                                        <label for="current-password">Current Password</label>
+                                        <input type="password" id="current-password" name="current-password" class="input" placeholder="Enter current password" autocomplete="current-password" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="new-password">New Password</label>
+                                        <input type="password" id="new-password" name="new-password" class="input" placeholder="Enter new password" autocomplete="new-password" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirm-password">Confirm New Password</label>
+                                        <input type="password" id="confirm-password" name="confirm-password" class="input" placeholder="Confirm new password" autocomplete="new-password" required>
+                                    </div>
+                                    <button class="btn" style="width: 100%; margin-bottom: var(--space-6);">Update Password</button>
+                                </fieldset>
+
+                                <div style="border-top: 1px solid rgba(0, 0, 0, 0.1); padding-top: var(--space-6); margin-top: var(--space-6);">
+                                    <h4 style="margin-bottom: var(--space-4); font-size: 1.125rem;">Privacy Settings</h4>
+                                    <fieldset style="border: none; padding: 0; margin: 0;">
+                                        <legend class="sr-only">Privacy preferences</legend>
+                                        <label class="notification-option">
+                                            <input type="checkbox" name="privacy-profile" checked>
+                                            <span>Show my profile to other members</span>
+                                        </label>
+                                        <label class="notification-option">
+                                            <input type="checkbox" name="privacy-messages" checked>
+                                            <span>Allow others to message me</span>
+                                        </label>
+                                        <label class="notification-option">
+                                            <input type="checkbox" name="privacy-testimonials">
+                                            <span>Include my testimonials in public view</span>
+                                        </label>
+                                        <label class="notification-option">
+                                            <input type="checkbox" name="privacy-status" checked>
+                                            <span>Show my online status</span>
+                                        </label>
+                                    </fieldset>
+                                    <button class="btn" style="width: 100%; margin-top: var(--space-4);">Save Privacy Settings</button>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span class="badge badge-green">Secure</span>
+                                <span class="badge">Your Control</span>
                             </div>
                         </div>
 
@@ -126,26 +239,34 @@
                                 <h3>Share Your Experience</h3>
                             </div>
                             <div class="card-body">
-                                <!-- Example Testimonial -->
-                                <div class="testimonial-example">
-                                    <p style="font-style: italic; color: var(--text-muted); margin-bottom: var(--space-4);">
+                                <!-- Example Testimonial with SVG -->
+                                <div class="testimonial-example" style="position: relative; padding: var(--space-6); background: linear-gradient(135deg, rgba(4, 128, 85, 0.03) 0%, rgba(255, 231, 109, 0.03) 100%); border-radius: var(--radius-sm); margin-bottom: var(--space-6);">
+                                    <!-- SVG Smiley Face -->
+                                    <svg width="70" height="70" viewBox="0 0 60 60" style="position: absolute; top: var(--space-3); right: var(--space-3); opacity: 0.5;" aria-hidden="true" role="presentation">
+                                        <circle cx="30" cy="30" r="28" fill="none" stroke="#e3170a" stroke-width="2.5"/>
+                                        <circle cx="20" cy="23" r="3.5" fill="#e3170a"/>
+                                        <circle cx="40" cy="23" r="3.5" fill="#e3170a"/>
+                                        <path d="M 18 35 Q 30 45, 42 35" fill="none" stroke="#e3170a" stroke-width="3" stroke-linecap="round"/>
+                                    </svg>
+                                    
+                                    <blockquote style="font-size: 1.25rem; line-height: 1.7; color: #0b0a07; font-weight: 600; margin-bottom: var(--space-4); position: relative; z-index: 1; font-style: italic;">
                                         "The resources on this site have been incredibly helpful for my mental health journey. The clear organization makes it easy to find what I need."
+                                    </blockquote>
+                                    <p style="font-size: 0.9375rem; color: var(--text-primary); font-weight: 600; margin: 0; position: relative; z-index: 1;">
+                                        — Sarah, Community Member
                                     </p>
-                                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: var(--space-2);">
-                                        - Sarah, Community Member
-                                    </p>
-                                    <div style="text-align: center; margin-bottom: var(--space-6);">
-                                        <span style="font-size: 2rem;">😊</span>
-                                    </div>
                                 </div>
 
-                                <div style="border-top: 1px solid rgba(0, 0, 0, 0.1); padding-top: var(--space-6);">
-                                    <h4 style="margin-bottom: var(--space-4);">Your Story Matters</h4>
-                                    <div class="form-group">
-                                        <label for="testimonial">Share your experience with the community (optional)</label>
-                                        <textarea id="testimonial" name="testimonial" class="input" rows="4" placeholder="How has this platform helped you? What would you like others to know?"></textarea>
-                                    </div>
-                                    <button class="btn" style="width: 100%;">Submit Testimonial</button>
+                                <div>
+                                    <h4 style="margin-bottom: var(--space-4); font-size: 1.125rem; font-weight: 600;">Your Story Matters</h4>
+                                    <fieldset style="border: none; padding: 0; margin: 0;">
+                                        <legend class="sr-only">Share your testimonial</legend>
+                                        <div class="form-group">
+                                            <label for="testimonial">Share your experience with the community (optional)</label>
+                                            <textarea id="testimonial" name="testimonial" class="input" rows="4" placeholder="How has this platform helped you? What would you like others to know?"></textarea>
+                                        </div>
+                                        <button class="btn" style="width: 100%;">Submit Testimonial</button>
+                                    </fieldset>
                                 </div>
                             </div>
                             <div class="card-footer">
@@ -153,19 +274,22 @@
                                 <span class="badge">Help Others</span>
                             </div>
                         </div>
+                    </div>
 
+                    <!-- Right Column: Surveys & Settings -->
+                    <div class="personal-sidebar">
                         <!-- Accessibility Preferences -->
-                        <div class="card" style="margin-top: var(--space-8);">
+                        <div class="card">
                             <div class="card-header">
-                                <h3>Accessibility Preferences</h3>
+                                <h3>Accessibility</h3>
                             </div>
                             <div class="card-body">
                                 <div class="preference-group">
-                                    <label for="font-size" class="preference-label">Font Size</label>
-                                    <div class="font-size-selector">
-                                        <button class="size-option active" data-size="small">Small</button>
-                                        <button class="size-option" data-size="medium">Medium</button>
-                                        <button class="size-option" data-size="large">Large</button>
+                                    <span class="preference-label">Font Size</span>
+                                    <div class="font-size-selector" role="group" aria-label="Font size options">
+                                        <button class="size-option active" data-size="small" type="button">Small</button>
+                                        <button class="size-option" data-size="medium" type="button">Medium</button>
+                                        <button class="size-option" data-size="large" type="button">Large</button>
                                     </div>
                                 </div>
 
@@ -173,47 +297,55 @@
                                     <label for="language" class="preference-label">Language Preference</label>
                                     <select id="language" name="language" class="input">
                                         <option value="en" selected>English</option>
-                                        <option value="zh">中文 (Chinese)</option>
-                                        <option value="vi">日本語(Japanese)</option>
-                                        <option value="ar">조선어(Korean)</option>
+                                        <option value="zh-CN">简体中文 (Simplified Chinese)</option>
+                                        <option value="zh-TW">繁體中文 (Traditional Chinese)</option>
+                                        <option value="ja">日本語 (Japanese)</option>
+                                        <option value="ko">한국어 (Korean)</option>
+                                        <option value="vi">Tiếng Việt (Vietnamese)</option>
+                                        <option value="es">Español (Spanish)</option>
+                                        <option value="fr">Français (French)</option>
+                                        <option value="ar">العربية (Arabic)</option>
+                                        <option value="hi">हिन्दी (Hindi)</option>
+                                        <option value="th">ไทย (Thai)</option>
+                                        <option value="id">Bahasa Indonesia (Indonesian)</option>
                                     </select>
                                 </div>
 
-                                <button class="btn" style="width: 100%; margin-top: var(--space-4);">Apply Settings</button>
+                                <button class="btn btn-sm" style="width: 100%; margin-top: var(--space-4);">Apply Settings</button>
                             </div>
                             <div class="card-footer">
                                 <span class="badge badge-green">Customizable</span>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Right Column: Surveys & Settings -->
-                    <div class="personal-sidebar">
                         <!-- Quick Survey Card -->
-                        <div class="card survey-card">
+                        <div class="card survey-card" style="margin-top: var(--space-6);">
                             <div class="card-header">
                                 <h3>Quick Feedback</h3>
                             </div>
                             <div class="card-body survey-body">
                                 <p class="survey-question">When was the last time you felt happy in a dream?</p>
-                                <div class="survey-options">
-                                    <label class="survey-option">
-                                        <input type="radio" name="dream-survey" value="recently">
-                                        <span>Recently (past week)</span>
-                                    </label>
-                                    <label class="survey-option">
-                                        <input type="radio" name="dream-survey" value="sometime">
-                                        <span>Sometime ago (past month)</span>
-                                    </label>
-                                    <label class="survey-option">
-                                        <input type="radio" name="dream-survey" value="long-ago">
-                                        <span>Long ago (months/years)</span>
-                                    </label>
-                                    <label class="survey-option">
-                                        <input type="radio" name="dream-survey" value="never">
-                                        <span>Can't remember</span>
-                                    </label>
-                                </div>
+                                <fieldset style="border: none; padding: 0; margin: 0;">
+                                    <legend class="sr-only">Dream happiness survey options</legend>
+                                    <div class="survey-options">
+                                        <label class="survey-option">
+                                            <input type="radio" name="dream-survey" value="recently">
+                                            <span>Recently (past week)</span>
+                                        </label>
+                                        <label class="survey-option">
+                                            <input type="radio" name="dream-survey" value="sometime">
+                                            <span>Sometime ago (past month)</span>
+                                        </label>
+                                        <label class="survey-option">
+                                            <input type="radio" name="dream-survey" value="long-ago">
+                                            <span>Long ago (months/years)</span>
+                                        </label>
+                                        <label class="survey-option">
+                                            <input type="radio" name="dream-survey" value="never">
+                                            <span>Can't remember</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
                                 <button class="btn btn-sm survey-submit" style="width: 100%; margin-top: var(--space-4);">Submit</button>
                                 
                                 <!-- Thank you message (hidden by default) -->
@@ -238,13 +370,14 @@
                             <div class="card-body">
                                 <p class="survey-question" style="margin-bottom: var(--space-4);">How would you rate the page contrast?</p>
                                 <div class="contrast-slider-container">
+                                    <label for="contrast-slider" style="display: block; font-weight: 600; margin-bottom: var(--space-3);">Page contrast rating</label>
                                     <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-2); font-size: 0.875rem; color: var(--text-muted);">
                                         <span>0 (Too Low)</span>
                                         <span>10 (Perfect)</span>
                                     </div>
-                                    <input type="range" id="contrast-slider" name="contrast" min="0" max="10" value="7" class="contrast-slider">
+                                    <input type="range" id="contrast-slider" name="contrast" min="0" max="10" value="7" class="contrast-slider" aria-valuemin="0" aria-valuemax="10" aria-valuenow="7" aria-valuetext="7 out of 10">
                                     <div style="text-align: center; margin-top: var(--space-2);">
-                                        <span class="slider-value" style="font-size: 1.25rem; font-weight: 600; color: var(--primary);">7</span>
+                                        <span class="slider-value" style="font-size: 1.25rem; font-weight: 600; color: var(--primary);" aria-live="polite" role="status">7</span>
                                     </div>
                                 </div>
                                 <button class="btn btn-sm" style="width: 100%; margin-top: var(--space-4);">Submit Feedback</button>
@@ -260,22 +393,25 @@
                                 <h3>Notifications</h3>
                             </div>
                             <div class="card-body">
-                                <label class="checkbox-option">
-                                    <input type="checkbox" checked>
-                                    <span>Community updates</span>
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" checked>
-                                    <span>New resources available</span>
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox">
-                                    <span>Weekly wellness tips</span>
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox">
-                                    <span>Event reminders</span>
-                                </label>
+                                <fieldset style="border: none; padding: 0; margin: 0;">
+                                    <legend class="sr-only">Notification preferences</legend>
+                                    <label class="notification-option">
+                                        <input type="checkbox" name="notif-community" checked>
+                                        <span>Community updates</span>
+                                    </label>
+                                    <label class="notification-option">
+                                        <input type="checkbox" name="notif-resources" checked>
+                                        <span>New resources available</span>
+                                    </label>
+                                    <label class="notification-option">
+                                        <input type="checkbox" name="notif-tips">
+                                        <span>Weekly wellness tips</span>
+                                    </label>
+                                    <label class="notification-option">
+                                        <input type="checkbox" name="notif-events">
+                                        <span>Event reminders</span>
+                                    </label>
+                                </fieldset>
                                 <button class="btn btn-sm" style="width: 100%; margin-top: var(--space-4);">Save Preferences</button>
                             </div>
                             <div class="card-footer">
@@ -327,6 +463,9 @@
         
         contrastSlider.addEventListener('input', function() {
             sliderValue.textContent = this.value;
+            // Update ARIA attributes
+            this.setAttribute('aria-valuenow', this.value);
+            this.setAttribute('aria-valuetext', this.value + ' out of 10');
         });
 
         // Font size selector
