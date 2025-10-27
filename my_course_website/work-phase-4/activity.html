@@ -14,6 +14,61 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/homepage.css">
+    
+    <style>
+        /* Register button hover effect */
+        .register-btn:hover {
+            background: var(--accent-green) !important;
+            color: var(--white) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(4, 128, 85, 0.3) !important;
+        }
+        
+        .register-btn:active {
+            transform: translateY(0);
+        }
+        
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .accordion-item {
+                border: 2px solid var(--text-primary);
+                background: var(--white);
+            }
+            
+            .accordion-header {
+                border-bottom: 2px solid var(--text-primary);
+            }
+            
+            .register-btn {
+                border: 2px solid var(--text-primary) !important;
+            }
+            
+            .register-btn:hover {
+                outline: 3px solid Highlight !important;
+                outline-offset: 2px;
+            }
+            
+            /* Sun icon visibility in high contrast */
+            svg[aria-label*="sun"] path,
+            svg[aria-label*="sun"] circle {
+                stroke: var(--text-primary);
+                stroke-width: 1;
+            }
+        }
+        
+        /* Screen reader only class */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
 </head>
 <body>
     <!-- Skip to main content (accessibility) -->
@@ -33,7 +88,8 @@
             </ul>
             <div class="nav-search">
                 <div class="search-container">
-                    <input type="search" class="search-input" placeholder="Search..." aria-label="Search the site">
+                    <label for="activity-search" class="sr-only">Search the site</label>
+                    <input type="search" id="activity-search" class="search-input" placeholder="Search..." title="Search the site">
                 </div>
             </div>
         </div>
@@ -54,84 +110,143 @@
                 </div>
             </div>
             </div>
-                    <svg width="60%" height="30" viewBox="0 0 1200 30" preserveAspectRatio="none" style="display: block; margin: var(--space-2) auto 0;">
-                        <path d="M0,15 Q300,5 600,15 T1200,15" fill="none" stroke="var(--primary)" stroke-width="2" opacity="0.6"/>
-                    </svg>
+                    <!-- Activity/Workshop SVG Icon with dividers -->
+                    <div style="display: flex; align-items: center; justify-content: center; margin: var(--space-6) auto 0; max-width: 700px;">
+                        <!-- Left divider line (extended) -->
+                        <svg width="35%" height="2" viewBox="0 0 400 2" preserveAspectRatio="none" style="flex-shrink: 1;" aria-hidden="true" role="presentation">
+                            <line x1="0" y1="1" x2="400" y2="1" stroke="var(--accent-green)" stroke-width="2.5" opacity="0.6"/>
+                        </svg>
+                        
+                        <!-- Center sun icon - 80x80 -->
+                        <svg width="80" height="80" viewBox="0 0 120 120" style="flex-shrink: 0; margin: 0 var(--space-4);" aria-label="Mindfulness and wellbeing sun icon" role="img">
+                            <title>Mindfulness Sun Icon</title>
+                            <desc>A bright sun representing mindfulness, warmth, and mental wellbeing</desc>
+                            
+                            <defs>
+                                <!-- Deeper radial gradient from yellow center to dark orange edge -->
+                                <radialGradient id="sunGradient" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" style="stop-color:#fff4d1;stop-opacity:1" />
+                                    <stop offset="40%" style="stop-color:#ffd93d;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#ff9f1c;stop-opacity:1" />
+                                </radialGradient>
+                            </defs>
+                            
+                            <g transform="translate(60, 60)">
+                                <!-- Sun rays as triangular shapes (deeper yellow-orange) -->
+                                <!-- Ray 1: Top -->
+                                <path d="M 0,-25 L 4,-40 L -4,-40 Z" fill="#ffd93d" opacity="0.95"/>
+                                <!-- Ray 2: Top-right -->
+                                <path d="M 18,-18 L 28,-28 L 22,-34 Z" fill="#ffd93d" opacity="0.95"/>
+                                <!-- Ray 3: Right -->
+                                <path d="M 25,0 L 40,4 L 40,-4 Z" fill="#ffd93d" opacity="0.95"/>
+                                <!-- Ray 4: Bottom-right -->
+                                <path d="M 18,18 L 28,28 L 34,22 Z" fill="#ffd93d" opacity="0.95"/>
+                                <!-- Ray 5: Bottom -->
+                                <path d="M 0,25 L 4,40 L -4,40 Z" fill="#ffd93d" opacity="0.95"/>
+                                <!-- Ray 6: Bottom-left -->
+                                <path d="M -18,18 L -28,28 L -22,34 Z" fill="#ffd93d" opacity="0.95"/>
+                                <!-- Ray 7: Left -->
+                                <path d="M -25,0 L -40,4 L -40,-4 Z" fill="#ffd93d" opacity="0.95"/>
+                                <!-- Ray 8: Top-left -->
+                                <path d="M -18,-18 L -28,-28 L -34,-22 Z" fill="#ffd93d" opacity="0.95"/>
+                                
+                                <!-- Outer glow circle (deeper orange) -->
+                                <circle cx="0" cy="0" r="24" fill="#ff9f1c" opacity="0.4"/>
+                                
+                                <!-- Main sun circle with gradient -->
+                                <circle cx="0" cy="0" r="20" fill="url(#sunGradient)"/>
+                                
+                                <!-- Inner highlight for dimension (slightly less bright) -->
+                                <circle cx="-3" cy="-3" r="8" fill="#ffffff" opacity="0.35"/>
+                            </g>
+                        </svg>
+                        
+                        <!-- Right divider line (extended) -->
+                        <svg width="35%" height="2" viewBox="0 0 400 2" preserveAspectRatio="none" style="flex-shrink: 1;" aria-hidden="true" role="presentation">
+                            <line x1="0" y1="1" x2="400" y2="1" stroke="var(--accent-green)" stroke-width="2.5" opacity="0.6"/>
+                        </svg>
+                    </div>
                 </div>
         </section>
 
         <!-- Activity Description -->
-        <section class="content-cards" style="margin-top: var(--space-2) auto 0;">
+        <section class="content-cards" style="margin-top: calc(var(--space-20) * -1);">
             <div class="container">
                 <div style="max-width: 800px; margin: 0 auto;">
-                    <h2 style="margin-bottom: var(--space-6);">About This Workshop</h2>
+                    <h2 style="margin-bottom: var(--space-6); color: var(--text-primary); font-weight: 700;">About This Workshop</h2>
                     
-                    <p style="margin-bottom: var(--space-4); line-height: 1.7;">
+                    <p style="margin-bottom: var(--space-4); line-height: 1.7; color: var(--text-primary); font-size: 1.0625rem; font-weight: 500;">
                         Join us for a peaceful evening of mindfulness and meditation practice. This beginner-friendly workshop is designed to introduce you to simple yet powerful techniques that can help reduce stress, improve focus, and enhance overall wellbeing.
                     </p>
                     
-                    <p style="margin-bottom: var(--space-4); line-height: 1.7;">
+                    <p style="margin-bottom: var(--space-4); line-height: 1.7; color: var(--text-primary); font-size: 1.0625rem; font-weight: 500;">
                         Whether you're completely new to meditation or looking to deepen your practice, you'll find a welcoming and supportive environment. Our experienced facilitator will guide you through gentle breathing exercises, body awareness techniques, and guided meditation sessions.
                     </p>
                     
-                    <p style="margin-bottom: var(--space-8); line-height: 1.7;">
+                    <p style="margin-bottom: var(--space-8); line-height: 1.7; color: var(--text-primary); font-size: 1.0625rem; font-weight: 500;">
                         No special equipment or prior experience is needed. Just bring yourself and an open mind. This workshop is part of our ongoing commitment to making mental health support accessible to everyone in our community.
                     </p>
 
                     <!-- What to Expect Accordion -->
                     <div class="accordion-item">
-                        <div class="accordion-header">
+                        <div class="accordion-header" role="heading" aria-level="3">
                             What to Expect
                         </div>
                         <div class="accordion-content">
                             <div class="accordion-body">
-                                <p style="margin-bottom: var(--space-4);">During this 2-hour workshop, you will:</p>
+                                <p style="margin-bottom: var(--space-4); color: var(--text-primary); font-weight: 600;">During this 2-hour workshop, you will:</p>
                                 <ul style="margin-left: var(--space-6); margin-bottom: var(--space-4); line-height: 1.8;">
-                                    <li style="margin-bottom: var(--space-2);">✨ Learn the fundamentals of mindfulness and its benefits for mental health</li>
-                                    <li style="margin-bottom: var(--space-2);">✨ Practice simple breathing techniques to calm your mind</li>
-                                    <li style="margin-bottom: var(--space-2);">✨ Experience guided meditation sessions (10-15 minutes each)</li>
-                                    <li style="margin-bottom: var(--space-2);">✨ Explore body scan techniques for relaxation</li>
-                                    <li style="margin-bottom: var(--space-2);">✨ Receive a take-home guide with daily mindfulness exercises</li>
-                                    <li style="margin-bottom: var(--space-2);">✨ Connect with others in a supportive group setting</li>
+                                    <li style="margin-bottom: var(--space-2); color: var(--text-primary); font-weight: 500;">✨ Learn the fundamentals of mindfulness and its benefits for mental health</li>
+                                    <li style="margin-bottom: var(--space-2); color: var(--text-primary); font-weight: 500;">✨ Practice simple breathing techniques to calm your mind</li>
+                                    <li style="margin-bottom: var(--space-2); color: var(--text-primary); font-weight: 500;">✨ Experience guided meditation sessions (10-15 minutes each)</li>
+                                    <li style="margin-bottom: var(--space-2); color: var(--text-primary); font-weight: 500;">✨ Explore body scan techniques for relaxation</li>
+                                    <li style="margin-bottom: var(--space-2); color: var(--text-primary); font-weight: 500;">✨ Receive a take-home guide with daily mindfulness exercises</li>
+                                    <li style="margin-bottom: var(--space-2); color: var(--text-primary); font-weight: 500;">✨ Connect with others in a supportive group setting</li>
                                 </ul>
-                                <p style="margin-bottom: 0;">The session includes gentle movement and seated meditation. You're welcome to sit on a chair or cushion - whatever feels most comfortable for you.</p>
+                                <p style="margin-bottom: 0; color: var(--text-primary); font-weight: 500;">The session includes gentle movement and seated meditation. You're welcome to sit on a chair or cushion - whatever feels most comfortable for you.</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- What to Bring Accordion -->
                     <div class="accordion-item" style="margin-top: var(--space-4);">
-                        <div class="accordion-header">
+                        <div class="accordion-header" role="heading" aria-level="3">
                             What to Bring
                         </div>
                         <div class="accordion-content">
                             <div class="accordion-body">
                                 <ul style="margin-left: var(--space-6); margin-bottom: 0; line-height: 1.8;">
-                                    <li style="margin-bottom: var(--space-2);">📝 Comfortable, loose-fitting clothing</li>
-                                    <li style="margin-bottom: var(--space-2);">📝 A water bottle to stay hydrated</li>
-                                    <li style="margin-bottom: var(--space-2);">📝 A notebook and pen (optional, for personal reflections)</li>
-                                    <li style="margin-bottom: var(--space-2);">📝 An open mind and willingness to try something new</li>
+                                    <li style="margin-bottom: var(--space-2); color: var(--text-primary); font-weight: 500;">📝 Comfortable, loose-fitting clothing</li>
+                                    <li style="margin-bottom: var(--space-2); color: var(--text-primary); font-weight: 500;">📝 A water bottle to stay hydrated</li>
+                                    <li style="margin-bottom: var(--space-2); color: var(--text-primary); font-weight: 500;">📝 A notebook and pen (optional, for personal reflections)</li>
+                                    <li style="margin-bottom: var(--space-2); color: var(--text-primary); font-weight: 500;">📝 An open mind and willingness to try something new</li>
                                 </ul>
-                                <p style="margin-top: var(--space-4); margin-bottom: 0;"><strong>Note:</strong> Yoga mats and cushions will be provided, but you're welcome to bring your own if you prefer.</p>
+                                <p style="margin-top: var(--space-4); margin-bottom: 0; color: var(--text-primary); font-weight: 500;"><strong>Note:</strong> Yoga mats and cushions will be provided, but you're welcome to bring your own if you prefer.</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Facilitator Info -->
-                    <div style="margin-top: var(--space-12); padding: var(--space-6); background-color: var(--bg-card); border-radius: var(--radius-md);">
-                        <h3 style="margin-bottom: var(--space-3);">Your Facilitator</h3>
-                        <p style="line-height: 1.7; margin-bottom: 0;">
-                            <strong>Sarah Chen</strong> is a certified mindfulness instructor with over 8 years of experience teaching meditation and stress reduction techniques. She has helped hundreds of people discover the benefits of mindfulness practice in their daily lives.
-                        </p>
+                    <div class="accordion-item" style="margin-top: var(--space-4);">
+                        <div class="accordion-header" role="heading" aria-level="3">
+                            Your Facilitator
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p style="line-height: 1.7; margin-bottom: 0; color: var(--text-primary); font-weight: 500;">
+                                    <strong>Sarah Chen</strong> is a certified mindfulness instructor with over 8 years of experience teaching meditation and stress reduction techniques. She has helped hundreds of people discover the benefits of mindfulness practice in their daily lives.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- CTA Section -->
-                    <div style="margin-top: var(--space-12); text-align: center; padding: var(--space-8); background-color: var(--primary); color: var(--white); border-radius: var(--radius-md);">
-                        <h2 style="color: var(--white); margin-bottom: var(--space-4);">Ready to Join Us?</h2>
-                        <p style="color: var(--white); margin-bottom: var(--space-6); opacity: 0.95;">
+                    <div style="margin-top: var(--space-12); text-align: center; padding: var(--space-8); background: linear-gradient(135deg, var(--primary) 0%, #4a38c7 100%); color: var(--white); border-radius: var(--radius-md); box-shadow: 0 8px 24px rgba(54, 38, 167, 0.2);">
+                        <h2 style="color: var(--white); margin-bottom: var(--space-4); font-weight: 700;">Ready to Join Us?</h2>
+                        <p style="color: var(--white); margin-bottom: var(--space-6); opacity: 1; font-size: 1.0625rem; font-weight: 500;">
                             Spaces are limited to ensure an intimate, supportive environment. Register now to secure your spot.
                         </p>
-                        <a href="#register" class="btn btn-lg">Register</a>
+                        <a href="#register" class="btn btn-lg register-btn" style="background: var(--white); color: var(--primary); font-weight: 700; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); transition: all 0.3s ease;">Register Now</a>
                     </div>
                 </div>
             </div>
