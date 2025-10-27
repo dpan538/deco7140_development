@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="css/homepage.css" />
         <link rel="stylesheet" href="css/personal.css" />
         <link rel="stylesheet" href="css/community.css" />
+        <link rel="stylesheet" href="css/discussion.css" />
     </head>
     <body>
         <!-- Skip to main content -->
@@ -46,8 +47,10 @@
                 </ul>
                 <div class="nav-search">
                     <div class="search-container">
+                        <label for="discussion-search" class="sr-only">Search the site</label>
                         <input
                             type="search"
+                            id="discussion-search"
                             class="search-input"
                             placeholder="Search..."
                             aria-label="Search the site" />
@@ -58,32 +61,29 @@
 
         <!-- Main Content -->
         <main id="main-content">
-            <section class="content-cards" style="margin-top: var(--space-8)">
+            <section class="content-cards" style="margin-top: var(--space-4);" aria-label="Discussion content">
                 <div class="container">
                     <div class="personal-grid">
                         <!-- Left Column - Discussion Content -->
                         <div class="discussion-content">
                             <!-- Main Post -->
                             <article
-                                class="card"
-                                style="
-                                    padding: var(--space-6);
-                                    margin-bottom: var(--space-8);
-                                ">
-                                <div style="margin-bottom: var(--space-4)">
-                                    <span class="badge badge-green"
-                                        >Depression</span
-                                    >
-                                    <span class="badge">Coping</span>
+                                class="card main-discussion-post"
+                                style="padding: var(--space-6); margin-bottom: var(--space-6);">
+                                
+                                <div style="margin-bottom: var(--space-4);">
+                                    <span class="badge badge-green">Depression</span>
+                                    <span class="badge badge-yellow">Coping</span>
+                                    <span class="badge">Motivation</span>
+                                    <span class="badge">Self-Care</span>
+                                    <span class="badge badge-green">Mental Health</span>
                                 </div>
 
-                                <h1 style="margin-bottom: var(--space-4)">
+                                <h1 style="margin-bottom: var(--space-4);">
                                     Finding Motivation During Tough Times
                                 </h1>
 
-                                <p
-                                    class="discussion-meta"
-                                    style="margin-bottom: var(--space-6)">
+                                <p class="discussion-meta" style="margin-bottom: var(--space-6); color: #333333; font-weight: 600;">
                                     by @james_w · 1 day ago
                                 </p>
 
@@ -103,9 +103,9 @@
                                         that motivation doesn't always come
                                         before action—sometimes action comes
                                         first, and motivation follows. On my
-                                        worst days, I set incredibly small
+                                        worst days, I set manageable
                                         goals: make the bed, take a shower, eat
-                                        one proper meal. These tiny victories
+                                        one proper meal. These simple victories
                                         matter more than people realize.
                                     </p>
 
@@ -114,7 +114,7 @@
                                         myself makes a difference. Instead of
                                         beating myself up for what I didn't
                                         accomplish, I try to acknowledge what I
-                                        did manage to do, no matter how small.
+                                        did manage to do, regardless of scale.
                                         Some days, just surviving is enough.
                                     </p>
 
@@ -131,12 +131,12 @@
                             </article>
 
                             <!-- Replies Section -->
-                            <div style="margin-bottom: var(--space-4)">
+                            <div style="margin-bottom: var(--space-4);">
                                 <h2><span id="reply-count">5</span> Replies</h2>
                             </div>
 
                             <!-- Reply 1 -->
-                            <div class="card discussion-card">
+                            <div class="card discussion-card reply-card">
                                 <div class="card-body">
                                     <p class="discussion-meta">
                                         @sarah_mindful · 18 hours ago
@@ -155,17 +155,17 @@
                             </div>
 
                             <!-- Reply 2 -->
-                            <div class="card discussion-card">
+                            <div class="card discussion-card reply-card">
                                 <div class="card-body">
                                     <p class="discussion-meta">
                                         @wellness_journey · 16 hours ago
                                     </p>
                                     <p>
-                                        This is so relatable. I keep a "done
-                                        list" instead of a to-do list on my
+                                        This is so relatable. I keep a <q>done
+                                        list</q> instead of a to-do list on my
                                         hardest days. Writing down what I
-                                        managed to do, even if it's just "made
-                                        coffee" or "replied to one text," helps
+                                        managed to do, even if it's just <q>made
+                                        coffee</q> or <q>replied to one text,</q> helps
                                         me see that I'm not as unproductive as
                                         depression tells me I am.
                                     </p>
@@ -173,7 +173,7 @@
                             </div>
 
                             <!-- Reply 3 -->
-                            <div class="card discussion-card">
+                            <div class="card discussion-card reply-card">
                                 <div class="card-body">
                                     <p class="discussion-meta">
                                         @quiet_strength · 12 hours ago
@@ -181,7 +181,7 @@
                                     <p>
                                         Your post came at the perfect time. I've
                                         been in a really dark place lately, and
-                                        reading that "just surviving is enough"
+                                        reading that <q>just surviving is enough</q>
                                         made me tear up. Sometimes we need
                                         permission to not be okay, and your
                                         words gave me that permission. Thank
@@ -191,7 +191,7 @@
                             </div>
 
                             <!-- Reply 4 -->
-                            <div class="card discussion-card">
+                            <div class="card discussion-card reply-card">
                                 <div class="card-body">
                                     <p class="discussion-meta">
                                         @morning_light · 8 hours ago
@@ -211,7 +211,7 @@
                             </div>
 
                             <!-- Reply 5 -->
-                            <div class="card discussion-card">
+                            <div class="card discussion-card reply-card">
                                 <div class="card-body">
                                     <p class="discussion-meta">
                                         @hopeful_steps · 4 hours ago
@@ -223,7 +223,7 @@
                                         doing things (even when you don't feel
                                         like it) can actually improve your mood
                                         over time. It sounds counterintuitive,
-                                        but starting with tiny actions has
+                                        but starting with manageable actions has
                                         really helped me. We're all in this
                                         together.
                                     </p>
@@ -237,67 +237,66 @@
                         <!-- Right Sidebar -->
                         <div class="discussion-sidebar">
                             <!-- Stats Card -->
-                            <div
-                                class="card"
-                                style="margin-bottom: var(--space-6)">
+                            <div class="card sidebar-card" style="margin-bottom: var(--space-6);">
                                 <div class="card-header">
                                     <h3>Quick Stats</h3>
                                 </div>
                                 <div class="card-body">
-                                    <p style="margin-bottom: var(--space-2)">
+                                    <p style="margin-bottom: var(--space-2);">
                                         💬
                                         <span id="sidebar-reply-count">5</span>
                                         replies
                                     </p>
-                                    <p style="margin: 0">👁️ 203 views</p>
+                                    <p style="margin: 0;">👁️ 203 views</p>
                                 </div>
                             </div>
 
                             <!-- Reply Form -->
-                            <div
-                                class="card"
-                                style="margin-bottom: var(--space-6)">
+                            <div class="card sidebar-card" style="margin-bottom: var(--space-6);">
                                 <div class="card-header">
                                     <h3>Join the Discussion</h3>
                                 </div>
                                 <div class="card-body">
                                     <form id="discussion-reply-form">
-                                        <div class="form-group">
-                                            <label for="person_name"
-                                                >Your Name</label
-                                            >
+                                        <fieldset style="border: none; padding: 0; margin: 0;">
+                                            <legend class="sr-only">Reply to discussion</legend>
+                                            <div class="form-group">
+                                                <label for="person_name"
+                                                    >Your Name</label
+                                                >
+                                                <input
+                                                    type="text"
+                                                    id="person_name"
+                                                    name="person_name"
+                                                    class="input"
+                                                    placeholder="e.g., @username or Anonymous"
+                                                    required />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="chat_post_content"
+                                                    >Your Reply</label
+                                                >
+                                                <textarea
+                                                    id="chat_post_content"
+                                                    name="chat_post_content"
+                                                    rows="5"
+                                                    class="input"
+                                                    placeholder="Share your thoughts..."
+                                                    required></textarea>
+                                            </div>
+
                                             <input
-                                                type="text"
-                                                id="person_name"
-                                                name="person_name"
-                                                class="input"
-                                                placeholder="e.g., @username or Anonymous"
-                                                required />
-                                        </div>
+                                                type="hidden"
+                                                name="chat_post_title"
+                                                value="Finding Motivation During Tough Times" />
 
-                                        <div class="form-group">
-                                            <label for="chat_post_content"
-                                                >Your Reply</label
-                                            >
-                                            <textarea
-                                                id="chat_post_content"
-                                                name="chat_post_content"
-                                                rows="5"
-                                                class="input"
-                                                placeholder="Share your thoughts..."
-                                                required></textarea>
-                                        </div>
-
-                                        <input
-                                            type="hidden"
-                                            name="chat_post_title"
-                                            value="Finding Motivation During Tough Times" />
-
-                                        <button
-                                            type="submit"
-                                            class="btn btn-block">
-                                            Submit Reply
-                                        </button>
+                                            <button
+                                                type="submit"
+                                                class="btn btn-block">
+                                                Submit Reply
+                                            </button>
+                                        </fieldset>
                                     </form>
                                     <p
                                         id="form-feedback"
@@ -309,7 +308,7 @@
                             </div>
 
                             <!-- Helpful Card -->
-                            <div class="card">
+                            <div class="card sidebar-card">
                                 <div class="card-header">
                                     <h3>Was this discussion helpful?</h3>
                                 </div>
@@ -330,13 +329,13 @@
                                             gap: var(--space-3);
                                         ">
                                         <button
-                                            class="btn"
-                                            onclick="markHelpful(true)">
+                                            class="btn helpful-btn"
+                                            data-helpful="true">
                                             Yes, this was helpful
                                         </button>
                                         <button
-                                            class="btn"
-                                            onclick="markHelpful(false)">
+                                            class="btn helpful-btn"
+                                            data-helpful="false">
                                             No, needs improvement
                                         </button>
                                     </div>
@@ -384,15 +383,22 @@
         <script type="module" src="js/discussion.js"></script>
 
         <script>
-            // Helpful button feedback
-            function markHelpful(wasHelpful) {
-                const buttons = document.getElementById("helpful-buttons");
-                const feedback = document.getElementById("helpful-feedback");
+            // Helpful button feedback using event listeners
+            document.addEventListener('DOMContentLoaded', function() {
+                const helpfulButtons = document.querySelectorAll('.helpful-btn');
+                
+                helpfulButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const wasHelpful = this.getAttribute('data-helpful') === 'true';
+                        const buttons = document.getElementById("helpful-buttons");
+                        const feedback = document.getElementById("helpful-feedback");
 
-                buttons.style.display = "none";
-                feedback.style.display = "block";
-                feedback.textContent = "Thank you for your feedback!";
-            }
+                        buttons.style.display = "none";
+                        feedback.style.display = "block";
+                        feedback.textContent = "Thank you for your feedback!";
+                    });
+                });
+            });
         </script>
     </body>
 </html>

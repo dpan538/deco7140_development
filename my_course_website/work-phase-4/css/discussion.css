@@ -1,0 +1,181 @@
+/* 
+ * DISCUSSION.CSS
+ * Discussion page specific styles
+ */
+
+/* ============================================
+   MAIN DISCUSSION POST
+   ============================================ */
+
+.main-discussion-post {
+    transition: all var(--motion-duration-quick) var(--motion-ease-standard);
+}
+
+.main-discussion-post:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--elev-shadow-md);
+}
+
+.main-discussion-post h1 {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 600;
+    transition: all var(--motion-duration-quick) var(--motion-ease-standard);
+    cursor: pointer;
+}
+
+.main-discussion-post h1:hover {
+    font-weight: 700;
+    color: var(--accent-green);
+}
+
+/* ============================================
+   REPLY CARDS
+   ============================================ */
+
+.reply-card {
+    transition: all var(--motion-duration-quick) var(--motion-ease-standard);
+}
+
+.reply-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--elev-shadow-md);
+    background-color: rgba(253, 249, 244, 0.5);
+}
+
+.reply-card .discussion-meta {
+    color: #333333; /* Improved contrast for accessibility */
+    font-weight: 600;
+    transition: color var(--motion-duration-quick) var(--motion-ease-standard);
+}
+
+.reply-card:hover .discussion-meta {
+    color: var(--accent-green);
+    font-weight: 600;
+}
+
+/* ============================================
+   SIDEBAR CARDS
+   ============================================ */
+
+.sidebar-card {
+    transition: all var(--motion-duration-quick) var(--motion-ease-standard);
+}
+
+.sidebar-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--elev-shadow-sm);
+    outline: 2px solid var(--accent-green);
+    outline-offset: -2px;
+}
+
+.sidebar-card .card-header h3 {
+    font-family: "Google Sans Code", monospace, sans-serif;
+    font-weight: 600;
+    transition: font-weight var(--motion-duration-quick) var(--motion-ease-standard);
+}
+
+.sidebar-card:hover .card-header h3 {
+    font-weight: 800;
+}
+
+.sidebar-card .card-body p {
+    transition: color var(--motion-duration-quick) var(--motion-ease-standard);
+}
+
+.sidebar-card:hover .card-body p {
+    color: var(--text-primary);
+}
+
+/* ============================================
+   FORM ENHANCEMENTS
+   ============================================ */
+
+/* Screen reader only content */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.form-group label {
+    font-family: "Onest", sans-serif;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+    display: block;
+}
+
+.input {
+    transition: all var(--motion-duration-quick) var(--motion-ease-standard);
+    border: 2px solid rgba(11, 10, 7, 0.2);
+    border-radius: var(--radius-sm);
+    padding: var(--space-3);
+    font-family: inherit;
+    font-size: 1rem;
+    background: var(--white);
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(54, 38, 167, 0.1);
+}
+
+.input:hover {
+    border-color: var(--primary);
+}
+
+/* ============================================
+   BUTTON ENHANCEMENTS
+   ============================================ */
+
+.btn {
+    transition: all var(--motion-duration-quick) var(--motion-ease-standard);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--elev-shadow-sm);
+}
+
+/* ============================================
+   HIGH CONTRAST MODE SUPPORT
+   ============================================ */
+
+@media (prefers-contrast: high) {
+    .main-discussion-post,
+    .reply-card,
+    .sidebar-card {
+        border: 2px solid var(--text-primary);
+        background: var(--white);
+    }
+    
+    .input {
+        border: 2px solid var(--text-primary);
+        background: var(--white);
+    }
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .main-discussion-post {
+        padding: var(--space-6) !important;
+    }
+    
+    .reply-card {
+        margin-bottom: var(--space-3) !important;
+    }
+    
+    .sidebar-card {
+        margin-bottom: var(--space-4) !important;
+    }
+}

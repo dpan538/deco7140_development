@@ -35,7 +35,8 @@
             </ul>
             <div class="nav-search">
                 <div class="search-container">
-                    <input type="search" class="search-input" placeholder="Search..." aria-label="Search the site">
+                    <label for="main-search" class="sr-only">Search the site</label>
+                    <input type="search" id="main-search" class="search-input" placeholder="Search..." aria-label="Search the site">
                 </div>
             </div>
         </div>
@@ -44,7 +45,7 @@
     <!-- Main Content -->
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="hero" style="margin-bottom: var(--space-4);">
+        <section class="hero" style="margin-bottom: calc(var(--space-2) * -1);">
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text" style="margin-top: var(--space-12);">
@@ -53,19 +54,57 @@
                             Connect with others, share experiences, and find support in our community
                         </p>
                     </div>
-                    <svg width="60%" height="30" viewBox="0 0 1200 30" preserveAspectRatio="none" style="display: block; margin: var(--space-2) auto 0;">
-                        <path d="M0,15 Q300,5 600,15 T1200,15" fill="none" stroke="var(--primary)" stroke-width="2" opacity="0.6"/>
-                    </svg>
+                    <!-- Decorative Community Connection SVG -->
+                    <div style="display: flex; align-items: center; justify-content: center; margin: var(--space-3) auto 0; max-width: 800px;">
+                        <!-- Left decorative element -->
+                        <svg width="30%" height="40" viewBox="0 0 300 40" preserveAspectRatio="none" style="flex-shrink: 1;" aria-hidden="true" role="presentation">
+                            <path d="M0,20 Q75,10 150,20 T300,20" fill="none" stroke="#04773b" stroke-width="2.5" opacity="0.7"/>
+                            <circle cx="60" cy="20" r="2" fill="#04773b" opacity="0.8"/>
+                            <circle cx="120" cy="20" r="1.5" fill="#e3170a" opacity="0.7"/>
+                        </svg>
+                        
+                        <!-- Center community icon - enlarged -->
+                        <svg width="120" height="120" viewBox="0 0 120 120" style="flex-shrink: 0; margin: 0 var(--space-5);" aria-label="Community chat icon" role="img">
+                            <title>Community chat icon showing three people connected in a conversation bubble</title>
+                            <desc>A chat bubble with three circular icons representing people inside, connected by conversation lines, symbolizing community discussion and support</desc>
+                            <!-- Chat bubble with gradient effect -->
+                            <defs>
+                                <linearGradient id="chatGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#04773b;stop-opacity:0.8" />
+                                    <stop offset="100%" style="stop-color:#e3170a;stop-opacity:0.6" />
+                                </linearGradient>
+                            </defs>
+                            <ellipse cx="60" cy="50" rx="35" ry="28" fill="none" stroke="url(#chatGradient)" stroke-width="3" opacity="0.8"/>
+                            <path d="M 35 65 L 20 80 L 35 75" fill="none" stroke="url(#chatGradient)" stroke-width="3" opacity="0.8"/>
+                            
+                            <!-- People icons inside with better visibility -->
+                            <circle cx="45" cy="45" r="4" fill="#04773b" opacity="0.9"/>
+                            <circle cx="60" cy="45" r="4" fill="#04773b" opacity="0.9"/>
+                            <circle cx="75" cy="45" r="4" fill="#04773b" opacity="0.9"/>
+                            
+                            <!-- Chat lines with varying lengths -->
+                            <line x1="40" y1="55" x2="50" y2="55" stroke="#04773b" stroke-width="2" opacity="0.8"/>
+                            <line x1="55" y1="58" x2="70" y2="58" stroke="#04773b" stroke-width="2" opacity="0.8"/>
+                            <line x1="45" y1="61" x2="60" y2="61" stroke="#04773b" stroke-width="2" opacity="0.8"/>
+                        </svg>
+                        
+                        <!-- Right decorative element -->
+                        <svg width="30%" height="40" viewBox="0 0 300 40" preserveAspectRatio="none" style="flex-shrink: 1;" aria-hidden="true" role="presentation">
+                            <path d="M0,20 Q75,30 150,20 T300,20" fill="none" stroke="#04773b" stroke-width="2.5" opacity="0.7"/>
+                            <circle cx="180" cy="20" r="1.5" fill="#e3170a" opacity="0.7"/>
+                            <circle cx="240" cy="20" r="2" fill="#04773b" opacity="0.8"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Community Grid -->
-        <section class="content-cards" style="margin-top: var(--space-8);">
+        <section class="content-cards" style="margin-top: calc(var(--space-3) * -1);" role="region" aria-label="Community content">
             <div class="container">
                 <div class="personal-grid">
                     <!-- Left Column - Discussions -->
-                    <div class="discussions-column">
+                    <div class="discussions-column" role="region" aria-label="Discussion topics">
                         <div class="section-header">
                             <h2 class="section-title">Discussions</h2>
                         </div>
@@ -73,7 +112,8 @@
                         <!-- Search Bar -->
                         <div class="nav-search" style="margin-bottom: var(--space-6);">
                             <div class="search-container">
-                                <input type="search" class="search-input" placeholder="Search discussions..." aria-label="Search discussions">
+                                <label for="discussion-search" class="sr-only">Search discussions</label>
+                                <input type="search" id="discussion-search" class="search-input" placeholder="Search discussions..." aria-label="Search discussions">
                             </div>
                         </div>
 
@@ -238,8 +278,8 @@
                     </div>
 
                     <!-- Right Column - Group Chats -->
-                    <div class="chats-column">
-                        <div class="section-header" style="text-align: left; margin-bottom: var(--space-6);">
+                    <div class="chats-column" role="region" aria-label="Group chat rooms">
+                        <div class="section-header" style="text-align: center; margin-bottom: var(--space-6);">
                             <h2 class="section-title">Group Chats</h2>
                         </div>
 

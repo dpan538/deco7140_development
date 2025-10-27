@@ -36,7 +36,8 @@
             </ul>
             <div class="nav-search">
                 <div class="search-container">
-                    <input type="search" class="search-input" placeholder="Search..." aria-label="Search the site">
+                    <label for="chat-search" class="sr-only">Search the site</label>
+                    <input type="search" id="chat-search" class="search-input" placeholder="Search..." aria-label="Search the site" title="Search the site">
                 </div>
             </div>
         </div>
@@ -44,7 +45,7 @@
 
     <!-- Main Content -->
     <main id="main-content">
-        <section class="content-cards" style="margin-top: var(--space-8);">
+        <section class="content-cards" style="margin-top: var(--space-4);" aria-label="Chat content">
             <div class="container">
                 <div class="personal-grid">
                     <!-- Left Column - Chat Messages -->
@@ -109,14 +110,19 @@
                         <!-- Message Input -->
                         <div class="message-input-container">
                             <form id="chat-message-form">
-                                <div class="form-group">
-                                    <input type="text" id="person_name" name="person_name" class="input" placeholder="Your name (or Anonymous)" required>
-                                </div>
-                                <div class="form-group">
-                                    <textarea id="chat_post_content" name="chat_post_content" rows="3" class="input" placeholder="Type your message..." required></textarea>
-                                </div>
-                                <input type="hidden" name="chat_post_title" value="Local Brisbane Chat">
-                                <button type="submit" class="btn btn-block">Send Message</button>
+                                <fieldset style="border: none; padding: 0; margin: 0;">
+                                    <legend class="sr-only">Send a message to the chat</legend>
+                                    <div class="form-group">
+                                        <label for="person_name">Your name</label>
+                                        <input type="text" id="person_name" name="person_name" class="input" placeholder="e.g., @username or Anonymous" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="chat_post_content">Your message</label>
+                                        <textarea id="chat_post_content" name="chat_post_content" rows="3" class="input" placeholder="Type your message..." required></textarea>
+                                    </div>
+                                    <input type="hidden" name="chat_post_title" value="Local Brisbane Chat">
+                                    <button type="submit" class="btn btn-block">Send Message</button>
+                                </fieldset>
                             </form>
                             <p id="chat-feedback" style="margin-top: var(--space-3); font-size: 0.875rem;"></p>
                         </div>
@@ -142,7 +148,7 @@
                                 <h3>About this chat</h3>
                             </div>
                             <div class="card-body">
-                                <p>A welcoming space for Brisbane locals to connect, share experiences, and support each other's wellbeing. Whether you're looking for activity buddies, local recommendations, or just friendly conversation, you're in the right place.</p>
+                                <p>A welcoming space for Brisbane locals to connect, share experiences, and support each other's wellbeing. Whether you're looking for activity buddies, local recommendations, or just friendly conversation, this is the perfect community for you.</p>
                             </div>
                         </div>
 
@@ -172,7 +178,7 @@
                                     If you notice any content that raises mental health or safety concerns, please report it to our team. We're here to keep this space safe for everyone.
                                 </p>
                                 <div id="report-buttons">
-                                    <button class="btn btn-block" onclick="reportConcern()">Report to Team</button>
+                                    <button class="btn btn-block report-btn" data-action="report">Report to Team</button>
                                 </div>
                                 <p id="report-feedback" style="margin-top: var(--space-3); font-weight: 600; color: var(--accent-green); display: none;"></p>
                             </div>
@@ -205,15 +211,21 @@
 
     <script src="js/chat.js"></script>
     <script>
-        // Report button feedback
-        function reportConcern() {
-            const buttons = document.getElementById('report-buttons');
-            const feedback = document.getElementById('report-feedback');
+        // Report button feedback using event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const reportBtn = document.querySelector('.report-btn');
             
-            buttons.style.display = 'none';
-            feedback.style.display = 'block';
-            feedback.textContent = 'Thank you for reporting. Our team will review this.';
-        }
+            if (reportBtn) {
+                reportBtn.addEventListener('click', function() {
+                    const buttons = document.getElementById('report-buttons');
+                    const feedback = document.getElementById('report-feedback');
+                    
+                    buttons.style.display = 'none';
+                    feedback.style.display = 'block';
+                    feedback.textContent = 'Thank you for reporting. Our team will review this.';
+                });
+            }
+        });
     </script>
 </body>
 </html>

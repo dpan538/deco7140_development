@@ -1,0 +1,255 @@
+/* 
+ * CHAT.CSS
+ * Chat page specific styles
+ */
+
+/* ============================================
+   CHAT MESSAGES
+   ============================================ */
+
+.chat-message {
+    padding: var(--space-4);
+    margin-bottom: var(--space-3);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(253, 249, 244, 0.9) 100%);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-subtle);
+    transition: all var(--motion-duration-quick) var(--motion-ease-standard);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add subtle corner decoration */
+.chat-message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-yellow) 100%);
+    opacity: 0;
+    border-radius: 0 var(--radius-sm) 0 100%;
+    transition: opacity var(--motion-duration-quick) var(--motion-ease-standard);
+}
+
+.chat-message:hover::before {
+    opacity: 0.15;
+}
+
+.chat-message:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--elev-shadow-sm);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(253, 249, 244, 0.95) 100%);
+}
+
+.message-meta {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #333333; /* Improved contrast */
+    margin-bottom: var(--space-2);
+    transition: color var(--motion-duration-quick) var(--motion-ease-standard);
+    position: relative;
+    z-index: 1;
+}
+
+.chat-message:hover .message-meta {
+    color: var(--accent-green);
+}
+
+.message-content {
+    line-height: 1.7;
+    color: var(--text-primary);
+    position: relative;
+    z-index: 1;
+}
+
+/* Messages container */
+.messages-container {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    margin-bottom: var(--space-6);
+    box-shadow: var(--shadow-card);
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+/* ============================================
+   MESSAGE INPUT
+   ============================================ */
+
+.message-input-container {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-card);
+    border-top: 3px solid var(--accent-green);
+}
+
+.message-input-container .form-group {
+    margin-bottom: var(--space-4);
+}
+
+.message-input-container .form-group label {
+    font-family: "Onest", sans-serif;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+    display: block;
+    font-size: 0.875rem;
+}
+
+.message-input-container .input {
+    font-family: "Onest", sans-serif;
+    transition: all var(--motion-duration-quick) var(--motion-ease-standard);
+    border: 2px solid rgba(11, 10, 7, 0.2);
+}
+
+.message-input-container .input:focus {
+    outline: none;
+    border-color: var(--accent-green);
+    box-shadow: 0 0 0 3px rgba(4, 128, 85, 0.1);
+    transform: translateY(-1px);
+}
+
+.message-input-container .input:hover {
+    border-color: var(--accent-green);
+}
+
+/* ============================================
+   SIDEBAR CARDS
+   ============================================ */
+
+.chat-info-column .card {
+    transition: all var(--motion-duration-quick) var(--motion-ease-standard);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add subtle gradient overlay on hover */
+.chat-info-column .card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(4, 128, 85, 0.03) 0%, rgba(255, 231, 109, 0.03) 100%);
+    opacity: 0;
+    transition: opacity var(--motion-duration-quick) var(--motion-ease-standard);
+    pointer-events: none;
+}
+
+.chat-info-column .card:hover::after {
+    opacity: 1;
+}
+
+.chat-info-column .card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--elev-shadow-md);
+}
+
+.chat-info-column .card-header h3 {
+    font-family: "Google Sans Code", monospace, sans-serif;
+    font-weight: 600;
+    transition: font-weight var(--motion-duration-quick) var(--motion-ease-standard);
+    position: relative;
+    z-index: 1;
+}
+
+.chat-info-column .card:hover .card-header h3 {
+    font-weight: 800;
+}
+
+/* Group info specific styles */
+.chat-info-column .card-body {
+    position: relative;
+    z-index: 1;
+}
+
+.chat-info-column .card-body p {
+    transition: color var(--motion-duration-quick) var(--motion-ease-standard);
+}
+
+.chat-info-column .card:hover .card-body p {
+    color: var(--text-primary);
+}
+
+/* Rules list styling */
+.chat-info-column ul li {
+    position: relative;
+    padding-left: var(--space-2);
+    margin-bottom: var(--space-2);
+}
+
+.chat-info-column ul li::marker {
+    color: var(--accent-green);
+}
+
+/* ============================================
+   BUTTON ENHANCEMENTS
+   ============================================ */
+
+.btn {
+    transition: all var(--motion-duration-quick) var(--motion-ease-standard);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--elev-shadow-sm);
+}
+
+/* ============================================
+   SCREEN READER ONLY
+   ============================================ */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ============================================
+   HIGH CONTRAST MODE SUPPORT
+   ============================================ */
+
+@media (prefers-contrast: high) {
+    .chat-message,
+    .messages-container,
+    .message-input-container,
+    .chat-info-column .card {
+        border: 2px solid var(--text-primary);
+        background: var(--white);
+    }
+    
+    .message-input-container .input {
+        border: 2px solid var(--text-primary);
+        background: var(--white);
+    }
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .messages-container {
+        max-height: 400px;
+        padding: var(--space-4);
+    }
+    
+    .message-input-container {
+        padding: var(--space-4);
+    }
+    
+    .chat-message {
+        padding: var(--space-3);
+    }
+}
+
