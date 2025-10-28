@@ -1,99 +1,89 @@
-/* DECO7140 Introduction to Web Design - Work Phase 1 */
-/* Components - buttons, overlay, interactive elements */
-/* 页面组件样式：按钮、遮罩层、交互元素 */
+/**
+ * Components - Cards and Interactive Elements
+ */
 
-/* Next button - white border, transparent background */
-/* Next 按钮：白色边框，透明背景 */
-.next-btn {
-    padding: 20px 50px; /* 内边距 */
-    border: 5px solid var(--color-light); /* 白色边框 */
-    border-radius: 50px; /* 圆角按钮 */
-    background-color: transparent; /* 背景透明 */
-    cursor: pointer; /* 鼠标悬停时显示手型 */
-    transition: all 0.5s ease; /* 添加过渡动画 */
-    outline: none; /* 移除点击时的外边框 */
+.card {
+    background: var(--bg-primary);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
 }
 
-/* Next button hover effect */
-/* 悬停时按钮的效果 */
-.next-btn:hover {
-    background-color: var(--color-light); /* 悬停时背景变白 */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
 }
 
-.next-btn:hover .next-text {
-    color: var(--color-blue); /* 按钮文字变为主色 */
+.welcome-card {
+    border-left: 4px solid var(--primary-color);
 }
 
-/* Overlay styles - preserving existing functionality */
-/* 遮罩层样式：全屏覆盖，初始隐藏 */
-.overlay {
-    position: fixed; /* 固定定位，覆盖整个窗口 */
+.welcome-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.welcome-card p:last-child {
+    margin-bottom: 0;
+}
+
+.nav-card {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.nav-card::before {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--color-dark); /* 黑色背景 */
-    color: var(--color-light); /* 白色文字 */
-    display: none; /* 初始隐藏 */
-    justify-content: center; /* 水平居中内容 */
-    align-items: center; /* 垂直居中内容 */
-    z-index: 1000; /* 层级最高，覆盖所有内容 */
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
 }
 
-/* Overlay active state */
-/* 当 active 类被添加时 → 显示遮罩层 */
-.overlay.active {
-    display: flex;
+.nav-card:hover::before {
+    transform: scaleX(1);
 }
 
-/* Overlay content box */
-/* 遮罩层中的内容容器 */
-.overlay-box {
-    text-align: center;
-    max-width: 600px;
-    padding: 2rem;
+.nav-card:hover {
+    border-color: var(--primary-color);
 }
 
-/* Typewriter effect text */
-/* 打字机效果的文字样式 */
-.typewriter-text {
-    font-family: "Borel", cursive; /* 手写风格字体 */
-    font-size: 2.3rem;
-    margin-bottom: 3rem;
-    min-height: 3rem; /* 保持固定高度，避免文字抖动 */
-    color: var(--color-light); /* 白色文字 */
+.nav-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
 }
 
-/* Typewriter hint text */
-/* 提示文字样式（press esc to exit） */
-.typewriter-hint {
-    font-family: "American Typewriter", monospace;
+.nav-card p {
+    color: var(--text-secondary);
+    margin-bottom: 0;
+    font-size: 0.9375rem;
+}
+
+.card-arrow {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
     font-size: 1.5rem;
-    color: var(--color-yellow); /* 黄色提示文字 */
-    margin-top: 2rem;
+    color: var(--primary-color);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
 }
 
-/* Interactive cursor styles */
-/* 鼠标悬停时绿色和黄色区域透明度变化 */
-.green-section:hover {
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+.nav-card:hover .card-arrow {
+    opacity: 1;
+    transform: translateX(0);
 }
 
-.yellow-section:hover {
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+/* Active state */
+.nav-card:active {
+    transform: translateY(-2px);
 }
-
-/* Primary button style / 主按钮（蓝色背景） */
-.button-primary {
-    background-color: var(--color-blue);
-    color: var(--color-light);
-}
-
-/* Secondary button style / 次按钮（黄色背景） */
-.button-secondary {
-    background-color: var(--color-yellow);
-    color: var(--color-dark);
-}
-

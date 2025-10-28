@@ -1,153 +1,80 @@
-/* DECO7140 Introduction to Web Design - Work Phase 1 */
-/* Layout matching exact design specifications / 页面布局，完全符合设计稿要求 */
+/**
+ * Layout - Container and Grid System
+ */
 
-/* Main design container - exact 1440x1024 ratio */
-/* 主容器，保持 1440:1024 的比例，居中显示 */
-.design-container {
-    width: 100vw; /* 占满浏览器宽度 */
-    height: 100vh; /* 占满浏览器高度 */
-    max-width: 1440px; /* 最大宽度 1440px */
-    max-height: 1024px; /* 最大高度 1024px */
-    margin: 0 auto; /* 自动水平居中 */
-    position: relative;
-    overflow: hidden;
-    /* Maintain exact aspect ratio / 保持宽高比不变 */
-    aspect-ratio: 1440 / 1024;
-    background: rgb(0, 0, 0);
-}
-
-/* Responsive scaling while maintaining proportions */
-/* 响应式调整，保持比例缩放 */
-@media (max-aspect-ratio: 1440/1024) {
-    .design-container {
-        width: 100vw; /* 宽度满屏 */
-        height: calc(100vw * 1024 / 1440); /* 高度按比例缩放 */
-    }
-}
-
-@media (min-aspect-ratio: 1440/1024) {
-    .design-container {
-        width: calc(100vh * 1440 / 1024); /* 宽度按比例缩放 */
-        height: 100vh; /* 高度满屏 */
-    }
-}
-
-/* Top Blue Section - increased to 50% for better visual balance */
-/* 顶部蓝色区域，占页面高度 50%，内容居中 */
-.blue-section {
-    background-color: var(--color-blue);
-    width: 100%;
-    height: 50%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* 垂直居中 */
-    align-items: center; /* 水平居中 */
-}
-
-/* Remove yellow triangle - pure blue background */
-
-/* Bottom Section - 50% of total height */
-/* 底部区域，占页面高度 50% */
-.bottom-section {
-    width: 100%;
-    height: 50%;
-    display: flex;
-}
-
-/* Left Green Section - 50% of bottom width */
-/* 左侧绿色区域，占底部宽度一半，居中显示内容 */
-.green-section {
-    background-color: var(--color-green);
-    width: 50%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer; /* 鼠标悬停可点击 */
-}
-
-/* Yellow diagonal line through Links - adjusted positioning */
-/* 黄色斜线装饰，穿过 Links 标题 */
-.yellow-diagonal {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    width: 80%;
-    height: 9px;
-    background-color: var(--color-yellow);
-    transform: translateY(-50%) rotate(-15deg); /* 居中并旋转成斜线 */
-    z-index: 1;
-}
-
-/* Right Section - 50% of bottom width, split vertically */
-/* 右侧区域，占底部一半宽度，上下分为两部分 */
-.right-section {
-    width: 50%;
-    height: 100%;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* Red Section - 50% of right section height with compact padding */
-/* 红色区域，占右侧高度一半，带内边距，文字居中 */
-.red-section {
-    background-color: var(--color-red);
-    width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 1.5rem;
-}
-
-/* Yellow Section - 50% of right section height */
-/* 黄色区域，占右侧高度一半，居中显示，允许点击 */
-.yellow-section {
-    background-color: var(--color-yellow);
-    width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer; /* 鼠标悬停可点击 */
-    overflow: hidden; /* 内容溢出隐藏 */
-}
-
-/* Welcome text positioning - centered with good spacing */
-/* 欢迎标题，居中并增加底部间距 */
-.welcome-text {
+.header {
+    text-align: center;
+    padding: 3rem 0;
     margin-bottom: 3rem;
 }
 
-/* Next button positioning - adjusted for centered layout */
-/* Next 按钮，放在蓝色区域底部中间 */
-.next-btn {
-    position: absolute;
-    bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%);
+.site-title {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
 }
 
-/* Intro text positioning */
-/* 介绍文字，靠左排列，行距紧凑 */
-.intro-text {
-    text-align: left;
-    line-height: 1.2;
+.site-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    font-weight: 500;
 }
 
-/* Footer badge - red background, white text, aligned with yellow line */
-/* 页脚徽章：红底白字，与黄色斜线对齐，带圆角 */
-.footer-badge {
-    position: absolute;
-    bottom: 20px;
-    left: 3.4%; /* 与黄色斜线起点对齐 */
-    background-color: var(--color-red);
-    color: var(--color-light);
-    padding: 8px 16px;
-    font-size: 0.75rem;
-    z-index: 10;
-    border-radius: 4px;
-    font-family: "American Typewriter", "Courier New", monospace;
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .header {
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+    }
+    
+    .site-title {
+        font-size: 2rem;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
 }

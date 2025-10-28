@@ -1,7 +1,5 @@
-/* 让链接和 home 间距更紧凑排列 */
-.links {
-    display: flex;
-    align-items: center;
-    gap: 1rem; /* 控制间距 */
-    margin-top: 1.5rem;
-}
+/**
+ * Spacing Utilities
+ */
+
+/* Spacing is handled in layout.css and components.css */
