@@ -58,7 +58,7 @@
         }
         
         .color-box.primary { background-color: #3626a7; }
-        .color-box.accent-green { background-color: #048055; }
+        .color-box.accent-green { background-color: #04724d; }
         .color-box.accent-yellow { background-color: #ffe76d; }
         .color-box.black { background-color: #0b0a07; }
         .color-box.cream { background-color: #fdf9f4; border: 1px solid rgba(0,0,0,0.1); }
@@ -162,44 +162,6 @@
             line-height: 1.6;
             color: var(--text-primary);
         }
-        
-        /* Screen reader only */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-        
-        /* High Contrast Mode Support */
-        @media (prefers-contrast: high) {
-            .card,
-            .principle-card,
-            table,
-            .accordion-item {
-                border: 2px solid currentColor !important;
-                background: Canvas !important;
-                color: CanvasText !important;
-            }
-            
-            .badge {
-                border: 2px solid currentColor !important;
-                background: Canvas !important;
-                color: CanvasText !important;
-            }
-            
-            svg path,
-            svg circle,
-            svg rect {
-                stroke: currentColor !important;
-                fill: currentColor !important;
-            }
-        }
     </style>
 </head>
 <body>
@@ -207,7 +169,7 @@
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
 
     <!-- Navigation -->
-    <nav aria-label="Main navigation">
+    <nav>
         <div class="nav-container">
             <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 &#9776;
@@ -220,8 +182,7 @@
             </ul>
             <div class="nav-search">
                 <div class="search-container">
-                    <label for="impl-search" class="sr-only">Search the site</label>
-                    <input type="search" id="impl-search" class="search-input" placeholder="Search..." aria-label="Search the site" title="Search the site">
+                    <input type="search" class="search-input" placeholder="Search..." aria-label="Search the site">
                 </div>
             </div>
         </div>
@@ -288,7 +249,7 @@
                             <desc>A flowing wave pattern representing the design process</desc>
                             <path d="M0,20 Q100,10 200,20 T400,20" fill="none" stroke="var(--accent-green)" stroke-width="2.5" opacity="0.7"/>
                             <path d="M0,20 Q100,30 200,20 T400,20" fill="none" stroke="var(--accent-yellow)" stroke-width="2" opacity="0.5"/>
-                    </svg>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -299,7 +260,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Core Design Philosophy</h2>
-                    <p role="doc-subtitle" class="section-subtitle">
+                    <p class="section-subtitle">
                         Restraint as strategy—accessibility as foundation, clarity as craft
                     </p>
                 </div>
@@ -316,59 +277,12 @@
             </div>
         </section>
 
-        <!-- Design Principles -->
-        <section class="content-cards" role="region" aria-label="Design Principles Section" style="margin-bottom: var(--space-16);">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Design Principles</h2>
-                    <p role="doc-subtitle" class="section-subtitle">
-                        Core insights that guided every decision
-                    </p>
-                </div>
-
-                <div class="principle-cards">
-                    <div class="principle-card" style="border-left: 4px solid var(--accent-green);">
-                        <div class="principle-quote" role="heading" aria-level="4">
-                            "Design isn't decoration—it's information architecture."
-                        
-                        
-                        </div>
-                        <p class="principle-text">
-                            Color, typography, spacing, and components form relationships that clarify or obscure meaning. Badges transform complexity into visual tokens. Consistency turns elements from decoration into signal.
-                        </p>
-                    </div>
-
-                    <div class="principle-card" style="border-left: 4px solid var(--accent-yellow);">
-                        <div class="principle-quote" role="heading" aria-level="4">
-                            "The hardest skill is knowing what to remove."
-                        
-                        
-                        </div>
-                        <p class="principle-text">
-                            Restraint isn't minimalism—it's strategic editing. SVG decorations add breathing room but stay opacity-reduced. Visual interest serves user tasks, not ego.
-                        </p>
-                    </div>
-
-                    <div class="principle-card" style="border-left: 4px solid var(--primary);">
-                        <div class="principle-quote" role="heading" aria-level="4">
-                            "Systems serve content, not vice versa."
-                        
-                        
-                        </div>
-                        <p class="principle-text">
-                            The spacing scale creates rhythm 90% of the time. The other 10% requires judgment. Good systems have clear rules and the wisdom to break them when necessary.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Professional Standards & Compliance -->
         <section class="content-cards">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Professional Standards & Compliance</h2>
-                    <p role="doc-subtitle" class="section-subtitle">
+                    <p class="section-subtitle">
                         Adhering to ACS Code of Ethics and WCAG 2.2 AA accessibility standards
                     </p>
                 </div>
@@ -425,7 +339,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Color System: Restraint & Balance</h2>
-                    <p role="doc-subtitle" class="section-subtitle">
+                    <p class="section-subtitle">
                         Warm neutrals anchored by strategic accent colors
                     </p>
                 </div>
@@ -498,14 +412,14 @@
                     <!-- Accordion: Chromatic Restraint -->
                     <div class="accordion-wrapper" style="grid-column: span 2;">
                         <div class="accordion-item">
-                            <div role="heading" aria-level="4" class="accordion-header">Chromatic Restraint</div>
+                            <div class="accordion-header">Chromatic Restraint</div>
                             <div class="accordion-content">
                                 <div class="accordion-body">
                                     <p>
                                         Color acceptance varies dramatically across users, particularly among older adults who may have color vision changes or strong preferences. I chose a warm black-and-white foundation (smoky black #0b0a07 and isabelline off-white #fdf9f4) because neutrals provide universal accessibility while establishing a calm, approachable atmosphere. The cream background reduces eye strain compared to pure white, particularly important for extended reading sessions.
                                     </p>
                                     <p style="margin-top: var(--space-4);">
-                                        Phase 3 established blue (#4357ad) and green (#048055) as dual primary accents, with yellow (#ffe76d) as secondary. Phase 4 introduced purple (#3626a7) experimentally to create a triadic color system—a variation of the three primary colors (blue-purple, green, yellow). These colors alternate throughout the interface: purple for navigation and structure, green for positive actions and growth, yellow for attention and warmth. This triadic relationship creates visual interest without overwhelming users who might find saturated color palettes distracting or stressful.
+                                        Accent colors—dark spring green (#04724d) and maize yellow (#ffe76d)—serve as visual punctuation, not paragraphs. Green and yellow are relatively universal colors with broad cultural acceptance. The zaffre purple (#3626a7) primary color adds creative distinction while the green and yellow accents provide chromatic balance, preventing the purple from dominating. This triadic relationship creates visual interest without overwhelming users who might find saturated color palettes distracting or stressful.
                                     </p>
                                 </div>
                             </div>
@@ -515,7 +429,7 @@
                     <!-- Functional Color Usage -->
                     <div class="accordion-wrapper">
                         <div class="accordion-item">
-                            <div role="heading" aria-level="4" class="accordion-header">Functional Color Usage</div>
+                            <div class="accordion-header">Functional Color Usage</div>
                             <div class="accordion-content">
                                 <div class="accordion-body">
                                     <p>
@@ -534,7 +448,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Typography: Warmth Meets Structure</h2>
-                    <p role="doc-subtitle" class="section-subtitle">
+                    <p class="section-subtitle">
                         Three typefaces balancing readability with personality
                     </p>
                 </div>
@@ -582,84 +496,12 @@
             </div>
         </section>
 
-        <!-- Design Adjustments from A3 -->
-        <section class="content-cards">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Design Adjustments & Rationale</h2>
-                    <p role="doc-subtitle" class="section-subtitle">
-                        Justified variations from Work Phase 3 design proposal
-                    </p>
-                </div>
-
-                <div class="cards-grid">
-                    <div class="card" style="grid-column: span 3;">
-                        <div class="card-body">
-                            <p style="margin-bottom: var(--space-4);">The final implementation refined several design decisions from the Phase 3 proposal based on accessibility testing, user research insights, and technical constraints. Each change prioritizes user wellbeing and WCAG 2.2 AA compliance.</p>
-                            
-                            <table style="width: 100%; border-collapse: collapse; margin-top: var(--space-4); border-radius: var(--radius-sm); overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-                                <thead>
-                                    <tr style="background: linear-gradient(135deg, rgba(54, 38, 167, 0.15) 0%, rgba(54, 38, 167, 0.1) 100%); text-align: left;">
-                                        <th style="padding: var(--space-3); font-weight: 700; color: var(--primary);">Original Plan (A3)</th>
-                                        <th style="padding: var(--space-3); font-weight: 700; color: var(--primary);">Implemented Change (A4)</th>
-                                        <th style="padding: var(--space-3); font-weight: 700; color: var(--primary);">Justification</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr style="background: linear-gradient(135deg, rgba(54, 38, 167, 0.06) 0%, rgba(255, 231, 109, 0.16) 100%); border-bottom: 1px solid rgba(0,0,0,0.05);">
-                                        <td style="padding: var(--space-3);">Gradient backgrounds on all cards</td>
-                                        <td style="padding: var(--space-3);">Replaced with solid white backgrounds and subtle shadows</td>
-                                        <td style="padding: var(--space-3);">Improved text readability and contrast ratios (WCAG 1.4.3). Gradients reduced to hover states only.</td>
-                                    </tr>
-                                    <tr style="background: linear-gradient(135deg, rgba(54, 38, 167, 0.05) 0%, rgba(255, 231, 109, 0.18) 100%); border-bottom: 1px solid rgba(0,0,0,0.05);">
-                                        <td style="padding: var(--space-3);">No badge system planned</td>
-                                        <td style="padding: var(--space-3);">Added green/yellow badge system for content categorization</td>
-                                        <td style="padding: var(--space-3);">Phase 4 addition: badges provide visual redundancy and information scannability—helps users quickly identify content types (e.g., "New", "Popular", "Wellness Guide").</td>
-                                    </tr>
-                                    <tr style="background: linear-gradient(135deg, rgba(54, 38, 167, 0.04) 0%, rgba(255, 231, 109, 0.20) 100%); border-bottom: 1px solid rgba(0,0,0,0.05);">
-                                        <td style="padding: var(--space-3);">Three-column grid layout for homepage on all devices</td>
-                                        <td style="padding: var(--space-3);">Simplified to single column on mobile, two on tablet, three on desktop</td>
-                                        <td style="padding: var(--space-3);">Better responsive flow and readability. Akasha (67, older adult) needs simplified mobile layouts.</td>
-                                    </tr>
-                                    <tr style="background: linear-gradient(135deg, rgba(54, 38, 167, 0.03) 0%, rgba(255, 231, 109, 0.22) 100%); border-bottom: 1px solid rgba(0,0,0,0.05);">
-                                        <td style="padding: var(--space-3);">Discussion forum as separate standalone page</td>
-                                        <td style="padding: var(--space-3);">Integrated discussion cards on Community page, detailed threads on Discussion page</td>
-                                        <td style="padding: var(--space-3);">Two-level navigation matches mental model: overview → detail. Reduces clicks for common browsing patterns.</td>
-                                    </tr>
-                                    <tr style="background: linear-gradient(135deg, rgba(54, 38, 167, 0.02) 0%, rgba(255, 231, 109, 0.24) 100%); border-bottom: 1px solid rgba(0,0,0,0.05);">
-                                        <td style="padding: var(--space-3);">Animated transitions for all interactions</td>
-                                        <td style="padding: var(--space-3);">Minimal animations, primarily static hover effects</td>
-                                        <td style="padding: var(--space-3);">Respects prefers-reduced-motion and avoids triggering vestibular disorders. Calm UI aligns with mental health context.</td>
-                                    </tr>
-                                    <tr style="background: linear-gradient(135deg, rgba(54, 38, 167, 0.02) 0%, rgba(255, 231, 109, 0.26) 100%); border-bottom: 1px solid rgba(0,0,0,0.05);">
-                                        <td style="padding: var(--space-3);">Blue (#4357ad) and green (#048055) as dual primary accents</td>
-                                        <td style="padding: var(--space-3);">Added purple (#3626a7) to create triadic system; blue/green/yellow alternate</td>
-                                        <td style="padding: var(--space-3);">Phase 4 experimental addition: purple creates a three-color system (variation of primary colors: blue-purple, green, yellow) that alternates throughout interface. Adds personal design interest and visual richness without compromising accessibility.</td>
-                                    </tr>
-                                    <tr style="background: linear-gradient(135deg, rgba(54, 38, 167, 0.01) 0%, rgba(255, 231, 109, 0.28) 100%);">
-                                        <td style="padding: var(--space-3);">Separate mobile and desktop navigation structures</td>
-                                        <td style="padding: var(--space-3);">Unified navigation with responsive hamburger menu</td>
-                                        <td style="padding: var(--space-3);">Consistent experience across devices. ARIA-expanded toggle ensures screen reader compatibility.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="card-footer">
-                            <span class="badge badge-green">Evidence-Based</span>
-                            <span class="badge">User-Centered</span>
-                            <span class="badge badge-yellow">Accessibility</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Component Design Decisions -->
+        <!-- Component Design -->
         <section class="content-cards">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Component Design Decisions</h2>
-                    <p role="doc-subtitle" class="section-subtitle">
+                    <p class="section-subtitle">
                         Thoughtful choices behind cards, badges, buttons, and accordions
                     </p>
                 </div>
@@ -695,7 +537,7 @@
                     <!-- Card System -->
                     <div class="accordion-wrapper" style="grid-column: span 2;">
                         <div class="accordion-item">
-                            <div role="heading" aria-level="4" class="accordion-header">Card System as Clickable Links</div>
+                            <div class="accordion-header">Card System as Clickable Links</div>
                             <div class="accordion-content">
                                 <div class="accordion-body">
                                     <p>
@@ -712,11 +554,11 @@
                     <!-- Badge System -->
                     <div class="accordion-wrapper">
                         <div class="accordion-item">
-                            <div role="heading" aria-level="4" class="accordion-header">Badge System</div>
+                            <div class="accordion-header">Badge System</div>
                             <div class="accordion-content">
                                 <div class="accordion-body">
                                     <p>
-                                        <strong>Phase 4 addition:</strong> Badges were not planned in Phase 3 but added during implementation to provide visual redundancy and information scannability. They distill information into scannable labels—"Active Community", "Evidence-Based", "Private & Secure"—serving users who don't want to read full paragraphs but need quick confirmation of key attributes. The badge system does information subtraction, removing cognitive load while preserving essential meaning. Color-coding (green for positive/safe, yellow for attention/important, purple for general categorization) creates visual patterns that aid recognition across pages.
+                                        Badges distill information into scannable labels—"Active Community", "Evidence-Based", "Private & Secure". This serves users who don't want to read full paragraphs but need quick confirmation of key attributes. The badge system does information subtraction, removing cognitive load while preserving essential meaning. Color-coding (green for positive/safe, yellow for attention/important, purple for general categorization) creates visual patterns that aid recognition across pages.
                                     </p>
                                 </div>
                             </div>
@@ -726,7 +568,7 @@
                     <!-- Accordion Pattern -->
                     <div class="accordion-wrapper" style="grid-column: span 3;">
                         <div class="accordion-item">
-                            <div role="heading" aria-level="4" class="accordion-header">Accordion Pattern</div>
+                            <div class="accordion-header">Accordion Pattern</div>
                             <div class="accordion-content">
                                 <div class="accordion-body">
                                     <p>
@@ -745,7 +587,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Image Aspect Ratio Evolution</h2>
-                    <p role="doc-subtitle" class="section-subtitle">
+                    <p class="section-subtitle">
                         4:3 → 16:9 → 2.39:1 (Cinematic)
                     </p>
                 </div>
@@ -826,7 +668,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Information Architecture & Strategic Redundancy</h2>
-                    <p role="doc-subtitle" class="section-subtitle">
+                    <p class="section-subtitle">
                         Multiple pathways ensure users find what they need
                     </p>
                 </div>
@@ -835,7 +677,7 @@
                     <!-- Navigation Structure -->
                     <div class="accordion-wrapper" style="grid-column: span 2;">
                         <div class="accordion-item">
-                            <div role="heading" aria-level="4" class="accordion-header">Navigation Structure</div>
+                            <div class="accordion-header">Navigation Structure</div>
                             <div class="accordion-content">
                                 <div class="accordion-body">
                                     <p>
@@ -849,7 +691,7 @@
                     <!-- Modular CSS -->
                     <div class="accordion-wrapper">
                         <div class="accordion-item">
-                            <div role="heading" aria-level="4" class="accordion-header">Modular CSS Architecture</div>
+                            <div class="accordion-header">Modular CSS Architecture</div>
                             <div class="accordion-content">
                                 <div class="accordion-body">
                                     <p>
@@ -885,7 +727,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Visual Balance & Rhythm</h2>
-                    <p role="doc-subtitle" class="section-subtitle">
+                    <p class="section-subtitle">
                         SVG decorations and spacing systems create hierarchy
                     </p>
                 </div>
@@ -894,7 +736,7 @@
                     <!-- SVG Decorations -->
                     <div class="accordion-wrapper" style="grid-column: span 2;">
                         <div class="accordion-item">
-                            <div role="heading" aria-level="4" class="accordion-header">SVG Decorations</div>
+                            <div class="accordion-header">SVG Decorations</div>
                             <div class="accordion-content">
                                 <div class="accordion-body">
                                     <p>
@@ -911,7 +753,7 @@
                     <!-- Spacing System -->
                     <div class="accordion-wrapper">
                         <div class="accordion-item">
-                            <div role="heading" aria-level="4" class="accordion-header">Spacing System</div>
+                            <div class="accordion-header">Spacing System</div>
                             <div class="accordion-content">
                                 <div class="accordion-body">
                                     <p>
@@ -925,7 +767,7 @@
                     <!-- Privacy-First Technical Decisions -->
                     <div class="accordion-wrapper" style="grid-column: span 3;">
                         <div class="accordion-item">
-                            <div role="heading" aria-level="4" class="accordion-header">Privacy-First Technical Decisions</div>
+                            <div class="accordion-header">Privacy-First Technical Decisions</div>
                             <div class="accordion-content">
                                 <div class="accordion-body">
                                     <p>
@@ -939,74 +781,15 @@
             </div>
         </section>
 
-        <!-- Accessibility Audit Evidence -->
-        <section class="content-cards">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Accessibility Audit Evidence</h2>
-                    <p role="doc-subtitle" class="section-subtitle">
-                        IBM Equal Access Checker results and remediation
-                    </p>
-                </div>
-
-                <div class="cards-grid">
-                    <div class="card" style="grid-column: span 2;">
-                        <div class="card-header">
-                            <h3>Audit Results Summary</h3>
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Tool Used:</strong> IBM Equal Access Checker</p>
-                            
-                            <p style="margin-top: var(--space-3);"><strong>Pages Audited:</strong> All 12 pages tested across multiple breakpoints (mobile, tablet, desktop)</p>
-                            
-                            <p style="margin-top: var(--space-3);"><strong>Violations:</strong> Initially 36 across all pages (primarily ARIA labels, contrast ratios, landmark structure)</p>
-                            <p style="margin-top: var(--space-2);"><strong>Final Status:</strong> Optimized all violations through careful review and implemented all feasible recommendations.</p>
-                            
-                            <p style="margin-top: var(--space-3); font-size: 1rem;"><strong>Key Fixes Applied:</strong></p>
-                            <ul style="margin-left: var(--space-6); margin-top: var(--space-2); font-size: 1rem; line-height: 1.7;">
-                                <li style="margin-bottom: var(--space-2);">Added <code>sr-only</code> labels for all search inputs (previously placeholder-only)</li>
-                                <li style="margin-bottom: var(--space-2);">Wrapped form inputs in <code>&lt;fieldset&gt;</code> with <code>&lt;legend&gt;</code> for logical grouping</li>
-                                <li style="margin-bottom: var(--space-2);">Corrected accordion headers from <code>&lt;div&gt;</code> to <code>role="heading"</code> with <code>aria-level</code></li>
-                                <li style="margin-bottom: var(--space-2);">Increased color contrast for discussion metadata from gray (#888) to dark gray (#333) — now meets 4.5:1 ratio</li>
-                                <li style="margin-bottom: var(--space-2);">Added explicit <code>@media (prefers-contrast: high)</code> styles for badges, cards, and buttons</li>
-                                <li style="margin-bottom: var(--space-2);">Wrapped quotations in <code>&lt;q&gt;</code> tags (12 instances across genai_mt_acknowledgement.html)</li>
-                                <li>Added <code>title</code> attributes to complement ARIA labels for search inputs</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer">
-                            <span class="badge badge-green">WCAG 2.2 AA</span>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Reflection</h3>
-                        </div>
-                        <div class="card-body">
-                            <p>The IBM Equal Access Checker revealed patterns I hadn't anticipated: placeholder text, while visually clear, provides no semantic value to screen readers. This reinforced the importance of redundant labeling strategies.</p>
-                            
-                            <p style="margin-top: var(--space-3);">Most impactful fix: wrapping form inputs in <code>&lt;fieldset&gt;</code> elements. Screen readers now announce "Reply to discussion" before reading each input field, providing critical context that was previously missing.</p>
-                            
-                            <p style="margin-top: var(--space-3);">The audit also highlighted subtle issues like directional language ("left unaddressed" → "unaddressed") and the need for explicit high-contrast mode styles—both invisible in standard testing but crucial for users with specific needs.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="badge">Iterative</span>
-                            <span class="badge badge-yellow">Learning-Focused</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Technical Implementation & Code Structure -->
         <section class="content-cards">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Technical Implementation & Code Structure</h2>
-                    <p role="doc-subtitle" class="section-subtitle">
+                    <p class="section-subtitle">
                         Functional features, responsive design, and modular architecture
-                        </p>
-                    </div>
+                    </p>
+                </div>
 
                 <div class="accordion-wrapper">
                     <!-- Website Structure (Accordion) -->
@@ -1018,7 +801,7 @@
                                 <p style="margin-top: var(--space-2);"><strong>Sub Pages:</strong> Discussion, Chat, Article, Activity</p>
                                 <p style="margin-top: var(--space-2);"><strong>Footer Pages:</strong> About, Privacy, Implementation Rationale, GenAI Acknowledgement</p>
                                 <p style="margin-top: var(--space-3); font-size: 0.875rem; color: var(--text-muted);">12 pages total, organized in 3-tier hierarchy for clear information architecture.</p>
-                        </div>
+                            </div>
                         </div>
                     </div>
 
@@ -1099,7 +882,179 @@ work-phase-4/
                                 <p style="margin-top: var(--space-3);"><strong>Recent Commits:</strong> WCAG 2.2 updates, CSS refactoring, IBM accessibility compliance, visual hierarchy refinements, ARIA semantics improvements</p>
                                 
                                 <p style="margin-top: var(--space-3);"><strong>Technologies:</strong> HTML5, CSS3 (Grid, Flexbox, Custom Properties), Vanilla JavaScript (ES6 Modules), Google Fonts API</p>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Design Principles -->
+        <section class="content-cards" style="margin-bottom: var(--space-16);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Design Principles</h2>
+                    <p class="section-subtitle">
+                        Core insights that guided every decision
+                    </p>
+                </div>
+
+                <div class="principle-cards">
+                    <div class="principle-card" style="border-left: 4px solid var(--accent-green);">
+                        <div class="principle-quote">
+                            "Design isn't decoration—it's information architecture."
+                        </div>
+                        <p class="principle-text">
+                            Color, typography, spacing, and components form relationships that clarify or obscure meaning. Badges transform complexity into visual tokens. Consistency turns elements from decoration into signal.
+                        </p>
+                    </div>
+
+                    <div class="principle-card" style="border-left: 4px solid var(--accent-yellow);">
+                        <div class="principle-quote">
+                            "The hardest skill is knowing what to remove."
+                        </div>
+                        <p class="principle-text">
+                            Restraint isn't minimalism—it's strategic editing. SVG decorations add breathing room but stay opacity-reduced. Visual interest serves user tasks, not ego.
+                        </p>
+                    </div>
+
+                    <div class="principle-card" style="border-left: 4px solid var(--primary);">
+                        <div class="principle-quote">
+                            "Systems serve content, not vice versa."
+                        </div>
+                        <p class="principle-text">
+                            The spacing scale creates rhythm 90% of the time. The other 10% requires judgment. Good systems have clear rules and the wisdom to break them when necessary.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Design Adjustments from A3 -->
+        <section class="content-cards">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Design Adjustments & Rationale</h2>
+                    <p class="section-subtitle">
+                        Justified variations from Work Phase 3 design proposal
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="card" style="grid-column: span 3;">
+                        <div class="card-body">
+                            <p style="margin-bottom: var(--space-4);">The final implementation refined several design decisions from the Phase 3 proposal based on accessibility testing, user research insights, and technical constraints. Each change prioritizes user wellbeing and WCAG 2.2 AA compliance.</p>
+                            
+                            <table style="width: 100%; border-collapse: collapse; margin-top: var(--space-4); border-radius: var(--radius-sm); overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                                <thead>
+                                    <tr style="background: linear-gradient(135deg, rgba(54, 38, 167, 0.15) 0%, rgba(54, 38, 167, 0.1) 100%); text-align: left;">
+                                        <th style="padding: var(--space-3); font-weight: 700; color: var(--primary);">Original Plan (A3)</th>
+                                        <th style="padding: var(--space-3); font-weight: 700; color: var(--primary);">Implemented Change (A4)</th>
+                                        <th style="padding: var(--space-3); font-weight: 700; color: var(--primary);">Justification</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background: linear-gradient(135deg, rgba(54, 38, 167, 0.06) 0%, rgba(255, 231, 109, 0.16) 100%); border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                        <td style="padding: var(--space-3);">Gradient backgrounds on all cards</td>
+                                        <td style="padding: var(--space-3);">Replaced with solid white backgrounds and subtle shadows</td>
+                                        <td style="padding: var(--space-3);">Improved text readability and contrast ratios (WCAG 1.4.3). Gradients reduced to hover states only.</td>
+                                    </tr>
+                                    <tr style="background: linear-gradient(135deg, rgba(54, 38, 167, 0.05) 0%, rgba(255, 231, 109, 0.18) 100%); border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                        <td style="padding: var(--space-3);">GenAI badge in footer of every page</td>
+                                        <td style="padding: var(--space-3);">Consolidated into dedicated GenAI Acknowledgement page</td>
+                                        <td style="padding: var(--space-3);">Reduced footer clutter while maintaining transparency. Full disclosure more appropriate than minimal badge.</td>
+                                    </tr>
+                                    <tr style="background: linear-gradient(135deg, rgba(54, 38, 167, 0.04) 0%, rgba(255, 231, 109, 0.20) 100%); border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                        <td style="padding: var(--space-3);">Three-column grid layout for homepage on all devices</td>
+                                        <td style="padding: var(--space-3);">Simplified to single column on mobile, two on tablet, three on desktop</td>
+                                        <td style="padding: var(--space-3);">Better responsive flow and readability. Akasha (67, older adult) needs simplified mobile layouts.</td>
+                                    </tr>
+                                    <tr style="background: linear-gradient(135deg, rgba(54, 38, 167, 0.03) 0%, rgba(255, 231, 109, 0.22) 100%); border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                        <td style="padding: var(--space-3);">Discussion forum as separate standalone page</td>
+                                        <td style="padding: var(--space-3);">Integrated discussion cards on Community page, detailed threads on Discussion page</td>
+                                        <td style="padding: var(--space-3);">Two-level navigation matches mental model: overview → detail. Reduces clicks for common browsing patterns.</td>
+                                    </tr>
+                                    <tr style="background: linear-gradient(135deg, rgba(54, 38, 167, 0.02) 0%, rgba(255, 231, 109, 0.24) 100%); border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                        <td style="padding: var(--space-3);">Animated transitions for all interactions</td>
+                                        <td style="padding: var(--space-3);">Minimal animations, primarily static hover effects</td>
+                                        <td style="padding: var(--space-3);">Respects prefers-reduced-motion and avoids triggering vestibular disorders. Calm UI aligns with mental health context.</td>
+                                    </tr>
+                                    <tr style="background: linear-gradient(135deg, rgba(54, 38, 167, 0.02) 0%, rgba(255, 231, 109, 0.26) 100%); border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                        <td style="padding: var(--space-3);">Purple (#3626a7) as dominant accent throughout</td>
+                                        <td style="padding: var(--space-3);">Reduced purple to secondary role; green (#04724d) as primary accent</td>
+                                        <td style="padding: var(--space-3);">Green better conveys growth and healing in mental health context. Purple retained for visual diversity without overwhelming users.</td>
+                                    </tr>
+                                    <tr style="background: linear-gradient(135deg, rgba(54, 38, 167, 0.01) 0%, rgba(255, 231, 109, 0.28) 100%);">
+                                        <td style="padding: var(--space-3);">Separate mobile and desktop navigation structures</td>
+                                        <td style="padding: var(--space-3);">Unified navigation with responsive hamburger menu</td>
+                                        <td style="padding: var(--space-3);">Consistent experience across devices. ARIA-expanded toggle ensures screen reader compatibility.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge badge-green">Evidence-Based</span>
+                            <span class="badge">User-Centered</span>
+                            <span class="badge badge-yellow">Accessibility</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accessibility Audit Evidence -->
+        <section class="content-cards">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Accessibility Audit Evidence</h2>
+                    <p class="section-subtitle">
+                        IBM Equal Access Checker results and remediation
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="card" style="grid-column: span 2;">
+                        <div class="card-header">
+                            <h3>Audit Results Summary</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Tool Used:</strong> IBM Equal Access Checker</p>
+                            
+                            <p style="margin-top: var(--space-3);"><strong>Pages Audited:</strong> All 12 pages tested across multiple breakpoints (mobile, tablet, desktop)</p>
+                            
+                            <p style="margin-top: var(--space-3);"><strong>Violations:</strong> Initially 36 across all pages (primarily ARIA labels, contrast ratios, landmark structure)</p>
+                            <p style="margin-top: var(--space-2);"><strong>Final Status:</strong> Optimized all violations through careful review and implemented all feasible recommendations.</p>
+                            
+                            <p style="margin-top: var(--space-3); font-size: 1rem;"><strong>Key Fixes Applied:</strong></p>
+                            <ul style="margin-left: var(--space-6); margin-top: var(--space-2); font-size: 1rem; line-height: 1.7;">
+                                <li style="margin-bottom: var(--space-2);">Added <code>sr-only</code> labels for all search inputs (previously placeholder-only)</li>
+                                <li style="margin-bottom: var(--space-2);">Wrapped form inputs in <code>&lt;fieldset&gt;</code> with <code>&lt;legend&gt;</code> for logical grouping</li>
+                                <li style="margin-bottom: var(--space-2);">Corrected accordion headers from <code>&lt;div&gt;</code> to <code>role="heading"</code> with <code>aria-level</code></li>
+                                <li style="margin-bottom: var(--space-2);">Increased color contrast for discussion metadata from gray (#888) to dark gray (#333) — now meets 4.5:1 ratio</li>
+                                <li style="margin-bottom: var(--space-2);">Added explicit <code>@media (prefers-contrast: high)</code> styles for badges, cards, and buttons</li>
+                                <li style="margin-bottom: var(--space-2);">Wrapped quotations in <code>&lt;q&gt;</code> tags (12 instances across genai_mt_acknowledgement.html)</li>
+                                <li>Added <code>title</code> attributes to complement ARIA labels for search inputs</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge badge-green">WCAG 2.2 AA</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Reflection</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>The IBM Equal Access Checker revealed patterns I hadn't anticipated: placeholder text, while visually clear, provides no semantic value to screen readers. This reinforced the importance of redundant labeling strategies.</p>
+                            
+                            <p style="margin-top: var(--space-3);">Most impactful fix: wrapping form inputs in <code>&lt;fieldset&gt;</code> elements. Screen readers now announce "Reply to discussion" before reading each input field, providing critical context that was previously missing.</p>
+                            
+                            <p style="margin-top: var(--space-3);">The audit also highlighted subtle issues like directional language ("left unaddressed" → "unaddressed") and the need for explicit high-contrast mode styles—both invisible in standard testing but crucial for users with specific needs.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge">Iterative</span>
+                            <span class="badge badge-yellow">Learning-Focused</span>
                         </div>
                     </div>
                 </div>
@@ -1111,10 +1066,10 @@ work-phase-4/
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Final Optimization</h2>
-                    <p role="doc-subtitle" class="section-subtitle">
+                    <p class="section-subtitle">
                         AI-assisted code cleanup and performance improvement
                     </p>
-                        </div>
+                </div>
 
                 <div class="cards-grid">
                     <!-- CSS Reduction -->
@@ -1124,25 +1079,25 @@ work-phase-4/
                         </div>
                         <div class="card-body">
                             <div style="text-align: center; margin-bottom: var(--space-6);">
-                                <div role="img" aria-label="59 percent reduction" style="font-size: 2.5rem; font-weight: 700; color: var(--primary); margin-bottom: var(--space-2);">59%</div>
+                                <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary); margin-bottom: var(--space-2);">59%</div>
                                 <div style="font-family: 'Google Sans Code', monospace; font-size: 0.875rem; color: var(--text-muted);">Reduction</div>
                             </div>
                             
                             <!-- Overlap Circles -->
                             <div style="position: relative; width: 200px; height: 200px; margin: 0 auto var(--space-4);">
                                 <!-- Before (large circle) -->
-                                <div style="position: absolute; left: 0; top: 0; width: 200px; height: 200px; border-radius: 50%; background: rgba(54, 38, 167, 0.1); border: 2px solid rgba(54, 38, 167, 0.3);">
-                                    <!-- Text positioned to avoid overlap -->
+                                <div style="position: absolute; left: 0; top: 0; width: 200px; height: 200px; border-radius: 50%; background: rgba(54, 38, 167, 0.2);">
+                                    <!-- Text positioned top-left to avoid overlap -->
                                     <div style="position: absolute; left: 30px; top: 40px; text-align: center;">
-                                        <div role="img" aria-label="249 classes before" style="font-size: 1.5rem; font-weight: 700; color: var(--black);">249</div>
-                                        <div style="font-size: 0.75rem; color: var(--black); font-weight: 600;">Before</div>
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary);">249</div>
+                                        <div style="font-size: 0.75rem; color: var(--text-muted);">Before</div>
                                     </div>
                                 </div>
                                 <!-- After (small circle) -->
                                 <div style="position: absolute; right: 0; bottom: 0; width: 120px; height: 120px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
                                     <div style="text-align: center;">
-                                        <div role="img" aria-label="101 classes after" style="font-size: 1.25rem; font-weight: 700; color: white;">101</div>
-                                        <div style="font-size: 0.75rem; color: white; font-weight: 600;">After</div>
+                                        <div style="font-size: 1.25rem; font-weight: 700; color: white;">101</div>
+                                        <div style="font-size: 0.75rem; color: rgba(255,255,255,0.9);">After</div>
                                     </div>
                                 </div>
                             </div>
@@ -1282,15 +1237,15 @@ print(f"{len(unused)} unused")
                                             <div style="width: 48px; height: 48px; background: var(--accent-yellow); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #0b0a07; font-weight: 700; font-size: 1.25rem; flex-shrink: 0;">3</div>
                                             <div>
                                                 <p style="font-size: 1rem; margin: 0; font-weight: 500;">Identify</p>
-                                                <p role="img" aria-label="148 unused classes" style="font-size: 1.125rem; margin: 0; font-weight: 700; color: #9a7d00;">148 unused</p>
+                                                <p style="font-size: 1.125rem; margin: 0; font-weight: 700; color: #c4a000;">148 unused</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Manual Calculation Highlight (Larger) -->
-                                    <div style="margin-top: var(--space-5); padding: var(--space-4); background: rgba(227, 23, 10, 0.06); border-left: 4px solid #e3170a; border-radius: var(--radius-sm);">
-                                        <p role="img" aria-label="249 multiplied by 12 equals 2988 manual checks" style="font-size: 1.5rem; font-weight: 700; color: #a00000; margin: 0;">249 × 12 = 2,988</p>
-                                        <p style="font-size: 0.875rem; color: var(--text-primary); margin-top: var(--space-2); margin-bottom: 0; font-weight: 600;">Manual checks required</p>
+                                    <div style="margin-top: var(--space-5); padding: var(--space-4); background: rgba(227, 23, 10, 0.12); border-left: 4px solid #e3170a; border-radius: var(--radius-sm);">
+                                        <p style="font-size: 1.5rem; font-weight: 700; color: #e3170a; margin: 0;">249 × 12 = 2,988</p>
+                                        <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: var(--space-2); margin-bottom: 0; font-weight: 500;">Manual checks required</p>
                                     </div>
                                 </div>
                             </div>
@@ -1311,10 +1266,10 @@ print(f"{len(unused)} unused")
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Integration with Work Phases 2 & 3</h2>
-                    <p role="doc-subtitle" class="section-subtitle">
+                    <p class="section-subtitle">
                         How accessibility analysis, ethical principles, and design research informed implementation
-                        </p>
-                    </div>
+                    </p>
+                </div>
 
                 <div class="cards-grid">
                     <!-- Phase 2 Card with Accordion -->
@@ -1327,7 +1282,7 @@ print(f"{len(unused)} unused")
                             
                             <p style="margin-top: var(--space-4);">The accessibility audit revealed critical insights about older adults (Akasha, 67) requiring simplified navigation and clear structure. This informed button sizing (48×48px minimum), color contrast (4.5:1), and ARIA labeling throughout the site.</p>
                             
-                            <p style="margin-top: var(--space-3);">ACS ethical analysis emphasized public interest primacy: mental health support cannot prioritize aesthetics over accessibility. This manifested in privacy controls (respect & autonomy), transparent data usage (honesty), and multi-pathway navigation. Every choice was evaluated: <q>Does this serve user wellbeing first?</q></p>
+                            <p style="margin-top: var(--space-3);">ACS ethical analysis emphasized public interest primacy: mental health support cannot prioritize aesthetics over accessibility. This manifested in privacy controls (respect & autonomy), transparent data usage (honesty), and multi-pathway navigation. Every choice was evaluated: "Does this serve user wellbeing first?"</p>
                             
                             <!-- Accordion for details -->
                             <div class="accordion-item" style="margin-top: var(--space-4);">
@@ -1336,7 +1291,7 @@ print(f"{len(unused)} unused")
                                 </div>
                                 <div class="accordion-content">
                                     <div class="accordion-body">
-                                        <h5 style="font-size: 1.125rem; font-weight: 700; margin-top: var(--space-4); margin-bottom: var(--space-2);">WCAG 2.2 AA Principles Applied:</h5>
+                                        <p><strong>WCAG 2.2 AA Principles Applied:</strong></p>
                                         <ul style="margin-left: var(--space-4); margin-top: var(--space-2);">
                                             <li>Color contrast ≥ 4.5:1 for all body text</li>
                                             <li>Semantic HTML with ARIA labels for screen readers</li>
@@ -1345,14 +1300,14 @@ print(f"{len(unused)} unused")
                                             <li>Alt text and titles for all meaningful images and SVGs</li>
                                         </ul>
                                         
-                                        <h5 style="margin-top: var(--space-4);" style="font-size: 1.125rem; font-weight: 700; margin-top: var(--space-4); margin-bottom: var(--space-2);">ACS Code of Ethics Implementation:</h5>
+                                        <p style="margin-top: var(--space-4);"><strong>ACS Code of Ethics Implementation:</strong></p>
                                         <ul style="margin-left: var(--space-4); margin-top: var(--space-2);">
                                             <li><strong>Public Interest:</strong> Prioritized older adults (Akasha, 67) with simplified navigation, large text, and minimal cognitive load</li>
                                             <li><strong>Privacy & Data Protection:</strong> Clear consent forms, transparent data usage documentation on Privacy page</li>
                                             <li><strong>Respect & Autonomy:</strong> User control over profile visibility, notifications, and accessibility preferences</li>
                                         </ul>
                                         
-                                        <h5 style="margin-top: var(--space-4);" style="font-size: 1.125rem; font-weight: 700; margin-top: var(--space-4); margin-bottom: var(--space-2);">Persona-Driven Implementation Examples:</h5>
+                                        <p style="margin-top: var(--space-4);"><strong>Persona-Driven Implementation Examples:</strong></p>
                                         <ul style="margin-left: var(--space-4); margin-top: var(--space-2);">
                                             <li>Akasha (67, older adult) → 60px buttons, clear language, direct pathways to core features</li>
                                             <li>Denisho (security-conscious) → Explicit privacy controls, password change options, data transparency</li>
@@ -1396,7 +1351,7 @@ print(f"{len(unused)} unused")
                                         <p style="margin-left: var(--space-4);">Resources categorized as "Finding Hope," "Managing Stress," "Building Resilience"—frames mental health as active practice. Personal Space includes "Share Your Experience" for self-reflection.</p>
                                         
                                         <p style="margin-top: var(--space-4);"><strong>Emotional Accessibility:</strong></p>
-                                        <p style="margin-left: var(--space-4);">Avoids size-based minimizing language. Emphasizes <q>You're not alone</q> messaging. Badge system reduces information anxiety.</p>
+                                        <p style="margin-left: var(--space-4);">Avoids triggering language (removed "tiny," "small"). Emphasizes "You're not alone" messaging. Badge system reduces information anxiety.</p>
                                     </div>
                                 </div>
                             </div>

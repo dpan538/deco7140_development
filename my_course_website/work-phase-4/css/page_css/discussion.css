@@ -168,14 +168,14 @@
 
 @media (max-width: 768px) {
     .main-discussion-post {
-        padding: var(--space-6) !important;
+        padding: var(--space-6);
     }
     
     .reply-card {
-        margin-bottom: var(--space-3) !important;
+        margin-bottom: var(--space-3);
     }
     
     .sidebar-card {
-        margin-bottom: var(--space-4) !important;
+        margin-bottom: var(--space-4);
     }
 }

@@ -387,6 +387,40 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="accordion-wrapper" style="grid-column: span 3;">
+                        <div class="accordion-item">
+                            <div role="heading" aria-level="3" class="accordion-header">Step 7: Code Optimization & Performance Improvement</div>
+                            <div class="accordion-content">
+                                <div class="accordion-body">
+                                    <p><strong>Principle:</strong> AI's global scanning capability makes it ideal for code cleanup and optimization—tasks that are tedious and error-prone when done manually.</p>
+                                    
+                                    <p style="margin-top: var(--space-4);"><strong>Final Week Focus:</strong> After completing all pages and functionality, I used Cursor AI to identify and remove unused code, improve accessibility, and optimize performance.</p>
+
+                                    <p style="margin-top: var(--space-4);"><strong>Results Achieved:</strong></p>
+                                    <ul style="margin-left: var(--space-6); margin-top: var(--space-2);">
+                                        <li><strong>CSS Cleanup:</strong> Removed 148 unused classes (59% reduction from 249 → 101 classes). This included leftover code from design iterations (4:3, 16:9 aspect ratios that were tested but not finalized).</li>
+                                        <li><strong>Accessibility Improvement:</strong> Fixed 36 WCAG violations across all pages using IBM Equal Access Checker + Cursor AI. Final result: 0 violations, full WCAG 2.2 AA compliance.</li>
+                                        <li><strong>!important Reduction:</strong> Removed 3 unnecessary <code>!important</code> declarations while keeping 7 essential ones for accessibility (reduced motion) and responsive utilities.</li>
+                                        <li><strong>File Deletion:</strong> Removed <code>genai.css</code> (~420 lines) after confirming it wasn't being used.</li>
+                                        <li><strong>Code Comments:</strong> Simplified overly-technical comments to student-appropriate level while keeping accessibility notes professional.</li>
+                                    </ul>
+
+                                    <p style="margin-top: var(--space-4);"><strong>Why AI Was Essential:</strong></p>
+                                    <ul style="margin-left: var(--space-6); margin-top: var(--space-2);">
+                                        <li><strong>Global Scanning:</strong> Manually checking if 249 CSS classes are used across 12 HTML files would take hours and likely miss instances. Cursor's Python script did this in seconds with perfect accuracy.</li>
+                                        <li><strong>Cross-File Analysis:</strong> AI can instantly check dependencies between files (e.g., which CSS files are linked where), something that's difficult to track manually in a large project.</li>
+                                        <li><strong>Pattern Recognition:</strong> AI identified that I was using multiple conflicting spacing approaches and suggested consolidating to CSS variables—improving consistency across the site.</li>
+                                        <li><strong>Accessibility Testing:</strong> IBM Equal Access Checker + Cursor AI combination caught issues I would never have found without assistive technology (e.g., screen reader label problems, keyboard navigation failures).</li>
+                                    </ul>
+
+                                    <p style="margin-top: var(--space-4);"><strong>Learning Outcome:</strong> This process taught me that AI is most valuable for <em>mechanical, repeatable tasks</em> (scanning, checking, finding patterns) rather than creative decisions (which layouts to use, what colors feel right). The human still makes all design decisions—AI just ensures technical quality and catches mistakes.</p>
+
+                                    <p style="margin-top: var(--space-4);"><strong>Data Visualization:</strong> See the Implementation Rationale page for detailed charts showing CSS reduction, accessibility improvements, and performance gains.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -447,18 +481,22 @@
             </div>
         </section>
 
-        <!-- Declaration of Authorship -->
+        <!-- Conclusion: Reflecting on AI-Assisted Learning -->
         <section class="content-cards" style="margin-top: var(--space-8); margin-bottom: var(--space-16);">
             <div class="container">
                 <div class="section-header" style="text-align: center;">
-                    <h2 class="section-title">Declaration of Authorship</h2>
+                    <h2 class="section-title">Conclusion</h2>
+                    <p role="doc-subtitle" class="section-subtitle">
+                        Reflecting on AI-assisted learning and personal growth
+                    </p>
                 </div>
 
                 <div class="cards-grid">
                     <div class="card" style="grid-column: span 3; border-left: 4px solid var(--accent-green);">
                         <div class="card-body">
-                            <p style="font-size: 1.25rem; line-height: 1.8; font-weight: 500;">All design decisions, ethical considerations, and critical evaluations in this project originated from my own analysis and judgment. AI tools served as implementation assistants and learning facilitators, but they did not author the design thinking, user research synthesis, or accessibility strategy that shaped this platform.</p>
-                            <p style="margin-top: var(--space-4); font-size: 1.25rem; line-height: 1.8; font-weight: 500;">Where AI suggested code, I evaluated its appropriateness, modified it for context, and verified its correctness against authoritative sources. <strong>This website reflects my design education, ethical reasoning, and technical learning—amplified by AI tools but not replaced by them.</strong></p>
+                            <p style="font-size: 1.25rem; line-height: 1.8; font-weight: 500;">Throughout this project, I've learned that AI tools are most valuable when they enhance—rather than replace—critical thinking and creative decision-making. Every design choice, from the color palette to the navigation structure, emerged from my understanding of user needs, accessibility principles, and ethical considerations developed through DECO7140 coursework.</p>
+                            
+                            <p style="margin-top: var(--space-4); font-size: 1.25rem; line-height: 1.8; font-weight: 500;">AI accelerated my technical implementation and helped me catch errors I might have missed. But the <em>why</em> behind every decision—why this layout supports older adults, why these colors meet accessibility standards, why this navigation pattern reduces cognitive load—came from my own analysis, research synthesis, and growing expertise in UX design.</p>
                         </div>
                     </div>
                 </div>

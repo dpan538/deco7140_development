@@ -1,20 +1,4 @@
-/**
- * DISCUSSION.JS
- * Handles discussion reply form submission and real-time UI updates
- * 
- * Purpose:
- * - Submit user replies to the discussion API
- * - Dynamically add new replies to the page without reload
- * - Update reply counts in multiple locations (header, sidebar)
- * - Provide clear user feedback for all states (loading, success, error)
- * 
- * Dependencies:
- * - postFormData.js (handles API communication)
- * 
- * API Endpoint:
- * - DECO7140 generic chat API (Heroku-hosted)
- */
-
+// Discussion reply form handler
 import { postFormData } from "./modules/postFormData.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -23,25 +7,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const newRepliesContainer = document.getElementById("new-replies");
 
     form.addEventListener("submit", async (e) => {
-        e.preventDefault();  // Prevent default form submission (page reload)
+        e.preventDefault();
 
-        // Show loading state
         feedback.textContent = "Submitting...";
         feedback.style.color = "var(--text-muted)";
 
-        // API endpoint for DECO7140 chat system
         const apiUrl =
             "https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericchat/";
 
         try {
-            // Submit form data with student credentials
             const { success, data } = await postFormData(form, apiUrl, {
                 student_number: "s4954763",
                 uqcloud_zone_id: "7a6b4b57",
             });
 
             if (success) {
-                // Extract reply data - prefer API response, fallback to form values
                 const personName =
                     (data && data.person_name) ||
                     form.querySelector("#person_name").value;
@@ -53,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         ? data.chat_date_time
                         : "just now";
 
-                // Create and inject new reply card into the DOM
+                // Add new reply to the page
                 const newReply = document.createElement("div");
                 newReply.className = "card discussion-card";
                 newReply.innerHTML = `
@@ -64,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
                 newRepliesContainer.appendChild(newReply);
 
-                // Update main reply count (in discussion header)
+                // Update reply counts
                 const headerCountEl = document.getElementById("reply-count");
                 if (headerCountEl) {
                     headerCountEl.textContent = String(
@@ -72,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     );
                 }
 
-                // Update sidebar reply count (quick stats)
                 const sidebarCountEl = document.getElementById(
                     "sidebar-reply-count"
                 );
@@ -82,19 +61,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     );
                 }
 
-                // Show success message
                 feedback.textContent =
                     (data && data.message) || "Reply posted successfully!";
                 feedback.style.color = "var(--accent-green)";
                 form.reset();
 
-                // Clear feedback message after 3 seconds
                 setTimeout(() => {
                     feedback.textContent = "";
                 }, 3000);
             } else {
-                // Handle validation errors from API
-                // API returns arrays for field errors (Django Rest Framework format)
                 const firstError =
                     (data &&
                         (data.person_name?.[0] ||
@@ -106,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 feedback.style.color = "var(--text-primary)";
             }
         } catch (err) {
-            // Handle network errors (offline, server down, etc.)
             console.error("Error submitting reply:", err);
             feedback.textContent = "Network error. Please try again.";
             feedback.style.color = "var(--text-primary)";
