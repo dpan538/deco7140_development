@@ -95,10 +95,6 @@ nav {
     border: 0;
 }
 
-/* Hide search icon */
-.search-icon {
-    display: none;  /* REMOVED: Icon hidden, using text placeholder only */
-}
 
 .search-input {
     padding: var(--space-3) var(--space-8);

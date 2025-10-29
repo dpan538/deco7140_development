@@ -1,11 +1,25 @@
 /* 
- * COMPONENTS.CSS - FIXED
- * Buttons, cards, and reusable components
- * Work Phase 4 - Wellness Community Platform
+ * COMPONENTS.CSS
+ * Reusable UI components for the Wellness Community Platform
+ * 
+ * Contains:
+ * - Buttons (primary, variants, states)
+ * - Cards (basic, header, body, footer)
+ * - Form elements (inputs, textareas, selects)
+ * - Badges and tags
+ * - Accordions
+ * - Alerts and notifications
+ * 
+ * All components meet WCAG 2.2 AA standards:
+ * - Minimum touch target: 48x48px
+ * - Color contrast: 4.5:1 minimum
+ * - Keyboard accessible with visible focus states
  */
 
 /* ============================================
-   BUTTONS - FIXED FOR ACCESSIBILITY
+   BUTTONS
+   Touch-friendly with 48px minimum height
+   Accessible focus states for keyboard navigation
    ============================================ */
 
 .btn {
@@ -93,23 +107,6 @@
     display: flex;
 }
 
-/* Icon button (for icon-only buttons) */
-.btn-icon {
-    padding: var(--space-3);
-    min-width: 48px;
-    min-height: 48px;
-    border-radius: 50%;
-}
-
-.btn-icon img {
-    width: 24px;
-    height: 24px;
-}
-
-.btn-icon.btn-lg img {
-    width: 32px;
-    height: 32px;
-}
 
 /* ============================================
    CARDS
@@ -177,24 +174,9 @@ a.card:focus-visible {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* Card with image */
-.card-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: var(--radius-md) var(--radius-md) 0 0;
-    margin: calc(var(--space-6) * -1);
-    margin-bottom: var(--space-4);
-}
-
 /* Compact card (less padding) */
 .card-compact {
     padding: var(--space-4);
-}
-
-/* Featured card (with accent) */
-.card-featured {
-    border: 2px solid var(--primary);
 }
 
 /* ============================================
@@ -266,11 +248,6 @@ textarea {
     color: var(--text-muted);
 }
 
-/* Required field indicator */
-.required::after {
-    content: " *";
-    color: var(--accent-yellow);
-}
 
 /* ============================================
    BADGES & TAGS
@@ -329,31 +306,6 @@ textarea {
    ICONS
    ============================================ */
 
-.icon {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-}
-
-.icon-sm {
-    width: 20px;
-    height: 20px;
-}
-
-.icon-lg {
-    width: 32px;
-    height: 32px;
-}
-
-.icon-xl {
-    width: 48px;
-    height: 48px;
-}
-
-.icon-xxl {
-    width: 60px;
-    height: 60px;
-}
 
 /* ============================================
    DIVIDER
@@ -365,9 +317,6 @@ textarea {
     margin: var(--space-8) 0;
 }
 
-.divider-thick {
-    height: 2px;
-}
 
 /* ============================================
    ALERT / NOTIFICATION
@@ -387,11 +336,6 @@ textarea {
     color: var(--text-primary);
 }
 
-.alert-success {
-    background-color: rgba(4, 114, 77, 0.1);
-    border-left-color: var(--accent-green);
-    color: var(--text-primary);
-}
 
 .alert-warning {
     background-color: rgba(255, 231, 109, 0.2);
@@ -403,27 +347,6 @@ textarea {
    LOADING SPINNER
    ============================================ */
 
-.spinner {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    border-left-color: var(--primary);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.spinner-sm {
-    width: 20px;
-    height: 20px;
-    border-width: 2px;
-}
 
 /* ============================================
    IMAGE WITH CAPTION
@@ -438,13 +361,6 @@ textarea {
     border-radius: var(--radius-md);
 }
 
-.figure-caption {
-    margin-top: var(--space-2);
-    font-size: 0.875rem;
-    font-weight: 500;                    /* FIXED: Added */
-    color: var(--text-muted);
-    text-align: center;
-}
 
 /* ============================================
    RESPONSIVE COMPONENTS

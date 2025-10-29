@@ -1,11 +1,19 @@
 /* 
- * BASE.CSS - FINAL VERSION
- * Core styles: colors, typography, spacing system
- * Work Phase 4 - Wellness Community Platform
+ * BASE.CSS
+ * Foundation styles for the Wellness Community Platform
+ * 
+ * Contains:
+ * - Design tokens (colors, spacing, typography)
+ * - Global typography system (Onest, Comfortaa, Google Sans Code)
+ * - Consistent focus states for WCAG 2.2 AA compliance
+ * - Responsive utilities and card micro-interactions
+ * 
+ * Note: All color values meet WCAG 2.2 AA contrast requirements (4.5:1 minimum)
  */
 
 /* ============================================
-   FONT IMPORTS - MUST BE AT TOP
+   FONT IMPORTS
+   Must be at the top of the file before any CSS rules
    ============================================ */
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
@@ -16,98 +24,129 @@
    ============================================ */
 
 :root {
-    /* PRIMARY COLORS */
-    --primary: #3626a7; /* Zaffre purple */
-    --secondary: #fdf9f4; /* Isabelline off-white */
-    --black: #0b0a07; /* Smoky black */
-    --white: #ffffff;
+    /* ----------------------------------------
+       PRIMARY BRAND COLORS
+       ---------------------------------------- */
+    --primary: #3626a7;      /* Zaffre purple - main brand color */
+    --secondary: #fdf9f4;    /* Isabelline off-white - warm neutral background */
+    --black: #0b0a07;        /* Smoky black - text and dark UI elements */
+    --white: #ffffff;        /* Pure white - cards and bright elements */
 
-    /* ACCENT COLORS (USE SPARINGLY - DECORATION ONLY) */
-    --accent-yellow: #ffe76d; /* Maize yellow */
-    --accent-green: #048055; /* FIXED: Darker green for badge contrast 4.51:1 on white */
+    /* ----------------------------------------
+       ACCENT COLORS
+       Use sparingly for badges, highlights, and decorative elements
+       ---------------------------------------- */
+    --accent-yellow: #ffe76d;  /* Maize yellow - warm accent */
+    --accent-green: #048055;   /* Forest green - contrast 4.51:1 on white (WCAG AA) */
 
-    /* FUNCTIONAL COLORS */
-    --bg-body: #fdf9f4;
-    --bg-nav: #0b0a07;
-    --bg-footer: #0b0a07;
-    --bg-card: #ffffff;
+    /* ----------------------------------------
+       FUNCTIONAL COLORS
+       Applied to specific UI components
+       ---------------------------------------- */
+    --bg-body: #fdf9f4;      /* Main page background */
+    --bg-nav: #0b0a07;       /* Navigation bar background */
+    --bg-footer: #0b0a07;    /* Footer background */
+    --bg-card: #ffffff;      /* Card backgrounds */
 
-    --text-primary: #0b0a07;
-    --text-on-dark: #ffffff;
-    --text-muted: #666666;
+    --text-primary: #0b0a07;   /* Main body text */
+    --text-on-dark: #ffffff;   /* Text on dark backgrounds (nav, footer) */
+    --text-muted: #666666;     /* Secondary text, metadata */
 
-    /* INTERACTIVE COLORS */
-    --hover-green: #06a86b; /* FIXED: Bright green for dark backgrounds 4.8:1 */
-    --focus-outline: #3626a7;
+    /* ----------------------------------------
+       INTERACTIVE STATES
+       ---------------------------------------- */
+    --hover-green: #06a86b;    /* Hover state - contrast 4.8:1 on dark (WCAG AA) */
+    --focus-outline: #3626a7;  /* Focus ring color for accessibility */
 
-    /* SHADOWS */
-    --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.1);
-    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+    /* ----------------------------------------
+       VISUAL EFFECTS
+       ---------------------------------------- */
+    --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.1);   /* Light card shadow */
+    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);   /* Elevated card shadow */
 
-    /* BORDER RADIUS */
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 16px;
+    --radius-sm: 8px;    /* Small elements (badges, buttons) */
+    --radius-md: 12px;   /* Medium elements (cards, inputs) */
+    --radius-lg: 16px;   /* Large elements (hero sections) */
 
-    /* CONTAINER WIDTH */
-    --container-width: 1380px;
+    --container-width: 1380px;  /* Max content width for readability */
 
-    /* ============================================
-       PRECISE SPACING SYSTEM
-       ============================================ */
-    --space-1: 0.25rem; /* 4px */
-    --space-2: 0.5rem; /* 8px */
-    --space-3: 0.75rem; /* 12px */
-    --space-4: 1rem; /* 16px */
-    --space-5: 1.25rem; /* 20px */
-    --space-6: 1.5rem; /* 24px */
-    --space-8: 2rem; /* 32px */
-    --space-10: 2.5rem; /* 40px */
-    --space-12: 3rem; /* 48px */
-    --space-16: 4rem; /* 64px */
-    --space-20: 5rem; /* 80px */
-    --space-24: 6rem; /* 96px */
+    /* ----------------------------------------
+       SPACING SYSTEM
+       Based on 4px base unit for consistent rhythm
+       Use these tokens instead of arbitrary values
+       ---------------------------------------- */
+    --space-1: 0.25rem;   /* 4px - tight spacing */
+    --space-2: 0.5rem;    /* 8px - compact */
+    --space-3: 0.75rem;   /* 12px - small gaps */
+    --space-4: 1rem;      /* 16px - base unit */
+    --space-5: 1.25rem;   /* 20px */
+    --space-6: 1.5rem;    /* 24px - card padding */
+    --space-8: 2rem;      /* 32px - section gaps */
+    --space-10: 2.5rem;   /* 40px */
+    --space-12: 3rem;     /* 48px - large section gaps */
+    --space-16: 4rem;     /* 64px - major sections */
+    --space-20: 5rem;     /* 80px */
+    --space-24: 6rem;     /* 96px - hero spacing */
 }
 
-/* =========================
-   Design Tokens (additions)
-   These extend the existing palette without replacing it.
-   ========================= */
+/* ============================================
+   EXTENDED DESIGN TOKENS
+   Additional tokens for enhanced visual design
+   These complement the primary palette above
+   ============================================ */
 :root {
-    /* Brand & semantic colors (additive) */
-    --brand-blue: #4357ad; /* primary accent / links / focus */
-    --state-success: #04773b; /* active/success tags */
-    --state-attention: #e3170a; /* warnings/cta accents - use sparingly */
-    --neutral-plate: #e6e8e6; /* light neutral background */
-    --ink-strong: #040404; /* strong text / dark bg */
+    /* ----------------------------------------
+       SEMANTIC COLORS
+       ---------------------------------------- */
+    --brand-blue: #4357ad;        /* Links, interactive elements */
+    --state-success: #04773b;     /* Success states, active tags */
+    --state-attention: #e3170a;   /* Warnings, important CTAs (use sparingly) */
+    --neutral-plate: #e6e8e6;     /* Light neutral surfaces */
+    --ink-strong: #040404;        /* High contrast text on light backgrounds */
 
-    /* Motion tokens (very subtle by default) */
-    --motion-duration-quick: 160ms;
-    --motion-ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+    /* ----------------------------------------
+       MOTION TOKENS
+       Consistent animation timing across the site
+       ---------------------------------------- */
+    --motion-duration-quick: 160ms;                         /* Fast transitions (hover, focus) */
+    --motion-ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1); /* Standard easing curve */
 
-    /* Elevation tokens */
-    --elev-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06),
+    /* ----------------------------------------
+       ELEVATION SYSTEM
+       Layered shadows for depth hierarchy
+       ---------------------------------------- */
+    --elev-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06),    /* Subtle lift */
         0 2px 8px rgba(0, 0, 0, 0.04);
-    --elev-shadow-md: 0 4px 14px rgba(0, 0, 0, 0.08),
+    --elev-shadow-md: 0 4px 14px rgba(0, 0, 0, 0.08),   /* Medium elevation */
         0 10px 24px rgba(0, 0, 0, 0.06);
 }
 
 /* ============================================
-   TYPOGRAPHY - THREE FONTS SYSTEM
+   TYPOGRAPHY SYSTEM
+   Three-font hierarchy for visual interest and hierarchy
+   
+   Font roles:
+   - Onest (sans-serif): Body text, H2 section titles
+   - Comfortaa (rounded sans): H1 page titles, blockquotes
+   - Google Sans Code (monospace): H3 card titles, metadata
+   
+   All sizes increased by 25% for better readability
    ============================================ */
 
 body {
     font-family: "Onest", sans-serif;
-    font-size: 1.125rem; /* 18px */
+    font-size: 1.125rem;  /* 18px base size for readability */
     font-weight: 500;
-    line-height: 1.7;
+    line-height: 1.7;     /* Generous line height for long-form content */
     color: var(--text-primary);
     background-color: var(--bg-body);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;      /* Better rendering on macOS */
+    -moz-osx-font-smoothing: grayscale;       /* Better rendering on Firefox */
 }
 
-/* Headings */
+/* ----------------------------------------
+   HEADING HIERARCHY
+   ---------------------------------------- */
 h1,
 h2,
 h3,
@@ -120,64 +159,69 @@ h6 {
 }
 
 h1 {
-    font-family: "Comfortaa", sans-serif;
-    font-size: 2.8125rem; /* 45px - increased by 25% from 36px */
+    font-family: "Comfortaa", sans-serif;  /* Friendly, welcoming feel for page titles */
+    font-size: 2.8125rem;  /* 45px */
     font-weight: 400;
     line-height: 1;
 }
 
-/* H2 - Comfortaa for Section titles */
 h2 {
-    font-family: "Onest", sans-serif;
-    font-size: 3.125rem; /* 50px - increased by 25% from 40px */
-    font-weight: 700; /* Bold Comfortaa */
+    font-family: "Onest", sans-serif;  /* Section headers */
+    font-size: 3.125rem;  /* 50px */
+    font-weight: 700;
     line-height: 1.2;
 }
 
-/* H3 - Onest for Card titles */
 h3 {
-    font-family: "Google Sans Code", monospace, sans-serif;
-    font-size: 2.1875rem; /* 35px - increased by 25% from 28px */
+    font-family: "Google Sans Code", monospace, sans-serif;  /* Card titles with technical feel */
+    font-size: 2.1875rem;  /* 35px */
     font-weight: 700;
 }
 
 h4 {
-    font-size: 1.5625rem; /* 25px - increased by 25% from 20px */
+    font-size: 1.5625rem;  /* 25px */
 }
 
 h5 {
-    font-size: 1.40625rem; /* 22.5px - increased by 25% from 18px */
+    font-size: 1.40625rem;  /* 22.5px */
 }
 
 h6 {
-    font-size: 1.25rem; /* 20px - increased by 25% from 16px */
+    font-size: 1.25rem;  /* 20px */
 }
 
-/* Paragraphs */
+/* ----------------------------------------
+   BODY TEXT
+   ---------------------------------------- */
 p {
     margin-bottom: var(--space-3);
-    font-weight: 450;
+    font-weight: 450;  /* Slightly heavier than normal for better readability */
 }
 
-/* Blockquotes - Using Comfortaa */
+/* ----------------------------------------
+   BLOCKQUOTES
+   Used for testimonials and highlighted quotes
+   ---------------------------------------- */
 blockquote {
     font-family: "Comfortaa", cursive;
-    font-size: 1.25rem; /* 20px - readable quote size */
-    font-weight: 600; /* Bold for emphasis */
+    font-size: 1.25rem;
+    font-weight: 600;
     line-height: 1.6;
-    font-style: italic; /* Italic for quote styling */
+    font-style: italic;
     margin: var(--space-6) 0;
     padding: var(--space-6) var(--space-8);
-    border-left: 4px solid var(--accent-green);
-    background-color: rgba(4, 114, 77, 0.05);
+    border-left: 4px solid var(--accent-green);  /* Visual indicator */
+    background-color: rgba(4, 114, 77, 0.05);    /* Subtle background tint */
     color: var(--text-primary);
 }
 
 blockquote p:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0;  /* Remove extra space on last paragraph */
 }
 
-/* Links */
+/* ----------------------------------------
+   LINKS
+   ---------------------------------------- */
 a {
     color: var(--primary);
     font-weight: 500;
@@ -190,10 +234,12 @@ a:hover {
 
 a:focus {
     outline: 2px solid var(--focus-outline);
-    outline-offset: 2px;
+    outline-offset: 2px;  /* Space between element and focus ring */
 }
 
-/* Strong and emphasis */
+/* ----------------------------------------
+   TEXT EMPHASIS
+   ---------------------------------------- */
 strong,
 b {
     font-weight: 700;
@@ -205,349 +251,35 @@ i {
 }
 
 /* ============================================
-   SPACING HELPER CLASSES
-   ============================================ */
-
-/* Margin helpers */
-.m-0 {
-    margin: 0;
-}
-.m-1 {
-    margin: var(--space-1);
-}
-.m-2 {
-    margin: var(--space-2);
-}
-.m-3 {
-    margin: var(--space-3);
-}
-.m-4 {
-    margin: var(--space-4);
-}
-.m-5 {
-    margin: var(--space-5);
-}
-.m-6 {
-    margin: var(--space-6);
-}
-.m-8 {
-    margin: var(--space-8);
-}
-.m-10 {
-    margin: var(--space-10);
-}
-.m-12 {
-    margin: var(--space-12);
-}
-.m-16 {
-    margin: var(--space-16);
-}
-.m-20 {
-    margin: var(--space-20);
-}
-
-/* Margin top */
-.m-t-0 {
-    margin-top: 0;
-}
-.m-t-1 {
-    margin-top: var(--space-1);
-}
-.m-t-2 {
-    margin-top: var(--space-2);
-}
-.m-t-3 {
-    margin-top: var(--space-3);
-}
-.m-t-4 {
-    margin-top: var(--space-4);
-}
-.m-t-6 {
-    margin-top: var(--space-6);
-}
-.m-t-8 {
-    margin-top: var(--space-8);
-}
-.m-t-12 {
-    margin-top: var(--space-12);
-}
-.m-t-16 {
-    margin-top: var(--space-16);
-}
-
-/* Margin bottom */
-.m-b-0 {
-    margin-bottom: 0;
-}
-.m-b-1 {
-    margin-bottom: var(--space-1);
-}
-.m-b-2 {
-    margin-bottom: var(--space-2);
-}
-.m-b-3 {
-    margin-bottom: var(--space-3);
-}
-.m-b-4 {
-    margin-bottom: var(--space-4);
-}
-.m-b-6 {
-    margin-bottom: var(--space-6);
-}
-.m-b-8 {
-    margin-bottom: var(--space-8);
-}
-.m-b-12 {
-    margin-bottom: var(--space-12);
-}
-
-/* Margin vertical (top and bottom) */
-.m-y-0 {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-.m-y-2 {
-    margin-top: var(--space-2);
-    margin-bottom: var(--space-2);
-}
-.m-y-3 {
-    margin-top: var(--space-3);
-    margin-bottom: var(--space-3);
-}
-.m-y-4 {
-    margin-top: var(--space-4);
-    margin-bottom: var(--space-4);
-}
-.m-y-6 {
-    margin-top: var(--space-6);
-    margin-bottom: var(--space-6);
-}
-.m-y-8 {
-    margin-top: var(--space-8);
-    margin-bottom: var(--space-8);
-}
-
-/* Margin horizontal (left and right) */
-.m-x-auto {
-    margin-left: auto;
-    margin-right: auto;
-}
-.m-x-2 {
-    margin-left: var(--space-2);
-    margin-right: var(--space-2);
-}
-.m-x-4 {
-    margin-left: var(--space-4);
-    margin-right: var(--space-4);
-}
-
-/* Padding helpers */
-.p-0 {
-    padding: 0;
-}
-.p-1 {
-    padding: var(--space-1);
-}
-.p-2 {
-    padding: var(--space-2);
-}
-.p-3 {
-    padding: var(--space-3);
-}
-.p-4 {
-    padding: var(--space-4);
-}
-.p-5 {
-    padding: var(--space-5);
-}
-.p-6 {
-    padding: var(--space-6);
-}
-.p-8 {
-    padding: var(--space-8);
-}
-.p-10 {
-    padding: var(--space-10);
-}
-.p-12 {
-    padding: var(--space-12);
-}
-
-/* Padding vertical */
-.p-y-2 {
-    padding-top: var(--space-2);
-    padding-bottom: var(--space-2);
-}
-.p-y-4 {
-    padding-top: var(--space-4);
-    padding-bottom: var(--space-4);
-}
-.p-y-6 {
-    padding-top: var(--space-6);
-    padding-bottom: var(--space-6);
-}
-.p-y-8 {
-    padding-top: var(--space-8);
-    padding-bottom: var(--space-8);
-}
-
-/* Padding horizontal */
-.p-x-2 {
-    padding-left: var(--space-2);
-    padding-right: var(--space-2);
-}
-.p-x-4 {
-    padding-left: var(--space-4);
-    padding-right: var(--space-4);
-}
-.p-x-6 {
-    padding-left: var(--space-6);
-    padding-right: var(--space-6);
-}
-.p-x-8 {
-    padding-left: var(--space-8);
-    padding-right: var(--space-8);
-}
-
-/* Gap helpers (for flexbox/grid) */
-.gap-1 {
-    gap: var(--space-1);
-}
-.gap-2 {
-    gap: var(--space-2);
-}
-.gap-3 {
-    gap: var(--space-3);
-}
-.gap-4 {
-    gap: var(--space-4);
-}
-.gap-6 {
-    gap: var(--space-6);
-}
-.gap-8 {
-    gap: var(--space-8);
-}
-
-/* ============================================
    UTILITY CLASSES
    ============================================ */
 
-/* Text alignment */
 .text-center {
     text-align: center;
 }
-.text-left {
-    text-align: left;
-}
-.text-right {
-    text-align: right;
-}
 
-/* Text colors */
-.text-primary {
-    color: var(--text-primary);
-}
-.text-muted {
-    color: var(--text-muted);
-}
-.text-white {
-    color: var(--white);
-}
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
 
-/* Font weights */
-.font-light {
-    font-weight: 300;
-}
-.font-normal {
-    font-weight: 400;
-}
-.font-medium {
-    font-weight: 500;
-}
-.font-semibold {
-    font-weight: 600;
-}
-.font-bold {
-    font-weight: 700;
-}
-
-/* Display utilities */
-.d-block {
-    display: block;
-}
-.d-inline-block {
-    display: inline-block;
-}
-.d-flex {
-    display: flex;
-}
-.d-grid {
-    display: grid;
-}
-.d-none {
-    display: none;
-}
-
-/* Flex utilities */
-.flex-row {
-    flex-direction: row;
-}
-.flex-column {
-    flex-direction: column;
-}
-.flex-wrap {
-    flex-wrap: wrap;
-}
-.justify-center {
-    justify-content: center;
-}
-.justify-between {
-    justify-content: space-between;
-}
-.justify-start {
-    justify-content: flex-start;
-}
-.justify-end {
-    justify-content: flex-end;
-}
-.align-center {
-    align-items: center;
-}
-.align-start {
-    align-items: flex-start;
-}
-.align-end {
-    align-items: flex-end;
-}
-
-/* Width utilities */
-.w-full {
-    width: 100%;
-}
-.w-auto {
-    width: auto;
-}
-
-/* Responsive utilities */
 @media (max-width: 768px) {
     .mobile-hide {
         display: none;
     }
 
-    /* Adjust typography for mobile */
+    /* Scale down typography for smaller screens */
     h1 {
-        font-size: 2rem;
-    } /* 32px on mobile */
+        font-size: 2rem;  /* 32px on mobile */
+    }
     h2 {
-        font-size: 1.5rem;
-    } /* 24px on mobile */
+        font-size: 1.5rem;  /* 24px on mobile */
+    }
     body {
-        font-size: 1rem;
-    } /* 16px on mobile */
+        font-size: 1rem;  /* 16px on mobile */
+    }
     blockquote {
-        font-size: 1.25rem;
-    } /* 20px on mobile */
+        font-size: 1.25rem;  /* 20px on mobile */
+    }
 }
 
 @media (min-width: 769px) {
@@ -556,12 +288,13 @@ i {
     }
 }
 
-/* ==================================
-   Interactive Card micro-interactions
-   Apply automatically for .card
-   ================================== */
+/* ============================================
+   CARD MICRO-INTERACTIONS
+   Subtle animations for better user feedback
+   Applied automatically to all .card elements
+   ============================================ */
 
-/* Respect user's reduced motion preference */
+/* Accessibility: Respect user's reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
     .card {
         transition: none !important;
@@ -569,135 +302,31 @@ i {
 }
 
 .card {
-    transition: transform var(--motion-duration-quick)
-            var(--motion-ease-standard),
+    transition: transform var(--motion-duration-quick) var(--motion-ease-standard),
         filter var(--motion-duration-quick) var(--motion-ease-standard),
         box-shadow var(--motion-duration-quick) var(--motion-ease-standard);
-    /* keep your existing border-radius/background */
 }
 
-/* Subtle hover + focus-visible */
+/* Gentle hover effect for better discoverability */
 .card:hover,
 .card:focus-within,
 .card:focus-visible {
-    transform: scale(1.02); /* very gentle */
-    filter: brightness(1.03); /* ~+3% lightness */
+    transform: scale(1.02);          /* Subtle lift */
+    filter: brightness(1.03);        /* Slight brightening */
     box-shadow: var(--elev-shadow-md);
-    outline: none; /* we will handle focus ring below */
+    outline: none;  /* Using custom focus ring below */
 }
 
-/* Brand-aligned focus ring for keyboard users */
+/* Keyboard accessibility: Clear focus indicator */
 .card:focus-visible {
     box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand-blue) 55%, white 45%),
         var(--elev-shadow-md);
 }
 
-/* ===========================
-   Hero gradient & texture helpers
-   =========================== */
-
-/* Gradient background that keeps the calm/brand tone */
-.bg-journey-gradient {
-    background: linear-gradient(180deg, #4a3bd1 0%, #3b2373 100%);
-    color: white; /* ensure text is legible on hero */
-}
-
-/* Optional: subtle top "bokeh" texture overlay using layered gradients */
-.bg-journey-gradient.texture-soft {
-    position: relative;
-    isolation: isolate;
-}
-.bg-journey-gradient.texture-soft::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    /* very subtle radial speckles (opacity ~.08) */
-    background: radial-gradient(
-            180px 120px at 20% 10%,
-            rgba(255, 255, 255, 0.08),
-            transparent 60%
-        ),
-        radial-gradient(
-            220px 160px at 80% 5%,
-            rgba(255, 255, 255, 0.06),
-            transparent 65%
-        ),
-        radial-gradient(
-            160px 120px at 60% 20%,
-            rgba(255, 255, 255, 0.05),
-            transparent 60%
-        );
-}
-.bg-journey-gradient > * {
-    position: relative; /* keep content above the overlay */
-    z-index: 1;
-}
-
-/* ===========================
-   Section anchor / divider
-   =========================== */
-.section-divider {
-    position: relative;
-    padding-top: clamp(16px, 4vw, 24px);
-    margin-top: clamp(24px, 5vw, 40px);
-}
-.section-divider::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    /* soft brand-tinted gradient line */
-    background: linear-gradient(
-        90deg,
-        color-mix(in oklab, var(--brand-blue) 65%, white 35%) 0%,
-        color-mix(in oklab, var(--neutral-plate) 60%, white 40%) 50%,
-        transparent 100%
-    );
-    border-radius: 2px;
-    opacity: 0.8;
-}
-
-/* ===========================
-   Small helpers 
-   =========================== */
-
-/* Stronger focus ring when you need to emphasize focus on a specific element */
-.u-focus-ring {
-    outline: 0;
-    box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand-blue) 55%, white 45%),
-        0 2px 10px rgba(0, 0, 0, 0.08) !important;
-}
-
-/* Light elevation and hover-ready shadow */
-.u-elev-sm {
-    box-shadow: var(--elev-shadow-sm);
-}
-.u-elev-md {
-    box-shadow: var(--elev-shadow-md);
-}
-.u-bright-3 {
-    filter: brightness(1.03);
-}
-
-/* In case you want a one-off hover scale without changing component CSS */
-.u-hover-scale:hover {
-    transform: scale(1.02);
-}
-
-/* Brand text/link helpers */
-.text-brand {
-    color: var(--brand-blue);
-}
-.bg-plate {
-    background-color: var(--neutral-plate);
-}
-
 /* ============================================
    CONSISTENT FOCUS STYLES
+   WCAG 2.2 AA compliant focus indicators for all interactive elements
+   Using 3px outline with 2px offset for clear visibility
    ============================================ */
 
 /* Universal focus outline for all interactive elements */
@@ -712,15 +341,15 @@ select:focus-visible,
     outline-offset: 2px;
 }
 
-/* Special focus for checkboxes and radios */
+/* Checkboxes and radio buttons need consistent focus */
 input[type="checkbox"]:focus-visible,
 input[type="radio"]:focus-visible {
     outline: 3px solid var(--accent-green);
     outline-offset: 2px;
 }
 
-/* Range slider focus */
+/* Range sliders need more offset due to their track */
 input[type="range"]:focus-visible {
     outline: 3px solid var(--accent-green);
-    outline-offset: 4px;
+    outline-offset: 4px;  /* Extra space to avoid track overlap */
 }
