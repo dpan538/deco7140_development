@@ -363,6 +363,51 @@
             </div>
         </section>
 
+        <!-- Alignment with Client and User Needs (CCI) -->
+        <section class="content-cards">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Alignment with Client and User Needs</h2>
+                    <p role="doc-subtitle" class="section-subtitle">How implementation aligns with A3 goals and the Connect Communities Initiative (CCI)</p>
+                </div>
+
+                <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Client Goals (from A3)</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Community-first platform:</strong> Homepage pathways and Community hub prioritize conversations and peer support.</p>
+                            <p style="margin-top: var(--space-2);"><strong>Practical resources:</strong> Resources page organizes evidence-based articles and activities with clear badges for quick scanning.</p>
+                            <p style="margin-top: var(--space-2);"><strong>Private self-management:</strong> Personal Space provides settings, accessibility preferences, and feedback tools without social pressure.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>User Needs Addressed</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Low-friction onboarding:</strong> Clear hero CTAs and compact section spacing reduce cognitive load.</p>
+                            <p style="margin-top: var(--space-2);"><strong>Belonging and safety:</strong> Visible badges for LGBTQ+ and multicultural support; consistent focus states; high-contrast mode.</p>
+                            <p style="margin-top: var(--space-2);"><strong>Clarity:</strong> Headings re-leveled, landmarks added, and search inputs labeled to support screen readers.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>CCI Alignment</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Connect Communities Initiative:</strong> Design centers connection, mutual support, and inclusive participation.</p>
+                            <p style="margin-top: var(--space-2);"><strong>Inclusive access:</strong> WCAG 2.2 AA fixes (labels, fieldsets, contrast, landmarks) operationalize equitable access.</p>
+                            <p style="margin-top: var(--space-2);"><strong>Community impact:</strong> Content and badges highlight minority groups (LGBTQ+, immigrants), reflecting CCI’s social inclusion goals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Professional Standards & Compliance -->
         <section class="content-cards">
             <div class="container">
@@ -939,6 +984,48 @@
             </div>
         </section>
 
+        <!-- Challenges & Strategies -->
+        <section class="content-cards">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Challenges & Strategies</h2>
+                    <p role="doc-subtitle" class="section-subtitle">What was hard and how it was solved during implementation</p>
+                </div>
+
+                <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>IBM Accessibility Fixes at Scale</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Challenge:</strong> 36 violations across forms, headings, and landmarks.</p>
+                            <p style="margin-top: var(--space-2);"><strong>Strategy:</strong> Standardized patterns: sr-only labels for all search inputs, fieldset/legend for grouped inputs, re-leveled headings, and explicit high-contrast styles.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Consistent Visual System</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Challenge:</strong> Visual monotony and inconsistency across pages.</p>
+                            <p style="margin-top: var(--space-2);"><strong>Strategy:</strong> Unified badge system, compact spacing using negative margins where appropriate, and careful color alternation (purple/green/yellow) to maintain contrast and hierarchy.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Code Hygiene & Maintainability</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Challenge:</strong> Unused CSS and inconsistent comments increased cognitive load.</p>
+                            <p style="margin-top: var(--space-2);"><strong>Strategy:</strong> Removed unused utilities, consolidated page CSS into <code>css/page_css/</code>, standardized comments, and documented remaining <code>!important</code> overrides as technical debt.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Accessibility Audit Evidence -->
         <section class="content-cards">
             <div class="container">
@@ -949,8 +1036,8 @@
                     </p>
                 </div>
 
-                <div class="cards-grid">
-                    <div class="card" style="grid-column: span 2;">
+                <div class="cards-grid" style="grid-template-columns: 2fr 1fr;">
+                    <div class="card">
                         <div class="card-header">
                             <h3>Audit Results Summary</h3>
                         </div>
@@ -980,7 +1067,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h3>Reflection</h3>
+                        <h3>Reflection</h3>
                         </div>
                         <div class="card-body">
                             <p>The IBM Equal Access Checker revealed patterns I hadn't anticipated: placeholder text, while visually clear, provides no semantic value to screen readers. This reinforced the importance of redundant labeling strategies.</p>
@@ -992,6 +1079,33 @@
                         <div class="card-footer">
                             <span class="badge">Iterative</span>
                             <span class="badge badge-yellow">Learning-Focused</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accessibility Audit Screenshots -->
+                <div class="accordion-wrapper" style="margin-top: var(--space-6);">
+                    <div class="accordion-item">
+                        <div role="heading" aria-level="3" class="accordion-header">Accessibility Audit Screenshots</div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <div class="cards-grid" style="grid-template-columns: repeat(2, 1fr); gap: var(--space-6); margin-top: var(--space-4);">
+                                    <figure aria-label="IBM Equal Access Checker screenshot showing Level 1 violations">
+                                        <img src="images/screenshot1.png" alt="IBM Equal Access Checker audit results showing Level 1 violations" style="width: 100%; height: auto; border-radius: var(--radius-sm); box-shadow: var(--shadow-subtle); border: 1px solid rgba(0,0,0,0.08);">
+                                        <figcaption style="margin-top: var(--space-2); font-size: 0.875rem; color: var(--text-muted); text-align: center;">IBM Equal Access Checker - Level 1 Violations</figcaption>
+                                    </figure>
+                                    <figure aria-label="IBM Equal Access Checker screenshot showing Level 2-4 reviews">
+                                        <img src="images/screenshot2.jpg" alt="IBM Equal Access Checker audit results showing Level 2-4 reviews" style="width: 100%; height: auto; border-radius: var(--radius-sm); box-shadow: var(--shadow-subtle); border: 1px solid rgba(0,0,0,0.08);">
+                                        <figcaption style="margin-top: var(--space-2); font-size: 0.875rem; color: var(--text-muted); text-align: center;">IBM Equal Access Checker - Level 2-4 Reviews</figcaption>
+                                    </figure>
+                                </div>
+                                
+                                <!-- Reference: All IBM Check Records -->
+                                <figure aria-label="Reference screenshot showing all IBM Equal Access Checker audit records" style="margin-top: var(--space-6);">
+                                    <img src="images/checkrecords.jpg" alt="Complete reference of all IBM Equal Access Checker audit records across all pages" style="width: 100%; height: auto; border-radius: var(--radius-sm); box-shadow: var(--shadow-subtle); border: 1px solid rgba(0,0,0,0.08);">
+                                    <figcaption style="margin-top: var(--space-2); font-size: 0.875rem; color: var(--text-muted); text-align: center;">Reference: All IBM Equal Access Checker Audit Records</figcaption>
+                                </figure>
+                            </div>
                         </div>
                     </div>
                 </div>
